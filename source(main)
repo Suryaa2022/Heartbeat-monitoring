@@ -1,0 +1,1219 @@
+/**
+* @file main.cpp
+* @author Sunyup, Kim sunyup.kim@lge.com
+* @version 1.0
+* This file include main() function.
+*/
+#include <execinfo.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <gio/gio.h>
+#include <sys/wait.h>
+#include <string>
+#include <thread>
+#include <chrono>
+#include <sstream>
+
+#include <CommonAPI/CommonAPI.hpp>
+#include <systemd/sd-daemon.h>
+
+#include "common.h"
+#include "lms.h"
+#include "indexerstub.h"
+#include "option.h"
+#include "player_logger.h"
+#include "playerprovider.h"
+#include "playerstub.h"
+#include "file_decryptor.h"
+// #include "dolby_ipp.h"
+//#include "browserprovider.h"
+//#include "browserstub.h"
+
+using namespace ::lge::mm;
+
+/**
+* @fn : void LogMemoryMap()
+* @brief Displays memory map.
+* @section function_flow Function flow
+* - Makes a command for getting memory map.
+* - Opens file with a command.
+* - Gets a contents of file and leaves it as logs.
+*
+* @section global_variable_none Global Variables : None
+* @section dependencies_none Dependencies : None
+* @return None
+*/
+static void LogMemoryMap() {
+    char buff[1024];
+    char command[32];
+    FILE *fp;
+
+    snprintf(command, 32, "cat /proc/%d/maps", getpid());
+
+    fp = popen(command, "r");
+    if (fp == NULL) {
+        MMLogError("popen() error");
+        return;
+    }
+
+    while(fgets(buff, 1024, fp))
+        MMLogError("%s", buff);
+
+    pclose(fp);
+}
+
+/**
+* @fn : void LogBacktrace()
+* @brief Displays backtrace.
+* @section function_flow Function flow
+* - Stores a backtrace in the array pointed to by buffer.
+* - Translates the addresses into an array of strings.
+* - If an array of strings is null, return.
+* - Otherwise, prints an array of strings.
+* - Releases an array of strings.
+*
+* @section global_variable_none Global Variables : None
+* @section dependencies_none Dependencies : None
+* @return None
+*/
+static void LogBacktrace() {
+    void *array[50];
+    size_t size;
+    char **strings;
+    size_t i;
+
+    size = backtrace(array, 50);
+    strings = backtrace_symbols(array, size);
+    if (strings == NULL) {
+        MMLogError("backtrace symbol error");
+        return;
+    }
+
+    for(i = 0; i < size; i++) {
+        MMLogError("%s", strings[i]);
+    }
+
+    free(strings);
+}
+
+/**
+* @fn : void SigHandler(int sig)
+* @brief Handler for signal.
+* @section function_flow Function flow
+* - Calls LogBacktrace() and LogMemoryMap().
+* - Terminates the process normally with EXIT_FAILURE code.
+*
+* @param[in] sig : A signal number.
+* @section global_variable_none Global Variables : None
+* @section dependencies_none Dependencies : None
+* @return None
+*/
+static void SigHandler(int sig) {
+    MMLogError("Caught Signal : %d", sig);
+
+    LogBacktrace();
+    LogMemoryMap();
+
+    std::exit(EXIT_FAILURE);
+}
+
+static void SigCHLDHandler(int sig) {
+    while(waitpid(-1, NULL, WNOHANG) > 0);
+}
+
+static void SigTERMInfoHandler(int sig,
+        siginfo_t *siginfo, void* context){
+    MMLogError("Caught Signal : %d", sig);
+    MMLogError("Sending PID : %d", (int)siginfo->si_pid);
+
+    LogBacktrace();
+    LogMemoryMap();
+
+    std::exit(EXIT_FAILURE);
+}
+
+/**
+* @fn : void RegisterSignalHandler()
+* @brief Connects signals and handler.
+* @section function_flow Function flow
+* - Connects handler and SIGABRT, SIGSEGV, SIGPIPE, SIGBUS and SIGTERM signals.
+*
+* @section global_variable_none Global Variables : None
+* @section dependencies_none Dependencies : None
+* @return None
+*/
+static void RegisterSignalHandler() {
+
+    struct sigaction sa;
+    sa.sa_handler = SigCHLDHandler;
+    sa.sa_flags = SA_NODEFER | SA_NOCLDWAIT;
+    sigemptyset(&sa.sa_mask);
+    sa.sa_restorer = NULL;
+    sigaction(SIGCHLD, &sa, NULL);
+
+    struct sigaction sa_term;
+    sa_term.sa_sigaction = SigTERMInfoHandler;
+    sa_term.sa_flags = SA_SIGINFO;
+    sigemptyset(&sa_term.sa_mask);
+    sigaction(SIGTERM, &sa_term, NULL);
+
+    signal(SIGABRT, SigHandler);
+    signal(SIGSEGV, SigHandler);
+    signal(SIGPIPE, SigHandler);
+    signal(SIGBUS,  SigHandler);
+}
+
+/**
+* @fn : void InitLog()
+* @brief Initializes Log.
+* @section function_flow Function flow
+* - Initializes DLT Log.
+* - If the option is to use log, Initializes file log.
+*
+* @section global_variable_none Global Variables : None
+* @section dependencies_none Dependencies : None
+* @return None
+*/
+static void InitLog() {
+    MMLog::RegisterLogger(new DltLogger("MMSVC", "media manager service", "MMSVC-CTX", "media manager service context"));
+    if (Option::use_log())
+        MMLog::RegisterLogger(new FileLogger(Option::log_path().c_str()));
+}
+
+/**
+* @fn : void ShowVerionInfo()
+* @brief Displays version information.
+* @section function_flow_none Function flow : None
+* @section global_variable_none Global Variables : None
+* @section dependencies_none Dependencies : None
+* @return None
+*/
+static void ShowVerionInfo() {
+    MMLogError("==============================================");
+    MMLogError("Media Manager[Multi] S/W Info : Leopard v%s", LEOPARD_VERSION);
+    MMLogError("Reference Version : %s", GIT_VERSION);
+    MMLogError("Commit Date : %s", GIT_DATE);
+    MMLogError("Build Date  : %s %s", __TIME__, __DATE__);
+    MMLogError("DBUS_SESSION_BUS_ADDRESS=%s", getenv("DBUS_SESSION_BUS_ADDRESS"));
+    MMLogError("==============================================");
+}
+
+void onConnectedCallback(MmError *e, indexer::LMSProvider *lms, std::string proxy_name) {
+    static auto runtime = CommonAPI::Runtime::get();
+    std::string domain = "local";
+    std::string instance = proxy_name;
+    MMLogInfo("Indexer Register Start %s : ", proxy_name.c_str());
+    if (!e) {
+        if (lms->stub != nullptr) {
+            MMLogInfo("lightmediascannerd recovered");
+        }
+
+        auto stub = std::make_shared<indexer::IndexerStubImpl>(lms);
+        bool success = runtime->registerService(domain, instance, stub);
+        if (!success) {
+            MMLogError("Unable to register %s service!", instance.c_str());
+        }
+    } else {
+        MMLogError("Error connecting to %s : %s", instance.c_str(), e->message.c_str());
+    }
+}
+
+static void InitDbusSessionBusAddress() {
+    std::string str;
+    do {
+        std::ifstream is("/tmp/session_appmgr");
+        std::getline(is, str);
+        if (str.empty() == false)
+            break;
+        MMLogInfo("DBUS_SESSION_BUS_ADDRESS is empty, retry");
+        usleep(100*1000);
+    } while(1);
+
+    setenv("DBUS_SESSION_BUS_ADDRESS", str.c_str(), 1);
+    MMLogInfo("DBUS_SESSION_BUS_ADDRESS=%s", str.c_str());
+}
+
+/**
+* @fn : bool isDefaultConnectionNameExist()
+* @brief Checks if default ConnectionName exist or not
+* @section function_flow Function flow
+* - Return true if default connectionName exists
+* - Return false if default connectionName does not exist
+*
+* @section global_variable_none Global Variables : None
+* @section dependencies_none Dependencies : None
+* @return bool
+*/
+bool isDefaultConnectionNameExist(std::string default_connection_name, int32_t process_id) {
+    std::vector<gchar*> busName;
+    GError *error = NULL;
+
+    GDBusConnection *conn = g_bus_get_sync(G_BUS_TYPE_SESSION, NULL, &error);
+    if (!conn) {
+        MMLogError("GDBusConnection is NULL");
+        return false;
+    }
+    GDBusProxy *proxy = g_dbus_proxy_new_sync(conn,
+                        G_DBUS_PROXY_FLAGS_NONE,
+                        NULL,
+                        "org.freedesktop.DBus",
+                        "/org/freedesktop/DBus",
+                        "org.freedesktop.DBus",
+                        NULL,
+                        &error);
+    if (!proxy) {
+        MMLogError("Proxy is NULL");
+        return false;
+    }
+    GVariant *result = g_dbus_proxy_call_sync(proxy,
+                       "ListQueuedOwners",
+                       g_variant_new ("(s)","com.lge.PlayerEngine"),
+                       G_DBUS_CALL_FLAGS_NONE,
+                       -1,
+                       NULL,
+                       &error);
+    if (!result) {
+        MMLogError("result is NULL");
+        return false;
+    }
+    if (error) {
+        MMLogError("Error-----%s", error->message);
+        return false;
+    }
+    GVariantIter *iter;
+    GVariant *temp;
+    temp = g_variant_get_child_value(result, 0);
+    iter = g_variant_iter_new(temp);
+    gchar *value;
+    while (g_variant_iter_next(iter, "s", &value)) {
+        busName.push_back(value);
+    }
+    g_variant_unref(temp);
+    g_variant_iter_free(iter);
+
+    if (find(busName.begin(), busName.end(), default_connection_name) != busName.end()) {
+        if (process_id > 0 && (kill(process_id, 0) == 0)) {
+            MMLogInfo("## find OK && return true [%s][%d]", default_connection_name.c_str(), process_id);
+            return true;
+        } else {
+            MMLogInfo("## find OK, but process was died before [%s][%d]", default_connection_name.c_str(), process_id);
+            return false;
+        }
+    } else {
+        if (process_id > 0 && (kill(process_id, 0) == 0)) {
+            MMLogInfo("## Not found, but process is already restored [%s][%d]", default_connection_name.c_str(), process_id);
+            return true;
+        }
+        MMLogInfo("## Not found [%s][%d]", default_connection_name.c_str(), process_id);
+        return false;
+    }
+}
+
+/**
+* @fn : std::string getDefaultConnectionName()
+* @brief Return the connectionName for default playerengine
+* @section function_flow Function flow
+* - Return the connectionName when the default playerengine will crash
+*
+* @section global_variable_none Global Variables : None
+* @section dependencies_none Dependencies : None
+* @return string
+*/
+std::string getDefaultConnectionName() {
+
+    //sleep(1);
+    GError *error = NULL;
+
+    GDBusConnection *conn = g_bus_get_sync(G_BUS_TYPE_SESSION, NULL, &error);
+    if (!conn) {
+        MMLogError("GDBusConnection is NULL");
+        return std::string();
+    }
+
+    GDBusProxy *proxy = g_dbus_proxy_new_sync(conn,
+                        G_DBUS_PROXY_FLAGS_NONE,
+                        NULL,
+                        "org.freedesktop.DBus",
+                        "/org/freedesktop/DBus",
+                        "org.freedesktop.DBus",
+                        NULL,
+                        &error);
+    if (!proxy) {
+        MMLogError("Proxy is NULL");
+        if(error) {
+            MMLogError("g_dbus_proxy_call_sync to dbus failed, message:[%s]", error->message);
+            g_clear_error(&error);
+        }
+        return std::string();
+    }
+
+    int retCnt = 10;
+    GVariant *result = NULL;
+    while (retCnt > 0) {
+        result = g_dbus_proxy_call_sync(proxy,
+                       "GetNameOwner",
+                       g_variant_new("(s)","com.lge.PlayerEngine"),
+                       G_DBUS_CALL_FLAGS_NONE,
+                       10 * 1000,
+                       NULL,
+                       &error);
+        if (!result) {
+            MMLogError("result is NULL");
+            if(error) {
+                MMLogError("GetNameOwner failed, message:[%s]", error->message);
+                g_clear_error(&error);
+            }
+            if (retCnt == 1) {
+               MMLogError("Failed to get owner after retry");
+               return std::string();
+            }
+            usleep(200 * 1000);
+            retCnt--;
+        } else {
+            MMLogInfo("Got owner name for PE");
+            break;
+        }
+    }
+
+    GVariant *temp;
+    gchar *value;
+    temp = g_variant_get_child_value(result, 0);
+    g_variant_get(temp, "s", &value);
+
+    g_variant_unref(temp);
+    g_variant_unref(result);
+    g_object_unref(proxy);
+    g_object_unref(conn);
+    return (value ? value : "");
+
+}
+
+/**
+* @fn : bool verifySignature(const std::string& filePath, const std::string& sigPath)
+* @brief : Verifies the signature of a given file.
+* @section function_flow Function flow
+* - Attempts to verify the signature of the specified file using the FileDecryptor instance.
+* - Catches and logs any system errors encountered during the verification process.
+* - Returns true if the verification is successful, otherwise false.
+*
+* @param[in] filePath : The path to the file whose signature needs to be verified.
+* @param[in] sigPath : The path to the signature file.
+* @section global_variable_none Global Variables : None
+* @section dependencies_none Dependencies : None
+* @return bool : The result of the signature verification.
+*/
+bool verifySignature(const std::string& filePath, const std::string& sigPath) {
+    try {
+        auto result = FileDecryptor::getInstance()->verifySigFile(filePath, sigPath);
+        return result == FileDecryptor::DecryptResult::SUCCESS;
+    } catch (const std::system_error& e) {
+        MMLogError("[jjy] Verifying signature file failed, caught system error: %s", e.what());
+        return false;
+    }
+}
+
+/**
+* @fn : FileDecryptor::DecryptResult decryptFileWithRetries(const std::string& keyName, const std::string& encPath, const std::string& decPath, const std::string& symlinkPath, int maxRetries)
+* @brief : Decrypts a file with retries in case of failure.
+* @section function_flow Function flow
+* - Tries to decrypt the specified file using the provided keyName and paths.
+* - If the decryption call fails with DBUS_CALL_FAIL, it retries until the maxRetries limit is reached.
+* - Returns the result of the decryption attempt.
+*
+* @param[in] keyName : The decryption key name.
+* @param[in] encPath : The path to the encrypted file.
+* @param[in] decPath : The path where the decrypted file should be saved.
+* @param[in] symlinkPath : The symlink path for the decrypted file, if applicable.
+* @param[in] maxRetries : The maximum number of retries for the decryption.
+* @section global_variable_none Global Variables : None
+* @section dependencies_none Dependencies : None
+* @return FileDecryptor::DecryptResult : The result of the decryption process.
+*/
+FileDecryptor::DecryptResult decryptFileWithRetries(const std::string& keyName, const std::string& encPath, const std::string& decPath, const std::string& symlinkPath, int maxRetries) {
+    int cnt = 0;
+    FileDecryptor::DecryptResult result;
+    while (cnt < maxRetries) {
+        result = FileDecryptor::getInstance()->decrypt(keyName, encPath, decPath, symlinkPath);
+        if (result == FileDecryptor::DecryptResult::DBUS_CALL_FAIL) {
+            MMLogInfo("[jjy] Wait for cryptoservice ready...[%d]s", cnt);
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        } else {
+            break;
+        }
+        cnt++;
+    }
+    return result;
+}
+
+FileDecryptor::DecryptResult decryptDolbyAtmosFileWithRetries(const std::string& keyName, const std::string& encPath, const std::string& decPath, int maxRetries) {
+    int cnt = 0;
+    FileDecryptor::DecryptResult result;
+    while (cnt < maxRetries) {
+        result = FileDecryptor::getInstance()->decryptDolbySupportStateFile(keyName, encPath, decPath);
+        if (result == FileDecryptor::DecryptResult::DBUS_CALL_FAIL) {
+            MMLogInfo("[jjy] Wait for cryptoservice ready...[%d]s", cnt);
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        } else {
+            break;
+        }
+        cnt++;
+    }
+    return result;
+}
+
+/**
+* @fn : bool DecryptDolbyDlbdecLibrary()
+* @brief : Decrypts the Dolby dlbdec library if the signature verification is successful.
+* @section function_flow Function flow
+* - Verifies the signature of the Dolby dlbdec library file.
+* - If the signature is valid, attempts to decrypt the library file.
+* - Logs an error message if the decryption fails.
+*
+* @return bool : Returns true if decryption is successful, false otherwise.
+*/
+bool DecryptDolbyDlbdecLibrary() {
+    if (verifySignature(Option::dolby_lib_info().lib_enc_path, Option::dolby_lib_info().libgstdlbdec_enc_so_sig_path)) {
+        auto dlbdec_result = decryptFileWithRetries(Option::dolby_lib_info().key_name_dolby_lib,
+                                                    Option::dolby_lib_info().lib_enc_path,
+                                                    Option::dolby_lib_info().lib_dec_path,
+                                                    Option::dolby_lib_info().lib_symlink_path, 60);
+        if ((dlbdec_result != FileDecryptor::DecryptResult::SUCCESS) && (dlbdec_result != FileDecryptor::DecryptResult::FILE_EXIST)) {
+            MMLogError("[jjy] Failed to decrypt Dolby dlbdec library.");
+            return false;
+        }
+        const char *path = "/tmp/dolby/libgstdlbdec_dec.so";
+        if (access(path, F_OK) != -1) {
+            // 파일이 존재
+            MMLogInfo("[jjy] /tmp/dolby/libgstdlbdec_dec.so File exists. Decryption Success.");
+            return true;
+        } else {
+            // 파일이 존재하지 않음
+            MMLogInfo("[jjy] /tmp/dolby/libgstdlbdec_dec.so File does not exist. Decryption Failed.");
+            return false;
+        }
+    }
+    MMLogError("[jjy] Failed to decrypt Dolby dlbdec library entirely.");
+    return false;
+}
+
+/**
+* @fn : bool DecryptDolbyCinemoLibrary()
+* @brief : Decrypts the Dolby Cinemo library if the signature verification is successful and the use_cinemo option is enabled.
+* @section function_flow Function flow
+* - Checks if the use_cinemo option is enabled and then verifies the signature of the Dolby Cinemo library file.
+* - If the signature is valid and use_cinemo is true, attempts to decrypt the library file.
+* - Logs an error message if the decryption fails.
+*
+* @return bool : Returns true if decryption is successful, false otherwise.
+*/
+bool DecryptDolbyCinemoLibrary() {
+    if (Option::dolby_lib_info().use_cinemo && verifySignature(Option::dolby_lib_info().cinemo_lib_path, Option::dolby_lib_info().cinemo_lib_sig_path)) {
+        auto cinemo_result = decryptFileWithRetries(Option::dolby_lib_info().key_name_dolby_lib,
+                                                   Option::dolby_lib_info().cinemo_lib_path,
+                                                   Option::dolby_lib_info().cinemo_dec_lib_path,
+                                                   std::string(), 60);
+        if (cinemo_result != FileDecryptor::DecryptResult::SUCCESS) {
+            MMLogError("[jjy] Failed to decrypt Dolby cinemo library.");
+            return false;
+        }
+        MMLogError("[jjy] Success to decrypt Dolby cinemo library.");
+        return true;
+    }
+    MMLogError("[jjy] Failed to decrypt Dolby cinemo entirely.");
+    return false;
+}
+
+/**
+* @fn : void ProcessDolbyDecoderDecrypt()
+* @brief : Processes the decryption and configuration of the Dolby decoder.
+* @section function_flow Function flow
+* - Attempts to decrypt the Dolby region and vehicle configuration file.
+* - Loads the configuration if the decryption is successful.
+* - Parses vehicle and region information, and checks their validity.
+* - Performs additional decryption steps for specific Dolby components if needed.
+*
+* @section global_variable_none Global Variables : None
+* @section dependencies_none Dependencies : None
+*/
+void ProcessDolbyDecoderDecrypt() {
+    MMLogError("[jjy] Enter AVN ProcessDolbyDecoder logic");
+    auto result = decryptFileWithRetries(Option::dolby_lib_info().key_name_dolby_region_vehicle,
+                                        Option::dolby_lib_info().dolby_region_vehicle_enc_cfg_path,
+                                        Option::dolby_lib_info().dolby_region_vehicle_dec_cfg_path,
+                                        std::string(), 60);
+
+    if (!(result == FileDecryptor::DecryptResult::SUCCESS || result == FileDecryptor::DecryptResult::FILE_EXIST)) {
+        MMLogError("[jjy] Failed to decrypt dolby region and vehicle config file.");
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+        auto result = FileDecryptor::setDcxActivationState(false);
+        if (result != FileDecryptor::DecryptResult::SUCCESS) {
+            MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+        }
+#endif
+        return;
+    }
+
+    // Load vehicle/region config option
+    if (!Option::LoadConfig(Option::dolby_lib_info().dolby_region_vehicle_dec_cfg_path)) {
+        MMLogError("[jjy] Option::LoadConfig(Option::dolby_lib_info().dolby_region_vehicle_dec_cfg_path) is Failed.");
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+        auto result = FileDecryptor::setDcxActivationState(false);
+        if (result != FileDecryptor::DecryptResult::SUCCESS) {
+            MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+        }
+#endif
+        return;
+    }
+
+    // 차량 및 지역 정보 파싱
+    std::string vehicle_name;
+    std::string region_name;
+    try {
+        vehicle_name = FileDecryptor::parseVehicleName();
+        region_name = FileDecryptor::parseCountryName();
+    } catch (const std::system_error& e) {
+        MMLogError("[jjy] Parsing vehicle or country name failed, Error: %s", e.what());
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+        auto result = FileDecryptor::setDcxActivationState(false);
+        if (result != FileDecryptor::DecryptResult::SUCCESS) {
+            MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+        }
+#endif
+        return;
+    }
+
+    if (vehicle_name.empty() || region_name.empty()) {
+        MMLogInfo("[jjy] Fail to get info from config. vehicle=[%s], region=[%s]", region_name.c_str(), vehicle_name.c_str());
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+        auto result = FileDecryptor::setDcxActivationState(false);
+        if (result != FileDecryptor::DecryptResult::SUCCESS) {
+            MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+        }
+#endif
+        return;
+    }
+
+    // 모델 이름 파싱 및 유효성 검사
+    std::string my_model_str = "";
+    if(Option::dolby_lib_info().use_my_model){
+        try {
+            my_model_str = FileDecryptor::parseMyModelName(Option::dolby_lib_info().my_model_sys_path);
+        } catch (const std::system_error& e) {
+            MMLogError("[jjy] Parsing my model name failed, Error: %s", e.what());
+        }
+
+        if (my_model_str.empty()) {
+            MMLogInfo("[jjy] Get my model is failed");
+        }
+    }
+
+    bool valid_vehicle = std::find(Option::dolby_lib_info().vehicle_.begin(),
+                                Option::dolby_lib_info().vehicle_.end(),
+                                vehicle_name) != Option::dolby_lib_info().vehicle_.end();
+
+    bool valid_region = std::find(Option::dolby_lib_info().region_.begin(),
+                                Option::dolby_lib_info().region_.end(),
+                                region_name) != Option::dolby_lib_info().region_.end();
+
+    bool valid_my_model = !Option::dolby_lib_info().use_my_model ||
+                        (std::find(Option::dolby_lib_info().my_model_.begin(),
+                                    Option::dolby_lib_info().my_model_.end(),
+                                    my_model_str) != Option::dolby_lib_info().my_model_.end());
+
+    if (!valid_vehicle || !valid_region || !valid_my_model) {
+        MMLogInfo("[jjy] Region: %s, Vehicle: %s, Model: %s - Not supported for Dolby Atmos.",
+                region_name.c_str(), vehicle_name.c_str(), my_model_str.c_str());
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+        auto result = FileDecryptor::setDcxActivationState(false);
+        if (result != FileDecryptor::DecryptResult::SUCCESS) {
+            MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+        }
+#endif
+        return;
+    }
+
+    // Dolby Atmos for dlbdec 및 Dolby Atmos for cinemo와 관련된 추가적인 파일 디크립트 작업입니다.
+    if (valid_vehicle && valid_region && valid_my_model) {
+        // Dolby dlbdec library decryption
+        if (!DecryptDolbyDlbdecLibrary()) {
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+            MMLogError("[jjy] Dolby dlbdec library decryption failed.");
+            auto result = FileDecryptor::setDcxActivationState(false);
+            if (result != FileDecryptor::DecryptResult::SUCCESS) {
+                MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+            }
+#endif
+        } else {
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+            // 나머지 전석 플랫폼(현재까지는 ccIC27)은 Set을 한다.
+            auto result = FileDecryptor::setDcxActivationState(true);
+            if (result != FileDecryptor::DecryptResult::SUCCESS) {
+                MMLogError("[jjy] Failed to setDcxActivationState to Enable.");
+            }
+#endif
+        }
+
+        // Dolby Cinemo library decryption
+        if (!DecryptDolbyCinemoLibrary()) {
+            MMLogError("[jjy] Dolby Cinemo library decryption failed.");
+        }
+    } else {
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+            auto result = FileDecryptor::setDcxActivationState(false);
+            if (result != FileDecryptor::DecryptResult::SUCCESS) {
+                MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+            }
+#endif
+    }
+}
+
+void testRearAvnLogic() {
+    // 엔지니어링 모드 테스트를 위해 임시로 만든 함수
+    // getDcxActivationStateEventHandler 함수 호출
+    MMLogError("[jjy] Enter test Rear AVN dolby logic");
+    FileDecryptor::getDcxActivationStateEventHandler();
+    MMLogError("[jjy] FileDecryptor::getDcxActivationStateEventHandler is activated");
+}
+
+static int mkdirp(std::string dir, mode_t mod) {
+    int spos = 0;
+    int pos = 0;
+    std::string cd;
+    do{
+      pos = dir.find('/', spos);
+      if(pos == std::string::npos) cd = dir;
+      else cd = dir.substr(0,pos+1);
+
+      if(-1 == mkdir(cd.c_str(), mod) && errno != EEXIST) {
+        MMLogError("fail to create %s directory", cd.c_str());
+        return -1;
+      } else {
+        MMLogInfo("%s directory exist", cd.c_str());
+      }
+      spos = pos+1;
+    } while(spos < dir.length() && pos != std::string::npos);
+
+    return 0;
+}
+
+bool CreateDir(std::string dir_received) {
+    if(access( dir_received.c_str(), F_OK ) != -1) {
+        MMLogError("[jjy] Decrypted File is Already Exist");
+        return true;
+    }
+
+    // create destination file directory
+    int pos = 0;
+    std::string dir;
+    if((pos = dir_received.rfind('/')) != std::string::npos) {
+        dir = dir_received.substr(0,pos);
+        if (access(dir.c_str(), F_OK) != -1) {
+            MMLogError("%s directory already exists", dir.c_str());
+        }
+        else {
+            if(mkdirp(dir, 0755) == -1){
+                MMLogError("fail to create %s directory", dir.c_str());
+                return false;
+            }
+            else{
+                MMLogError("success to create %s directory", dir.c_str());
+            }
+        }
+    }
+    return true;
+}
+
+
+void PreviousFullLogicDolbyDecrypter() {
+    if (!Option::dolby_lib_info().isexist) {
+        MMLogInfo("[jjy] Not supported Atmos platform");
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+        auto result = FileDecryptor::setDcxActivationState(false);
+        if (result != FileDecryptor::DecryptResult::SUCCESS) {
+            MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+        }
+#endif
+        return;
+    }
+
+    FileDecryptor::DecryptResult decryptresult = FileDecryptor::DecryptResult::SUCCESS;
+    try {
+        decryptresult = FileDecryptor::getInstance()->verifySigFile(
+                    Option::dolby_lib_info().dolby_region_vehicle_enc_cfg_path,
+                    Option::dolby_lib_info().dolby_region_vehicle_enc_cfg_sig_path);
+    } catch (const std::system_error& e) {
+        MMLogError("[jjy] verifying signature file failed, caught system error: %s", e.what());
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+        auto result = FileDecryptor::setDcxActivationState(false);
+        if (result != FileDecryptor::DecryptResult::SUCCESS) {
+            MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+        }
+#endif
+    }
+
+    if (FileDecryptor::DecryptResult::SUCCESS == decryptresult) {
+        ProcessDolbyDecoderDecrypt();
+    } else {
+        MMLogError("[jjy] Fail to verify Atmos config file");
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+            auto result = FileDecryptor::setDcxActivationState(false);
+            if (result != FileDecryptor::DecryptResult::SUCCESS) {
+                MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+            }
+#endif
+    }
+}
+
+void FrontAvnLogic() {
+    std::string USE_DCX_NEW_LOGIC = "0";
+    std::string DCX_ENABLE = "0";
+#ifdef PLATFORM_MP
+    // 양산버전에 대한 코드
+    MMLogError("[jjy] PLATFORM_MP");
+    auto result = decryptDolbyAtmosFileWithRetries("AES256_DOLBY_ACTIVATION",
+                                                    "/ESP/lg_varaint.bin",
+                                                    "/tmp/dolby/lg_variant_dec.bin",
+                                                     60);
+
+    if (!(result == FileDecryptor::DecryptResult::SUCCESS || result == FileDecryptor::DecryptResult::FILE_EXIST)) {
+        MMLogError("[jjy] Failed to decrypt lg_variant.bin file. Result code: %d", static_cast<int>(result));
+        MMLogError("[jjy] set USE_DCX_NEW_LOGIC = '0' and DCX_ENABLE = '0'");
+        USE_DCX_NEW_LOGIC = "0";
+        DCX_ENABLE = "0";
+    } else {
+        MMLogError("[jjy] Success to decrypt lg_variant.bin file. Result code: %d", static_cast<int>(result));
+    }
+    auto result2 = FileDecryptor::getDolbySupportState("/tmp/dolby/lg_variant_dec.bin");
+    if (result2 == "") {    // 제대로 decrypt되지 않거나 예상치 못한 오류로 인해 /tmp/dolby안에 파일이 없는 경우
+        MMLogError("[jjy] If the file is not properly decrypted or if it is missing in /tmp/dolby due to an unexpected error.");
+        USE_DCX_NEW_LOGIC = "0";
+        DCX_ENABLE = "0";
+    } else {
+        if(result2 == "00") {
+            USE_DCX_NEW_LOGIC = "0";
+            DCX_ENABLE = "0";
+        }
+        else if(result2 == "01") {
+            USE_DCX_NEW_LOGIC = "0";
+            DCX_ENABLE = "1";
+        }
+        else if(result2 == "02") {
+            USE_DCX_NEW_LOGIC = "1";
+            DCX_ENABLE = "0";
+        }
+        else if(result2 == "03") {
+            USE_DCX_NEW_LOGIC = "1";
+            DCX_ENABLE = "1";
+        }
+        else {
+            MMLogError("[jjy] result2 value is %s please add else-if",result2.c_str());
+            USE_DCX_NEW_LOGIC = "0";
+            DCX_ENABLE = "0";
+        }
+    }
+
+#else
+    MMLogError("[jjy] NOT PLATFORM_MP");
+    // 개발버전에 대한 코드
+    USE_DCX_NEW_LOGIC = FileDecryptor::getValueFromCsystem("USE_DCX_NEW_LOGIC");
+    DCX_ENABLE = FileDecryptor::getValueFromCsystem("DCX_ENABLE");
+
+#endif
+
+    if(USE_DCX_NEW_LOGIC == "1") {
+        MMLogError("[jjy] Enter FileDecryptor::getValueFromCsystem()");
+        MMLogError("[jjy] Use New Logic because FileDecryptor::getValueFromCsystem('USE_DCX_NEW_LOGIC')  == 1");
+        if(DCX_ENABLE == "1") {
+            MMLogError("[jjy] Use New Logic because FileDecryptor::getValueFromCsystem('DCX_ENABLE') is True");
+            // new logic
+            // Dolby dlbdec library decryption
+            bool result = CreateDir("/tmp/dolby/libgstdlbdec_dec.so");
+            if (!result) {
+                MMLogError("[jjy] Fail to create dir /tmp/dolby/");
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+                auto result = FileDecryptor::setDcxActivationState(false);
+                if (result != FileDecryptor::DecryptResult::SUCCESS) {
+                    MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+                }
+#endif
+                return;
+            }
+            if (!DecryptDolbyDlbdecLibrary()) {
+                MMLogError("[jjy] Dolby dlbdec library decryption failed.");
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+                auto result = FileDecryptor::setDcxActivationState(false);
+                if (result != FileDecryptor::DecryptResult::SUCCESS) {
+                    MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+                }
+#endif
+            } else {
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+            // 나머지 전석 플랫폼(현재까지는 ccIC27)은 Set을 한다.
+                auto result = FileDecryptor::setDcxActivationState(true);
+                if (result != FileDecryptor::DecryptResult::SUCCESS) {
+                    MMLogError("[jjy] Failed to setDcxActivationState to Enable.");
+                }
+#endif
+            }
+            // Dolby Cinemo library decryption
+            if (!DecryptDolbyCinemoLibrary()) {
+                MMLogError("[jjy] Dolby Cinemo library decryption failed.");
+            }
+        } else if(DCX_ENABLE == "0") {
+            // previous logic
+            MMLogError("[jjy] DCX_ENABLE  == 0");
+            MMLogError("[jjy] Therefore, dolby dcx unsupport");
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+            auto result = FileDecryptor::setDcxActivationState(false);
+            if (result != FileDecryptor::DecryptResult::SUCCESS) {
+                MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+            }
+#endif
+        } else {
+            MMLogError("[jjy] None Of Case getValueFromCsystem add else if DCX_ENABLE = %s", DCX_ENABLE.c_str());
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+            auto result = FileDecryptor::setDcxActivationState(false);
+            if (result != FileDecryptor::DecryptResult::SUCCESS) {
+                MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+            }
+#endif
+        }
+    } else {
+#if defined(PLATFORM_MP) && defined(PLATFORM_CCIC)
+        MMLogInfo("[jjy][PLATFORM_MP][PLATFORM_CCIC] Enter");
+        MMLogInfo("[jjy][PLATFORM_MP][PLATFORM_CCIC] Dolby Atmos Deactivate because USE_DCX_NEW_LOGIC == 0 and DCX_ENABLE == 0");
+        auto result = FileDecryptor::setDcxActivationState(false);
+        if (result != FileDecryptor::DecryptResult::SUCCESS) {
+            MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+        }
+
+#elif defined(PLATFORM_MP) && defined(PLATFORM_CCIC27)
+        MMLogInfo("[jjy][PLATFORM_MP][PLATFORM_CCIC27] Enter");
+        MMLogInfo("[jjy][PLATFORM_MP][PLATFORM_CCIC27] Dolby Atmos Deactivate because USE_DCX_NEW_LOGIC == 0");
+        auto result = FileDecryptor::setDcxActivationState(false);
+        if (result != FileDecryptor::DecryptResult::SUCCESS) {
+            MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+        }
+
+#else
+        MMLogInfo("[jjy][NOT_MP] Enter");
+        PreviousFullLogicDolbyDecrypter();
+        MMLogInfo("[jjy] PreviousFullLogicDolbyDecrypter activate because USE_DCX_NEW_LOGIC == not 1 ");
+        MMLogInfo("[jjy] None Of Case getValueFromCsystem add else if USE_DCX_NEW_LOGIC = %s", USE_DCX_NEW_LOGIC.c_str());
+#endif
+    }
+}
+
+void RearAvnLogic() {
+    MMLogError("[jjy] Enter Rear AVN dolby logic");
+    testRearAvnLogic();
+    std::string result;
+    result = FileDecryptor::getDcxActivationState();
+    MMLogError("[jjy] FileDecryptor::getDcxActivationState() == %s", result.c_str());
+
+    // 만약 getDcxActivationState 결과값이 dcx_enable = true 면 아래 if문을 타게 한다.
+    // Dolby Atmos for dlbdec 및 Dolby Atmos for cinemo와 관련된 추가적인 파일 디크립트 작업입니다.
+    if (result == "Enable") {
+        bool result = CreateDir("/tmp/dolby/libgstdlbdec_dec.so");
+        if (!result) {
+            MMLogError("[jjy] Fail to create dir /tmp/dolby/");
+            return;
+        }
+        // Dolby dlbdec library decryption
+        if (!DecryptDolbyDlbdecLibrary()) {
+            MMLogError("[jjy] Dolby dlbdec library decryption failed.");
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+            auto result = FileDecryptor::setDcxActivationState(false);
+            if (result != FileDecryptor::DecryptResult::SUCCESS) {
+                MMLogError("[jjy] Failed to setDcxActivationState to Disable.");
+            }
+#endif
+        } else {
+#ifdef PLATFORM_CCRC
+            // ccRC 는 Set 하지 않는다.
+
+#else
+            // 나머지 전석 플랫폼(현재까지는 ccIC27)은 Set을 한다.
+            auto result = FileDecryptor::setDcxActivationState(true);
+            if (result != FileDecryptor::DecryptResult::SUCCESS) {
+                MMLogError("[jjy] Failed to setDcxActivationState to Enable.");
+            }
+#endif
+        }
+
+        // Dolby Cinemo library decryption
+        if (!DecryptDolbyCinemoLibrary()) {
+            MMLogError("[jjy] Dolby Cinemo library decryption failed.");
+        }
+    } else {
+        MMLogError("[jjy] FileDecryptor::getDcxActivationState() != Enable");
+        MMLogError("[jjy] Therefore, dolby dcx unsupport");
+    }
+}
+
+/**
+* @fn : void InitializeDolbyDecrypter()
+* @brief : Initializes the Dolby decrypter if the platform supports it.
+* @section function_flow Function flow
+* - Checks if the Dolby library information exists and proceeds if it does.
+* - Verifies the signature of the Dolby configuration file.
+* - Starts a separate thread to process the Dolby decoder decryption using `ProcessDolbyDecoderDecrypt`.
+*
+* @section global_variable_none Global Variables : None
+* @section dependencies_none Dependencies : None
+*/
+void InitializeDolbyDecrypter() {
+    MMLogError("[jjy] Enter InitializeDolbyDecrypter()");
+    std::string libGstDlbParserPath = "usr/lib/gstreamer-1.0/libgstdlbparse.so";
+    std::string libGstDlbDecPath = "usr/lib/libgstdlbdec_enc.so";
+    // SrcFilePath 경로에 변환할 원본 파일이 있는지 검사
+    if (access(libGstDlbParserPath.c_str(), F_OK) != -1) {
+        // 파일이 존재하면 상관없음
+        MMLogInfo("[jjy] %s File is exist.", libGstDlbParserPath.c_str());
+    }
+    else {
+        // 파일이 존재하지 않으면 안되는 오류Log를 찍어야됨
+        MMLogError("[jjy] %s File is Not exist. please check", libGstDlbParserPath.c_str());
+    }
+    if (access(libGstDlbDecPath.c_str(), F_OK) != -1) {
+        // 파일이 존재하면 상관없음
+        MMLogInfo("[jjy] %s File is exist.", libGstDlbDecPath.c_str());
+    }
+    else {
+        // 파일이 존재하지 않으면 안되는 오류Log를 찍어야됨
+        MMLogError("[jjy] %s File is Not exist. please check", libGstDlbDecPath.c_str());
+    }
+    // is rear logic use consider
+    if(Option::dolby_lib_info().use_rear_logic) {
+        RearAvnLogic();
+    } else {
+        FrontAvnLogic();
+    }
+    MMLogError("[jjy] End of InitializeDolbyDecrypter()");
+}
+
+/**
+* @fn : int main(int argc, char *argv[])
+* @brief Displays version information.
+* @section function_flow Function flow
+* - Loads configuration file.
+* - Initializes Log and connects signals and handler.
+* - Prints information of configuration and version information.
+* - Gets a pointer to the runtime object.
+* - Creates a indexer::LMSProvider instance and Connects to the running LMS instance.
+* - Creates a indexer::PlayerProvider instance and Connects to the running Player instance.
+* - Notifies the service manager about state change.
+* - Creates a new GMainLoop and runs a main loop.
+* - Decreases the reference count on a GMainLoop object by one.
+*
+* @param[in] argc : A count of the command line arguments.
+* @param[in] *argv[] : An array of the command line arguments.
+* @section global_variable_none Global Variables : None
+* @section dependencies_none Dependencies : None
+* @return int
+*/
+int main(int argc, char *argv[]) {
+    InitLog();
+
+    std::string cfg_path = "/etc/mediamanager/mediamanager.cfg";
+    if (argc > 1)
+        cfg_path = std::string(argv[1]);
+
+    Option::LoadConfig(cfg_path);
+    Option::Print();
+
+    RegisterSignalHandler();
+    InitDbusSessionBusAddress();
+
+    ShowVerionInfo();
+    auto runtime = CommonAPI::Runtime::get();
+    try {   // Dolby dcx 관련 작업 전체를 스레드로 돌림
+        std::thread DolbyDcxActivateThread(InitializeDolbyDecrypter);
+        DolbyDcxActivateThread.detach(); // 스레드를 백그라운드에서 실행
+    } catch(const std::system_error& e) {
+        MMLogError("[jjy] Failed to create or detach DolbyDcxActivateThread thread: %s", e.what());
+        // 필요한 경우 여기서 추가적인 에러 처리 로직을 수행
+    }
+
+    std::vector<indexer::LMSProvider*> providers;
+    std::deque<UsbInfo> usb_list = Option::usb_list();
+    for(unsigned int i = 0; i < usb_list.size(); i++) {
+        MMLogInfo("name : %s", usb_list[i].name.c_str());
+        MMLogInfo("address : %s", usb_list[i].address.c_str());
+        MMLogInfo("object : %s", usb_list[i].object.c_str());
+        MMLogInfo("proxy : %s", usb_list[i].proxy.c_str());
+
+        indexer::LMSProvider* lms = new indexer::LMSProvider(
+                                                    usb_list[i].address.c_str(),
+                                                    usb_list[i].object.c_str(),
+                                                    usb_list[i].proxy.c_str());
+
+        lms->connect(std::bind(&onConnectedCallback,
+                                std::placeholders::_1,
+                                std::placeholders::_2,
+                                std::placeholders::_3));
+
+        providers.push_back(lms);
+    }
+
+    sd_notify(0, "READY=1");
+
+    indexer::LMSProvider::startExtractorService();
+
+#if 0
+    BrowserProvider browser;
+    browser.ServiceProvider::connect([&](MmError *e) {
+        std::string domain = "local";
+        std::string instance = "org.genivi.mediamanager.Browser";
+        if (!e) {
+            if (browser.mStub != nullptr) {
+                MMLogInfo("Browser recovered");
+                return true;
+            }
+
+            auto stub = std::make_shared<BrowserStubImpl>(&browser);
+            bool success = runtime->registerService(domain, instance, stub);
+            if (!success) {
+                MMLogError("Unable to register %s service!", instance.c_str());
+                return false;
+            }
+
+            browser.connectToUSBAutoMounter();
+            browser.connectToMtpDaemon();
+            browser.requestUsbList();
+
+            return true;
+        } else {
+            MMLogError("Error connecting to %s : %s", instance.c_str(), e->message.c_str());
+            return false;
+        }
+    });
+#endif
+    auto sp_command_queue = std::make_shared<command::Queue>();
+    player::PlayerProvider player(sp_command_queue);
+    static std::string default_connection_name;
+    player.connect([&](MmError *e) {
+        std::string domain = "local";
+        std::string instance = "org.genivi.mediamanager.Player";
+
+        if (!e) {
+            MMLogInfo("PlayerEngine name appeared in the Dbus");
+
+            if (player.stub == nullptr) {
+                auto stub = std::make_shared<player::PlayerStubImpl>(&player, sp_command_queue);
+
+                MMLogInfo("Player Service Register Start - pStub=[%p]", stub.get());
+
+                bool success = runtime->registerService(domain, instance, stub);
+                if (!success) {
+                    MMLogError("Unable to register %s service!", instance.c_str());
+                }
+                MMLogInfo("Player Service Register Finish");
+
+                player.ServiceRegistered();
+            }
+            return true;
+        } else {
+
+            MMLogWarn("Cannot connecting to %s : %s", instance.c_str(), e->message.c_str());
+            static int32_t child_pid = 0;
+            static int32_t default_pid = 0;
+            MMLogInfo("Child PID=[%d], Default PID=[%d]", child_pid, default_pid);
+            MMLogInfo("P_Stub_PID=[%d]", player::PlayerStubImpl::default_media_id);
+            if ((child_pid != 0) && !isDefaultConnectionNameExist(default_connection_name, child_pid)) {
+                int status;
+                MMLogInfo("wait child process %d destroying..", child_pid);
+                pid_t done = waitpid(child_pid, &status, WNOHANG|WUNTRACED);
+                MMLogInfo("PlayerEngine process %d destroyed", done);
+                if (done > 0)
+                    default_pid = done;
+                else
+                    child_pid = (child_pid == player::PlayerStubImpl::default_media_id) ? 0 : player::PlayerStubImpl::default_media_id;
+            }
+
+            std::string fullpath = Option::playerengine_path();
+            size_t pos = fullpath.rfind('/');
+            std::string filename = fullpath.substr(pos+1);
+
+            if (child_pid == default_pid && player::PlayerStubImpl::default_media_id >= 0) {
+                MMLogInfo("launch default PlayerEngine: %s [%s]", filename.c_str(), fullpath.c_str());
+                int32_t pid = fork();
+                if (pid == 0) {
+                    execl(fullpath.c_str(), filename.c_str(), (char*)0);
+                } else if (pid > 0) {
+                    int32_t temp = child_pid;
+                    child_pid = pid;
+                    player::PlayerStubImpl::default_media_id = child_pid;
+                    default_connection_name = getDefaultConnectionName();
+                    MMLogInfo("PlayerEngine process %d created and default name[%s]", pid, default_connection_name.c_str());
+                    if(player.stub != nullptr) {
+                        MMLogInfo("default PlayerEngine process destroyed and created");
+                        player.PEDestroyed((int)temp);
+                    }
+                }
+            }
+            return false;
+        }
+    });
+    MMLogInfo("Service start done");
+
+    GMainLoop* loop = g_main_loop_new(NULL, FALSE);
+
+    g_main_loop_run(loop);
+
+    g_main_loop_unref(loop);
+
+    return 0;
+}
