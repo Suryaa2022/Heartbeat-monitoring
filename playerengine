@@ -1,0 +1,312 @@
+// @@@LICENSE
+//
+// Copyright (C) 2018, LG Electronics, All Right Reserved.
+//
+// No part of this source code may be communicated, distributed, reproduced
+// or transmitted in any form or by any means, electronic or mechanical or
+// otherwise, for any purpose, without the prior written permission of
+// LG Electronics.
+//
+// LICENSE@@@
+
+#include <execinfo.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <gio/gio.h>
+#include <sys/wait.h>
+#include <string>
+#include<iostream>
+#include <map>
+#include <iterator>
+#include <algorithm>
+
+#include "option.h"
+#include "player_logger.h"
+
+#include "playerengine_manager.h"
+
+using namespace ::lge::mm;
+
+using namespace std;
+
+PlayerEngineManager::PlayerEngineManager() : child_pid(0) {
+
+    firstBusId = getConnectionName();
+
+}
+
+int PlayerEngineManager::getPID() {
+    return child_pid;
+}
+
+int PlayerEngineManager::createPlayerEngine() {
+
+    string fullpath = Option::playerengine_path();
+    size_t pos = fullpath.rfind('/');
+    string filename = fullpath.substr(pos+1);
+    MMLogInfo("launch PlayerEngine: %s [%s]", filename.c_str(), fullpath.c_str());
+
+    int32_t pid = fork();
+    if (pid == -1) {
+        MMLogInfo("PID creation failed");
+        return -1;
+    }
+    if (pid == 0) {
+        execl(fullpath.c_str(), filename.c_str(), (char*)0);
+    } else if (pid > 0) {
+        child_pid = pid;
+        MMLogInfo("PlayerEngine process %d created", child_pid);
+        usleep(30*1000); // For waiting while launch child player-engine
+    }
+    return 0;
+}
+
+int PlayerEngineManager::destroyPlayerEngine(int pid) {
+
+    MMLogInfo("PlayerEngine[%d] process will be destroyed", pid);
+    kill(pid, SIGKILL);
+    if (pid != 0) {
+        int status;
+        pid_t done = waitpid(pid, &status, WNOHANG|WUNTRACED);
+        MMLogInfo("PlayerEngine process %d destroyed", done);
+        return done;
+    } else {
+        return -1;
+    }
+}
+
+string PlayerEngineManager::getConnectionName(uint32_t mediaId) {
+
+    map<int, string>::iterator it = connectionMap.find(mediaId);
+    if (it != connectionMap.end()) {
+        return it->second;
+    } else {
+        MMLogInfo("Key-value pair not present in map");
+        return string();
+    }
+}
+string PlayerEngineManager::getConnectionName() {
+
+    string ret("");
+    usleep(100 * 1000);
+    MMLogInfo("getConnectionName() method");
+    GError *error = NULL;
+
+    GDBusConnection *conn = g_bus_get_sync(G_BUS_TYPE_SESSION, NULL, &error);
+    if (!conn) {
+        MMLogError("GDBusConnection is NULL");
+        if (error)
+            g_error_free(error);
+        return ret;
+    }
+
+    GDBusProxy *proxy = g_dbus_proxy_new_sync(conn,
+                        G_DBUS_PROXY_FLAGS_NONE,
+                        NULL,
+                        "org.freedesktop.DBus",
+                        "/org/freedesktop/DBus",
+                        "org.freedesktop.DBus",
+                        NULL,
+                        &error);
+    if (!proxy) {
+        MMLogError("Proxy is NULL");
+        if (error)
+            g_error_free(error);
+        return ret;
+    }
+
+    GVariant *result = g_dbus_proxy_call_sync(proxy,
+                       "GetNameOwner",
+                       g_variant_new ("(s)","com.lge.PlayerEngine"),
+                       G_DBUS_CALL_FLAGS_NONE,
+                       -1,
+                       NULL,
+                       &error);
+    if (!result) {
+        MMLogError("result is NULL");
+        if (error)
+            g_error_free(error);
+        return ret;
+    }
+
+    if (error) {
+        MMLogError("Error-----%s", error->message);
+        g_error_free(error);
+        return ret;
+    }
+
+    GVariant *temp;
+    gchar *value;
+    temp = g_variant_get_child_value (result, 0);
+    g_variant_get (temp, "s", &value);
+    MMLogInfo("New connection name created = %s", value);
+    ret = (value ? value : "");
+
+    g_free(value);
+    g_variant_unref(result);
+    g_object_unref(proxy);
+    g_object_unref(conn);
+    return ret;
+}
+
+void PlayerEngineManager::insertMediaId(int mediaId, string connectionName) {
+    connectionMap.insert(pair <int, string>(mediaId, connectionName));
+}
+
+string PlayerEngineManager::insertDefaultMediaId(int mediaId, string connectionName) {
+    map<int, string>::iterator it;
+    it = connectionMap.find(mediaId);
+    string returnName("");
+    if (it != connectionMap.end()) {
+        MMLogInfo("default connection is already in map");
+        if (it->second != connectionName){
+            MMLogInfo("connection name is different: %s",(it->second).c_str());
+            returnName = it->second;
+            it->second = connectionName;
+        }
+    } else {
+        MMLogInfo("default connection is not in map, insert new");
+        connectionMap.insert(pair <int, string>(mediaId, connectionName));
+        firstBusId = connectionName;
+    }
+    return returnName;
+}
+
+string PlayerEngineManager::removeMediaId(int mediaId) {
+    map<int, string>::iterator it;
+    int32_t pid = -1;
+
+    it = connectionMap.find(mediaId);
+    if (it != connectionMap.end()) {
+        string connectionName;
+        if ( (pid = destroyPlayerEngine(mediaId)) != -1) {
+            MMLogInfo("the player engine[pid:%d] is destroyed", pid);
+        } else {
+            MMLogInfo("the player engine[pid:%d] is not destroyed", pid);
+        }
+        connectionName = it->second;
+        connectionMap.erase(mediaId);
+        MMLogInfo("Removed the connection name[%s] since the player engine is destroyed", connectionName.c_str());
+        return connectionName;
+    } else {
+        MMLogWarn("MediaId does not exist in the connectionMap");
+        return string();
+    }
+}
+
+string PlayerEngineManager::getDefaultConnectionName() {
+
+    map<int, string>::iterator it;
+    MMLogInfo("getDefaultConnectionName() method");
+    GError *error = NULL;
+    vector<string>prevBusIDs = {firstBusId};
+    prevBusIDs.resize(busName.size());
+    copy(busName.begin(), busName.end(), prevBusIDs.begin());
+    busName.clear();
+
+    vector<string>::iterator it2;
+    for (it2 = prevBusIDs.begin(); it2 != prevBusIDs.end(); ++it2) {
+        MMLogInfo("Previous busID------%s", (*it2).c_str());
+    }
+    GDBusConnection *conn = g_bus_get_sync(G_BUS_TYPE_SESSION, NULL, &error);
+    if (!conn) {
+        MMLogError("GDBusConnection is NULL");
+        if (error)
+            g_error_free(error);
+        return string();
+    }
+
+    GDBusProxy *proxy = g_dbus_proxy_new_sync(conn,
+                        G_DBUS_PROXY_FLAGS_NONE,
+                        NULL,
+                        "org.freedesktop.DBus",
+                        "/org/freedesktop/DBus",
+                        "org.freedesktop.DBus",
+                        NULL,
+                        &error);
+    if (!proxy) {
+        MMLogError("Proxy is NULL");
+        if (error)
+            g_error_free(error);
+        return string();
+    }
+
+    GVariant *result = g_dbus_proxy_call_sync(proxy,
+                       "ListQueuedOwners",
+                       g_variant_new ("(s)","com.lge.PlayerEngine"),
+                       G_DBUS_CALL_FLAGS_NONE,
+                       -1,
+                       NULL,
+                       &error);
+    if (!result) {
+        MMLogError("result is NULL");
+        if (error)
+            g_error_free(error);
+        return string();
+    }
+
+    if (error) {
+        MMLogError("Error-----%s", error->message);
+        g_error_free(error);
+        return string();
+    }
+
+    GVariantIter *iter;
+    GVariant *temp;
+    temp = g_variant_get_child_value (result, 0);
+    iter = g_variant_iter_new (temp);
+    gchar *value;
+    while (g_variant_iter_next (iter, "s", &value)) {
+        busName.push_back(value);
+    }
+
+    vector<gchar*>::iterator it3;
+    for (it3 = busName.begin(); it3 != busName.end(); ++it3) {
+        MMLogInfo("Current busID------%s", *it3);
+    }
+
+    if (find(busName.begin(), busName.end(), firstBusId) != busName.end()) {
+        MMLogInfo("getDefaultConnectionName=[%s]", firstBusId.c_str());
+        return firstBusId;
+    } else {
+        map<int, string>::iterator it4;
+        vector<gchar*>::iterator it5;
+        vector<string> tempVector;
+        for(it4 = connectionMap.begin(); it4 != connectionMap.end(); ++it4) {
+            tempVector.push_back(it4->second);
+            //MMLogInfo("Add temp vector : current conn=[%s]", it4->second.c_str());
+        }
+        for (it5 = busName.begin(); it5 != busName.end(); ++it5) {
+            if ( find(tempVector.begin(), tempVector.end(), *it5 ) != tempVector.end() ) {
+                continue;
+            } else {
+                firstBusId = *it5;
+                MMLogInfo("getDefaultConnectionName------%s", firstBusId.c_str());
+                return firstBusId;
+            }
+        }
+    }
+    return string();
+}
+
+bool PlayerEngineManager::checkValidConnectionName(int mediaId, std::string connectionName) {
+    if (firstBusId.size() > 0 && firstBusId.compare(connectionName) == 0) {
+        MMLogInfo("Default Id.. try again");
+        return false;
+    }
+
+    for (auto elem : connectionMap) {
+        if (elem.first != mediaId && connectionName.compare(elem.second) == 0) {
+            MMLogInfo("mediaId = %d and %d have same connection name[%s]", elem.first, mediaId, connectionName.c_str());
+            return false;
+        }
+    }
+    return true;
+}
+
+void PlayerEngineManager::printMap() {
+    for (auto elem : connectionMap) {
+        MMLogInfo("Map MediaId = %d:: Map PlayerEngineId = %s", elem.first, (elem.second).c_str());
+    }
+}
