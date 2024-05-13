@@ -1,0 +1,671 @@
+#include "media_data_provider.h"
+#include "dir_tree_provider.h"
+#include "player_logger.h"
+#include "MP_QueryFactory.h"
+#include "browser_collator.h"
+
+#include <string.h>
+#include <algorithm>
+
+#define LMS_DATABAE_PATH "/home/root/.config/lightmediascannerd/db.sqlite3"
+#define MAX_PATH_LENGTH 1024
+
+using namespace std;
+
+namespace lge {
+namespace mm {
+
+static char remainPath[MAX_PATH_LENGTH] = {0,};
+static std::vector<std::string> *remoteFilter;
+static MM::MediaTypes::ResultMapList *remoteMapList;
+int reccount;
+
+string replaceAll(const string &str, const string &pattern, const string &replace)
+{
+    string result = str;
+    string::size_type pos = 0;
+    string::size_type offset = 0;
+
+    while((pos = result.find(pattern, offset)) != string::npos)
+    {
+        result.replace(result.begin() + pos, result.begin() + pos + pattern.size(), replace);
+        offset = pos + replace.size();
+    }
+    return result;
+}
+
+string replaceBracket(const string &str)
+{
+    string result;
+
+    for(uint32_t i = 0; i < str.length(); i++)
+    {
+        if (str[i] == '[' || str[i] == ']')  {
+            result.push_back('[');
+            result.push_back(str[i]);
+            result.push_back(']');
+        } else {
+          result.push_back(str[i]);
+        }
+    }
+    return result;
+}
+
+/**
+ * ================================================================================
+ * @fn : MediaDataProvider
+ * @brief : Constructor of MediaDataProvider class.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ *  - initialize member variables.
+ *  - set LMS database file path
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : none
+ * ===================================================================================
+ */
+MediaDataProvider::MediaDataProvider()
+    : mSQLiteHandle(NULL)
+    , mDatabaseOpened(false)
+    , mCompareFunc(NULL)
+{
+    mDatabasePath = LMS_DATABAE_PATH;
+}
+
+/**
+ * ================================================================================
+ * @fn : ~MediaDataProvider
+ * @brief : Destructor of MediaDataProvider class.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ *  - close database file.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : none
+ * ===================================================================================
+ */
+MediaDataProvider::~MediaDataProvider()
+{
+  closeDatabase();
+}
+
+bool makeRowData(char** cols , char** fils , int columnSize)
+{
+    MM::MediaTypes::ResultMap map;
+    for (int col = 0; col < columnSize; col++)
+    {
+        std::string colName(cols[col]);
+        if (std::find(remoteFilter->begin(), remoteFilter->end(), colName) != remoteFilter->end())
+        {
+            std::pair<std::string, MM::MediaTypes::ResultUnion> elem;
+            elem.first = colName;
+            std::string stringValue(fils[col]);
+            elem.second = MM::MediaTypes::ResultUnion(stringValue);
+
+            map.insert(elem);
+        }
+    }
+    remoteMapList->push_back(map);
+
+    return true;
+}
+
+int uSQLdcallback(void *tag, int argc, char **argv, char **ColName,int fsizes[])
+{
+  int i = 0;
+  std::string str;
+
+  if(reccount==0) {
+    for(i=0;i<argc;i++)
+    {
+      if(ColName[i])
+        str.append(ColName[i]);
+      str.append(";");
+    }
+    MMLogWarn("Column Name = %s", str.c_str());
+  }
+
+  reccount++;
+  std::string str1;
+
+  for(i=0;i<argc;i++)
+  {
+    if(argv[i])
+      str1.append(argv[i]);
+    str1.append(";");
+  }
+  MMLogWarn("Data count = %d, data = %s", reccount, str1.c_str());
+
+  makeRowData(ColName, argv, argc);
+
+  return i;
+}
+
+void uSQLecallback(char *err)
+{
+  MMLogWarn("uSQL error callback : %s",err);
+}
+
+/**
+ * ================================================================================
+ * @fn : listGeneral
+ * @brief : Get list from LMS datase.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ *  - Call listIndexerData()
+ * @param [in] taskInfo : Information for listing task.
+ * @param [in] filter : column list to retrive.
+ * @param [out] mapList : ResultMapList, retrived data from browser.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (true: success, false: fail)
+ * ===================================================================================
+ */
+bool MediaDataProvider::listGeneral(TaskInfo& taskInfo,
+                        std::vector<std::string> filter,
+                        MM::MediaTypes::ResultMapList &mapList)
+{
+     return listIndexerData(taskInfo, filter, mapList);
+}
+
+/**
+ * ================================================================================
+ * @fn : searchObjectsRemote
+ * @brief : Search list from remote LMS datase.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ *  - Get search SQL.
+ *  - Prepare Query.
+ *  - Bind path.
+ *  - Fetch query.
+ *  - Finalize statement.
+ * @param [in] taskInfo : Information for listing task.
+ * @param [in] filter : column list to retrive.
+ * @param [out] items : ResultMapList, retrived data from browser.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (true: success, false: fail)
+ * ===================================================================================
+ */
+bool MediaDataProvider::searchObjectsRemote(TaskInfo& taskInfo,
+                       std::vector<std::string> filter,
+                       MM::MediaTypes::ResultMapList& items)
+{
+    setCollationName("NOCASE");
+
+    remoteFilter = &filter;
+    remoteMapList = &items;
+
+    std::string query = QueryFactory::getInstance()->generateSearchQuery(taskInfo);
+
+    query = replaceAll(query, string(":PATH"), "'"+taskInfo.filePath+"'");
+
+    if(query.length() <= 0)
+    {
+        MMLogError("Fail to generate query!");
+        return false;
+    }
+    MMLogWarn("QUERY = %s", query.c_str());
+
+    uSQLCdb *udb;
+    int ErrCode = 0;
+    uSQL *pSQL = new uSQL();
+
+    if (pSQL)
+    {
+      udb = pSQL->uSQLCopen("Level5", "newp2", (char*)taskInfo.remoteIP.c_str(), 3002, 5000, &ErrCode);
+
+      if(udb)
+      {
+        udb->seclevel = 5;
+        MMLogWarn("Remote : Connected with User Level %i",udb->seclevel);
+        reccount = 0;
+        ErrCode = pSQL->uSQLCexec(udb, query.c_str(), uSQLdcallback, NULL, uSQLecallback);
+        MMLogWarn("Remote : Error %i : %i Records", ErrCode, reccount);
+      }
+      else MMLogWarn("Remote : Client failed to establish connection code: %i",ErrCode);
+
+      pSQL->uSQLCclose(udb);
+
+      delete pSQL;
+    }
+    else
+        return false;
+
+    return true;
+}
+
+/**
+ * ================================================================================
+ * @fn : searchObjects
+ * @brief : Search list from LMS datase.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ *  - Get search SQL.
+ *  - Prepare Query.
+ *  - Bind path.
+ *  - Fetch query.
+ *  - Finalize statement.
+ * @param [in] taskInfo : Information for listing task.
+ * @param [in] filter : column list to retrive.
+ * @param [out] items : ResultMapList, retrived data from browser.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (true: success, false: fail)
+ * ===================================================================================
+ */
+bool MediaDataProvider::searchObjects(TaskInfo& taskInfo,
+                       std::vector<std::string> filter,
+                       MM::MediaTypes::ResultMapList& items)
+{
+    // 1. path
+    //
+    // [file system path]:[ObjectType]
+    // ex) /usr_data/media/Music:Songs
+    // ex) /usr_data/media/Music:Albums
+    // ex) /usr_data/media/Music:Artist
+    // ex) /usr_data/media/Music:Genres
+    // ex) /usr_data/media/Music:Folders
+    // ex) /usr_data/media/Music:Files
+
+
+    // 2. query
+    // 1) Songs
+    //  ex) Song.Title like '%Title1%' AND Song.Duration > 120
+    //  ex) Artist.Name like '%Singer%'
+    //
+    // 2) Albums
+    //  ex) Album.Name like '%name%'
+    //
+    // ->  use sql where clause statement.
+
+    if(taskInfo.protocol == eRemoteProtocol)
+        return searchObjectsRemote(taskInfo, filter, items);
+
+    std::string searchSql = QueryFactory::getInstance()->generateSearchQuery(taskInfo);
+
+    if(searchSql.length() <= 0)
+    {
+        MMLogError("Fail to generate query!");
+        return false;
+    }
+    MMLogInfo("Query = %s, query = %s", searchSql.c_str(), taskInfo.query.c_str());
+
+    sqlite3_stmt* statement;
+    if(QueryFactory::getInstance()->prepareQuery(mSQLiteHandle, &statement, searchSql) == false) {
+        MMLogError("ERROR: prepareQuery Error");
+        return false;
+    }
+
+    if (bindPath(taskInfo.filePath, statement) == false)
+    {
+        MMLogError("ERROR: bindPath Error");
+        return false;
+    }
+
+    if (QueryFactory::getInstance()->fetchQuery(statement, filter, items) == false)
+    {
+        MMLogError("ERROR: fetchQuery Error");
+        sqlite3_finalize(statement);
+        return false;
+    }
+
+    MMLogInfo("items size = %d", items.size());
+    sqlite3_finalize(statement);
+
+    return true;
+}
+
+/**
+ * ================================================================================
+ * @fn : listIndexerDataRemote
+ * @brief : Get list from remote LMS datase.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ *  - Call prepareStatementAndBind()
+ *  - Call fetchQuery()
+ *  - Finalize query statement.
+ * @param [in] taskInfo : Information for listing task.
+ * @param [in] filter : column list to retrive.
+ * @param [out] mapList : ResultMapList, retrived data from browser.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (true: success, false: fail)
+ * ===================================================================================
+ */
+bool MediaDataProvider::listIndexerDataRemote(TaskInfo& taskInfo,
+                                    std::vector<std::string> filter,
+                                    MM::MediaTypes::ResultMapList &mapList)
+{
+    setCollationName("NOCASE");
+
+    remoteFilter = &filter;
+    remoteMapList = &mapList;
+
+    std::string query = QueryFactory::getInstance()->generateQuery(taskInfo);
+
+    query = replaceAll(query, string(":PATH"), "'"+taskInfo.filePath+"'");
+
+    if(query.length() <= 0) {
+        MMLogError("Fail to generate query!");
+        return false;
+    }
+    MMLogWarn("QUERY = %s", query.c_str());
+
+    uSQLCdb *udb;
+    int ErrCode = 0;
+    uSQL *pSQL = new uSQL();
+
+    if (pSQL) {
+        udb = pSQL->uSQLCopen("Level5", "newp2", (char*)taskInfo.remoteIP.c_str(), 3002, 5000, &ErrCode);
+
+        if (udb) {
+            udb->seclevel = 5;
+            reccount = 0;
+            ErrCode = pSQL->uSQLCexec(udb, query.c_str(), uSQLdcallback, NULL, uSQLecallback);
+            MMLogWarn("Remote : Error %i : %i Records", ErrCode, reccount);
+        } else {
+            MMLogWarn("Remote : Client failed to establish connection code: %i", ErrCode);
+        }
+
+        pSQL->uSQLCclose(udb);
+        delete pSQL;
+    } else {
+        MMLogWarn("Remote : Fail to create uSQL instance");
+        return false;
+    }
+
+    return true;
+}
+
+/**
+ * ================================================================================
+ * @fn : listIndexerData
+ * @brief : Get list from LMS datase.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ *  - Call prepareStatementAndBind()
+ *  - Call fetchQuery()
+ *  - Finalize query statement.
+ * @param [in] taskInfo : Information for listing task.
+ * @param [in] filter : column list to retrive.
+ * @param [out] mapList : ResultMapList, retrived data from browser.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (true: success, false: fail)
+ * ===================================================================================
+ */
+bool MediaDataProvider::listIndexerData(TaskInfo& taskInfo,
+                                    std::vector<std::string> filter,
+                                    MM::MediaTypes::ResultMapList &mapList)
+{
+    if(taskInfo.protocol == eRemoteProtocol)
+        return listIndexerDataRemote(taskInfo, filter, mapList);
+
+    if(!isDatabaseOpen())
+    {
+        MMLogWarn("try to open database!");
+        openDatabase();
+    }
+
+    std::string query = QueryFactory::getInstance()->generateQuery(taskInfo);
+    if(query.length() <= 0)
+    {
+        MMLogError("Fail to generate query!");
+        return false;
+    }
+    MMLogWarn("QUERY = %s", query.c_str());
+
+    sqlite3_stmt* statement;
+
+    if( QueryFactory::getInstance()->prepareQuery(mSQLiteHandle, &statement, query) == false)
+    {
+        return false;
+    }
+
+    if (bindPath(taskInfo.filePath, statement) == false)
+    {
+        MMLogWarn("bindPath Error");
+        return false;
+    }
+
+    if (QueryFactory::getInstance()->fetchQuery(statement, filter, mapList) == false)
+    {
+        MMLogWarn("fetchQuery Error");
+        sqlite3_finalize(statement);
+        return false;
+    }
+
+    MMLogWarn("result map size = %d", mapList.size());
+
+    sqlite3_finalize(statement);
+
+    return true;
+}
+
+/**
+ * ================================================================================
+ * @fn : setCollationName
+ * @brief : set collation name to register to sqlite3 database.
+ *   - Save mCollationName with name.
+ *   - Get QueryFactory instance and call setCollateName with name.
+ * @param [in] name : string of collation name.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : none
+ * ===================================================================================
+ */
+void MediaDataProvider::setCollationName(std::string name)
+{
+    mCollationName = name;
+    QueryFactory::getInstance()->setCollateName(mCollationName);
+}
+
+/**
+ * ================================================================================
+ * @fn : bindPath
+ * @brief : Bind file path and query statement.
+ *   - Find bind parameter index for :PATH
+ *   - Bind statement with input path
+ * @param [in] path : string of file path
+ * @param [in] statement:  pointer to sqlite3 statement
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (TRUE: success FALSE: fail)
+ * ===================================================================================
+ */
+bool MediaDataProvider::bindPath(std::string path, sqlite3_stmt *statement)
+{
+    int index =  sqlite3_bind_parameter_index(statement, ":PATH");
+    string newBracket = replaceBracket(path);
+    string newPath = replaceAll(newBracket, string("'"), string("\'"));
+
+    MMLogInfo("*** index=[%d], newPath=[%s] quote escaped path = %s", index, newPath.c_str(), sqlite3_errmsg(mSQLiteHandle));
+    // std::string doesn't need NULL char. But sqllite3_bind_text need NULL + static variable.
+    if (newPath.length() < MAX_PATH_LENGTH) {
+        strncpy(remainPath, newPath.c_str(), newPath.length());
+        remainPath[newPath.length()] = NULL;
+    } else {
+        MMLogError("Error: Exceed max length %d", newPath.length());
+        return false;
+    }
+
+    if (index > 0 && sqlite3_bind_text(statement, index, remainPath, -1, SQLITE_STATIC) != SQLITE_OK)
+    {
+        MMLogError("Error: sqlite3_bind_text %s", sqlite3_errmsg(mSQLiteHandle));
+        return false;
+    }
+
+    MMLogInfo("bindPath OK ");
+    return true;
+}
+
+/**
+ * ================================================================================
+ * @fn : createSqlite3Collation
+ * @brief : Create custom collation in sqlite3 database.
+ *   - Create collation with mCompareFunc
+ * @param [in] collationName : string of collation name
+ * @param [in] dbHandle:  pointer to sqlite3 database handle.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (TRUE: success FALSE: fail)
+ * ===================================================================================
+ */
+bool MediaDataProvider::createSqlite3Collation(std::string collationName, sqlite3 *dbHandle)
+{
+    if(dbHandle && mCompareFunc)
+    {
+        if ( sqlite3_create_collation( dbHandle, collationName.c_str(), SQLITE_UTF8, NULL, mCompareFunc ) != SQLITE_OK)
+            return false;
+        else
+            return true;
+    }
+    return false;
+}
+
+/**
+ * ================================================================================
+ * @fn : openDatabase
+ * @brief : Open sqlite3 database.
+ *  - check if database file exists.
+ *  - open database file.
+ *  - set journal mode.
+ *  - create custom collation.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (TRUE: success FALSE: fail)
+ * ===================================================================================
+ */
+bool MediaDataProvider::openDatabase()
+{
+    MMLogInfo("Open SQLITE3 database");
+  if(!std::ifstream(mDatabasePath)) {
+    MMLogError("ERROR: DB is not exist. = %s", mDatabasePath.c_str());
+      return false;
+  }
+  if (sqlite3_open(mDatabasePath.c_str(), &mSQLiteHandle) != SQLITE_OK) {
+      MMLogError("ERROR: clould not open DB:  = %s", sqlite3_errmsg(mSQLiteHandle));
+      return false;
+  }
+  mDatabaseOpened = true;
+
+  createSqlite3Collation(mCollationName, mSQLiteHandle);
+  return true;
+}
+
+/**
+ * ================================================================================
+ * @fn : closeDatabase
+ * @brief : close sqlite3 database.
+ *  - close database file.
+  * @section : Function flow (Pseudo-code or Decision Table)
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (TRUE: success FALSE: fail)
+ * ===================================================================================
+ */
+bool MediaDataProvider::closeDatabase()
+{
+    MMLogInfo("Close SQLITE3 database");
+    if (sqlite3_close(mSQLiteHandle) != SQLITE_OK) {
+        MMLogError("ERROR: clould not close DB:  = %s", sqlite3_errmsg(mSQLiteHandle));
+        return false;
+    }
+    mSQLiteHandle = NULL;
+    mDatabaseOpened = false;
+    return true;
+}
+
+/**
+ * ================================================================================
+ * @fn : init
+ * @brief : Initialize
+ * @section : Function flow (Pseudo-code or Decision Table)
+ *  - Open database.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (TRUE: success FALSE: fail)
+ * ===================================================================================
+ */
+bool MediaDataProvider::init()
+{
+    MMLogInfo("");
+    return openDatabase();
+}
+
+/**
+ * ================================================================================
+ * @fn : getSongCountInfo
+ * @brief : Get song count for each device (CAR/USB)
+ * @section : Function flow (Pseudo-code or Decision Table)
+ *  - If database is not open, open database.
+ *  - Get query for counting.
+ *  - Prepare query.
+ *  - Fetch data
+ *  - Finalize query statement.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (TRUE: success FALSE: fail)
+ * ===================================================================================
+ */
+bool MediaDataProvider::getSongCountInfo(std::unordered_map<std::string, uint64_t>&infoList)
+{
+    if(!isDatabaseOpen())
+    {
+        MMLogWarn("try to open database");
+        openDatabase();
+    }
+
+    std::string query = QueryFactory::getInstance()->getSongCountStatByDeviceQuery();
+    sqlite3_stmt* statement;
+
+    if( QueryFactory::getInstance()->prepareQuery(mSQLiteHandle, &statement, query ) == false)
+    {
+        MMLogWarn("prepare query error");
+        return false;
+    }
+    int result = 0;
+    infoList.clear();
+
+    while (true)
+    {
+        result = sqlite3_step(statement);
+        if (result == SQLITE_ROW) {
+            std::string device = std::string((const char*)sqlite3_column_text(statement, 0));
+            uint64_t count = sqlite3_column_int64(statement, 1);
+            MMLogWarn("device = %s, count = %d", device.c_str(), count);
+            infoList[device] = count;
+        } else if (result == SQLITE_DONE) {
+            MMLogWarn("fetch DONE");
+            break;
+        } else {
+            MMLogWarn("result : %d", result);
+            break;
+        }
+    }
+    sqlite3_finalize(statement);
+    return true;
+}
+
+/**
+ * ================================================================================
+ * @fn : reopenDatabase
+ * @brief : close and reopen database file.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ *  - close database.
+ *  - open database.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (TRUE: success FALSE: fail)
+ * ===================================================================================
+ */
+bool MediaDataProvider::reopenDatabase()
+{
+    bool result = false;
+    MMLogWarn("Close Database..");
+    result = closeDatabase();
+    MMLogWarn("Open Database..");
+    result = openDatabase();
+
+    return result;
+}
+}
+}
