@@ -1,0 +1,881 @@
+#include "MP_TaskParser.h"
+#include "MP_MediaConfig.h"
+#include "player_logger.h"
+#include <algorithm>
+
+namespace lge {
+namespace mm {
+
+#define LOCAL_HOST "127.0.0.1"
+
+/**
+ * ================================================================================
+ * @fn : TaskParser
+ * @brief : Constructor of TaskParser class.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * - set up filter list for each object.
+ * - setup sort key list for each object.
+ * - setup object name for each object.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : none
+ * ===================================================================================
+ */
+TaskParser::TaskParser()
+{
+    setupFilters();
+    setupSortKeys();
+    setupObjectNames();
+}
+
+/**
+ * ================================================================================
+ * @fn : getAvailableFilters
+ * @brief : Get available filters for input meta type
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * -
+ * @param [in] metaType: meta data type
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : vector list of filter name
+ * ===================================================================================
+ */
+const std::vector<std::string> &TaskParser::getAvailableFilters(MediaMetaType metaType)
+{
+    return mAvailableFilters[metaType];
+}
+
+/**
+ * ================================================================================
+ * @fn : getAvailableSortKeys
+ * @brief : Get available sort keys for input meta type
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * -
+ * @param [in] metaType: meta data type
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return :  vector list of key name
+ * ===================================================================================
+ */
+const std::vector<std::string> &TaskParser::getAvailableSortKeys(MediaMetaType metaType)
+{
+    return mAvailableSortKeys[metaType];
+}
+
+/**
+ * ================================================================================
+ * @fn : getObjectName
+ * @brief : Get object name for input meta type
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * -
+ * @param [in] metaType: meta data type
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return :  string of object name
+ * ===================================================================================
+ */
+std::string TaskParser::getObjectName(MediaMetaType metaType)
+{
+    if (metaType < MEDIA_META_INVALID )
+        return mObjectName[metaType];
+    else
+        return "Invalid";
+}
+
+/**
+ * ================================================================================
+ * @fn : getObjectType
+ * @brief : Get object type from object path string.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * - list to get container,  call getObjectTypeForContainer
+ * - list to get item, call getObjectTypeForItems
+ * - null object string => default: MEDIA_META_FOLDER
+ * @param [in] objectString: string of object name.
+ * @param [in] isContainer: list for container or not.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return :  MediaMetaType (object type)
+ * ===================================================================================
+ */
+MediaMetaType TaskParser::getObjectType(std::string objectString, bool isContainer, bool isRemote)
+{
+    for(int i = 0; i < objectString.length(); i++)
+        objectString[i] = toupper(objectString[i]);
+
+    if (objectString.length() == 0)
+        return MEDIA_META_FOLDER;
+
+    if (isContainer)
+    {
+        return getObjectTypeForContainer(objectString, isRemote);
+    }
+    else
+    {
+        return getObjectTypeForItems(objectString, isRemote);
+    }
+}
+
+/**
+ * ================================================================================
+ * @fn : getObjectTypeForContainer
+ * @brief : Get object type from object path string.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * -
+ * @param [in] objectString: string of object name.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return :  MediaMetaType (object type)
+ * ===================================================================================
+ */
+MediaMetaType TaskParser::getObjectTypeForContainer(string objectString, bool isRemote)
+{
+    if (objectString.compare("ARTISTS") == 0)
+        return MEDIA_META_ARTIST;
+    else if (objectString.compare("ARTIST") == 0)
+        return MEDIA_META_ALBUM;
+    else if (objectString.compare("ALBUMS") == 0)
+        return MEDIA_META_ALBUM;
+    else if (objectString.compare("ALBUM") == 0)
+        return MEDIA_META_INVALID;
+    else if (objectString.compare("GENRES") == 0)
+        return MEDIA_META_GENRE;
+    else if (objectString.compare("GENRE") == 0)
+        return MEDIA_META_INVALID;
+    else if (objectString.compare("SONGS") == 0 || objectString.compare("SONG") == 0)
+        return MEDIA_META_INVALID;
+    else if (objectString.compare("FOLDERS") == 0 || objectString.compare("FOLDER") == 0)
+        return MEDIA_META_FOLDER;
+    else if (objectString.compare("COMPFOLDERS") == 0 ||  objectString.compare("COMPFOLDER") == 0)
+        return MEDIA_META_COMP_FOLDER;
+
+    return MEDIA_META_INVALID;
+
+}
+
+/**
+ * ================================================================================
+ * @fn : getObjectTypeForItems
+ * @brief : Get object type from object path string.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * -
+ * @param [in] objectString: string of object name.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return :  MediaMetaType (object type)
+ * ===================================================================================
+ */
+MediaMetaType TaskParser::getObjectTypeForItems(string objectString, bool isRemote)
+{
+    if (isRemote) {
+        if (objectString.compare("VIDEOS") == 0)
+            return MEDIA_META_REMOTE_VIDEO;
+        else if (objectString.compare("AUDIOS") == 0 || objectString.compare("SONGS") == 0)
+            return MEDIA_META_SONG;
+    }
+
+    if (objectString.compare("FOLDERS") == 0 || objectString.compare("FOLDER") == 0
+        || objectString.compare("FILES") == 0 || objectString.compare("FILE") == 0
+        || objectString.compare("AUDIOS") == 0 || objectString.compare("VIDEOS") == 0 )
+        return MEDIA_META_FILE;
+    else if (objectString.compare("THUMBNAIL") == 0)
+        return MEDIA_META_THUMBNAIL;
+    else if (objectString.compare("COVERART") == 0)
+        return MEDIA_META_COVERART;
+    else if (objectString.compare("COMPFOLDER") == 0 || objectString.compare("COMPFILES") == 0)
+        return MEDIA_META_COMP_FILE;
+    else if (objectString.compare("CDDASONGS") == 0 || objectString.compare("CDDASONG") == 0 )
+        return MEDIA_META_CDDA_SONG;
+    else if (objectString.compare("COMPFOLDERS") == 0  )
+        return MEDIA_META_COMP_FILE;
+    else
+        return MEDIA_META_SONG;
+}
+
+/**
+ * ================================================================================
+ * @fn : getObjectTypeForSearch
+ * @brief : Get object type from object path string in searchObjects.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * -
+ * @param [in] objectString: "Songs"/"Albums"/"Artists"/"Genres"/"Folders"/"Files"
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return :  MediaMetaType (object type)
+ * ===================================================================================
+ */
+MediaMetaType TaskParser::getObjectTypeForSearch(string objectString)
+{
+    if(objectString.compare("Songs") == 0)
+        return MEDIA_META_SONG;
+    else if(objectString.compare("Albums") == 0)
+        return MEDIA_META_ALBUM;
+    else if(objectString.compare("Artists") == 0)
+        return MEDIA_META_ARTIST;
+    else if(objectString.compare("Genres") == 0)
+        return MEDIA_META_GENRE;
+    else if(objectString.compare("Folders") == 0)
+        return MEDIA_META_FOLDER;
+    else if(objectString.compare("Files") == 0)
+        return MEDIA_META_FILE;
+    else
+        return MEDIA_META_INVALID;
+}
+
+/**
+ * ================================================================================
+ * @fn : getMediaCategory
+ * @brief : Get media category type from category string.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * -
+ * @param [in] categoryString: "Audios"/"Videos"/"Photos"
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return :  MediaCategoryType (MEDIA_CATEGORY_AUDIO/MEDIA_CATEGORY_VIDEO/MEDIA_CATEGORY_PHOTO)
+ * ===================================================================================
+ */
+MediaCategoryType TaskParser::getMediaCategory(std::string categoryString)
+{
+    for(int i = 0; i < categoryString.length(); i++)
+        categoryString[i] = toupper(categoryString[i]);
+
+    if(categoryString.compare("AUDIOS")==0)
+        return MEDIA_CATEGORY_AUDIO;
+    else if (categoryString.compare("VIDEOS")==0)
+        return MEDIA_CATEGORY_VIDEO;
+    else if (categoryString.compare("PHOTOS")==0)
+        return MEDIA_CATEGORY_PHOTO;
+    else
+        return MEDIA_CATEGORY_INVALID;
+
+}
+
+/**
+ * ================================================================================
+ * @fn : getMediaCategoryByExtension
+ * @brief : Get media category type from file path extenstion.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * -
+ * @param [in] filePath: "file path"
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return :  MediaCategoryType (MEDIA_CATEGORY_AUDIO/MEDIA_CATEGORY_VIDEO/MEDIA_CATEGORY_PHOTO)
+ * ===================================================================================
+ */
+MediaCategoryType TaskParser::getMediaCategoryByExtension(std::string filePath)
+{
+    int index = filePath.find_last_of(".");
+    if (index < 0) {
+        MMLogInfo("NOT valid file path=[%s]", filePath.c_str());
+        return MEDIA_CATEGORY_INVALID;
+    }
+
+    std::string extension = filePath.substr(index);
+    std::deque<std::string>& audioFormats = MediaConfig::getInstance()->getAudioFormats();
+    std::deque<std::string>& videoFormats = MediaConfig::getInstance()->getVideoFormats();
+    std::deque<std::string>& photoFormats = MediaConfig::getInstance()->getPhotoFormats();
+    std::deque<std::string>& avFormats    = MediaConfig::getInstance()->getAudioVideoFormats();
+
+    if (std::find(std::begin(audioFormats), std::end(audioFormats), extension) != std::end(audioFormats))
+        return MEDIA_CATEGORY_AUDIO;
+    else if (std::find(std::begin(videoFormats), std::end(videoFormats), extension) != std::end(videoFormats))
+        return MEDIA_CATEGORY_VIDEO;
+    else if (std::find(std::begin(photoFormats), std::end(photoFormats), extension) != std::end(photoFormats))
+        return MEDIA_CATEGORY_PHOTO;
+    else if (std::find(std::begin(avFormats), std::end(avFormats), extension) != std::end(avFormats))
+        return MEDIA_CATEGORY_VIDEO; // ToDo: ASF format (pretend as video format)
+    else
+        MMLogInfo("NOT registered file extension=[%s]", extension.c_str());
+    return MEDIA_CATEGORY_INVALID;
+}
+
+string TaskParser::splitObjectIP(string path)
+{
+    unsigned int pos = 0;
+    string temp = LOCAL_HOST;
+
+    if ((pos = path.find("/")) > 0)
+    {
+        temp = path.substr(0, pos);
+    }
+
+    return temp;
+}
+
+/**
+ * ================================================================================
+ * @fn : parseTaskInfo
+ * @brief : Parse object path and save information to taskinfo
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * -
+ * @param [in] objectPath: object path string
+ * @param [in] taskInfo: struct to load parsed data.
+ * @param [in] isContainer: list for container or not
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : none
+ * ===================================================================================
+ */
+void TaskParser::parseTaskInfo(std::string objectPath, TaskInfo &taskInfo, bool isContainer)
+{
+    std::string path;
+    taskInfo.protocol =  getProtocolInfo(objectPath, path);
+    taskInfo.remoteIP = LOCAL_HOST;
+    if (taskInfo.protocol == eRemoteProtocol) {
+        taskInfo.remoteIP = splitObjectIP(path);
+        path = path.substr(taskInfo.remoteIP.length());
+    }
+
+    std::string filePath;
+    std::string objectPart;
+    std::string keyPart;
+    std::string valuePart;
+
+    splitObjectPath(path, filePath, objectPart, keyPart, valuePart);
+    taskInfo.filePath = filePath;
+
+    std::string objectTypeString;
+    taskInfo.isCountQuery = splitCountPart(objectPart, objectTypeString);
+    taskInfo.objectType = getObjectType(objectTypeString, isContainer, taskInfo.protocol == eRemoteProtocol);
+
+    if (taskInfo.objectType == MEDIA_META_FILE)
+    {
+        taskInfo.category = getMediaCategory(objectTypeString);
+        if (taskInfo.category == MEDIA_CATEGORY_INVALID) {
+            taskInfo.category = getMediaCategoryByExtension(filePath);
+        }
+    }
+    taskInfo.objectName = getObjectName(taskInfo.objectType);
+    MMLogInfo("parseTaskInfo objectTypet = %d", taskInfo.objectType);
+
+    if (keyPart.length() > 0 )
+    {
+        if(checkFilterAvailable(taskInfo.objectType, keyPart) == true)
+        {
+            taskInfo.keyName = keyPart;
+            taskInfo.keyValue = valuePart;
+        }
+    }
+}
+
+/**
+ * ================================================================================
+ * @fn : parseTaskInfoForSearchObjects
+ * @brief : Parse object path and save information to taskinfo
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * -
+ * @param [in] objectPath: object path string
+ * @param [in] taskInfo: struct to load parsed data.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : none
+ * ===================================================================================
+ */
+void TaskParser::parseTaskInfoForSearchObjects(string objectPath, TaskInfo &taskInfo)
+{
+    std::string path;
+    taskInfo.protocol = getProtocolInfo(objectPath, path);
+
+    taskInfo.remoteIP = LOCAL_HOST;
+    if(taskInfo.protocol == eRemoteProtocol)
+    {
+        taskInfo.remoteIP = splitObjectIP(path);
+        path = path.substr(taskInfo.remoteIP.length());
+    }
+
+    MMLogInfo("path = %s", path.c_str());
+    unsigned int objPos = 0;
+    taskInfo.filePath.clear();
+    std::string objectPart;
+
+    if ((objPos = path.find(":")) != path.npos)
+    {
+        taskInfo.filePath = path.substr(0, objPos);
+        objectPart = path.substr(objPos+1);
+    }
+    else
+    {
+        MMLogError("Invalid path ! Not contain object type string");
+        taskInfo.valid = false;
+        return;
+    }
+    MMLogInfo("path = %s, objectPart = %s ", taskInfo.filePath.c_str(), objectPart.c_str());
+    std::string objectTypeString;
+    taskInfo.isCountQuery = splitCountPart(objectPart, objectTypeString);
+    MMLogInfo("isCountQuery = %d", taskInfo.isCountQuery);
+
+    taskInfo.objectType = getObjectTypeForSearch(objectTypeString);
+    taskInfo.objectName = getObjectName(taskInfo.objectType);
+    MMLogInfo("parseTaskInfo objectType = %s", taskInfo.objectName.c_str());
+}
+
+/**
+ * ================================================================================
+ * @fn : setupFilters
+ * @brief : set up filter list for each meta data type
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * - set up filter for LMS database.
+ * - set up filter for Deck database.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : none
+ * ===================================================================================
+ */
+void TaskParser::setupFilters()
+{
+    setupLMSFilters();
+    setupDeckFilters();
+}
+
+/**
+ * ================================================================================
+ * @fn : setupLMSFilters
+ * @brief : set up filter list for meta data type of LMS databse
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * - N/A
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : none
+ * ===================================================================================
+ */
+void TaskParser::setupLMSFilters()
+{
+    //Filter
+    mAvailableFilters[MEDIA_META_SONG].push_back("SongID");
+    mAvailableFilters[MEDIA_META_SONG].push_back("SongTitle");
+    mAvailableFilters[MEDIA_META_SONG].push_back("URL");
+    mAvailableFilters[MEDIA_META_SONG].push_back("PlayNG");
+    mAvailableFilters[MEDIA_META_SONG].push_back("ArtistID");
+    mAvailableFilters[MEDIA_META_SONG].push_back("ArtistName");
+    mAvailableFilters[MEDIA_META_SONG].push_back("AlbumID");
+    mAvailableFilters[MEDIA_META_SONG].push_back("AlbumName");
+    mAvailableFilters[MEDIA_META_SONG].push_back("GenreID");
+    mAvailableFilters[MEDIA_META_SONG].push_back("GenreName");
+    mAvailableFilters[MEDIA_META_SONG].push_back("TotalCount");
+
+    mAvailableFilters[MEDIA_META_ALBUM].push_back("ArtistID");
+    mAvailableFilters[MEDIA_META_ALBUM].push_back("ArtistName");
+    mAvailableFilters[MEDIA_META_ALBUM].push_back("AlbumID");
+    mAvailableFilters[MEDIA_META_ALBUM].push_back("AlbumName");
+    mAvailableFilters[MEDIA_META_ALBUM].push_back("TotalCount");
+    mAvailableFilters[MEDIA_META_ALBUM].push_back("Device");
+
+    mAvailableFilters[MEDIA_META_ARTIST].push_back("ArtistID");
+    mAvailableFilters[MEDIA_META_ARTIST].push_back("ArtistName");
+    mAvailableFilters[MEDIA_META_ARTIST].push_back("TotalCount");
+    mAvailableFilters[MEDIA_META_ARTIST].push_back("Device");
+
+    mAvailableFilters[MEDIA_META_GENRE].push_back("GenreID");
+    mAvailableFilters[MEDIA_META_GENRE].push_back("GenreName");
+    mAvailableFilters[MEDIA_META_GENRE].push_back("TotalCount");
+
+
+    mAvailableFilters[MEDIA_META_FOLDER].push_back("URL");
+    mAvailableFilters[MEDIA_META_FOLDER].push_back("ObjectType");
+    mAvailableFilters[MEDIA_META_FOLDER].push_back("ChildrenCount");
+    mAvailableFilters[MEDIA_META_FOLDER].push_back("TotalCount");
+    mAvailableFilters[MEDIA_META_FOLDER].push_back("TotalFolderCount");
+    mAvailableFilters[MEDIA_META_FOLDER].push_back("TotalFileCount");
+
+    mAvailableFilters[MEDIA_META_FILE].push_back("URL");
+    mAvailableFilters[MEDIA_META_FILE].push_back("ParentFolderID");
+    mAvailableFilters[MEDIA_META_FILE].push_back("TotalCount");
+    mAvailableFilters[MEDIA_META_FILE].push_back("TotalFolderCount");
+    mAvailableFilters[MEDIA_META_FILE].push_back("TotalFileCount");
+}
+
+/**
+ * ================================================================================
+ * @fn : setupDeckFilters
+ * @brief : set up filter list for meta data type of Deck databse
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * - N/A
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : none
+ * ===================================================================================
+ */
+void TaskParser::setupDeckFilters()
+{
+    mAvailableFilters[MEDIA_META_COMP_FILE].push_back("ObjectType");
+    mAvailableFilters[MEDIA_META_COMP_FILE].push_back("FileNo");
+    mAvailableFilters[MEDIA_META_COMP_FILE].push_back("FileName");
+    mAvailableFilters[MEDIA_META_COMP_FILE].push_back("FolderNo");
+    mAvailableFilters[MEDIA_META_COMP_FILE].push_back("FolderName");
+    mAvailableFilters[MEDIA_META_COMP_FILE].push_back("Hierachy");
+    mAvailableFilters[MEDIA_META_COMP_FILE].push_back("URL");
+
+    mAvailableFilters[MEDIA_META_COMP_FOLDER].push_back("ObjectType");
+    mAvailableFilters[MEDIA_META_COMP_FOLDER].push_back("FolderNo");
+    mAvailableFilters[MEDIA_META_COMP_FOLDER].push_back("FolderName");
+    mAvailableFilters[MEDIA_META_COMP_FOLDER].push_back("Hierachy");
+    mAvailableFilters[MEDIA_META_COMP_FOLDER].push_back("ParentNo");
+    mAvailableFilters[MEDIA_META_COMP_FOLDER].push_back("ParentFolderName");
+
+    mAvailableFilters[MEDIA_META_CDDA_SONG].push_back("ObjectType");
+    mAvailableFilters[MEDIA_META_CDDA_SONG].push_back("TrackNo");
+    mAvailableFilters[MEDIA_META_CDDA_SONG].push_back("TimeMin");
+    mAvailableFilters[MEDIA_META_CDDA_SONG].push_back("TimeSec");
+    mAvailableFilters[MEDIA_META_CDDA_SONG].push_back("Frame");
+    mAvailableFilters[MEDIA_META_CDDA_SONG].push_back("Title");
+    mAvailableFilters[MEDIA_META_CDDA_SONG].push_back("Lyricist");
+    mAvailableFilters[MEDIA_META_CDDA_SONG].push_back("Composer");
+    mAvailableFilters[MEDIA_META_CDDA_SONG].push_back("Arranger");
+    mAvailableFilters[MEDIA_META_CDDA_SONG].push_back("Message");
+}
+
+/**
+ * ================================================================================
+ * @fn : setupSortKeys
+ * @brief : set up sort key list for each meta data type.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * - N/A
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : none
+ * ===================================================================================
+ */
+void TaskParser::setupSortKeys()
+{
+    //SortKey
+    mAvailableSortKeys[MEDIA_META_SONG].push_back("SongID");
+    mAvailableSortKeys[MEDIA_META_SONG].push_back("SongTitle");
+    mAvailableSortKeys[MEDIA_META_SONG].push_back("Duration");
+    mAvailableSortKeys[MEDIA_META_SONG].push_back("URL");
+    mAvailableSortKeys[MEDIA_META_SONG].push_back("TrackNo");
+    mAvailableSortKeys[MEDIA_META_SONG].push_back("PlayCount");
+    mAvailableSortKeys[MEDIA_META_SONG].push_back("ArtistID");
+    mAvailableSortKeys[MEDIA_META_SONG].push_back("ArtistName");
+    mAvailableSortKeys[MEDIA_META_SONG].push_back("AlbumID");
+    mAvailableSortKeys[MEDIA_META_SONG].push_back("AlbumName");
+    mAvailableSortKeys[MEDIA_META_SONG].push_back("CoverArt");
+    mAvailableSortKeys[MEDIA_META_SONG].push_back("GenreID");
+    mAvailableSortKeys[MEDIA_META_SONG].push_back("GenreName");
+
+    mAvailableSortKeys[MEDIA_META_ALBUM].push_back("ArtistID");
+    mAvailableSortKeys[MEDIA_META_ALBUM].push_back("ArtistName");
+    mAvailableSortKeys[MEDIA_META_ALBUM].push_back("AlbumID");
+    mAvailableSortKeys[MEDIA_META_ALBUM].push_back("AlbumName");
+    mAvailableSortKeys[MEDIA_META_ALBUM].push_back("CoverArt ");
+    mAvailableSortKeys[MEDIA_META_ALBUM].push_back("Duration ");
+    mAvailableSortKeys[MEDIA_META_ALBUM].push_back("SongCount ");
+
+
+    mAvailableSortKeys[MEDIA_META_ARTIST].push_back("ArtistID");
+    mAvailableSortKeys[MEDIA_META_ARTIST].push_back("ArtistName");
+    mAvailableSortKeys[MEDIA_META_ARTIST].push_back("CoverArt");
+    mAvailableSortKeys[MEDIA_META_ARTIST].push_back("AlbumCount");
+    mAvailableSortKeys[MEDIA_META_ARTIST].push_back("SongCount");
+
+
+    mAvailableSortKeys[MEDIA_META_GENRE].push_back("GenreID");
+    mAvailableSortKeys[MEDIA_META_GENRE].push_back("GenreName");
+    mAvailableSortKeys[MEDIA_META_GENRE].push_back("Duration ");
+    mAvailableSortKeys[MEDIA_META_GENRE].push_back("SongCount ");
+
+    mAvailableSortKeys[MEDIA_META_FOLDER].push_back("URL");
+    mAvailableSortKeys[MEDIA_META_FOLDER].push_back("ChildrenCount");
+
+    mAvailableSortKeys[MEDIA_META_COVERART].push_back("URL");
+    mAvailableSortKeys[MEDIA_META_COVERART].push_back("CoverArt");
+
+    mAvailableSortKeys[MEDIA_META_THUMBNAIL].push_back("URL");
+    mAvailableSortKeys[MEDIA_META_THUMBNAIL].push_back("Thumbnail");
+
+    mAvailableSortKeys[MEDIA_META_COMP_FILE].push_back("FileNo");
+    mAvailableSortKeys[MEDIA_META_COMP_FILE].push_back("FileName");
+    mAvailableSortKeys[MEDIA_META_COMP_FILE].push_back("FolderNo");
+    mAvailableSortKeys[MEDIA_META_COMP_FILE].push_back("FolderName");
+    mAvailableSortKeys[MEDIA_META_COMP_FILE].push_back("Hierarchy");
+    mAvailableSortKeys[MEDIA_META_COMP_FILE].push_back("URL");
+
+    mAvailableSortKeys[MEDIA_META_COMP_FOLDER].push_back("FolderNo");
+    mAvailableSortKeys[MEDIA_META_COMP_FOLDER].push_back("FolderName");
+    mAvailableSortKeys[MEDIA_META_COMP_FOLDER].push_back("Hierarchy");
+    mAvailableSortKeys[MEDIA_META_COMP_FOLDER].push_back("ParentNo");
+    mAvailableSortKeys[MEDIA_META_COMP_FOLDER].push_back("ParentFolderName");
+
+    mAvailableSortKeys[MEDIA_META_CDDA_SONG].push_back("TrackNo");
+    mAvailableSortKeys[MEDIA_META_CDDA_SONG].push_back("TimeMin");
+    mAvailableSortKeys[MEDIA_META_CDDA_SONG].push_back("TimeSec");
+    mAvailableSortKeys[MEDIA_META_CDDA_SONG].push_back("Frame");
+    mAvailableSortKeys[MEDIA_META_CDDA_SONG].push_back("Title");
+    mAvailableSortKeys[MEDIA_META_CDDA_SONG].push_back("Lyricist");
+    mAvailableSortKeys[MEDIA_META_CDDA_SONG].push_back("Composer");
+    mAvailableSortKeys[MEDIA_META_CDDA_SONG].push_back("Arranger");
+    mAvailableSortKeys[MEDIA_META_CDDA_SONG].push_back("Message");
+}
+
+/**
+ * ================================================================================
+ * @fn : setupObjectNames
+ * @brief : set up object name list for each meta data type.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * - N/A
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : none
+ * ===================================================================================
+ */
+void TaskParser::setupObjectNames()
+{
+    mObjectName[MEDIA_META_FOLDER] = "Folder";
+    mObjectName[MEDIA_META_FILE]   = "File";
+    mObjectName[MEDIA_META_ARTIST] = "Artist";
+    mObjectName[MEDIA_META_ALBUM]  = "Album";
+    mObjectName[MEDIA_META_GENRE]  = "Genre";
+    mObjectName[MEDIA_META_SONG]   = "Song";
+    mObjectName[MEDIA_META_COVERART]  = "CoverArt";
+    mObjectName[MEDIA_META_THUMBNAIL] = "Thumbnail";
+    mObjectName[MEDIA_META_CDDA_SONG] = "CDDASong";
+    mObjectName[MEDIA_META_COMP_FOLDER] = "CompFolder";
+    mObjectName[MEDIA_META_COMP_FILE] = "CompFile";
+    mObjectName[MEDIA_META_REMOTE_VIDEO] = "Remote";
+}
+
+/**
+ * ================================================================================
+ * @fn : setupCollationFilters
+ * @brief : set up filter list that needs collation sorting.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * - N/A
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : none
+ * ===================================================================================
+ */
+void TaskParser::setupCollationFilters()
+{
+    mCollationFilters.push_back("SongTitle");
+    mCollationFilters.push_back("ArtistName");
+    mCollationFilters.push_back("AlbumName");
+    mCollationFilters.push_back("GenreName");
+    mCollationFilters.push_back("FileName");
+    mCollationFilters.push_back("FolderName");
+    mCollationFilters.push_back("Title");
+    mCollationFilters.push_back("Lyricist");
+    mCollationFilters.push_back("Composer");
+    mCollationFilters.push_back("Arranger");
+    mCollationFilters.push_back("Message");
+}
+
+/**
+ * ================================================================================
+ * @fn : checkFilterAvailable
+ * @brief : check if input key name is valid in input object type.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * - N/A
+ * @param [in] object type : meta data type.
+ * @param [in] key name : filter name to check.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (true: valid, false: invalid)
+ * ===================================================================================
+ */
+bool TaskParser::checkFilterAvailable(MediaMetaType objectType, std::string keyName)
+{
+
+    //No keys provided for file or folder
+    if (objectType == MEDIA_META_FOLDER || objectType == MEDIA_META_FILE || objectType == MEDIA_META_INVALID)
+        return false;
+
+    if (objectType < MEDIA_META_INVALID)
+    {
+        const std::vector<std::string>& keys = getAvailableFilters(objectType);
+
+        if (std::find(keys.begin(), keys.end() , keyName) != keys.end())
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * ================================================================================
+ * @fn : checkSortKeyAvaliable
+ * @brief : check if input key name is valid sort key in input object type.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * - N/A
+ * @param [in] object type : meta data type.
+ * @param [in] key name : filter name to check.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (true: valid, false: invalid)
+ * ===================================================================================
+ */
+bool TaskParser::checkSortKeyAvaliable(MediaMetaType objectType, std::string keyName)
+{
+    // TO-DO FILE/FOLDER VIEW
+    if (objectType == MEDIA_META_FOLDER || objectType == MEDIA_META_FILE || objectType == MEDIA_META_INVALID)
+        return false;
+
+    if (objectType < MEDIA_META_INVALID)
+    {
+        const std::vector<std::string>& sortKeys = getAvailableSortKeys(objectType);
+
+        if (std::find(sortKeys.begin(),sortKeys.end(), keyName) != sortKeys.end())
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * ================================================================================
+ * @fn : checkSortKeyAvaliable
+ * @brief : check if input key name needs collation sort.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * - N/A
+ * @param [in] key name : filter name to check.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (true: yes, false: no)
+ * ===================================================================================
+ */
+bool TaskParser::checkNeedCollation(string keyName)
+{
+    if (std::find(mCollationFilters.begin(), mCollationFilters.end(), keyName) != mCollationFilters.end())
+    {
+        return true;
+    }
+    return false;
+}
+
+/**
+ * ================================================================================
+ * @fn : splitObjectPath
+ * @brief : split object string to object part and key part and value part.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * - N/A
+ * @param [in] objectPath : object path string.
+ * @param [out] filePath :file path string
+ * @param [out] objectPart : object type  string.
+ * @param [out] keyPart : key type string.
+ * @param [out] valuePart : key value string.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (true: success, false: fail)
+ * ===================================================================================
+ */
+bool TaskParser::splitObjectPath(string objectPath, string &filePath,
+                                 string &objectPart, string &keyPart, string& valuePart)
+{
+    //get path
+    unsigned int objPos = 0;
+    unsigned int keyPosFrom = 0;
+    unsigned int keyPosTo = 0;
+
+    if ((objPos = objectPath.find(":")) == objectPath.npos) {
+        if ( (keyPosFrom = objectPath.find("?")) == objectPath.npos) {
+            filePath = objectPath;
+        } else {
+            filePath = objectPath.substr(0, keyPosFrom);
+            keyPosTo = objectPath.find('=');
+            keyPart = objectPath.substr(keyPosFrom + 1, keyPosTo - keyPosFrom - 1);
+            valuePart = objectPath.substr(keyPosTo + 1, objectPath.length() - keyPosTo - 1);
+        }
+    } else {
+        if ((keyPosFrom = objectPath.find("?")) == objectPath.npos) {
+            filePath = objectPath.substr(0, objPos);
+            objectPart = objectPath.substr(objPos+1, objectPath.length() - objPos - 1);
+        } else {
+            filePath = objectPath.substr(0, objPos);
+            objectPart = objectPath.substr(objPos+1, keyPosFrom - objPos -1);
+            keyPosTo = objectPath.find('=');
+            keyPart = objectPath.substr(keyPosFrom+1, keyPosTo - keyPosFrom -1);
+            valuePart = objectPath.substr(keyPosTo+1, objectPath.length() - keyPosTo - 1);
+        }
+    }
+
+    MMLogInfo("path = %s", filePath.c_str());
+    MMLogInfo("objectTypeString = %s", objectPart.c_str());
+    MMLogInfo("keyPart = %s", keyPart.c_str());
+    MMLogInfo("valuePart = %s", valuePart.c_str());
+    return true;
+}
+
+/**
+ * ================================================================================
+ * @fn : splitCountPart
+ * @brief : split object string to object part and count part.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * - Split count part and remove it
+ * - Get count from count part.
+ * @param [in] objectPart : object part string.
+ * @param [out] countRemovedObject : object part string that's count part string is removed.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : bool (true: count query, false: no count query(list))
+ * ===================================================================================
+ */
+bool TaskParser::splitCountPart(string objectPart, string &countRemovedObject)
+{
+    unsigned int countQueryPos = 0;
+    bool isCountQuery = false;
+    if( (countQueryPos = objectPart.find(".")) != objectPart.npos)
+    {
+        string queryCountString = objectPart.substr(countQueryPos+1);
+        if (queryCountString.compare("TotalCount") == 0 )
+            isCountQuery = true;
+
+        countRemovedObject = objectPart.substr(0, countQueryPos);
+    }
+    else
+    {
+        countRemovedObject = objectPart;
+    }
+
+    MMLogInfo("parseTaskInfo isCountQuery =  = %d", isCountQuery);
+
+    return isCountQuery;
+}
+
+/**
+ * ================================================================================
+ * @fn : getProtocolInfo
+ * @brief : Get protocol type from object path.
+ * @section : Function flow (Pseudo-code or Decision Table)
+ * - Check protocol string
+ * - Remove protocol string
+ * @param [in] objectPath : object path string.
+ * @param [out] protocolRemoved : object path string that's protocol string is removed.
+ * @section Global Variables: none
+ * @section Dependencies: none
+ * @return : MediaProtocol (eMtpProtocol/eDeckProtocol/eFileProtocol)
+ * ===================================================================================
+ */
+MediaProtocol TaskParser::getProtocolInfo(std::string objectPath, std::string &protocolRemoved)
+{
+    //parse protocol
+    std::string delimeter = "://";
+    int idx = objectPath.find(delimeter);
+    MediaProtocol protocol = eFileProtocol;
+
+    if(idx != -1)
+    {
+        std::string protocolString = objectPath.substr(0, idx);
+        MMLogInfo("getProtocolInfo protocolString = [%s]", protocolString.c_str());
+        if (protocolString.compare("mtp") == 0) {
+            protocol = eMtpProtocol;
+        } else if (protocolString.compare("deck") == 0) {
+            protocol = eDeckProtocol;
+        }
+        else if (protocolString.compare("remote") == 0) {
+            protocol = eRemoteProtocol;
+        }
+        else {
+            protocol = eFileProtocol;
+        }
+        protocolRemoved = objectPath.substr(delimeter.length() + idx);
+    }
+    else
+    {
+        protocol = eFileProtocol;
+        protocolRemoved = objectPath;
+    }
+    return protocol;
+}
+
+} // mm
+} // lge
