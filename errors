@@ -78,5 +78,28 @@ In file included from /usr/include/gstreamer-1.0/gst/gstelementfactory.h:38,
 video_brightness.c:63:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ at end of input
    63 | GST_PLUGIN_DEFINE(
       | ^~~~~~~~~~~~~~~~~
+-----------------------------------------
+
+
+video_bright.c:63:17: error: conflicting types for ‘gst_video_brightness_plugin_init’; have ‘gboolean(GstPlugin *)’ {aka ‘int(struct _GstPlugin *)’}
+   63 | static gboolean gst_video_brightness_plugin_init(GstPlugin *plugin) {
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+video_bright.c:45:13: note: previous definition of ‘gst_video_brightness_plugin_init’ with type ‘void(GstVideoBrightnessPlugin *)’ {aka ‘void(struct _GstVideoBrightnessPlugin *)’}
+   45 | static void gst_video_brightness_plugin_init(GstVideoBrightnessPlugin *plugin) {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+video_bright.c:77:1: error: macro "GST_PLUGIN_DEFINE" passed 10 arguments, but takes just 9
+   77 | )
+      | ^
+In file included from /usr/include/gstreamer-1.0/gst/gstelementfactory.h:38,
+                 from /usr/include/gstreamer-1.0/gst/gstelement.h:226,
+                 from /usr/include/gstreamer-1.0/gst/gstbin.h:27,
+                 from /usr/include/gstreamer-1.0/gst/gst.h:35,
+                 from video_bright.c:1:
+/usr/include/gstreamer-1.0/gst/gstplugin.h:255: note: macro "GST_PLUGIN_DEFINE" defined here
+  255 | #define GST_PLUGIN_DEFINE(major,minor,name,description,init,version,license,package,origin) \
+      |
+video_bright.c:66:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ at end of input
+   66 | GST_PLUGIN_DEFINE(
+      | ^~~~~~~~~~~~~~~~~
 
 
