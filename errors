@@ -119,4 +119,11 @@ video_brightness.c:115:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ o
   115 | GST_PLUGIN_DEFINE(
       | ^~~~~~~~~~~~~~~~~
 
+------------------------------------------------
+
+video_balance.c:1:10: fatal error: gst/gst.h: No such file or directory
+    1 | #include <gst/gst.h>
+      |          ^~~~~~~~~~~
+compilation terminated.
+
 
