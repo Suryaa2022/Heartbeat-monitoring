@@ -17,3 +17,7 @@ cp: cannot stat 'videobalance.so': No such file or directory
 
 
 cp: cannot create regular file '/usr/lib/gstreamer-1.0/': Not a directory
+
+(gst-inspect-1.0:792578): GStreamer-WARNING **: 12:29:25.309: Failed to load plugin 'adjustvideo.c': adjustvideo.c: cannot open shared object file: No such file or directory
+Could not load plugin file: Opening module failed: adjustvideo.c: cannot open shared object file: No such file or directory
+
