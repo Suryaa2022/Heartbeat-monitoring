@@ -1,58 +1,78 @@
 
+
+videoadjust.c: In function ‘gst_video_balance_set_property’:
+videoadjust.c:78:27: warning: implicit declaration of function ‘GST_VIDEO_BALANCE’; did you mean ‘GST_COLOR_BALANCE’? [-Wimplicit-function-declaration]
+   78 |   GstVideoBalance *self = GST_VIDEO_BALANCE(object);
+      |                           ^~~~~~~~~~~~~~~~~
+      |                           GST_COLOR_BALANCE
+videoadjust.c:78:27: warning: initialization of ‘GstVideoBalance *’ {aka ‘struct _GstVideoBalance *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+videoadjust.c: In function ‘gst_video_balance_get_property’:
+videoadjust.c:100:27: warning: initialization of ‘GstVideoBalance *’ {aka ‘struct _GstVideoBalance *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  100 |   GstVideoBalance *self = GST_VIDEO_BALANCE(object);
+      |                           ^~~~~~~~~~~~~~~~~
+videoadjust.c: In function ‘gst_video_balance_transform_ip’:
+videoadjust.c:122:27: warning: initialization of ‘GstVideoBalance *’ {aka ‘struct _GstVideoBalance *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  122 |   GstVideoBalance *self = GST_VIDEO_BALANCE(trans);
+      |                           ^~~~~~~~~~~~~~~~~
+videoadjust.c:128:36: warning: passing argument 2 of ‘gst_video_frame_map’ from incompatible pointer type [-Wincompatible-pointer-types]
+  128 |   if (!gst_video_frame_map(&frame, buffer, GST_MAP_READWRITE)) {
+      |                                    ^~~~~~
+      |                                    |
+      |                                    GstBuffer * {aka struct _GstBuffer *}
+In file included from /usr/include/gstreamer-1.0/gst/video/video.h:33,
+                 from videoadjust.c:2:
+/usr/include/gstreamer-1.0/gst/video/video-frame.h:97:86: note: expected ‘const GstVideoInfo *’ {aka ‘const struct _GstVideoInfo *’} but argument is of type ‘GstBuffer *’ {aka ‘struct _GstBuffer *’}
+   97 | gboolean    gst_video_frame_map           (GstVideoFrame *frame, const GstVideoInfo *info,
+      |                                                                  ~~~~~~~~~~~~~~~~~~~~^~~~
+In file included from /usr/include/gstreamer-1.0/gst/gstallocator.h:26,
+                 from /usr/include/gstreamer-1.0/gst/gstbuffer.h:29,
+                 from /usr/include/gstreamer-1.0/gst/gstpad.h:70,
+                 from /usr/include/gstreamer-1.0/gst/gstelement.h:223,
+                 from /usr/include/gstreamer-1.0/gst/gstbin.h:27,
+                 from /usr/include/gstreamer-1.0/gst/gst.h:35,
+                 from videoadjust.c:1:
+/usr/include/gstreamer-1.0/gst/gstmemory.h:193:32: error: incompatible type for argument 3 of ‘gst_video_frame_map’
+  193 | #define GST_MAP_READWRITE      ((GstMapFlags) (GST_MAP_READ | GST_MAP_WRITE))
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                |
+      |                                enum <anonymous>
+videoadjust.c:128:44: note: in expansion of macro ‘GST_MAP_READWRITE’
+  128 |   if (!gst_video_frame_map(&frame, buffer, GST_MAP_READWRITE)) {
+      |                                            ^~~~~~~~~~~~~~~~~
+In file included from /usr/include/gstreamer-1.0/gst/video/video.h:33,
+                 from videoadjust.c:2:
+/usr/include/gstreamer-1.0/gst/video/video-frame.h:98:55: note: expected ‘GstBuffer *’ {aka ‘struct _GstBuffer *’} but argument is of type ‘enum <anonymous>’
+   98 |                                            GstBuffer *buffer, GstMapFlags flags);
+      |                                            ~~~~~~~~~~~^~~~~~
+videoadjust.c:128:8: error: too few arguments to function ‘gst_video_frame_map’
+  128 |   if (!gst_video_frame_map(&frame, buffer, GST_MAP_READWRITE)) {
+      |        ^~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/gstreamer-1.0/gst/video/video.h:33,
+                 from videoadjust.c:2:
+/usr/include/gstreamer-1.0/gst/video/video-frame.h:97:13: note: declared here
+   97 | gboolean    gst_video_frame_map           (GstVideoFrame *frame, const GstVideoInfo *info,
+      |             ^~~~~~~~~~~~~~~~~~~
+videoadjust.c: In function ‘plugin_init’:
+videoadjust.c:188:70: error: ‘GST_TYPE_VIDEO_BALANCE’ undeclared (first use in this function); did you mean ‘GST_TYPE_COLOR_BALANCE’?
+  188 |   return gst_element_register(plugin, "videobalance", GST_RANK_NONE, GST_TYPE_VIDEO_BALANCE);
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~~~
+      |                                                                      GST_TYPE_COLOR_BALANCE
+videoadjust.c:188:70: note: each undeclared identifier is reported only once for each function it appears in
+videoadjust.c: At top level:
+videoadjust.c:198:1: error: macro "GST_PLUGIN_DEFINE" requires 9 arguments, but only 7 given
+  198 | );
+      | ^
 In file included from /usr/include/gstreamer-1.0/gst/gstelementfactory.h:38,
                  from /usr/include/gstreamer-1.0/gst/gstelement.h:226,
                  from /usr/include/gstreamer-1.0/gst/gstbin.h:27,
                  from /usr/include/gstreamer-1.0/gst/gst.h:35,
-                 from videobalance.c:1:
-/usr/include/gstreamer-1.0/gst/gstplugin.h:268:3: error: ‘PACKAGE’ undeclared here (not in a function)
-  268 |   PACKAGE, \
-      |   ^~~~~~~
-videobalance.c:89:1: note: in expansion of macro ‘GST_PLUGIN_DEFINE’
-   89 | GST_PLUGIN_DEFINE(GST_VERSION_MAJOR, GST_VERSION_MINOR, videobalance, "Video balance plugin", gst_video_balance_plugin_register, "1.0", "LGPL", "GStreamer", "http://gstreamer.net/")
-
-
----------
-
-cp: cannot stat 'videobalance.so': No such file or directory
-
-
-cp: cannot create regular file '/usr/lib/gstreamer-1.0/': Not a directory
-
-(gst-inspect-1.0:792578): GStreamer-WARNING **: 12:29:25.309: Failed to load plugin 'adjustvideo.c': adjustvideo.c: cannot open shared object file: No such file or directory
-Could not load plugin file: Opening module failed: adjustvideo.c: cannot open shared object file: No such file or directory
-
-------------------->
-
-
-Plugin Details:
-  Name                     adjustvideo.so
-  Description              Plugin for blacklisted file
-  Filename                 /usr/lib/x86_64-linux-gnu/gstreamer-1.0/adjustvideo.so
-  Version                  0.0.0
-  License                  BLACKLIST
-  Source module            BLACKLIST
-  Binary package           BLACKLIST
-  Origin URL               BLACKLIST
-
-
-  0 features:
-
----------------------------------->.
-
-
-videoadjust.c: In function ‘main’:
-videoadjust.c:97:33: warning: implicit declaration of function ‘GST_ELEMENT_FACTORY_LONG_NAME’; did you mean ‘GST_ELEMENT_FACTORY_TYPE_ANY’? [-Wimplicit-function-declaration]
-   97 |    g_print("Description: %s\n", GST_ELEMENT_FACTORY_LONG_NAME(gst_element_get_factory(videobalance)));
-      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |                                 GST_ELEMENT_FACTORY_TYPE_ANY
-videoadjust.c:97:27: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Wformat=]
-   97 |    g_print("Description: %s\n", GST_ELEMENT_FACTORY_LONG_NAME(gst_element_get_factory(videobalance)));
-      |                          ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |                           |     |
-      |                           |     int
-      |                           char *
-      |                          %d
-
-
-
+                 from videoadjust.c:1:
+/usr/include/gstreamer-1.0/gst/gstplugin.h:255: note: macro "GST_PLUGIN_DEFINE" defined here
+  255 | #define GST_PLUGIN_DEFINE(major,minor,name,description,init,version,license,package,origin) \
+      |
+videoadjust.c:191:1: warning: data definition has no type or storage class
+  191 | GST_PLUGIN_DEFINE(videobalance,
+      | ^~~~~~~~~~~~~~~~~
+videoadjust.c:191:1: warning: type defaults to ‘int’ in declaration of ‘GST_PLUGIN_DEFINE’ [-Wimplicit-int]
+lg@si-core:~/surya/plugin$
 
