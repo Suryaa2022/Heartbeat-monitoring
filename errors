@@ -9,3 +9,8 @@ In file included from /usr/include/gstreamer-1.0/gst/gstelementfactory.h:38,
       |   ^~~~~~~
 videobalance.c:89:1: note: in expansion of macro ‘GST_PLUGIN_DEFINE’
    89 | GST_PLUGIN_DEFINE(GST_VERSION_MAJOR, GST_VERSION_MINOR, videobalance, "Video balance plugin", gst_video_balance_plugin_register, "1.0", "LGPL", "GStreamer", "http://gstreamer.net/")
+
+
+---------
+
+cp: cannot stat 'videobalance.so': No such file or directory
