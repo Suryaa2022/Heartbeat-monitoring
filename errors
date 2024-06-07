@@ -1,122 +1,99 @@
 
 
 videoadjust.c: In function ‘gst_video_balance_set_property’:
-videoadjust.c:78:27: warning: implicit declaration of function ‘GST_VIDEO_BALANCE’; did you mean ‘GST_COLOR_BALANCE’? [-Wimplicit-function-declaration]
-   78 |   GstVideoBalance *self = GST_VIDEO_BALANCE(object);
+videoadjust.c:119:27: warning: implicit declaration of function ‘GST_VIDEO_BALANCE’; did you mean ‘GST_COLOR_BALANCE’? [-Wimplicit-function-declaration]
+  119 |   GstVideoBalance *self = GST_VIDEO_BALANCE(g_type_instance_get_private(G_OBJECT(object), gst_video_balance_get_type()));
       |                           ^~~~~~~~~~~~~~~~~
       |                           GST_COLOR_BALANCE
-videoadjust.c:78:27: warning: initialization of ‘GstVideoBalance *’ {aka ‘struct _GstVideoBalance *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
-videoadjust.c: In function ‘gst_video_balance_get_property’:
-videoadjust.c:100:27: warning: initialization of ‘GstVideoBalance *’ {aka ‘struct _GstVideoBalance *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
-  100 |   GstVideoBalance *self = GST_VIDEO_BALANCE(object);
-      |                           ^~~~~~~~~~~~~~~~~
-videoadjust.c: In function ‘gst_video_balance_transform_ip’:
-videoadjust.c:122:27: warning: initialization of ‘GstVideoBalance *’ {aka ‘struct _GstVideoBalance *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
-  122 |   GstVideoBalance *self = GST_VIDEO_BALANCE(trans);
-      |                           ^~~~~~~~~~~~~~~~~
-videoadjust.c:128:36: warning: passing argument 2 of ‘gst_video_frame_map’ from incompatible pointer type [-Wincompatible-pointer-types]
-  128 |   if (!gst_video_frame_map(&frame, buffer, GST_MAP_READWRITE)) {
-      |                                    ^~~~~~
-      |                                    |
-      |                                    GstBuffer * {aka struct _GstBuffer *}
-In file included from /usr/include/gstreamer-1.0/gst/video/video.h:33,
-                 from videoadjust.c:2:
-/usr/include/gstreamer-1.0/gst/video/video-frame.h:97:86: note: expected ‘const GstVideoInfo *’ {aka ‘const struct _GstVideoInfo *’} but argument is of type ‘GstBuffer *’ {aka ‘struct _GstBuffer *’}
-   97 | gboolean    gst_video_frame_map           (GstVideoFrame *frame, const GstVideoInfo *info,
-      |                                                                  ~~~~~~~~~~~~~~~~~~~~^~~~
-In file included from /usr/include/gstreamer-1.0/gst/gstallocator.h:26,
-                 from /usr/include/gstreamer-1.0/gst/gstbuffer.h:29,
-                 from /usr/include/gstreamer-1.0/gst/gstpad.h:70,
-                 from /usr/include/gstreamer-1.0/gst/gstelement.h:223,
-                 from /usr/include/gstreamer-1.0/gst/gstbin.h:27,
-                 from /usr/include/gstreamer-1.0/gst/gst.h:35,
+In file included from /usr/include/glib-2.0/gobject/gobject.h:24,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:29,
+                 from /usr/include/glib-2.0/glib-object.h:22,
+                 from /usr/include/gstreamer-1.0/gst/gstenumtypes.h:6,
+                 from /usr/include/gstreamer-1.0/gst/gst.h:31,
                  from videoadjust.c:1:
-/usr/include/gstreamer-1.0/gst/gstmemory.h:193:32: error: incompatible type for argument 3 of ‘gst_video_frame_map’
-  193 | #define GST_MAP_READWRITE      ((GstMapFlags) (GST_MAP_READ | GST_MAP_WRITE))
-      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |                                |
-      |                                enum <anonymous>
-videoadjust.c:128:44: note: in expansion of macro ‘GST_MAP_READWRITE’
-  128 |   if (!gst_video_frame_map(&frame, buffer, GST_MAP_READWRITE)) {
-      |                                            ^~~~~~~~~~~~~~~~~
-In file included from /usr/include/gstreamer-1.0/gst/video/video.h:33,
-                 from videoadjust.c:2:
-/usr/include/gstreamer-1.0/gst/video/video-frame.h:98:55: note: expected ‘GstBuffer *’ {aka ‘struct _GstBuffer *’} but argument is of type ‘enum <anonymous>’
-   98 |                                            GstBuffer *buffer, GstMapFlags flags);
-      |                                            ~~~~~~~~~~~^~~~~~
-videoadjust.c:128:8: error: too few arguments to function ‘gst_video_frame_map’
-  128 |   if (!gst_video_frame_map(&frame, buffer, GST_MAP_READWRITE)) {
-      |        ^~~~~~~~~~~~~~~~~~~
-In file included from /usr/include/gstreamer-1.0/gst/video/video.h:33,
-                 from videoadjust.c:2:
-/usr/include/gstreamer-1.0/gst/video/video-frame.h:97:13: note: declared here
-   97 | gboolean    gst_video_frame_map           (GstVideoFrame *frame, const GstVideoInfo *info,
-      |             ^~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gtype.h:2458:6: warning: passing argument 1 of ‘g_type_instance_get_private’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 2458 |     ((ct*) (void *) g_type_check_instance_cast ((GTypeInstance*) ip, gt))
+/usr/include/glib-2.0/gobject/gtype.h:501:66: note: in expansion of macro ‘_G_TYPE_CIC’
+  501 | #define G_TYPE_CHECK_INSTANCE_CAST(instance, g_type, c_type)    (_G_TYPE_CIC ((instance), (g_type), c_type))
+      |                                                                  ^~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gobject.h:52:38: note: in expansion of macro ‘G_TYPE_CHECK_INSTANCE_CAST’
+   52 | #define G_OBJECT(object)            (G_TYPE_CHECK_INSTANCE_CAST ((object), G_TYPE_OBJECT, GObject))
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+videoadjust.c:119:73: note: in expansion of macro ‘G_OBJECT’
+  119 |   GstVideoBalance *self = GST_VIDEO_BALANCE(g_type_instance_get_private(G_OBJECT(object), gst_video_balance_get_type()));
+      |                                                                         ^~~~~~~~
+/usr/include/glib-2.0/gobject/gtype.h:1352:70: note: expected ‘GTypeInstance *’ {aka ‘struct _GTypeInstance *’} but argument is of type ‘GObject *’ {aka ‘struct _GObject *’}
+ 1352 | gpointer g_type_instance_get_private    (GTypeInstance              *instance,
+      |                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+videoadjust.c:119:27: warning: initialization of ‘GstVideoBalance *’ {aka ‘struct _GstVideoBalance *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  119 |   GstVideoBalance *self = GST_VIDEO_BALANCE(g_type_instance_get_private(G_OBJECT(object), gst_video_balance_get_type()));
+      |                           ^~~~~~~~~~~~~~~~~
+In file included from /usr/include/glib-2.0/gobject/gobject.h:24,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:29,
+                 from /usr/include/glib-2.0/glib-object.h:22,
+                 from /usr/include/gstreamer-1.0/gst/gstenumtypes.h:6,
+                 from /usr/include/gstreamer-1.0/gst/gst.h:31,
+                 from videoadjust.c:1:
+videoadjust.c: In function ‘gst_video_balance_get_property’:
+/usr/include/glib-2.0/gobject/gtype.h:2458:6: warning: passing argument 1 of ‘g_type_instance_get_private’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 2458 |     ((ct*) (void *) g_type_check_instance_cast ((GTypeInstance*) ip, gt))
+/usr/include/glib-2.0/gobject/gtype.h:501:66: note: in expansion of macro ‘_G_TYPE_CIC’
+  501 | #define G_TYPE_CHECK_INSTANCE_CAST(instance, g_type, c_type)    (_G_TYPE_CIC ((instance), (g_type), c_type))
+      |                                                                  ^~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gobject.h:52:38: note: in expansion of macro ‘G_TYPE_CHECK_INSTANCE_CAST’
+   52 | #define G_OBJECT(object)            (G_TYPE_CHECK_INSTANCE_CAST ((object), G_TYPE_OBJECT, GObject))
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+videoadjust.c:159:73: note: in expansion of macro ‘G_OBJECT’
+  159 |   GstVideoBalance *self = GST_VIDEO_BALANCE(g_type_instance_get_private(G_OBJECT(object), gst_video_balance_get_type()));
+      |                                                                         ^~~~~~~~
+/usr/include/glib-2.0/gobject/gtype.h:1352:70: note: expected ‘GTypeInstance *’ {aka ‘struct _GTypeInstance *’} but argument is of type ‘GObject *’ {aka ‘struct _GObject *’}
+ 1352 | gpointer g_type_instance_get_private    (GTypeInstance              *instance,
+      |                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+videoadjust.c:159:27: warning: initialization of ‘GstVideoBalance *’ {aka ‘struct _GstVideoBalance *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  159 |   GstVideoBalance *self = GST_VIDEO_BALANCE(g_type_instance_get_private(G_OBJECT(object), gst_video_balance_get_type()));
+      |                           ^~~~~~~~~~~~~~~~~
+In file included from /usr/include/glib-2.0/gobject/gobject.h:24,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:29,
+                 from /usr/include/glib-2.0/glib-object.h:22,
+                 from /usr/include/gstreamer-1.0/gst/gstenumtypes.h:6,
+                 from /usr/include/gstreamer-1.0/gst/gst.h:31,
+                 from videoadjust.c:1:
+videoadjust.c: In function ‘gst_video_balance_transform_ip’:
+/usr/include/glib-2.0/gobject/gtype.h:2458:6: warning: passing argument 1 of ‘g_type_instance_get_private’ from incompatible pointer type [-Wincompatible-pointer-types]
+ 2458 |     ((ct*) (void *) g_type_check_instance_cast ((GTypeInstance*) ip, gt))
+/usr/include/glib-2.0/gobject/gtype.h:501:66: note: in expansion of macro ‘_G_TYPE_CIC’
+  501 | #define G_TYPE_CHECK_INSTANCE_CAST(instance, g_type, c_type)    (_G_TYPE_CIC ((instance), (g_type), c_type))
+      |                                                                  ^~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gobject.h:52:38: note: in expansion of macro ‘G_TYPE_CHECK_INSTANCE_CAST’
+   52 | #define G_OBJECT(object)            (G_TYPE_CHECK_INSTANCE_CAST ((object), G_TYPE_OBJECT, GObject))
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+videoadjust.c:199:73: note: in expansion of macro ‘G_OBJECT’
+  199 |   GstVideoBalance *self = GST_VIDEO_BALANCE(g_type_instance_get_private(G_OBJECT(trans), gst_video_balance_get_type()));
+      |                                                                         ^~~~~~~~
+/usr/include/glib-2.0/gobject/gtype.h:1352:70: note: expected ‘GTypeInstance *’ {aka ‘struct _GTypeInstance *’} but argument is of type ‘GObject *’ {aka ‘struct _GObject *’}
+ 1352 | gpointer g_type_instance_get_private    (GTypeInstance              *instance,
+      |                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~
+videoadjust.c:199:27: warning: initialization of ‘GstVideoBalance *’ {aka ‘struct _GstVideoBalance *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  199 |   GstVideoBalance *self = GST_VIDEO_BALANCE(g_type_instance_get_private(G_OBJECT(trans), gst_video_balance_get_type()));
+      |                           ^~~~~~~~~~~~~~~~~
+videoadjust.c:209:70: error: ‘GstPad’ {aka ‘struct _GstPad’} has no member named ‘template_caps’
+  209 |   if (!gst_video_frame_map(&frame, GST_BASE_TRANSFORM_SINK_PAD(trans)->template_caps, buffer, GST_MAP_READWRITE)) {
+      |                                                                      ^~
 videoadjust.c: In function ‘plugin_init’:
-videoadjust.c:188:70: error: ‘GST_TYPE_VIDEO_BALANCE’ undeclared (first use in this function); did you mean ‘GST_TYPE_COLOR_BALANCE’?
-  188 |   return gst_element_register(plugin, "videobalance", GST_RANK_NONE, GST_TYPE_VIDEO_BALANCE);
+videoadjust.c:315:70: error: ‘GST_TYPE_VIDEO_BALANCE’ undeclared (first use in this function); did you mean ‘GST_TYPE_COLOR_BALANCE’?
+  315 |   return gst_element_register(plugin, "videobalance", GST_RANK_NONE, GST_TYPE_VIDEO_BALANCE);
       |                                                                      ^~~~~~~~~~~~~~~~~~~~~~
       |                                                                      GST_TYPE_COLOR_BALANCE
-videoadjust.c:188:70: note: each undeclared identifier is reported only once for each function it appears in
-videoadjust.c: At top level:
-videoadjust.c:198:1: error: macro "GST_PLUGIN_DEFINE" requires 9 arguments, but only 7 given
-  198 | );
-      | ^
+videoadjust.c:315:70: note: each undeclared identifier is reported only once for each function it appears in
 In file included from /usr/include/gstreamer-1.0/gst/gstelementfactory.h:38,
                  from /usr/include/gstreamer-1.0/gst/gstelement.h:226,
                  from /usr/include/gstreamer-1.0/gst/gstbin.h:27,
                  from /usr/include/gstreamer-1.0/gst/gst.h:35,
                  from videoadjust.c:1:
-/usr/include/gstreamer-1.0/gst/gstplugin.h:255: note: macro "GST_PLUGIN_DEFINE" defined here
-  255 | #define GST_PLUGIN_DEFINE(major,minor,name,description,init,version,license,package,origin) \
-      |
-videoadjust.c:191:1: warning: data definition has no type or storage class
-  191 | GST_PLUGIN_DEFINE(videobalance,
-      | ^~~~~~~~~~~~~~~~~
-videoadjust.c:191:1: warning: type defaults to ‘int’ in declaration of ‘GST_PLUGIN_DEFINE’ [-Wimplicit-int]
-lg@si-core:~/surya/plugin$
-
------------------>>>....----------------------
-
-
-videoadjust.c: In function ‘gst_video_balance_set_property’:
-videoadjust.c:61:26: warning: implicit declaration of function ‘GST_VIDEO_BALANCE’; did you mean ‘GST_COLOR_BALANCE’? [-Wimplicit-function-declaration]
-   61 |  GstVideoBalance *self = GST_VIDEO_BALANCE(object);
-      |                          ^~~~~~~~~~~~~~~~~
-      |                          GST_COLOR_BALANCE
-videoadjust.c:61:26: warning: initialization of ‘GstVideoBalance *’ {aka ‘struct _GstVideoBalance *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
-videoadjust.c: In function ‘gst_video_balance_get_property’:
-videoadjust.c:81:26: warning: initialization of ‘GstVideoBalance *’ {aka ‘struct _GstVideoBalance *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
-   81 |  GstVideoBalance *self = GST_VIDEO_BALANCE(object);
-      |                          ^~~~~~~~~~~~~~~~~
-videoadjust.c: In function ‘gst_video_balance_transform_ip’:
-videoadjust.c:101:26: warning: initialization of ‘GstVideoBalance *’ {aka ‘struct _GstVideoBalance *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
-  101 |  GstVideoBalance *self = GST_VIDEO_BALANCE(trans);
-      |                          ^~~~~~~~~~~~~~~~~
-videoadjust.c:106:69: error: ‘GstPad’ {aka ‘struct _GstPad’} has no member named ‘current_caps’
-  106 |  if (!gst_video_frame_map(&frame, GST_BASE_TRANSFORM_SINK_PAD(trans)->current_caps, buffer, GST_MAP_READWRITE)) {
-      |                                                                     ^~
-videoadjust.c: In function ‘plugin_init’:
-videoadjust.c:159:37: error: stray ‘\342’ in program
-  159 | return gst_element_register(plugin, “videobalance”, GST_RANK_NONE, GST_TYPE_VIDEO_BALANCE);
-      |                                     ^
-videoadjust.c:159:50: error: stray ‘\342’ in program
-  159 | return gst_element_register(plugin, “videobalance”, GST_RANK_NONE, GST_TYPE_VIDEO_BALANCE);
-      |                                                  ^
-videoadjust.c:159:38: error: ‘videobalance’ undeclared (first use in this function); did you mean ‘GstVideoBalance’?
-  159 | return gst_element_register(plugin, “videobalance”, GST_RANK_NONE, GST_TYPE_VIDEO_BALANCE);
-      |                                      ^~~~~~~~~~~~
-      |                                      GstVideoBalance
-videoadjust.c:159:38: note: each undeclared identifier is reported only once for each function it appears in
-videoadjust.c:159:68: error: ‘GST_TYPE_VIDEO_BALANCE’ undeclared (first use in this function); did you mean ‘GST_TYPE_COLOR_BALANCE’?
-  159 | return gst_element_register(plugin, “videobalance”, GST_RANK_NONE, GST_TYPE_VIDEO_BALANCE);
-      |                                                                    ^~~~~~~~~~~~~~~~~~~~~~
-      |                                                                    GST_TYPE_COLOR_BALANCE
 videoadjust.c: At top level:
-videoadjust.c:169:25: error: unterminated argument list invoking macro "GST_PLUGIN_DEFINE"
-  169 | “http://gstreamer.net/”)
-      |                         ^
-videoadjust.c:161:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ at end of input
-  161 | GST_PLUGIN_DEFINE(GST_VERSION_MAJOR,
-
-
+/usr/include/gstreamer-1.0/gst/gstplugin.h:268:3: error: ‘PACKAGE’ undeclared here (not in a function)
+  268 |   PACKAGE, \
+      |   ^~~~~~~
+videoadjust.c:319:1: note: in expansion of macro ‘GST_PLUGIN_DEFINE’
+  319 | GST_PLUGIN_DEFINE(GST_VERSION_MAJOR,
+      | ^~~~~~~~~~~~~~~~~
