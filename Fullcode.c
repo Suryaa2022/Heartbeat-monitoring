@@ -1,99 +1,199 @@
+
 #include <gst/gst.h>
+#include <gst/video/video.h>
 
-/* Definition of structure storing data for this element. */
-typedef struct _GstMyFilter {
-  GstElement element;
+typedef struct _GstVideoBalance GstVideoBalance;
+typedef struct _GstVideoBalanceClass GstVideoBalanceClass;
 
-  GstPad *sinkpad, *srcpad;
+struct _GstVideoBalance {
+  GstBaseTransform element;
+  gdouble brightness;
+  gdouble contrast;
+  gdouble hue;
+  gdouble saturation;
+};
 
-  gboolean silent;
+struct _GstVideoBalanceClass {
+  GstBaseTransformClass parent_class;
+};
 
+GType gst_video_balance_get_type(void);
 
+static void gst_video_balance_set_property(GObject *object, guint property_id, const GValue *value, GParamSpec *pspec);
+static void gst_video_balance_get_property(GObject *object, guint property_id, GValue *value, GParamSpec *pspec);
 
-} GstMyFilter;
+static gboolean gst_video_balance_transform_ip(GstBaseTransform *trans, GstBuffer *buffer);
 
-/* Standard definition defining a class for this element. */
-typedef struct _GstMyFilterClass {
-  GstElementClass parent_class;
-} GstMyFilterClass;
+G_DEFINE_TYPE(GstVideoBalance, gst_video_balance, GST_TYPE_BASE_TRANSFORM);
 
-/* Standard macros for defining types for this element.  */
-#define GST_TYPE_MY_FILTER (gst_my_filter_get_type())
-#define GST_MY_FILTER(obj) \
-  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_MY_FILTER,GstMyFilter))
-#define GST_MY_FILTER_CLASS(klass) \
-  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_MY_FILTER,GstMyFilterClass))
-#define GST_IS_MY_FILTER(obj) \
-  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_MY_FILTER))
-#define GST_IS_MY_FILTER_CLASS(klass) \
-  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_MY_FILTER))
+enum {
+  PROP_0,
+  PROP_BRIGHTNESS,
+  PROP_CONTRAST,
+  PROP_HUE,
+  PROP_SATURATION
+};
 
-/* Standard function returning type information. */
-GType gst_my_filter_get_type (void);
+static void gst_video_balance_class_init(GstVideoBalanceClass *klass) {
+  GObjectClass *object_class = G_OBJECT_CLASS(klass);
+  GstBaseTransformClass *trans_class = GST_BASE_TRANSFORM_CLASS(klass);
 
-GST_ELEMENT_REGISTER_DECLARE(my_filter)
+  object_class->set_property = gst_video_balance_set_property;
+  object_class->get_property = gst_video_balance_get_property;
 
+  trans_class->transform_ip = gst_video_balance_transform_ip;
 
-#include "filter.h"
+  g_object_class_install_property(object_class, PROP_BRIGHTNESS,
+                                  g_param_spec_double("brightness", "Brightness",
+                                                     "Brightness adjustment",
+                                                     -1.0, 1.0, 0.0,
+                                                     G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
 
-G_DEFINE_TYPE (GstMyFilter, gst_my_filter, GST_TYPE_ELEMENT);
-GST_ELEMENT_REGISTER_DEFINE(my_filter, "my-filter", GST_RANK_NONE, GST_TYPE_MY_FILTER);
+  g_object_class_install_property(object_class, PROP_CONTRAST,
+                                  g_param_spec_double("contrast", "Contrast",
+                                                     "Contrast adjustment",
+                                                     0.0, 2.0, 1.0,
+                                                     G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
 
-gst_element_class_set_static_metadata (klass,
-  "An example plugin",
-  "Example/FirstExample",
-  "Shows the basic structure of a plugin",
-  "your name <your.name@your.isp>");
+  g_object_class_install_property(object_class, PROP_HUE,
+                                  g_param_spec_double("hue", "Hue",
+                                                     "Hue adjustment",
+                                                     -1.0, 1.0, 0.0,
+                                                     G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
 
-
-static void
-gst_my_filter_class_init (GstMyFilterClass * klass)
-{
-  GstElementClass *element_class = GST_ELEMENT_CLASS (klass);
-
-[..]
-  gst_element_class_set_static_metadata (element_class,
-    "An example plugin",
-    "Example/FirstExample",
-    "Shows the basic structure of a plugin",
-    "your name <your.name@your.isp>");
-
+  g_object_class_install_property(object_class, PROP_SATURATION,
+                                  g_param_spec_double("saturation", "Saturation",
+                                                     "Saturation adjustment",
+                                                     0.0, 2.0, 1.0,
+                                                     G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
 }
 
-static GstStaticPadTemplate sink_factory =
-GST_STATIC_PAD_TEMPLATE (
-  "sink",
-  GST_PAD_SINK,
-  GST_PAD_ALWAYS,
-  GST_STATIC_CAPS ("ANY")
-);
-
-
-static GstStaticPadTemplate sink_factory = [..],
-    src_factory = [..];
-
-static void
-gst_my_filter_class_init (GstMyFilterClass * klass)
-{
-  GstElementClass *element_class = GST_ELEMENT_CLASS (klass);
-[..]
-
-  gst_element_class_add_pad_template (element_class,
-    gst_static_pad_template_get (&src_factory));
-  gst_element_class_add_pad_template (element_class,
-    gst_static_pad_template_get (&sink_factory));
+static void gst_video_balance_init(GstVideoBalance *self) {
+  self->brightness = 0.0;
+  self->contrast = 1.0;
+  self->hue = 0.0;
+  self->saturation = 1.0;
 }
 
+static void gst_video_balance_set_property(GObject *object, guint property_id, const GValue *value, GParamSpec *pspec) {
+  GstVideoBalance *self = GST_VIDEO_BALANCE(object);
 
-static GstStaticPadTemplate sink_factory =
-GST_STATIC_PAD_TEMPLATE (
-  "sink",
-  GST_PAD_SINK,
-  GST_PAD_ALWAYS,
-  GST_STATIC_CAPS (
-    "audio/x-raw, "
-      "format = (string) " GST_AUDIO_NE (S16) ", "
-      "channels = (int) { 1, 2 }, "
-      "rate = (int) [ 8000, 96000 ]"
-  )
+  switch (property_id) {
+    case PROP_BRIGHTNESS:
+      self->brightness = g_value_get_double(value);
+      break;
+    case PROP_CONTRAST:
+      self->contrast = g_value_get_double(value);
+      break;
+    case PROP_HUE:
+      self->hue = g_value_get_double(value);
+      break;
+    case PROP_SATURATION:
+      self->saturation = g_value_get_double(value);
+      break;
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID(object, property_id, pspec);
+      break;
+  }
+}
+
+static void gst_video_balance_get_property(GObject *object, guint property_id, GValue *value, GParamSpec *pspec) {
+  GstVideoBalance *self = GST_VIDEO_BALANCE(object);
+
+  switch (property_id) {
+    case PROP_BRIGHTNESS:
+      g_value_set_double(value, self->brightness);
+      break;
+    case PROP_CONTRAST:
+      g_value_set_double(value, self->contrast);
+      break;
+    case PROP_HUE:
+      g_value_set_double(value, self->hue);
+      break;
+    case PROP_SATURATION:
+      g_value_set_double(value, self->saturation);
+      break;
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID(object, property_id, pspec);
+      break;
+  }
+}
+
+static gboolean gst_video_balance_transform_ip(GstBaseTransform *trans, GstBuffer *buffer) {
+  GstVideoBalance *self = GST_VIDEO_BALANCE(trans);
+  GstVideoFrame frame;
+  guint8 *data;
+  gint width, height;
+  gint i, j;
+
+  if (!gst_video_frame_map(&frame, buffer, GST_MAP_READWRITE)) {
+    return FALSE;
+  }
+
+  width = GST_VIDEO_FRAME_WIDTH(&frame);
+  height = GST_VIDEO_FRAME_HEIGHT(&frame);
+  data = GST_VIDEO_FRAME_PLANE_DATA(&frame, 0);
+
+  // Apply brightness adjustment
+  for (i = 0; i < height; i++) {
+    for (j = 0; j < width; j++) {
+      guint8 *pixel = data + (i * width * 3) + (j * 3);
+      pixel[0] += self->brightness * 255; // adjust red component
+      pixel[1] += self->brightness * 255; // adjust green component
+      pixel[2] += self->brightness * 255; // adjust blue component
+    }
+  }
+
+  // Apply contrast adjustment
+  for (i = 0; i < height; i++) {
+    for (j = 0; j < width; j++) {
+      guint8 *pixel = data + (i * width * 3) + (j * 3);
+      pixel[0] = CLAMP((pixel[0] - 128) * self->contrast + 128, 0, 255); // adjust red component
+      pixel[1] = CLAMP((pixel[1] - 128) * self->contrast + 128, 0, 255); // adjust green component
+      pixel[2] = CLAMP((pixel[2] - 128) * self->contrast + 128, 0, 255); // adjust blue component
+    }
+  }
+
+  // Apply hue adjustment
+  for (i = 0; i < height; i++) {
+    for (j = 0; j < width; j++) {
+      guint8 *pixel = data + (i * width * 3) + (j * 3);
+      guint8 r = pixel[0];
+      guint8 g = pixel[1];
+      guint8 b = pixel[2];
+      pixel[0] = CLAMP(r + self->hue * (g - b), 0, 255); // adjust red component
+      pixel[1] = CLAMP(g + self->hue * (b - r), 0, 255); // adjust green component
+      pixel[2] = CLAMP(b + self->hue * (r - g), 0, 255); // adjust blue component
+    }
+  }
+
+  // Apply saturation adjustment
+  for (i = 0; i < height; i++) {
+    for (j = 0; j < width; j++) {
+      guint8 *pixel = data + (i * width * 3) + (j * 3);
+      guint8 r = pixel[0];
+      guint8 g = pixel[1];
+      guint8 b = pixel[2];
+      guint8 avg = (r + g + b) / 3;
+      pixel[0] = CLAMP(avg + self->saturation * (r - avg), 0, 255); // adjust red component
+      pixel[1] = CLAMP(avg + self->saturation * (g - avg), 0, 255); // adjust green component
+      pixel[2] = CLAMP(avg + self->saturation * (b - avg), 0, 255); // adjust blue component
+    }
+  }
+
+  gst_video_frame_unmap(&frame);
+  return TRUE;
+}
+
+static gboolean plugin_init(GstPlugin *plugin) {
+  return gst_element_register(plugin, "videobalance", GST_RANK_NONE, GST_TYPE_VIDEO_BALANCE);
+}
+
+GST_PLUGIN_DEFINE(videobalance,
+    "Video Balance Adjustment Element",
+    plugin_init,
+    VERSION,
+    "LGPL",
+    "GStreamer",
+    "http://gstreamer.net/"
 );
