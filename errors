@@ -37,4 +37,22 @@ Plugin Details:
 
   0 features:
 
+---------------------------------->.
+
+
+videoadjust.c: In function ‘main’:
+videoadjust.c:97:33: warning: implicit declaration of function ‘GST_ELEMENT_FACTORY_LONG_NAME’; did you mean ‘GST_ELEMENT_FACTORY_TYPE_ANY’? [-Wimplicit-function-declaration]
+   97 |    g_print("Description: %s\n", GST_ELEMENT_FACTORY_LONG_NAME(gst_element_get_factory(videobalance)));
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                 GST_ELEMENT_FACTORY_TYPE_ANY
+videoadjust.c:97:27: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Wformat=]
+   97 |    g_print("Description: %s\n", GST_ELEMENT_FACTORY_LONG_NAME(gst_element_get_factory(videobalance)));
+      |                          ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                           |     |
+      |                           |     int
+      |                           char *
+      |                          %d
+
+
+
 
