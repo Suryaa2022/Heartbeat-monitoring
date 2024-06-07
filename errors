@@ -1,129 +1,17 @@
-video_Brightness.c:83:63: error: unknown type name ‘GstBaseTransform’; did you mean ‘GValueTransform’?
-   83 | static GstFlowReturn gst_video_brightness_plugin_transform_ip(GstBaseTransform *trans, GstBuffer *buf) {
-      |                                                               ^~~~~~~~~~~~~~~~
-      |                                                               GValueTransform
+
+gstvideobalance.c: In function ‘gst_video_balance_plugin_transform_ip’:
+gstvideobalance.c:97:28: warning: unused variable ‘plugin’ [-Wunused-variable]
+   97 |     GstVideoBalancePlugin *plugin = GST_VIDEO_BALANCE_PLUGIN(trans);
+      |                            ^~~~~~
 In file included from /usr/include/gstreamer-1.0/gst/gstelementfactory.h:38,
                  from /usr/include/gstreamer-1.0/gst/gstelement.h:226,
                  from /usr/include/gstreamer-1.0/gst/gstbin.h:27,
                  from /usr/include/gstreamer-1.0/gst/gst.h:35,
-                 from video_Brightness.c:1:
-video_Brightness.c:117:5: warning: initialization of ‘gboolean (*)(GstPlugin *)’ {aka ‘int (*)(struct _GstPlugin *)’} from incompatible pointer type ‘void (*)(GstVideoBrightnessPlugin *)’ {aka ‘void (*)(struct _GstVideoBrightnessPlugin *)’} [-Wincompatible-pointer-types]
-  117 |     gst_video_brightness_plugin_init,
-      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/usr/include/gstreamer-1.0/gst/gstplugin.h:265:3: note: in definition of macro ‘GST_PLUGIN_DEFINE’
-  265 |   init, \
-      |   ^~~~
-video_Brightness.c:117:5: note: (near initialization for ‘gst_plugin_desc.plugin_init’)
-  117 |     gst_video_brightness_plugin_init,
-      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/usr/include/gstreamer-1.0/gst/gstplugin.h:265:3: note: in definition of macro ‘GST_PLUGIN_DEFINE’
-  265 |   init, \
-      |   ^~~~
+                 from gstvideobalance.c:1:
+gstvideobalance.c: At top level:
 /usr/include/gstreamer-1.0/gst/gstplugin.h:268:3: error: ‘PACKAGE’ undeclared here (not in a function)
   268 |   PACKAGE, \
       |   ^~~~~~~
-video_Brightness.c:107:1: note: in expansion of macro ‘GST_PLUGIN_DEFINE’
-  107 | GST_PLUGIN_DEFINE(
+gstvideobalance.c:155:1: note: in expansion of macro ‘GST_PLUGIN_DEFINE’
+  155 | GST_PLUGIN_DEFINE(GST_VERSION_MAJOR, GST_VERSION_MINOR, videobalance, "Video balance plugin", gst_video_balance_plugin_register, "1.0", "LGPL", "GStreamer", "http://gstreamer.net/")
       | ^~~~~~~~~~~~~~~~~
-video_Brightness.c: In function ‘gst_plugin_video_brightness_register’:
-video_Brightness.c:117:5: warning: passing argument 5 of ‘gst_plugin_register_static’ from incompatible pointer type [-Wincompatible-pointer-types]
-  117 |     gst_video_brightness_plugin_init,
-      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      |     |
-      |     void (*)(GstVideoBrightnessPlugin *) {aka void (*)(struct _GstVideoBrightnessPlugin *)}
-/usr/include/gstreamer-1.0/gst/gstplugin.h:285:20: note: in definition of macro ‘GST_PLUGIN_DEFINE’
-  285 |       description, init, version, license, \
-      |                    ^~~~
-/usr/include/gstreamer-1.0/gst/gstplugin.h:320:76: note: expected ‘GstPluginInitFunc’ {aka ‘int (*)(struct _GstPlugin *)’} but argument is of type ‘void (*)(GstVideoBrightnessPlugin *)’ {aka ‘void (*)(struct _GstVideoBrightnessPlugin *)’}
-  320 |                                                          GstPluginInitFunc init_func,
-      |    
-
-
-
-
-
-
-------------------
-
-
-
-video_brightness.c:77:1: error: macro "GST_PLUGIN_DEFINE" passed 14 arguments, but takes just 9
-   77 | )
-      | ^
-In file included from /usr/include/gstreamer-1.0/gst/gstelementfactory.h:38,
-                 from /usr/include/gstreamer-1.0/gst/gstelement.h:226,
-                 from /usr/include/gstreamer-1.0/gst/gstbin.h:27,
-                 from /usr/include/gstreamer-1.0/gst/gst.h:35,
-                 from video_brightness.c:1:
-/usr/include/gstreamer-1.0/gst/gstplugin.h:255: note: macro "GST_PLUGIN_DEFINE" defined here
-  255 | #define GST_PLUGIN_DEFINE(major,minor,name,description,init,version,license,package,origin) \
-      |
-video_brightness.c:62:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ at end of input
-   62 | GST_PLUGIN_DEFINE(
-      | ^~~~~~~~~~~~~~~~~
--------------------------------------
-
-
-video_brightness.c:74:1: error: macro "GST_PLUGIN_DEFINE" passed 10 arguments, but takes just 9
-   74 | )
-      | ^
-In file included from /usr/include/gstreamer-1.0/gst/gstelementfactory.h:38,
-                 from /usr/include/gstreamer-1.0/gst/gstelement.h:226,
-                 from /usr/include/gstreamer-1.0/gst/gstbin.h:27,
-                 from /usr/include/gstreamer-1.0/gst/gst.h:35,
-                 from video_brightness.c:1:
-/usr/include/gstreamer-1.0/gst/gstplugin.h:255: note: macro "GST_PLUGIN_DEFINE" defined here
-  255 | #define GST_PLUGIN_DEFINE(major,minor,name,description,init,version,license,package,origin) \
-      |
-video_brightness.c:63:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ at end of input
-   63 | GST_PLUGIN_DEFINE(
-      | ^~~~~~~~~~~~~~~~~
------------------------------------------
-
-
-video_bright.c:63:17: error: conflicting types for ‘gst_video_brightness_plugin_init’; have ‘gboolean(GstPlugin *)’ {aka ‘int(struct _GstPlugin *)’}
-   63 | static gboolean gst_video_brightness_plugin_init(GstPlugin *plugin) {
-      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-video_bright.c:45:13: note: previous definition of ‘gst_video_brightness_plugin_init’ with type ‘void(GstVideoBrightnessPlugin *)’ {aka ‘void(struct _GstVideoBrightnessPlugin *)’}
-   45 | static void gst_video_brightness_plugin_init(GstVideoBrightnessPlugin *plugin) {
-      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-video_bright.c:77:1: error: macro "GST_PLUGIN_DEFINE" passed 10 arguments, but takes just 9
-   77 | )
-      | ^
-In file included from /usr/include/gstreamer-1.0/gst/gstelementfactory.h:38,
-                 from /usr/include/gstreamer-1.0/gst/gstelement.h:226,
-                 from /usr/include/gstreamer-1.0/gst/gstbin.h:27,
-                 from /usr/include/gstreamer-1.0/gst/gst.h:35,
-                 from video_bright.c:1:
-/usr/include/gstreamer-1.0/gst/gstplugin.h:255: note: macro "GST_PLUGIN_DEFINE" defined here
-  255 | #define GST_PLUGIN_DEFINE(major,minor,name,description,init,version,license,package,origin) \
-      |
-video_bright.c:66:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ at end of input
-   66 | GST_PLUGIN_DEFINE(
-      | ^~~~~~~~~~~~~~~~~
---------------------------------------
-
-
-video_brightness.c:137:1: error: macro "GST_PLUGIN_DEFINE" passed 10 arguments, but takes just 9
-  137 | )
-      | ^
-In file included from /usr/include/gstreamer-1.0/gst/gstelementfactory.h:38,
-                 from /usr/include/gstreamer-1.0/gst/gstelement.h:226,
-                 from /usr/include/gstreamer-1.0/gst/gstbin.h:27,
-                 from /usr/include/gstreamer-1.0/gst/gst.h:35,
-                 from video_brightness.c:1:
-/usr/include/gstreamer-1.0/gst/gstplugin.h:255: note: macro "GST_PLUGIN_DEFINE" defined here
-  255 | #define GST_PLUGIN_DEFINE(major,minor,name,description,init,version,license,package,origin) \
-      |
-video_brightness.c:115:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ at end of input
-  115 | GST_PLUGIN_DEFINE(
-      | ^~~~~~~~~~~~~~~~~
-
-------------------------------------------------
-
-video_balance.c:1:10: fatal error: gst/gst.h: No such file or directory
-    1 | #include <gst/gst.h>
-      |          ^~~~~~~~~~~
-compilation terminated.
-
-
