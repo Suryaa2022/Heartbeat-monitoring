@@ -1,34 +1,11 @@
 
-gstvideobalance.c: In function ‘gst_video_balance_plugin_transform_ip’:
-gstvideobalance.c:97:28: warning: unused variable ‘plugin’ [-Wunused-variable]
-   97 |     GstVideoBalancePlugin *plugin = GST_VIDEO_BALANCE_PLUGIN(trans);
-      |                            ^~~~~~
 In file included from /usr/include/gstreamer-1.0/gst/gstelementfactory.h:38,
                  from /usr/include/gstreamer-1.0/gst/gstelement.h:226,
                  from /usr/include/gstreamer-1.0/gst/gstbin.h:27,
                  from /usr/include/gstreamer-1.0/gst/gst.h:35,
-                 from gstvideobalance.c:1:
-gstvideobalance.c: At top level:
+                 from videobalance.c:1:
 /usr/include/gstreamer-1.0/gst/gstplugin.h:268:3: error: ‘PACKAGE’ undeclared here (not in a function)
   268 |   PACKAGE, \
       |   ^~~~~~~
-gstvideobalance.c:155:1: note: in expansion of macro ‘GST_PLUGIN_DEFINE’
-  155 | GST_PLUGIN_DEFINE(GST_VERSION_MAJOR, GST_VERSION_MINOR, videobalance, "Video balance plugin", gst_video_balance_plugin_register, "1.0", "LGPL", "GStreamer", "http://gstreamer.net/")
-      | ^~~~~~~~~~~~~~~~~
-
-
---------------------------
-
-cc1: fatal error: videobalance.c: No such file or directory
-compilation terminated.
-lg@si-core:~/surya/plugin$ gcc -o gstvideobalance.so -shared -fPIC -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -lgstreamer-1.0 -lgobject-2.0 -lglib-2.0 gstvideobalance.c
-In file included from /usr/include/gstreamer-1.0/gst/gstelementfactory.h:38,
-                 from /usr/include/gstreamer-1.0/gst/gstelement.h:226,
-                 from /usr/include/gstreamer-1.0/gst/gstbin.h:27,
-                 from /usr/include/gstreamer-1.0/gst/gst.h:35,
-                 from gstvideobalance.c:1:
-/usr/include/gstreamer-1.0/gst/gstplugin.h:268:3: error: ‘PACKAGE’ undeclared here (not in a function)
-  268 |   PACKAGE, \
-      |   ^~~~~~~
-gstvideobalance.c:79:1: note: in expansion of macro ‘GST_PLUGIN_DEFINE’
-   79 | GST_PLUGIN_DEFINE(GST_VERSION_MAJOR, GST_VERSION_MINOR, videobalance, "Video balance plugin", gst_video_balance_plugin_register, "1.0", "LGPL", "GStreamer", "http://gstreamer.net/")
+videobalance.c:89:1: note: in expansion of macro ‘GST_PLUGIN_DEFINE’
+   89 | GST_PLUGIN_DEFINE(GST_VERSION_MAJOR, GST_VERSION_MINOR, videobalance, "Video balance plugin", gst_video_balance_plugin_register, "1.0", "LGPL", "GStreamer", "http://gstreamer.net/")
