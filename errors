@@ -76,3 +76,47 @@ videoadjust.c:191:1: warning: data definition has no type or storage class
 videoadjust.c:191:1: warning: type defaults to ‘int’ in declaration of ‘GST_PLUGIN_DEFINE’ [-Wimplicit-int]
 lg@si-core:~/surya/plugin$
 
+----------------->>>....----------------------
+
+
+videoadjust.c: In function ‘gst_video_balance_set_property’:
+videoadjust.c:61:26: warning: implicit declaration of function ‘GST_VIDEO_BALANCE’; did you mean ‘GST_COLOR_BALANCE’? [-Wimplicit-function-declaration]
+   61 |  GstVideoBalance *self = GST_VIDEO_BALANCE(object);
+      |                          ^~~~~~~~~~~~~~~~~
+      |                          GST_COLOR_BALANCE
+videoadjust.c:61:26: warning: initialization of ‘GstVideoBalance *’ {aka ‘struct _GstVideoBalance *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+videoadjust.c: In function ‘gst_video_balance_get_property’:
+videoadjust.c:81:26: warning: initialization of ‘GstVideoBalance *’ {aka ‘struct _GstVideoBalance *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+   81 |  GstVideoBalance *self = GST_VIDEO_BALANCE(object);
+      |                          ^~~~~~~~~~~~~~~~~
+videoadjust.c: In function ‘gst_video_balance_transform_ip’:
+videoadjust.c:101:26: warning: initialization of ‘GstVideoBalance *’ {aka ‘struct _GstVideoBalance *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+  101 |  GstVideoBalance *self = GST_VIDEO_BALANCE(trans);
+      |                          ^~~~~~~~~~~~~~~~~
+videoadjust.c:106:69: error: ‘GstPad’ {aka ‘struct _GstPad’} has no member named ‘current_caps’
+  106 |  if (!gst_video_frame_map(&frame, GST_BASE_TRANSFORM_SINK_PAD(trans)->current_caps, buffer, GST_MAP_READWRITE)) {
+      |                                                                     ^~
+videoadjust.c: In function ‘plugin_init’:
+videoadjust.c:159:37: error: stray ‘\342’ in program
+  159 | return gst_element_register(plugin, “videobalance”, GST_RANK_NONE, GST_TYPE_VIDEO_BALANCE);
+      |                                     ^
+videoadjust.c:159:50: error: stray ‘\342’ in program
+  159 | return gst_element_register(plugin, “videobalance”, GST_RANK_NONE, GST_TYPE_VIDEO_BALANCE);
+      |                                                  ^
+videoadjust.c:159:38: error: ‘videobalance’ undeclared (first use in this function); did you mean ‘GstVideoBalance’?
+  159 | return gst_element_register(plugin, “videobalance”, GST_RANK_NONE, GST_TYPE_VIDEO_BALANCE);
+      |                                      ^~~~~~~~~~~~
+      |                                      GstVideoBalance
+videoadjust.c:159:38: note: each undeclared identifier is reported only once for each function it appears in
+videoadjust.c:159:68: error: ‘GST_TYPE_VIDEO_BALANCE’ undeclared (first use in this function); did you mean ‘GST_TYPE_COLOR_BALANCE’?
+  159 | return gst_element_register(plugin, “videobalance”, GST_RANK_NONE, GST_TYPE_VIDEO_BALANCE);
+      |                                                                    ^~~~~~~~~~~~~~~~~~~~~~
+      |                                                                    GST_TYPE_COLOR_BALANCE
+videoadjust.c: At top level:
+videoadjust.c:169:25: error: unterminated argument list invoking macro "GST_PLUGIN_DEFINE"
+  169 | “http://gstreamer.net/”)
+      |                         ^
+videoadjust.c:161:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ at end of input
+  161 | GST_PLUGIN_DEFINE(GST_VERSION_MAJOR,
+
+
