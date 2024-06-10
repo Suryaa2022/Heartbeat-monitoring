@@ -1,2 +1,12 @@
-Cloning into 'gst-template'...
-fatal: unable to access 'https://gitlab.freedesktop.org/gstreamer/gst-template.git/': server certificate verification failed. CAfile: none CRLfile: none
+
+
+[1/9] Compiling C object gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o
+FAILED: gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o
+cc -Igst-plugin/libgstvideoadjust.so.p -Igst-plugin -I../gst-plugin -I/usr/include/gstreamer-1.0 -I/usr/include/x86_64-linux-gnu -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -DHAVE_CONFIG_H -MD -MQ gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o -MF gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o.d -o gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o -c ../gst-plugin/src/gstvideoadjust.c
+In file included from ../gst-plugin/src/gstvideoadjust.c:66:
+../gst-plugin/src/gstvideoadjust.h:47:2: error: #endif without #if
+   47 | #endif /* __GST_VIDEOADJUST_H__ */
+      |  ^~~~~
+[5/9] Compiling C object gst-plugin/libgstaudiofilterexample.so.p/src_gstaudiofilter.c.o
+ninja: build stopped: subcommand failed.
+
