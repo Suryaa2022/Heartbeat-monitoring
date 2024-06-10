@@ -1,31 +1,115 @@
+Pipeline is PREROLLED ...
+Setting pipeline to PLAYING ...
+Redistribute latency...
+New clock: GstSystemClock
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
 
-
-[1/9] Compiling C object gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o
-FAILED: gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o
-cc -Igst-plugin/libgstvideoadjust.so.p -Igst-plugin -I../gst-plugin -I/usr/include/gstreamer-1.0 -I/usr/include/x86_64-linux-gnu -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -DHAVE_CONFIG_H -MD -MQ gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o -MF gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o.d -o gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o -c ../gst-plugin/src/gstvideoadjust.c
-In file included from ../gst-plugin/src/gstvideoadjust.c:66:
-../gst-plugin/src/gstvideoadjust.h:47:2: error: #endif without #if
-   47 | #endif /* __GST_VIDEOADJUST_H__ */
-      |  ^~~~~
-[5/9] Compiling C object gst-plugin/libgstaudiofilterexample.so.p/src_gstaudiofilter.c.o
-ninja: build stopped: subcommand failed.
-
-
---------------->>
-
-ninja: Entering directory `build'
-[0/1] Installing files.
-Traceback (most recent call last):
-  File "/home/lg/.local/lib/python3.10/site-packages/mesonbuild/mesonmain.py", line 186, in run
-    return options.run_func(options)
-  File "/home/lg/.local/lib/python3.10/site-packages/mesonbuild/minstall.py", line 854, in run
-    with open(os.path.join(log_dir, 'install-log.txt'), 'w', encoding='utf-8') as lf:
-PermissionError: [Errno 13] Permission denied: 'meson-private/../meson-logs/install-log.txt'
-
-ERROR: Unhandled python OSError. This is probably not a Meson bug, but an issue with your build environment.
-FAILED: meson-internal__install
-/home/lg/.local/bin/meson install --no-rebuild
-ninja: build stopped: subcommand failed.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+I'm plugged, therefore I'm in.
+^Chandling interrupt.
+Interrupt: Stopping pipeline ...
+Execution ended after 0:00:03.391263558
+Setting pipeline to NULL ...
+Freeing pipeline ..
 
 
 
