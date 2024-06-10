@@ -1,115 +1,13 @@
-Pipeline is PREROLLED ...
-Setting pipeline to PLAYING ...
-Redistribute latency...
-New clock: GstSystemClock
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
+ninja: Entering directory `build'
+[2/9] Compiling C object gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o
+FAILED: gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o
+cc -Igst-plugin/libgstvideoadjust.so.p -Igst-plugin -I../gst-plugin -I/usr/include/gstreamer-1.0 -I/usr/include/x86_64-linux-gnu -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -DHAVE_CONFIG_H -MD -MQ gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o -MF gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o.d -o gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o -c ../gst-plugin/src/gstvideoadjust.c
+../gst-plugin/src/gstvideoadjust.c:325:34: error: expected ‘;’, ‘,’ or ‘)’ before ‘*’ token
+  325 |     GValue * value, GParamSpec vs* pspec)
+      |                                  ^
+../gst-plugin/src/gstvideoadjust.c:139:13: warning: ‘gst_videoadjust_get_property’ used but never defined
+  139 | static void gst_videoadjust_get_property (GObject * object,
 
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-I'm plugged, therefore I'm in.
-^Chandling interrupt.
-Interrupt: Stopping pipeline ...
-Execution ended after 0:00:03.391263558
-Setting pipeline to NULL ...
-Freeing pipeline ..
 
 ----------------------------------------------->>
 
