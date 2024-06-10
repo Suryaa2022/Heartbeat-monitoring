@@ -16,20 +16,17 @@ ninja: build stopped: subcommand failed.
 ninja: Entering directory `build'
 [0/1] Installing files.
 Traceback (most recent call last):
-  File "/usr/lib/python3/dist-packages/mesonbuild/mesonmain.py", line 146, in run
+  File "/home/lg/.local/lib/python3.10/site-packages/mesonbuild/mesonmain.py", line 186, in run
     return options.run_func(options)
-  File "/usr/lib/python3/dist-packages/mesonbuild/minstall.py", line 811, in run
-    installer.do_install(datafilename)
-  File "/usr/lib/python3/dist-packages/mesonbuild/minstall.py", line 564, in do_install
-    d = self.check_installdata(pickle.load(ifile))
-AttributeError: Can't get attribute 'OptionString' on <module 'mesonbuild.interpreter.primitives.string' from '/usr/lib/python3/dist-packages/mesonbuild/interpreter/primitives/string.py'>
+  File "/home/lg/.local/lib/python3.10/site-packages/mesonbuild/minstall.py", line 854, in run
+    with open(os.path.join(log_dir, 'install-log.txt'), 'w', encoding='utf-8') as lf:
+PermissionError: [Errno 13] Permission denied: 'meson-private/../meson-logs/install-log.txt'
 
-ERROR: Unhandled python exception
-
-    This is a Meson bug and should be reported!
+ERROR: Unhandled python OSError. This is probably not a Meson bug, but an issue with your build environment.
 FAILED: meson-internal__install
 /home/lg/.local/bin/meson install --no-rebuild
 ninja: build stopped: subcommand failed.
+
 
 
 
