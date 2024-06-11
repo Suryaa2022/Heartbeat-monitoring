@@ -1,11 +1,69 @@
-[1/3] Compiling C object gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o
-../gst-plugin/src/gstvideoadjust.c:78:13: warning: ‘plugin_init’ defined but not used [-Wunused-function]
-   78 | static void plugin_init (GstVideoadjust * filter)
-      |             ^~~~~~~~~~~
-[2/3] Installing files.
-Installing gst-plugin/libgstplugin.so to /home/lg/work/sharan/PLUGIN-WRITE/prefix/lib/x86_64-linux-gnu/gstreamer-1.0
-Installing gst-plugin/libgstaudiofilterexample.so to /home/lg/work/sharan/PLUGIN-WRITE/prefix/lib/x86_64-linux-gnu/gstreamer-1.0
-Installing gst-plugin/libgstvideoadjust.so to /home/lg/work/sharan/PLUGIN-WRITE/prefix/lib/x86_64-linux-gnu/gstreamer-1.0
+
+BrightnesscontrastSetting pipeline to PAUSED ...
+Pipeline is PREROLLING ...
+Got context from element 'autovideosink0': gst.gl.GLDisplay=context, gst.gl.GLDisplay=(GstGLDisplay)"\(GstGLDisplayWayland\)\ gldisplaywayland0";
+0:00:00.106158684 1225414 0x5a927822e460 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received stream-start event: stream-start event: 0x5a92782666e0, time 99:99:99.999999999, seq-num 76, GstEventStreamStart, stream-id=(string)99fbfd69bf25cd39d67e5e799a933c20, flags=(GstStreamFlags)GST_STREAM_FLAG_NONE, group-id=(uint)1;
+0:00:00.107362986 1225414 0x5a927822e460 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received caps event: caps event: 0x712970004030, time 99:99:99.999999999, seq-num 82, GstEventCaps, caps=(GstCaps)"video/x-raw\,\ format\=\(string\)RGB\,\ width\=\(int\)640\,\ height\=\(int\)480\,\ framerate\=\(fraction\)30/1\,\ multiview-mode\=\(string\)mono\,\ pixel-aspect-ratio\=\(fraction\)1/1\,\ interlace-mode\=\(string\)progressive";
+0:00:00.109400633 1225414 0x5a927822e460 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received segment event: segment event: 0x7129700041f0, time 99:99:99.999999999, seq-num 72, GstEventSegment, segment=(GstSegment)"segment, flags=(GstSegmentFlags)GST_SEGMENT_FLAG_NONE, rate=(double)1, applied-rate=(double)1, format=(GstFormat)time, base=(guint64)0, offset=(guint64)0, start=(guint64)0, stop=(guint64)18446744073709551615, time=(guint64)0, position=(guint64)0, duration=(guint64)18446744073709551615;";
+Buffer size:921600
+Pipeline is PREROLLED ...
+Setting pipeline to PLAYING ...
+Redistribute latency...
+New clock: GstSystemClock
+Buffer size:921600
+Buffer size:921600
+Buffer size:92160099.
+Buffer size:921600
+Buffer size:921600
+Buffer size:921600
+Buffer size:92160099.
+Buffer size:921600
+Buffer size:921600
+Buffer size:92160099.
+Buffer size:921600
+Buffer size:92160099.
+Buffer size:921600
+Buffer size:921600
+Buffer size:92160099.
+Buffer size:921600
+Buffer size:921600
+Buffer size:921600
+Buffer size:92160099.
+Buffer size:921600
+Buffer size:921600
+Buffer size:92160099.
+Buffer size:921600
+Buffer size:921600
+Buffer size:92160099.
+Buffer size:921600
+Buffer size:921600
+Buffer size:92160099.
+Buffer size:921600
+Buffer size:921600
+Buffer size:92160099.
+Buffer size:921600
+Buffer size:921600
+Buffer size:92160099.
+Buffer size:921600
+Buffer size:921600
+Buffer size:92160099.
+Buffer size:921600
+Buffer size:921600
+Buffer size:92160099.
+Buffer size:921600
+Buffer size:92160099.
+Buffer size:921600
+Buffer size:921600
+Buffer size:921600
+Buffer size:92160099.
+Buffer size:921600
+Buffer size:921600
+Buffer size:92160099.
+^Chandling interrupt.
+Interrupt: Stopping pipeline ...
+Execution ended after 0:00:01.625799622
+Setting pipeline to NULL ...
+Freeing pipeline ...
 
 ------------------------------------>>..
 
