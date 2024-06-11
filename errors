@@ -1,26 +1,21 @@
 
-static GstFlowReturn
-gst_video_balance_transform_frame_ip (GstVideoFilter * vfilter,
-    GstVideoFrame * frame)
-{
-  GstVideoBalance *videobalance = GST_VIDEO_BALANCE (vfilter);
 
-  if (!videobalance->process)
-    goto not_negotiated;
+(gst-launch-1.0:1223698): GLib-GObject-WARNING **: 11:41:51.233: value "1.100000" of type 'gdouble' is invalid or out of range for property 'brightness' of type 'gdouble'
+Setting pipeline to PAUSED ...
+Pipeline is PREROLLING ...
+Got context from element 'autovideosink0': gst.gl.GLDisplay=context, gst.gl.GLDisplay=(GstGLDisplay)"\(GstGLDisplayWayland\)\ gldisplaywayland0";
+Redistribute latency...
+Redistribute latency...
+Buffer is not writeable
+ERROR: from element /GstPipeline:pipeline0/GstQTDemux:qtdemux0: Internal data stream error.
+Additional debug info:
+../gst/isomp4/qtdemux.c(6749): gst_qtdemux_loop (): /GstPipeline:pipeline0/GstQTDemux:qtdemux0:
+streaming stopped, reason error (-5)
+ERROR: pipeline doesn't want to preroll.
+Setting pipeline to NULL ...
+Buffer is not writeable
+Freeing pipeline ...
 
-  GST_OBJECT_LOCK (videobalance);
-  videobalance->process (videobalance, frame);
-  GST_OBJECT_UNLOCK (videobalance);
-
-  return GST_FLOW_OK;
-
-  /* ERRORS */
-not_negotiated:
-  {
-    GST_ERROR_OBJECT (videobalance, "Not negotiated yet");
-    return GST_FLOW_NOT_NEGOTIATED;
-  }
-}
 
 ------------------------------------>>..
 
