@@ -1,69 +1,45 @@
 
-BrightnesscontrastSetting pipeline to PAUSED ...
+
+BrightnesscontrastSaturationhueSetting pipeline to PAUSED ...
 Pipeline is PREROLLING ...
 Got context from element 'autovideosink0': gst.gl.GLDisplay=context, gst.gl.GLDisplay=(GstGLDisplay)"\(GstGLDisplayWayland\)\ gldisplaywayland0";
-0:00:00.106158684 1225414 0x5a927822e460 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received stream-start event: stream-start event: 0x5a92782666e0, time 99:99:99.999999999, seq-num 76, GstEventStreamStart, stream-id=(string)99fbfd69bf25cd39d67e5e799a933c20, flags=(GstStreamFlags)GST_STREAM_FLAG_NONE, group-id=(uint)1;
-0:00:00.107362986 1225414 0x5a927822e460 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received caps event: caps event: 0x712970004030, time 99:99:99.999999999, seq-num 82, GstEventCaps, caps=(GstCaps)"video/x-raw\,\ format\=\(string\)RGB\,\ width\=\(int\)640\,\ height\=\(int\)480\,\ framerate\=\(fraction\)30/1\,\ multiview-mode\=\(string\)mono\,\ pixel-aspect-ratio\=\(fraction\)1/1\,\ interlace-mode\=\(string\)progressive";
-0:00:00.109400633 1225414 0x5a927822e460 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received segment event: segment event: 0x7129700041f0, time 99:99:99.999999999, seq-num 72, GstEventSegment, segment=(GstSegment)"segment, flags=(GstSegmentFlags)GST_SEGMENT_FLAG_NONE, rate=(double)1, applied-rate=(double)1, format=(GstFormat)time, base=(guint64)0, offset=(guint64)0, start=(guint64)0, stop=(guint64)18446744073709551615, time=(guint64)0, position=(guint64)0, duration=(guint64)18446744073709551615;";
-Buffer size:921600
+0:00:00.109883413 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received stream-start event: stream-start event: 0x5eed6e7cfeb0, time 99:99:99.999999999, seq-num 87, GstEventStreamStart, stream-id=(string)4eb43ce07321f6fb9193f6e39bbf28e038e2647805adfe2dd499bc6818a6f4dc/001, flags=(GstStreamFlags)GST_STREAM_FLAG_NONE, group-id=(uint)1;
+Redistribute latency...
+0:00:00.117963187 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received caps event: caps event: 0x70a93c005640, time 99:99:99.999999999, seq-num 113, GstEventCaps, caps=(GstCaps)"video/x-raw\,\ width\=\(int\)720\,\ height\=\(int\)480\,\ interlace-mode\=\(string\)progressive\,\ pixel-aspect-ratio\=\(fraction\)32/27\,\ framerate\=\(fraction\)30/1\,\ format\=\(string\)RGB";
+Redistribute latency...
+0:00:00.118944858 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received segment event: segment event: 0x70a93c004d50, time 99:99:99.999999999, seq-num 94, GstEventSegment, segment=(GstSegment)"segment, flags=(GstSegmentFlags)GST_SEGMENT_FLAG_NONE, rate=(double)1, applied-rate=(double)1, format=(GstFormat)time, base=(guint64)0, offset=(guint64)0, start=(guint64)66666666, stop=(guint64)193533666666, time=(guint64)0, position=(guint64)66666666, duration=(guint64)18446744073709551615;";
+0:00:00.118996467 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c005410, time 99:99:99.999999999, seq-num 106, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ /\\\ AVC\"\,\ bitrate\=\(uint\)1418956\;";
+0:00:00.119044158 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c004f10, time 99:99:99.999999999, seq-num 103, GstTagList-global, taglist=(taglist)"taglist\,\ encoder\=\(string\)Lavf56.40.101\,\ container-format\=\(string\)\"ISO\\\ MP4/M4A\"\;";
+0:00:00.119083610 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c0054f0, time 99:99:99.999999999, seq-num 108, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\;";
 Pipeline is PREROLLED ...
 Setting pipeline to PLAYING ...
 Redistribute latency...
 New clock: GstSystemClock
-Buffer size:921600
-Buffer size:921600
-Buffer size:92160099.
-Buffer size:921600
-Buffer size:921600
-Buffer size:921600
-Buffer size:92160099.
-Buffer size:921600
-Buffer size:921600
-Buffer size:92160099.
-Buffer size:921600
-Buffer size:92160099.
-Buffer size:921600
-Buffer size:921600
-Buffer size:92160099.
-Buffer size:921600
-Buffer size:921600
-Buffer size:921600
-Buffer size:92160099.
-Buffer size:921600
-Buffer size:921600
-Buffer size:92160099.
-Buffer size:921600
-Buffer size:921600
-Buffer size:92160099.
-Buffer size:921600
-Buffer size:921600
-Buffer size:92160099.
-Buffer size:921600
-Buffer size:921600
-Buffer size:92160099.
-Buffer size:921600
-Buffer size:921600
-Buffer size:92160099.
-Buffer size:921600
-Buffer size:921600
-Buffer size:92160099.
-Buffer size:921600
-Buffer size:921600
-Buffer size:92160099.
-Buffer size:921600
-Buffer size:92160099.
-Buffer size:921600
-Buffer size:921600
-Buffer size:921600
-Buffer size:92160099.
-Buffer size:921600
-Buffer size:921600
-Buffer size:92160099.
-^Chandling interrupt.
+0:00:00.421114682 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c256820, time 99:99:99.999999999, seq-num 153, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)886320\,\ maximum-bitrate\=\(uint\)886320\;";
+0:00:00.453723921 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c005480, time 99:99:99.999999999, seq-num 156, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)861840\,\ maximum-bitrate\=\(uint\)886320\;";
+0:00:00.454308368 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c256640, time 99:99:99.999999999, seq-num 159, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)861840\,\ maximum-bitrate\=\(uint\)907440\;";
+0:00:00.518879341 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c0056b0, time 99:99:99.999999999, seq-num 162, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)861840\,\ maximum-bitrate\=\(uint\)983760\;";
+0:00:00.553048238 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c2566b0, time 99:99:99.999999999, seq-num 165, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)861840\,\ maximum-bitrate\=\(uint\)1015680\;";
+0:00:00.592624083 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c256890, time 99:99:99.999999999, seq-num 168, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)861840\,\ maximum-bitrate\=\(uint\)1164720\;";
+0:00:00.593222161 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c005410, time 99:99:99.999999999, seq-num 171, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)861840\,\ maximum-bitrate\=\(uint\)1217760\;";
+0:00:00.652539951 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c287000, time 99:99:99.999999999, seq-num 174, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)861840\,\ maximum-bitrate\=\(uint\)1342320\;";
+0:00:00.718887723 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c287150, time 99:99:99.999999999, seq-num 180, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)861840\,\ maximum-bitrate\=\(uint\)1400880\;";
+0:00:00.752099732 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c2872a0, time 99:99:99.999999999, seq-num 184, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)861840\,\ maximum-bitrate\=\(uint\)1541760\;";
+0:00:00.785458242 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c255480, time 99:99:99.999999999, seq-num 188, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)861840\,\ maximum-bitrate\=\(uint\)1552800\;";
+0:00:00.818679801 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c2555d0, time 99:99:99.999999999, seq-num 192, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)861840\,\ maximum-bitrate\=\(uint\)2198640\;";
+0:00:00.818721798 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c2554f0, time 99:99:99.999999999, seq-num 196, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)545760\,\ maximum-bitrate\=\(uint\)2198640\;";
+0:00:00.886038122 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c287310, time 99:99:99.999999999, seq-num 200, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)545760\,\ maximum-bitrate\=\(uint\)2283360\;";
+0:00:00.931865445 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c005480, time 99:99:99.999999999, seq-num 205, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)545760\,\ maximum-bitrate\=\(uint\)2365920\;";
+0:00:01.262982577 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c287310, time 99:99:99.999999999, seq-num 225, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)528000\,\ maximum-bitrate\=\(uint\)2365920\;";
+0:00:01.353203032 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c256720, time 99:99:99.999999999, seq-num 229, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)505200\,\ maximum-bitrate\=\(uint\)2365920\;";
+0:00:02.352072785 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c2871c0, time 99:99:99.999999999, seq-num 263, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)469920\,\ maximum-bitrate\=\(uint\)2365920\;";
+0:00:03.152153145 1228372 0x5eed6e7f5860 LOG              videoadjust gstvideoadjust.c:343:gst_videoadjust_sink_event:<videoadjust0> Received tag event: tag event: 0x70a93c287230, time 99:99:99.999999999, seq-num 289, GstTagList-stream, taglist=(taglist)"taglist\,\ video-codec\=\(string\)\"H.264\\\ \\\(High\\\ Profile\\\)\"\,\ bitrate\=\(uint\)1418956\,\ minimum-bitrate\=\(uint\)469920\,\ maximum-bitrate\=\(uint\)3061920\;";
+^Chandling interrupt. (2.1 %)
 Interrupt: Stopping pipeline ...
-Execution ended after 0:00:01.625799622
+Execution ended after 0:00:04.120721001
 Setting pipeline to NULL ...
 Freeing pipeline ...
+
 
 ------------------------------------>>..
 
