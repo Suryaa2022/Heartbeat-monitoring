@@ -1,10 +1,28 @@
-lg@si-core:~/work/sharan/PLUGIN-WRITE/gst-template/builddir$ ninja install
-[1/10] Compiling C object gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o
-FAILED: gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o
-cc -Igst-plugin/libgstvideoadjust.so.p -Igst-plugin -I../gst-plugin -I/usr/include/gstreamer-1.0 -I/usr/include/x86_64-linux-gnu -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -DHAVE_CONFIG_H -MD -MQ gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o -MF gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o.d -o gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o -c ../gst-plugin/src/gstvideoadjust.c
-../gst-plugin/src/gstvideoadjust.c:409:1: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ at end of input
-  409 | _videoadjust_chain
-      | ^~~~~~~~~~~~~~~~~~
+
+static GstFlowReturn
+gst_video_balance_transform_frame_ip (GstVideoFilter * vfilter,
+    GstVideoFrame * frame)
+{
+  GstVideoBalance *videobalance = GST_VIDEO_BALANCE (vfilter);
+
+  if (!videobalance->process)
+    goto not_negotiated;
+
+  GST_OBJECT_LOCK (videobalance);
+  videobalance->process (videobalance, frame);
+  GST_OBJECT_UNLOCK (videobalance);
+
+  return GST_FLOW_OK;
+
+  /* ERRORS */
+not_negotiated:
+  {
+    GST_ERROR_OBJECT (videobalance, "Not negotiated yet");
+    return GST_FLOW_NOT_NEGOTIATED;
+  }
+}
+
+------------------------------------>>..
 
 
 
