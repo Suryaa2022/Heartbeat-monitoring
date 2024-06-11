@@ -1,39 +1,11 @@
-
 [1/3] Compiling C object gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o
-FAILED: gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o
-cc -Igst-plugin/libgstvideoadjust.so.p -Igst-plugin -I../gst-plugin -I/usr/include/gstreamer-1.0 -I/usr/include/x86_64-linux-gnu -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O0 -g -fPIC -pthread -DHAVE_CONFIG_H -MD -MQ gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o -MF gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o.d -o gst-plugin/libgstvideoadjust.so.p/src_gstvideoadjust.c.o -c ../gst-plugin/src/gstvideoadjust.c
-In file included from /usr/include/gstreamer-1.0/gst/gst.h:55,
-                 from ../gst-plugin/src/gstvideoadjust.c:70:
-../gst-plugin/src/gstvideoadjust.c: In function ‘gst_videoadjust_sink_event’:
-../gst-plugin/src/gstvideoadjust.c:76:25: error: ‘videoadjust_debug’ undeclared (first use in this function); did you mean ‘gst_videoadjust_debug’?
-   76 | #define GST_CAT_DEFAULT videoadjust_debug
-      |                         ^~~~~~~~~~~~~~~~~
-/usr/include/gstreamer-1.0/gst/gstinfo.h:690:21: note: in definition of macro ‘GST_CAT_LEVEL_LOG’
-  690 |     gst_debug_log ((cat), (level), __FILE__, GST_FUNCTION, __LINE__,    \
-      |                     ^~~
-/usr/include/gstreamer-1.0/gst/gstinfo.h:1108:60: note: in expansion of macro ‘GST_CAT_DEFAULT’
- 1108 | #define GST_LOG_OBJECT(obj,...)         GST_CAT_LEVEL_LOG (GST_CAT_DEFAULT, GST_LEVEL_LOG,     obj,  __VA_ARGS__)
-      |                                                            ^~~~~~~~~~~~~~~
-../gst-plugin/src/gstvideoadjust.c:340:2: note: in expansion of macro ‘GST_LOG_OBJECT’
-  340 |  GST_LOG_OBJECT (filter, "Received %s event: %" GST_PTR_FORMAT,
-      |  ^~~~~~~~~~~~~~
-../gst-plugin/src/gstvideoadjust.c:76:25: note: each undeclared identifier is reported only once for each function it appears in
-   76 | #define GST_CAT_DEFAULT videoadjust_debug
-      |                         ^~~~~~~~~~~~~~~~~
-/usr/include/gstreamer-1.0/gst/gstinfo.h:690:21: note: in definition of macro ‘GST_CAT_LEVEL_LOG’
-  690 |     gst_debug_log ((cat), (level), __FILE__, GST_FUNCTION, __LINE__,    \
-      |                     ^~~
-/usr/include/gstreamer-1.0/gst/gstinfo.h:1108:60: note: in expansion of macro ‘GST_CAT_DEFAULT’
- 1108 | #define GST_LOG_OBJECT(obj,...)         GST_CAT_LEVEL_LOG (GST_CAT_DEFAULT, GST_LEVEL_LOG,     obj,  __VA_ARGS__)
-      |                                                            ^~~~~~~~~~~~~~~
-../gst-plugin/src/gstvideoadjust.c:340:2: note: in expansion of macro ‘GST_LOG_OBJECT’
-  340 |  GST_LOG_OBJECT (filter, "Received %s event: %" GST_PTR_FORMAT,
-      |  ^~~~~~~~~~~~~~
-At top level:
 ../gst-plugin/src/gstvideoadjust.c:78:13: warning: ‘plugin_init’ defined but not used [-Wunused-function]
    78 | static void plugin_init (GstVideoadjust * filter)
       |             ^~~~~~~~~~~
-ninja: build stopped: subcommand failed.
+[2/3] Installing files.
+Installing gst-plugin/libgstplugin.so to /home/lg/work/sharan/PLUGIN-WRITE/prefix/lib/x86_64-linux-gnu/gstreamer-1.0
+Installing gst-plugin/libgstaudiofilterexample.so to /home/lg/work/sharan/PLUGIN-WRITE/prefix/lib/x86_64-linux-gnu/gstreamer-1.0
+Installing gst-plugin/libgstvideoadjust.so to /home/lg/work/sharan/PLUGIN-WRITE/prefix/lib/x86_64-linux-gnu/gstreamer-1.0
 
 ------------------------------------>>..
 
