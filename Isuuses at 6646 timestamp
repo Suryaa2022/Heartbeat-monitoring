@@ -92,3 +92,26 @@
 177807 2024/07/02 07:17:24.460610 6722.5964 195 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:47:24 kernel: [ 6722.664650 / 07-02 01:47:24.458][0] CFG80211-INFO) wl_chanim_stats : chanspec=0xd897 tx=1 inbss=1 obss=2 nocat=1 nopkt=1 doze=0 txop=98 goodtx=1 badtx=0 glitch=8 badplcp=1 knoise=-88 idle=100 timestamp=6721758
 179257 2024/07/02 07:17:26.066460 6724.1915 231 CCIC MMSV MMSV 1150 log info verbose 1 [playerstub.cpp:373][stop] mid=[231768], ins_num=[4], aid=[1414], f=[1]
 179262 2024/07/02 07:17:26.066646 6724.1918 236 CCIC MMSV MMSV 1150 log info verbose 1 [playerengine_manager.cpp:190][removeMediaId] Removed the connection name[:1.76] since the player engine is destroyed
+
+
+void PlayerProvider::onError(const ptree& pt) {
+    auto verror_code = pt.get_optional<int>("ErrorCode");
+    auto opt = pt.get_optional<std::string>("ErrorText");
+    std::string err_msg = "";
+
+    if (!verror_code)
+        return;
+
+    int32_t Idx = getCurrentTrackAttrIdx(sender_name_);
+    if (Idx < 0) {
+        MMLogInfo("Invalid Track index");
+        return;
+    }
+
+    int error_code = *verror_code;
+    switch (error_code) {
+        case ERROR_OPERATION_NOT_SUPPORTED: // FALL-THROUGH
+        case ERROR_PIPELINE_NOT_CREATED: {
+            MMLogInfo("[%d] ignored", error_code);
+            return;
+        }
