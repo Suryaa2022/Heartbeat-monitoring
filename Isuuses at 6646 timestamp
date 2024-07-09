@@ -1,0 +1,94 @@
+61845 2024/07/02 07:16:08.669424 6646.8049 11 CCIC VA DBG 2695 log info verbose 1 onMessageRecieved(sender: ccos.hmi.vr.center-front, msgID: APP_REQUEST_ACTION, preparing: 0)
+61847 2024/07/02 07:16:08.669462 6646.8054 13 CCIC VA DBG 2695 log info verbose 1 [VAClusterHudService]initState()
+61846 2024/07/02 07:16:08.669445 6646.8054 12 CCIC VA DBG 2695 log error verbose 1 received jsonData: {"command":"mediaPlay","cp":"kakao","osdText":"음성 안내 중입니다. 핸들의 [★] 버튼을 눌러 종료할 수 있습니다.","prevLayout":0,"topic":"weather","tts":{"mediaURL":"http://kakaoi-newtone-hdkia.kakao.com/v2/synthesize/5c250859c7f6118cea9faf235e88c9fc.mp3","text":"현재 신대방동은 비가 와요. 이후 오전 11시에는 비가 오고, 오후 4시에는 흐리겠어요. 기온은 22도에서 26도예요. 미세먼지 농도는 현재는 보통이고, 오후는 좋음이에요. 우산 챙기는 거 잊지 마세요.","token":"shadow//5e1d7719-9399-426f-a742-5b08a7c710f2"},"urlArray":null}
+61848 2024/07/02 07:16:08.669478 6646.8055 14 CCIC VA DBG 2695 log error verbose 1 iac message received from VR
+61849 2024/07/02 07:16:08.669495 6646.8056 15 CCIC VA DBG 2695 log error verbose 1 {
+61861 2024/07/02 07:16:08.669779 6646.8057 27 CCIC VA DBG 2695 log error verbose 1 }
+61860 2024/07/02 07:16:08.669763 6646.8057 26 CCIC VA DBG 2695 log error verbose 1 "urlArray": null
+61859 2024/07/02 07:16:08.669748 6646.8057 25 CCIC VA DBG 2695 log error verbose 1 },
+61858 2024/07/02 07:16:08.669729 6646.8057 24 CCIC VA DBG 2695 log error verbose 1 "token": "shadow//5e1d7719-9399-426f-a742-5b08a7c710f2"
+61857 2024/07/02 07:16:08.669679 6646.8057 23 CCIC VA DBG 2695 log error verbose 1 "text": "현재 신대방동은 비가 와요. 이후 오전 11시에는 비가 오고, 오후 4시에는 흐리겠어요. 기온은 22도에서 26도예요. 미세먼지 농도는 현재는 보통이고, 오후는 좋음이에요. 우산 챙기는 거 잊지 마세요.",
+61856 2024/07/02 07:16:08.669663 6646.8057 22 CCIC VA DBG 2695 log error verbose 1 "mediaURL": "http://kakaoi-newtone-hdkia.kakao.com/v2/synthesize/5c250859c7f6118cea9faf235e88c9fc.mp3",
+61855 2024/07/02 07:16:08.669642 6646.8057 21 CCIC VA DBG 2695 log error verbose 1 "tts": {
+61854 2024/07/02 07:16:08.669575 6646.8057 20 CCIC VA DBG 2695 log error verbose 1 "topic": "weather",
+61853 2024/07/02 07:16:08.669559 6646.8057 19 CCIC VA DBG 2695 log error verbose 1 "prevLayout": 0,
+61852 2024/07/02 07:16:08.669543 6646.8057 18 CCIC VA DBG 2695 log error verbose 1 "osdText": "음성 안내 중입니다. 핸들의 [★] 버튼을 눌러 종료할 수 있습니다.",
+61851 2024/07/02 07:16:08.669527 6646.8057 17 CCIC VA DBG 2695 log error verbose 1 "cp": "kakao",
+61850 2024/07/02 07:16:08.669511 6646.8057 16 CCIC VA DBG 2695 log error verbose 1 "command": "mediaPlay",
+61862 2024/07/02 07:16:08.669796 6646.8058 28 CCIC VA DBG 2695 log info verbose 1 setVRAssistantStatus
+61863 2024/07/02 07:16:08.672588 6646.8083 29 CCIC VA DBG 2695 log error verbose 1 setAnnounceStatus(PrepareToObtainStreamingFocus)
+61864 2024/07/02 07:16:08.672645 6646.8084 30 CCIC VA DBG 2695 log info verbose 1 obtainFocusImpl : 0
+61866 2024/07/02 07:16:08.672677 6646.8088 31 CCIC VA DBG 2695 log error verbose 1 obtainFocus for tts 0
+61889 2024/07/02 07:16:08.674549 6646.8109 37 CCIC VA DBG 2695 log error verbose 1 Call obtainFocus(sourceType: 1090519049, FRONT)
+61888 2024/07/02 07:16:08.674533 6646.8109 36 CCIC VA DBG 2695 log info verbose 1 source[2]: 1075838984
+61887 2024/07/02 07:16:08.674513 6646.8109 35 CCIC VA DBG 2695 log info verbose 1 source[1]: 537002038
+61886 2024/07/02 07:16:08.674497 6646.8109 34 CCIC VA DBG 2695 log info verbose 1 source[0]: 1075838977
+61885 2024/07/02 07:16:08.674482 6646.8109 33 CCIC VA DBG 2695 log info verbose 1 Focused audio sources count: 3
+61883 2024/07/02 07:16:08.674451 6646.8109 32 CCIC VA DBG 2695 log info verbose 1 Ignore useless return value from HAudioFocus::getFocusedSources(): [0]
+62010 2024/07/02 07:16:08.681032 6646.8166 38 CCIC VA DBG 2695 log error verbose 1 Result obtainFocus() -> return: OK, focusId: 205
+62570 2024/07/02 07:16:08.723444 6646.8517 41 CCIC VA DBG 2695 log info verbose 1 onAudioFocusObtained.size() 1 onVRAudioFocusReleased.size() 0
+62569 2024/07/02 07:16:08.723428 6646.8517 40 CCIC VA DBG 2695 log info verbose 1 VR AudioFocus released
+62568 2024/07/02 07:16:08.723412 6646.8517 39 CCIC VA DBG 2695 log info verbose 1 VAAudioManager::onAudioFocusChanged(source: HU_VR, device: SPEAKER, status: LOSS)
+62854 2024/07/02 07:16:08.732933 6646.8685 42 CCIC VA DBG 2695 log error verbose 1 onUpdateAppModeInfoUpdated infoName: VRAssistantStatus
+62859 2024/07/02 07:16:08.733035 6646.8686 47 CCIC VA DBG 2695 log error verbose 1 }
+62858 2024/07/02 07:16:08.732998 6646.8686 46 CCIC VA DBG 2695 log error verbose 1 "va_state": "RENDERING_CONTENT"
+62857 2024/07/02 07:16:08.732982 6646.8686 45 CCIC VA DBG 2695 log error verbose 1 "va_domain": "weather",
+62856 2024/07/02 07:16:08.732965 6646.8686 44 CCIC VA DBG 2695 log error verbose 1 "va_content": "weather",
+62855 2024/07/02 07:16:08.732949 6646.8686 43 CCIC VA DBG 2695 log error verbose 1 jsonString: {
+63137 2024/07/02 07:16:08.763471 6646.8945 39 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:08 kernel: [ 6646.962842 / 07-02 01:46:08.756][2] [dma_request_chan] device name :virt-alt-pcm channel name:rx15
+63136 2024/07/02 07:16:08.763418 6646.8945 38 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:08 kernel: [ 6646.962242 / 07-02 01:46:08.755][2] virt-alt-pcm virt-alt-pcm: soc_pcm_open: DAI = ADMAIF15
+63135 2024/07/02 07:16:08.763305 6646.8945 37 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:08 kernel: [ 6646.962214 / 07-02 01:46:08.755][2] snd_pcm_open: pid = 227777, comm = AppSDS_AudioIn
+63138 2024/07/02 07:16:08.763517 6646.8946 40 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:08 kernel: [ 6646.963243 / 07-02 01:46:08.756][2] virt-alt-pcm virt-alt-pcm: There is no need to change i2s1 rate.
+63142 2024/07/02 07:16:08.763651 6646.8956 42 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:08 kernel: [ 6646.963600 / 07-02 01:46:08.757][2] virt-alt-pcm virt-alt-pcm: tegra210_admaif_start_capture: DAI = ADMAIF15
+63141 2024/07/02 07:16:08.763598 6646.8956 41 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:08 kernel: [ 6646.963517 / 07-02 01:46:08.757][2] Pcm trigger for admaif15 capture: cmd_id 1
+63172 2024/07/02 07:16:08.764508 6646.8966 49 CCIC VA DBG 2695 log info verbose 1 VAAudioManager::onAudioFocusChanged(source: KAKAO_I_STREAMING, device: SPEAKER, status: GET)
+63171 2024/07/02 07:16:08.764492 6646.8966 48 CCIC VA DBG 2695 log info verbose 1 VAAudioManager::onAudioFocusChanged(source: Unknown, device: SPEAKER, status: PENDING)
+63249 2024/07/02 07:16:08.773921 6646.9103 43 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:08 kernel: [ 6646.979264 / 07-02 01:46:08.772][3] virt-alt-pcm virt-alt-pcm: set mixer duration: rx=3, duration=9600 (pid=348, comm=audiocontrolser)
+63256 2024/07/02 07:16:08.776553 6646.9129 44 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:08 kernel: [ 6646.979550 / 07-02 01:46:08.773][3] virt-alt-pcm virt-alt-pcm: set mixer gain: rx=3, gain=65536 (pid=348, comm=audiocontrolser)
+63291 2024/07/02 07:16:08.791559 6646.9274 50 CCIC VA DBG 2695 log error verbose 1 VAPlayStatusNotifier::clearTask
+63296 2024/07/02 07:16:08.791645 6646.9275 55 CCIC VA DBG 2695 log info verbose 1 promptText:
+63295 2024/07/02 07:16:08.791629 6646.9275 54 CCIC VA DBG 2695 log info verbose 1 [VR-HUD] VAClusterHudService::vrRequestUpdateVRStateApp enum state_update, speaking
+63294 2024/07/02 07:16:08.791613 6646.9275 53 CCIC VA DBG 2695 log error verbose 1 onUrlAudioPlayRequested : url array size for audio play : 1
+63293 2024/07/02 07:16:08.791596 6646.9275 52 CCIC VA DBG 2695 log info verbose 1 synthesizer mediaURL : [http://kakaoi-newtone-hdkia.kakao.com/v2/synthesize/5c250859c7f6118cea9faf235e88c9fc.mp3]
+63292 2024/07/02 07:16:08.791579 6646.9275 51 CCIC VA DBG 2695 log error verbose 1 stopTimer!
+63297 2024/07/02 07:16:08.791661 6646.9276 56 CCIC VA DBG 2695 log info verbose 1 Set by replacing state [speaking] with [end]
+63313 2024/07/02 07:16:08.793177 6646.9285 68 CCIC VA DBG 2695 log error verbose 1 },
+63312 2024/07/02 07:16:08.793143 6646.9285 67 CCIC VA DBG 2695 log error verbose 1 "prompt_string": ""
+63311 2024/07/02 07:16:08.793126 6646.9285 66 CCIC VA DBG 2695 log error verbose 1 "period_to_show": 0,
+63310 2024/07/02 07:16:08.793110 6646.9285 65 CCIC VA DBG 2695 log error verbose 1 "prompt": {
+63309 2024/07/02 07:16:08.793093 6646.9285 64 CCIC VA DBG 2695 log error verbose 1 "kakao_state": 0,
+63308 2024/07/02 07:16:08.793075 6646.9285 63 CCIC VA DBG 2695 log error verbose 1 "kakao_enable": 0,
+63307 2024/07/02 07:16:08.793037 6646.9285 62 CCIC VA DBG 2695 log error verbose 1 "domain": "weather",
+63306 2024/07/02 07:16:08.792103 6646.9285 61 CCIC VA DBG 2695 log error verbose 1 "cmd": "state_update",
+63305 2024/07/02 07:16:08.792086 6646.9285 60 CCIC VA DBG 2695 log error verbose 1 "character": "ryan",
+63304 2024/07/02 07:16:08.792069 6646.9285 59 CCIC VA DBG 2695 log error verbose 1 "data": {
+63303 2024/07/02 07:16:08.792051 6646.9285 58 CCIC VA DBG 2695 log error verbose 1 data: {
+63302 2024/07/02 07:16:08.791973 6646.9285 57 CCIC VA DBG 2695 log error verbose 1 sendMessage(targetAppId: ccos.sys.ecumanager, msgID: 2567)
+63325 2024/07/02 07:16:08.793459 6646.9286 80 CCIC VA DBG 2695 log error verbose 1 }
+63324 2024/07/02 07:16:08.793435 6646.9286 79 CCIC VA DBG 2695 log error verbose 1 "version": "1.0"
+63323 2024/07/02 07:16:08.793356 6646.9286 78 CCIC VA DBG 2695 log error verbose 1 "service_type": "HUD",
+63322 2024/07/02 07:16:08.793339 6646.9286 77 CCIC VA DBG 2695 log error verbose 1 "msg_comm_type": "1:1",
+63321 2024/07/02 07:16:08.793322 6646.9286 76 CCIC VA DBG 2695 log error verbose 1 },
+63320 2024/07/02 07:16:08.793305 6646.9286 75 CCIC VA DBG 2695 log error verbose 1 }
+63319 2024/07/02 07:16:08.793286 6646.9286 74 CCIC VA DBG 2695 log error verbose 1 "wave_enable": "enabled"
+63318 2024/07/02 07:16:08.793269 6646.9286 73 CCIC VA DBG 2695 log error verbose 1 "period_to_show": 0,
+63317 2024/07/02 07:16:08.793252 6646.9286 72 CCIC VA DBG 2695 log error verbose 1 "level": 3,
+63316 2024/07/02 07:16:08.793235 6646.9286 71 CCIC VA DBG 2695 log error verbose 1 "wave_form": {
+63315 2024/07/02 07:16:08.793212 6646.9286 70 CCIC VA DBG 2695 log error verbose 1 "vui_type": "a",
+63314 2024/07/02 07:16:08.793196 6646.9286 69 CCIC VA DBG 2695 log error verbose 1 "state": "end",
+63329 2024/07/02 07:16:08.793529 6646.9290 81 CCIC VA DBG 2695 log error verbose 1 onUrlAudioPlayRequested : call url play
+63333 2024/07/02 07:16:08.793607 6646.9291 83 CCIC VA DBG 2695 log error verbose 1 setURL(http://kakaoi-newtone-hdkia.kakao.com/v2/synthesize/5c250859c7f6118cea9faf235e88c9fc.mp3) -> 0
+63332 2024/07/02 07:16:08.793584 6646.9291 211 CCIC VA HMED 2695 log info verbose 1 [p:2695] [t:2695] [hmedia] [I] player) setURL:739 : called setURL(13) : [http://kakaoi-newtone-hdkia.kakao.com/v2/synthesize/5c250859c7f6118cea9faf235e88c9fc.mp3]
+63331 2024/07/02 07:16:08.793566 6646.9291 82 CCIC VA DBG 2695 log info verbose 1 urlPlay
+63334 2024/07/02 07:16:08.793624 6646.9292 212 CCIC VA HMED 2695 log info verbose 1 [p:2695] [t:2695] [hmedia] [I] player) load:878 : channel info(0), 2ch_down=[false]
+63403 2024/07/02 07:16:08.976984 6646.9912 213 CCIC VA HMED 2695 log info verbose 1 [p:2695] [t:2695] [hmedia] [I] player) load:928 : ret=[0], Available slot=[0]
+63404 2024/07/02 07:16:08.977002 6646.9913 214 CCIC VA HMED 2695 log info verbose 1 [p:2695] [t:2695] [hmedia] [I] load:1213 Setting media_type [13]
+63408 2024/07/02 07:16:08.977076 6646.9924 94 CCIC MMSV MMSV 1150 log info verbose 1 [playerengine_manager.cpp:48][createPlayerEngine] launch PlayerEngine: playerservice [/usr/bin/playerservice]
+63407 2024/07/02 07:16:08.977058 6646.9924 93 CCIC MMSV MMSV 1150 log info verbose 1 [playerstub.cpp:715][checkValidMediaId] last_fail_id=[0]
+63406 2024/07/02 07:16:08.977038 6646.9924 92 CCIC MMSV MMSV 1150 log info verbose 1 [playerstub.cpp:180][openUri] Creating PE for multi instance, type=[13], saved_id=[0], pe_cnt=[3]
+63405 2024/07/02 07:16:08.977020 6646.9924 91 CCIC MMSV MMSV 1150 log info verbose 1 [playerstub.cpp:126][openUri] load contents.. channels=[2]
+63413 2024/07/02 07:16:08.977196 6646.9940 95 CCIC MMSV MMSV 1150 log info verbose 1 [playerengine_manager.cpp:59][createPlayerEngine] PlayerEngine process 227793 created
+177806 2024/07/02 07:17:24.460503 6722.5963 194 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:47:24 kernel: [ 6722.664638 / 07-02 01:47:24.458][0] CFG80211-INFO) wl_chanim_stats : chanspec: 0xd897 glitch: 8 badplcp: 1 knoise: -88 idle: 100 timestamp: 6721758
+177807 2024/07/02 07:17:24.460610 6722.5964 195 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:47:24 kernel: [ 6722.664650 / 07-02 01:47:24.458][0] CFG80211-INFO) wl_chanim_stats : chanspec=0xd897 tx=1 inbss=1 obss=2 nocat=1 nopkt=1 doze=0 txop=98 goodtx=1 badtx=0 glitch=8 badplcp=1 knoise=-88 idle=100 timestamp=6721758
+179257 2024/07/02 07:17:26.066460 6724.1915 231 CCIC MMSV MMSV 1150 log info verbose 1 [playerstub.cpp:373][stop] mid=[231768], ins_num=[4], aid=[1414], f=[1]
+179262 2024/07/02 07:17:26.066646 6724.1918 236 CCIC MMSV MMSV 1150 log info verbose 1 [playerengine_manager.cpp:190][removeMediaId] Removed the connection name[:1.76] since the player engine is destroyed
