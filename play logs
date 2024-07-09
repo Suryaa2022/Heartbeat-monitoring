@@ -1,0 +1,285 @@
+1085 2024/05/16 15:13:06.342000 933.4021 201 CCIC MMSV MMSV 4001 log info verbose 1 [playerstub.cpp:708][checkValidMediaId] last_fail_id=[0]
+1084 2024/05/16 15:13:06.342000 933.4021 200 CCIC MMSV MMSV 4001 log info verbose 1 [playerstub.cpp:177][openUri] Creating PE for multi instance, type=[1], saved_id=[4613], pe_cnt=[3]
+1083 2024/05/16 15:13:06.342000 933.4021 199 CCIC MMSV MMSV 4001 log info verbose 1 [playerstub.cpp:123][openUri] load contents.. channels=[2]
+1088 2024/05/16 15:13:06.358000 933.4022 204 CCIC MMSV MMSV 4001 log info verbose 1 [playerstub.cpp:237][openUri] Create openUri command=[:1.60 / 4613] to playerprovider
+1087 2024/05/16 15:13:06.358000 933.4022 203 CCIC MMSV MMSV 4001 log info verbose 1 [playerengine_manager.cpp:310][printMap] Map MediaId = 4613:: Map PlayerEngineId = :1.60
+1086 2024/05/16 15:13:06.342000 933.4022 202 CCIC MMSV MMSV 4001 log info verbose 1 [playerengine_manager.cpp:310][printMap] Map MediaId = 4564:: Map PlayerEngineId = :1.59
+1091 2024/05/16 15:13:06.358000 933.4025 205 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:304][process] [OpenUriCommand] index: 0, uri: [3]file:///rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/VIDEOS/resize.mp4, pos_us: 0, channel: 2
+1092 2024/05/16 15:13:06.358000 933.4026 206 CCIC MMSV MMSV 4001 log info verbose 1 [state_change_notifier.cpp:117][NotifyCommon] {"CurrentTrack":{"index":0,"uri":"[3]file:\/\/\/rw_data\/media\/usb\/front\/da7b0d56-66ae-41a4-ae6a-ab1921516a1c\/VIDEOS\/resize.mp4"}}
+1095 2024/05/16 15:13:06.358000 933.4031 207 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:426][process] 2ch_slot=[3]
+1103 2024/05/16 15:13:06.358000 933.4038 208 CCIC MMSV MMSV 4001 log info verbose 1 [event_system.cpp:97][WaitEvent] success:0x00000004, fail:0x00000000
+1106 2024/05/16 15:13:06.358000 933.4043 61 CCIC PESV PESV 4613 log info verbose 1 [dbus_player_service.cpp:134][SetURI] SetURI : uri: file:///rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/VIDEOS/resize.mp4 ,option : {"Option":{"mediatype":"video","saturation":"1","brightness":"0","contrast":"1","cache":"false","show-preroll-frame":"true","provide-global-clock":"true","is-dsd":"false","channel":"2","subtitle-path":"\/rw_data\/media\/usb\/front\/da7b0d56-66ae-41a4-ae6a-ab1921516a1c\/VIDEOS\/resize.mp4","2ch_slot":"3"}}
+1110 2024/05/16 15:13:06.358000 933.4049 63 CCIC PESV PESV 4613 log info verbose 1 [media_player.cpp:303][SetURI] #### Received channel = [2]
+1109 2024/05/16 15:13:06.358000 933.4049 62 CCIC PESV PESV 4613 log info verbose 1 [audio_controller.cpp:32][setMediaType] type=[video]
+1113 2024/05/16 15:13:06.358000 933.4050 66 CCIC PESV PESV 4613 log info verbose 1 [audio_controller.cpp:73][fadeOut] ##### Fade Out ######, ms=[100]
+1112 2024/05/16 15:13:06.358000 933.4050 65 CCIC PESV PESV 4613 log info verbose 1 [audio_controller.cpp:117][getAudioChannel] Get actual channel info.. type=[video], requested_ch=[2]
+1111 2024/05/16 15:13:06.358000 933.4050 64 CCIC PESV PESV 4613 log info verbose 1 [media_player.cpp:307][SetURI] #### Received 2ch_slot = [3]
+1114 2024/05/16 15:13:06.358000 933.4062 67 CCIC PESV PESV 4613 log info verbose 1 [audio_controller.cpp:333][setSoftVolume] snd_mixer_selem_set_playback_volume_all (0), (1)
+1115 2024/05/16 15:13:06.358000 933.4063 68 CCIC PESV PESV 4613 log info verbose 1 [audio_controller.cpp:282][fadeOutWithSoftVol] setSoftVolume(MIN_VOLUME), ret=[0], wait=[100]
+1126 2024/05/16 15:13:06.490000 933.5064 70 CCIC PESV PESV 4613 log info verbose 1 [media_player.cpp:569][SetURIInternal] destroy_pipeline[0]
+1125 2024/05/16 15:13:06.490000 933.5064 69 CCIC PESV PESV 4613 log info verbose 1 [media_player.cpp:359][SetURI] media type[2][video], channel=[2], slot=[3]
+1129 2024/05/16 15:13:06.490000 933.5065 73 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:721][ChangeStateToReady]
+1128 2024/05/16 15:13:06.490000 933.5065 72 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:210][UnloadInternal] cur_state is [3]
+1127 2024/05/16 15:13:06.490000 933.5065 71 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:191][UnloadInternal] UnloadInternal(0)
+1130 2024/05/16 15:13:06.490000 933.5122 204 CCIC SYS SYSL 854 log warn verbose 1 <12>Jan 1 10:16:34 kernel: [ 933.512068] snd_pcm_release : I2S_1 snd-soc-dummy-dai-1, PID:4613, Comm:playerservice
+1131 2024/05/16 15:13:06.490000 933.5134 74 CCIC PESV PESV 4613 log info verbose 1 [media_player.cpp:151][PrintGstLog] [../gst-plugins-good-1.16.2/gst/isomp4/qtdemux.c:6642 gst_qtdemux_loop] [1;33m ret = 2, state = 3, pending = 2 [1;0m
+1133 2024/05/16 15:13:06.490000 933.5204 76 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:214][UnloadInternal] After changing state to READY(2)-[2]
+1132 2024/05/16 15:13:06.490000 933.5204 75 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:735][ChangeStateToReady] state[2] done
+1135 2024/05/16 15:13:06.490000 933.5221 78 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:335][StopGstPipeline] Destroy get_state : SUCCESS
+1134 2024/05/16 15:13:06.490000 933.5221 77 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:333][StopGstPipeline] Destroy set_state : SUCCESS
+1137 2024/05/16 15:13:06.490000 933.5231 80 CCIC PESV PESV 4613 log info verbose 1 [seek_control.cpp:62][Exit]
+1136 2024/05/16 15:13:06.490000 933.5231 79 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:74][~GstMedia]
+1138 2024/05/16 15:13:06.490000 933.5232 81 CCIC PESV PESV 4613 log info verbose 1 [seek_control.cpp:83][Loop] receive exit message
+1140 2024/05/16 15:13:06.490000 933.5233 83 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:62][~VideoPipeline]
+1139 2024/05/16 15:13:06.490000 933.5233 82 CCIC PESV PESV 4613 log info verbose 1 [seek_control.cpp:35][~SeekControl]
+1141 2024/05/16 15:13:06.490000 933.5235 84 CCIC PESV PESV 4613 log info verbose 1 [creator.cpp:148][ParseMediaTypeFromExtension] given uri[file:///rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/VIDEOS/resize.mp4], file extension[.mp4] , media_type_[2]
+1146 2024/05/16 15:13:06.490000 933.5236 89 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:455][SetVideoWindow] SetVideoWindow with , 0
+1145 2024/05/16 15:13:06.490000 933.5236 88 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:58][VideoPipeline]
+1144 2024/05/16 15:13:06.490000 933.5236 87 CCIC PESV PESV 4613 log info verbose 1 [creator.cpp:126][ParsePipelineType] media_type[2]
+1143 2024/05/16 15:13:06.490000 933.5236 86 CCIC PESV PESV 4613 log info verbose 1 [creator.cpp:92][ParsePipelineType] return media type is [2]
+1142 2024/05/16 15:13:06.490000 933.5236 85 CCIC PESV PESV 4613 log info verbose 1 [creator.cpp:158][ParseMediaTypeFromExtension] Type local video
+1148 2024/05/16 15:13:06.490000 933.5243 91 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:176][Load] saturation[1.000000] contrast[1.000000] brightness[0.000000] mode[0]
+1147 2024/05/16 15:13:06.490000 933.5243 90 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:174][Load] preroll=[1], clock=[1], ch=[2], convert=[0], type=[video]
+1149 2024/05/16 15:13:06.490000 933.5244 92 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:85][Load] Load with URI[file:///rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/VIDEOS/resize.mp4]
+1150 2024/05/16 15:13:06.490000 933.5246 93 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:663][ControlPropertiesTelechips] get playsink
+1153 2024/05/16 15:13:06.490000 933.5247 96 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:244][CreateAudioSinkBin] audio-sink=[audioresample ! audio/x-raw, rate=48000 ! audioconvert ! audio/x-raw,channels=2 ! alsasink provide-clock=true device=tdm_media_usb_video3 buffer-time=80000 latency-time=10000]
+1152 2024/05/16 15:13:06.490000 933.5247 95 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:201][CreateAudioSinkBin] Channel=[2] Alsa device name[tdm_media_usb_video]
+1151 2024/05/16 15:13:06.490000 933.5247 94 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:681][ControlPropertiesTelechips] Set wayland surface id=[10000].. media_type=[video]
+1157 2024/05/16 15:13:06.490000 933.5265 98 CCIC PESV PESV 4613 log info verbose 1 [seek_control.cpp:72][Loop]
+1156 2024/05/16 15:13:06.490000 933.5265 97 CCIC PESV PESV 4613 log info verbose 1 [seek_control.cpp:29][SeekControl]
+1171 2024/05/16 15:13:06.490000 933.5287 205 CCIC SYS SYSL 854 log warn verbose 1 <12>Jan 1 10:16:34 kernel: [ 933.528569] snd_pcm_playback_open : I2S_1 snd-soc-dummy-dai-1, PID:4613, Comm:playerservice
+1175 2024/05/16 15:13:06.490000 933.5298 99 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:897][HandleElementAdd] uridecodebin3
+1176 2024/05/16 15:13:06.490000 933.5299 100 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:922][HandleElementAdd] timeout interval-1800
+1177 2024/05/16 15:13:06.490000 933.5305 101 CCIC PESV PESV 4613 log info verbose 1 [media_player.cpp:151][PrintGstLog] [../gstreamer-1.16.2/libs/gst/base/gstbasesrc.c:3600 gst_base_src_start_complete] pad not activated yet
+1178 2024/05/16 15:13:06.490000 933.5306 102 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:994][HandleUriDecodeBinElementAdd] source
+1179 2024/05/16 15:13:06.490000 933.5309 103 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:994][HandleUriDecodeBinElementAdd] decodebin3
+1180 2024/05/16 15:13:06.490000 933.5311 104 CCIC PESV PESV 4613 log info verbose 1 [media_player.cpp:151][PrintGstLog] [../gstreamer-1.16.2/libs/gst/base/gstbasesrc.c:3600 gst_base_src_start_complete] pad not activated yet
+1181 2024/05/16 15:13:06.490000 933.5312 105 CCIC PESV PESV 4613 log info verbose 1 [subtitle_controller.cpp:111][SetUri] SetUri
+1182 2024/05/16 15:13:06.490000 933.5320 106 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1199][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [NULL -> READY]
+1183 2024/05/16 15:13:06.490000 933.5321 107 CCIC PESV PESV 4613 log info verbose 1 [media_player.cpp:151][PrintGstLog] [../../alsa-lib-1.2.1.2/src/conf.c:5115 snd_config_expand] alsalib error: Unknown parameters {AES0 0x02 AES1 0x82 AES2 0x00 AES3 0x02}
+1184 2024/05/16 15:13:06.490000 933.5322 108 CCIC PESV PESV 4613 log info verbose 1 [media_player.cpp:151][PrintGstLog] [../../../alsa-lib-1.2.1.2/src/pcm/pcm.c:2642 snd_pcm_open_noupdate] alsalib error: Unknown PCM tdm_media_usb_video3:{AES0 0x02 AES1 0x82 AES2 0x00 AES3 0x02}
+1185 2024/05/16 15:13:06.490000 933.5323 209 CCIC MMSV MMSV 4001 log info verbose 1 [event_system.cpp:105][WaitEvent] got succeed event: 00000004
+1187 2024/05/16 15:13:06.490000 933.5325 211 CCIC MMSV MMSV 4001 log error verbose 1 [playerprovider.cpp:214][getRateAttrIdx] [getRateAttrIdx] Rate list size[1]
+1186 2024/05/16 15:13:06.490000 933.5325 210 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:581][process] Mutex lock() in rate_list before inserting it
+1189 2024/05/16 15:13:06.490000 933.5326 213 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:639][process] getPlaybackAttribute Idx = [0]
+1188 2024/05/16 15:13:06.490000 933.5326 212 CCIC MMSV MMSV 4001 log error verbose 1 [playerprovider.cpp:591][process] Insert rate_list[0] rate=1 to vector
+1192 2024/05/16 15:13:06.490000 933.5327 216 CCIC MMSV MMSV 4001 log error verbose 1 [playerprovider.cpp:667][process] Insert speed_list[0] rate=1 to vector
+1191 2024/05/16 15:13:06.490000 933.5327 215 CCIC MMSV MMSV 4001 log error verbose 1 [playerprovider.cpp:232][getSpeedAttrIdx] [getSpeedAttrIdx] Speed list size[1]
+1190 2024/05/16 15:13:06.490000 933.5327 214 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:657][process] Mutex lock() in speed_list before inserting it
+1196 2024/05/16 15:13:06.490000 933.5447 109 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1069][HandleAutoplugSort] count - 0
+1197 2024/05/16 15:13:06.490000 933.5449 110 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1095][HandleAutoplugSelect] #### gst_plugin_feature_get_name=[qtdemux] ####
+1198 2024/05/16 15:13:06.490000 933.5451 111 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1030][HandleDecodeBinElementAdd] qtdemux2
+1200 2024/05/16 15:13:06.490000 933.5459 112 CCIC PESV PESV 4613 log info verbose 1 [media_player.cpp:151][PrintGstLog] [../gst-plugins-good-1.16.2/gst/isomp4/qtdemux_types.c:241 qtdemux_type_get] unknown QuickTime node type pasp
+1201 2024/05/16 15:13:06.490000 933.5460 113 CCIC PESV PESV 4613 log info verbose 1 [media_player.cpp:151][PrintGstLog] [../gst-plugins-good-1.16.2/gst/isomp4/qtdemux_types.c:241 qtdemux_type_get] unknown QuickTime node type pasp
+1202 2024/05/16 15:13:06.490000 933.5462 114 CCIC PESV PESV 4613 log info verbose 1 [media_player.cpp:151][PrintGstLog] [../gst-plugins-good-1.16.2/gst/isomp4/qtdemux.c:3244 qtdemux_parse_trex] failed to find fragment defaults for stream 1
+1203 2024/05/16 15:13:06.490000 933.5464 115 CCIC PESV PESV 4613 log info verbose 1 [media_player.cpp:151][PrintGstLog] [../gst-plugins-good-1.16.2/gst/isomp4/qtdemux.c:3244 qtdemux_parse_trex] failed to find fragment defaults for stream 2
+1204 2024/05/16 15:13:06.490000 933.5467 116 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1030][HandleDecodeBinElementAdd] multiqueue3
+1205 2024/05/16 15:13:06.490000 933.5486 117 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1069][HandleAutoplugSort] count - 1
+1206 2024/05/16 15:13:06.506000 933.5489 118 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1095][HandleAutoplugSelect] #### gst_plugin_feature_get_name=[h264parse] ####
+1207 2024/05/16 15:13:06.506000 933.5491 119 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1030][HandleDecodeBinElementAdd] h264parse2
+1208 2024/05/16 15:13:06.506000 933.5495 120 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1069][HandleAutoplugSort] count - 2
+1209 2024/05/16 15:13:06.506000 933.5496 121 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1030][HandleDecodeBinElementAdd] capsfilter14
+1215 2024/05/16 15:13:06.506000 933.5528 122 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1095][HandleAutoplugSelect] #### gst_plugin_feature_get_name=[aacparse] ####
+1216 2024/05/16 15:13:06.574000 933.5529 123 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1030][HandleDecodeBinElementAdd] aacparse1
+1218 2024/05/16 15:13:06.574000 933.5553 124 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1095][HandleAutoplugSelect] #### gst_plugin_feature_get_name=[avdec_aac] ####
+1219 2024/05/16 15:13:06.574000 933.5567 125 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1030][HandleDecodeBinElementAdd] avdec_aac1
+1220 2024/05/16 15:13:06.574000 933.5631 126 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1069][HandleAutoplugSort] count - 3
+1221 2024/05/16 15:13:06.574000 933.5632 127 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1095][HandleAutoplugSelect] #### gst_plugin_feature_get_name=[omxh264dec] ####
+1222 2024/05/16 15:13:06.574000 933.5634 128 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1030][HandleDecodeBinElementAdd] omxh264dec-omxh264dec2
+1223 2024/05/16 15:13:06.574000 933.5658 129 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:897][HandleElementAdd] inputselector5
+1224 2024/05/16 15:13:06.574000 933.5661 130 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:897][HandleElementAdd] inputselector6
+1225 2024/05/16 15:13:06.574000 933.5663 131 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1179][HandleNoMorePads]
+1226 2024/05/16 15:13:06.574000 933.5664 132 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:943][HandlePlaySinkElementAdd] audiotee
+1228 2024/05/16 15:13:06.606000 933.6074 134 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:486][SetVideoBrightness] SetVideoBrightness videobalance:0.000000
+1227 2024/05/16 15:13:06.606000 933.6074 133 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:943][HandlePlaySinkElementAdd] vbin
+1230 2024/05/16 15:13:06.606000 933.6075 136 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:469][SetVideoSaturation] SetVideoSaturation videobalance: 1.000000
+1229 2024/05/16 15:13:06.606000 933.6075 135 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:501][SetVideoContrast] SetVideoContrast videobalance: 1.000000
+1232 2024/05/16 15:13:06.643000 933.6541 137 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:943][HandlePlaySinkElementAdd] abin
+1239 2024/05/16 15:13:06.643000 933.7020 138 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1199][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [READY -> PAUSED]
+1241 2024/05/16 15:13:06.643000 933.7021 140 CCIC PESV PESV 4613 log info verbose 1 [event.cpp:299][NotifyEventAsyncDone] [NotifyEventAsyncDone]
+1240 2024/05/16 15:13:06.643000 933.7021 139 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1359][HandleAsyncDone] [BUS] GST_MESSAGE_ASYNC_DONE
+1244 2024/05/16 15:13:06.659000 933.7028 141 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:1271][GetDuration] duration : 193 (sec)
+1247 2024/05/16 15:13:06.659000 933.7031 143 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:908][GetLanguage] get-audio-tags : code[un]
+1246 2024/05/16 15:13:06.659000 933.7031 142 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:1283][IsSeekable] seekable : true
+1250 2024/05/16 15:13:06.659000 933.7032 146 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:1019][GetAudioTagInfo] GST_TAG_AUDIO_BITRATE-125596
+1249 2024/05/16 15:13:06.659000 933.7032 145 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:1018][GetAudioTagInfo] GST_TAG_AUDIO_CODEC-MPEG-4 AAC
+1248 2024/05/16 15:13:06.659000 933.7032 144 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:956][GetFormatTagInfo] GST_TAG_CONTAINER_FORMAT-ISO MP4/M4A
+1257 2024/05/16 15:13:06.659000 933.7033 153 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:997][GetVideoTagInfo] GST_TAG_VIDEO_FRAMERATE-30
+1256 2024/05/16 15:13:06.659000 933.7033 152 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:996][GetVideoTagInfo] GST_TAG_VIDEO_HEIGHT-480
+1255 2024/05/16 15:13:06.659000 933.7033 151 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:995][GetVideoTagInfo] GST_TAG_VIDEO_WIDTH-720
+1254 2024/05/16 15:13:06.659000 933.7033 150 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:994][GetVideoTagInfo] GST_TAG_VIDEO_BITRATE-1418956
+1253 2024/05/16 15:13:06.659000 933.7033 149 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:993][GetVideoTagInfo] GST_TAG_VIDEO_CODEC-H.264 (High Profile)
+1252 2024/05/16 15:13:06.659000 933.7033 148 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:1077][GetAudioPadInfo] GST_CAPS_AUDIO SAMPLERATE[44100]
+1251 2024/05/16 15:13:06.659000 933.7033 147 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:1076][GetAudioPadInfo] GST_CAPS_AUDIO - audio/x-raw, format=(string)F32LE, layout=(string)non-interleaved, rate=(int)44100, channels=(int)2, channel-mask=(bitmask)0x0000000000000003
+1263 2024/05/16 15:13:06.659000 933.7034 217 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:2412][onDuration] Duration [193516], list size=[1], index=[0]
+1262 2024/05/16 15:13:06.659000 933.7034 158 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:908][GetLanguage] get-video-tags : code[un]
+1261 2024/05/16 15:13:06.659000 933.7034 157 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:1051][GetVideoPadInfo] GST_PAD_VIDEO WIDTH[720] HEIGHT[480] Framerate[30 / 1]
+1260 2024/05/16 15:13:06.659000 933.7034 156 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:1050][GetVideoPadInfo] GST_CAPS_VIDEO - video/x-raw, format=(string)NV12, width=(int)720, height=(int)480, pixel-aspect-ratio=(fraction)32/27, interlace-mode=(string)progressive, multiview-mode=(string)mono, multiview-flags=(GstVideoMultiviewFlagsSet)0:ffffffff:/right-view-first/left-flipped/left-flopped/right-flipped/right-flopped/half-aspect/mixed-mono, chroma-site=(string)jpeg, colorimetry=(string)bt601, framerate=(fraction)30/1, tc-vdec=(boolean)true
+1259 2024/05/16 15:13:06.659000 933.7034 155 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:999][GetVideoTagInfo] GST_TAG_VIDEO_QPEL-No
+1258 2024/05/16 15:13:06.659000 933.7034 154 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:998][GetVideoTagInfo] GST_TAG_VIDEO_SPRITE_WARPING_POINTS-0
+1265 2024/05/16 15:13:06.659000 933.7035 159 CCIC PESV PESV 4613 log info verbose 1 [support_media_telechips.cpp:130][CheckVideoFrameRate] supported : FHD, 60FPS
+1266 2024/05/16 15:13:06.659000 933.7038 218 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:2424][onDuration] Duration aft set 193516000
+1268 2024/05/16 15:13:06.659000 933.7046 160 CCIC PESV PESV 4613 log info verbose 1 [event.cpp:91][NotifyEventSourceInfo] [NotifyEventSourceInfo] {"SourceInfo":{"CanPlay":true,"CanPause":true,"CanSeek":true,"TrackInfo":{"NumAudioTracks":1,"NumVideoTracks":1,"NumTextTracks":0,"AudioTrack":[{"Format":"un"}],"VideoTrack":[{"Format":"un","Width":720,"Height":480}]}}}
+1270 2024/05/16 15:13:06.659000 933.7047 161 CCIC PESV PESV 4613 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Ready
+1272 2024/05/16 15:13:06.659000 933.7059 219 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:2754][onSourceInfo]
+1273 2024/05/16 15:13:06.659000 933.7060 220 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:2759][onSourceInfo] CanSeek : 1
+1275 2024/05/16 15:13:06.659000 933.7061 221 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:3466][fillSubtitleList] No TextTrack : No such node (TrackInfo.TextTrack)
+1278 2024/05/16 15:13:06.659000 933.7062 222 CCIC MMSV MMSV 4001 log info verbose 1 [state_change_notifier.cpp:117][NotifyCommon] {"AudioLanguageList":{"count":1,"list":["Unknown 1"]}}
+1281 2024/05/16 15:13:06.659000 933.7067 223 CCIC MMSV MMSV 4001 log info verbose 1 [state_change_notifier.cpp:117][NotifyCommon] {"SubtitleList":{"count":0,"list":[]}}
+1282 2024/05/16 15:13:06.659000 933.7069 224 CCIC MMSV MMSV 4001 log info verbose 1 [state_change_notifier.cpp:117][NotifyCommon] {"Resolution":{"width":720,"height":480}}
+1283 2024/05/16 15:13:06.659000 933.7071 225 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:2510][onPlaybackStatus] Ready
+1315 2024/05/16 15:13:06.659000 933.7105 226 CCIC MMSV MMSV 4001 log info verbose 1 [playerstub.cpp:648][setVideoBrightness]
+1322 2024/05/16 15:13:06.659000 933.7110 228 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:2144][process] [SetVideoBrightnessCommand] brightness : 0.000000
+1321 2024/05/16 15:13:06.659000 933.7110 227 CCIC MMSV MMSV 4001 log info verbose 1 [playerstub.cpp:678][setVideoContrast]
+1323 2024/05/16 15:13:06.659000 933.7111 229 CCIC MMSV MMSV 4001 log info verbose 1 [playerstub.cpp:668][setVideoSaturation]
+1330 2024/05/16 15:13:06.659000 933.7116 162 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:486][SetVideoBrightness] SetVideoBrightness videobalance:0.000000
+1336 2024/05/16 15:13:06.659000 933.7121 230 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:2106][process] [SetVideoContrastCommand] contrast : 1.000000
+1339 2024/05/16 15:13:06.659000 933.7126 163 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:501][SetVideoContrast] SetVideoContrast videobalance: 1.000000
+1343 2024/05/16 15:13:06.659000 933.7131 231 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:2202][process] [SetVideoSaturationCommand] saturation : 1.000000
+1349 2024/05/16 15:13:06.659000 933.7136 164 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:469][SetVideoSaturation] SetVideoSaturation videobalance: 1.000000
+1372 2024/05/16 15:13:06.659000 933.7161 232 CCIC MMSV MMSV 4001 log info verbose 1 [playerstub.cpp:294][play] media id = 4613
+1374 2024/05/16 15:13:06.659000 933.7162 234 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:872][process] [PlayCommand]
+1373 2024/05/16 15:13:06.659000 933.7162 233 CCIC MMSV MMSV 4001 log info verbose 1 [playerstub.cpp:296][play] connectionName = :1.60
+1376 2024/05/16 15:13:06.659000 933.7168 166 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:246][Play] Play
+1375 2024/05/16 15:13:06.659000 933.7168 165 CCIC PESV PESV 4613 log info verbose 1 [dbus_player_service.cpp:73][Play] Play
+1389 2024/05/16 15:13:06.659000 933.7179 167 CCIC PESV PESV 4613 log info verbose 1 [gst_media.cpp:793][ChangeStateToPlay] changed state to play
+1390 2024/05/16 15:13:06.659000 933.7180 168 CCIC PESV PESV 4613 log info verbose 1 [audio_controller.cpp:37][fadeIn] ##### Fade In ######, time_ms=[100]
+1451 2024/05/16 15:13:06.690000 933.7443 169 CCIC PESV PESV 4613 log info verbose 1 [audio_controller.cpp:333][setSoftVolume] snd_mixer_selem_set_playback_volume_all (0), (255)
+1452 2024/05/16 15:13:06.690000 933.7444 170 CCIC PESV PESV 4613 log info verbose 1 [audio_controller.cpp:277][fadeInWithSoftVol] setSoftVolume(MAX_VOLUME), ret=[0]
+1453 2024/05/16 15:13:06.690000 933.7455 235 CCIC MMSV MMSV 4001 log info verbose 1 [playerstub.cpp:570][getAudioLanguageList]
+1455 2024/05/16 15:13:06.690000 933.7456 171 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1199][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PAUSED -> PLAYING]
+1454 2024/05/16 15:13:06.690000 933.7456 236 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:1611][process] [GetAudioLanguageListCommand]
+1456 2024/05/16 15:13:06.690000 933.7457 172 CCIC PESV PESV 4613 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Playing
+1465 2024/05/16 15:13:06.690000 933.7464 237 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:2471][onPlaybackStatus] Playing
+1486 2024/05/16 15:13:06.690000 933.7476 238 CCIC MMSV MMSV 4001 log info verbose 1 [playerstub.cpp:590][getSubtitleList]
+1487 2024/05/16 15:13:06.690000 933.7477 239 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:1647][process] [GetSubtitleListCommand]
+1693 2024/05/16 15:13:06.844000 933.8563 206 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:35 kernel: [ 933.853978] RTL9010AA Gigabit Ethernet stmmac-0:00: PHY SQI:0x0 rx_pkt:0 NET tx:0 rx:0
+1769 2024/05/16 15:13:07.522000 934.5240 173 CCIC PESV PESV 4613 log info verbose 1 [media_player.cpp:542][updateTimerFlag]
+1782 2024/05/16 15:13:07.691000 934.7465 174 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:566][UpdatePositionInfo] UpdatePositionInfo time(sec)-1.025000
+1783 2024/05/16 15:13:07.691000 934.7472 240 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:2453][onCurrentTime] get position = 1025000
+1944 2024/05/16 15:13:08.691000 935.7470 175 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:566][UpdatePositionInfo] UpdatePositionInfo time(sec)-2.025667
+1945 2024/05/16 15:13:08.691000 935.7476 241 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:2453][onCurrentTime] get position = 2025000
+2095 2024/05/16 15:13:09.376000 936.4162 208 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:37 kernel: [ 936.414031] [TOUCH][lge_touch_monitor_func] himax_ts - alive[911], error[0]
+2094 2024/05/16 15:13:09.376000 936.4162 207 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:37 kernel: [ 936.414025] [TOUCH][lge_himax_ts_read_icid] touch IC ID = HX83192A
+2196 2024/05/16 15:13:09.691000 936.7474 176 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:566][UpdatePositionInfo] UpdatePositionInfo time(sec)-3.026000
+2197 2024/05/16 15:13:09.691000 936.7481 242 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:2453][onCurrentTime] get position = 3026000
+2410 2024/05/16 15:13:10.392000 937.4482 209 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:38 kernel: [ 937.445989] [TOUCH][himax_parse_report_points] touch_down : id[0] x[1002] y[534], w[12]
+2456 2024/05/16 15:13:10.577000 937.6282 210 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:39 kernel: [ 937.628466] [TOUCH][himax_finger_leave] touch_up : id[0] x[1002] y[534]
+2457 2024/05/16 15:13:10.577000 937.6286 243 CCIC MMSV MMSV 4001 log info verbose 1 [playerstub.cpp:280][pause] media id = 4613
+2458 2024/05/16 15:13:10.577000 937.6287 244 CCIC MMSV MMSV 4001 log info verbose 1 [playerstub.cpp:282][pause] connectionName = :1.60
+2461 2024/05/16 15:13:10.577000 937.6288 247 CCIC MMSV MMSV 4001 log error verbose 1 [playerprovider.cpp:214][getRateAttrIdx] [getRateAttrIdx] Rate list size[1]
+2460 2024/05/16 15:13:10.577000 937.6288 246 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:750][process] [PauseCommand] state : 2
+2459 2024/05/16 15:13:10.577000 937.6288 245 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:739][process] [PauseCommand]
+2463 2024/05/16 15:13:10.577000 937.6294 178 CCIC PESV PESV 4613 log info verbose 1 [audio_controller.cpp:73][fadeOut] ##### Fade Out ######, ms=[100]
+2462 2024/05/16 15:13:10.577000 937.6294 177 CCIC PESV PESV 4613 log info verbose 1 [dbus_player_service.cpp:83][Pause] Pause
+2464 2024/05/16 15:13:10.646000 937.6306 179 CCIC PESV PESV 4613 log info verbose 1 [audio_controller.cpp:333][setSoftVolume] snd_mixer_selem_set_playback_volume_all (0), (1)
+2465 2024/05/16 15:13:10.646000 937.6307 180 CCIC PESV PESV 4613 log info verbose 1 [audio_controller.cpp:282][fadeOutWithSoftVol] setSoftVolume(MIN_VOLUME), ret=[0], wait=[100]
+2471 2024/05/16 15:13:10.693000 937.7308 181 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:257][Pause] Pause
+2476 2024/05/16 15:13:10.693000 937.7412 183 CCIC PESV PESV 4613 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Paused
+2475 2024/05/16 15:13:10.693000 937.7412 182 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1199][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PLAYING -> PAUSED]
+2487 2024/05/16 15:13:10.693000 937.7416 185 CCIC PESV PESV 4613 log info verbose 1 [event.cpp:299][NotifyEventAsyncDone] [NotifyEventAsyncDone]
+2486 2024/05/16 15:13:10.693000 937.7416 184 CCIC PESV PESV 4613 log info verbose 1 [video_pipeline.cpp:1359][HandleAsyncDone] [BUS] GST_MESSAGE_ASYNC_DONE
+2489 2024/05/16 15:13:10.693000 937.7422 248 CCIC MMSV MMSV 4001 log info verbose 1 [playerprovider.cpp:2492][onPlaybackStatus] Paused
+3037 2024/05/16 15:13:14.999000 942.0482 212 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:43 kernel: [ 942.045326] MICOM I> can1: rx_packets=0, rx_bytes=0, rx_errors=0, rx_dropped=0
+3036 2024/05/16 15:13:14.999000 942.0482 211 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:43 kernel: [ 942.045322] MICOM I> can0: rx_packets=1292, rx_bytes=20149, rx_errors=0, rx_dropped=0
+3378 2024/05/16 15:13:15.855000 942.9009 175 CCIC VA DBG 2476 log error verbose 1 ignore screen change event
+3376 2024/05/16 15:13:15.855000 942.9009 174 CCIC VA DBG 2476 log error verbose 1 jsonString: {"appid":"ccos.hmi.mediaplayer.center-front","intent":"SceneUSBVideoPlaybackFullScreen","layout":0}
+3375 2024/05/16 15:13:15.855000 942.9009 173 CCIC VA DBG 2476 log error verbose 1 onUpdateAppModeInfoUpdated infoName: PrepareStatus.center-front
+3836 2024/05/16 15:13:15.917000 942.9408 177 CCIC VA DBG 2476 log error verbose 1 jsonString: {"appid":"ccos.hmi.mediaplayer.center-front","disp":false,"intent":"SceneUSBVideoPlaybackFullScreen","layout":0}
+3834 2024/05/16 15:13:15.917000 942.9408 176 CCIC VA DBG 2476 log error verbose 1 onUpdateAppModeInfoUpdated infoName: ScreenStatus.center-front
+4049 2024/05/16 15:13:16.071000 943.0722 213 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:44 kernel: [ 943.069431] RTL9010AA Gigabit Ethernet stmmac-0:00: phy link status: down
+4156 2024/05/16 15:13:17.073000 944.0961 214 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:45 kernel: [ 944.093967] RTL9010AA Gigabit Ethernet stmmac-0:00: PHY SQI:0x0 rx_pkt:0 NET tx:0 rx:0
+4404 2024/05/16 15:13:19.640000 946.6561 215 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:48 kernel: [ 946.654024] [TOUCH][lge_himax_ts_read_icid] touch IC ID = HX83192A
+4405 2024/05/16 15:13:19.640000 946.6562 216 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:48 kernel: [ 946.654030] [TOUCH][lge_touch_monitor_func] himax_ts - alive[921], error[0]
+5045 2024/05/16 15:13:25.284000 952.2882 217 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:53 kernel: [ 952.285326] MICOM I> can0: rx_packets=1292, rx_bytes=20149, rx_errors=0, rx_dropped=0
+5046 2024/05/16 15:13:25.284000 952.2883 218 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:53 kernel: [ 952.285331] MICOM I> can1: rx_packets=0, rx_bytes=0, rx_errors=0, rx_dropped=0
+5145 2024/05/16 15:13:26.301000 953.3121 219 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:54 kernel: [ 953.309440] RTL9010AA Gigabit Ethernet stmmac-0:00: phy link status: down
+5253 2024/05/16 15:13:27.319000 954.3361 220 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:55 kernel: [ 954.333969] RTL9010AA Gigabit Ethernet stmmac-0:00: PHY SQI:0x0 rx_pkt:0 NET tx:0 rx:0
+5501 2024/05/16 15:13:29.872000 956.8961 221 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:58 kernel: [ 956.894023] [TOUCH][lge_himax_ts_read_icid] touch IC ID = HX83192A
+5502 2024/05/16 15:13:29.872000 956.8962 222 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:16:58 kernel: [ 956.894029] [TOUCH][lge_touch_monitor_func] himax_ts - alive[931], error[0]
+6145 2024/05/16 15:13:35.486000 962.5282 224 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:03 kernel: [ 962.525326] MICOM I> can1: rx_packets=0, rx_bytes=0, rx_errors=0, rx_dropped=0
+6144 2024/05/16 15:13:35.486000 962.5282 223 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:03 kernel: [ 962.525321] MICOM I> can0: rx_packets=1292, rx_bytes=20149, rx_errors=0, rx_dropped=0
+6253 2024/05/16 15:13:36.541000 963.5521 225 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:04 kernel: [ 963.549428] RTL9010AA Gigabit Ethernet stmmac-0:00: phy link status: down
+6356 2024/05/16 15:13:37.544000 964.5761 226 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:05 kernel: [ 964.573969] RTL9010AA Gigabit Ethernet stmmac-0:00: PHY SQI:0x0 rx_pkt:0 NET tx:0 rx:0
+6668 2024/05/16 15:13:40.093000 967.1361 227 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:08 kernel: [ 967.134041] [TOUCH][lge_himax_ts_read_icid] touch IC ID = HX83192A
+6669 2024/05/16 15:13:40.093000 967.1362 228 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:08 kernel: [ 967.134046] [TOUCH][lge_touch_monitor_func] himax_ts - alive[941], error[0]
+7262 2024/05/16 15:13:45.727000 972.7681 230 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:14 kernel: [ 972.765332] MICOM I> can1: rx_packets=0, rx_bytes=0, rx_errors=0, rx_dropped=0
+7261 2024/05/16 15:13:45.727000 972.7681 229 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:14 kernel: [ 972.765327] MICOM I> can0: rx_packets=1292, rx_bytes=20149, rx_errors=0, rx_dropped=0
+7364 2024/05/16 15:13:46.747000 973.7921 231 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:15 kernel: [ 973.789849] RTL9010AA Gigabit Ethernet stmmac-0:00: phy link status: down
+7470 2024/05/16 15:13:47.811000 974.8161 232 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:16 kernel: [ 974.813968] RTL9010AA Gigabit Ethernet stmmac-0:00: PHY SQI:0x0 rx_pkt:0 NET tx:0 rx:0
+7779 2024/05/16 15:13:50.335000 977.3761 233 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:18 kernel: [ 977.374025] [TOUCH][lge_himax_ts_read_icid] touch IC ID = HX83192A
+7780 2024/05/16 15:13:50.335000 977.3762 234 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:18 kernel: [ 977.374032] [TOUCH][lge_touch_monitor_func] himax_ts - alive[951], error[0]
+8399 2024/05/16 15:13:55.963000 983.0081 235 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:24 kernel: [ 983.005330] MICOM I> can0: rx_packets=1292, rx_bytes=20149, rx_errors=0, rx_dropped=0
+8400 2024/05/16 15:13:55.963000 983.0082 236 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:24 kernel: [ 983.005335] MICOM I> can1: rx_packets=0, rx_bytes=0, rx_errors=0, rx_dropped=0
+8504 2024/05/16 15:13:57.033000 984.0321 237 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:25 kernel: [ 984.029442] RTL9010AA Gigabit Ethernet stmmac-0:00: phy link status: down
+8614 2024/05/16 15:13:58.034000 985.0562 238 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:26 kernel: [ 985.053969] RTL9010AA Gigabit Ethernet stmmac-0:00: PHY SQI:0x0 rx_pkt:0 NET tx:0 rx:0
+8738 2024/05/16 15:13:59.385000 986.4001 239 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:27 kernel: [ 986.397860] lge_monitor f_monitor_ccnc_pio: [front_DIM_check] SER dim:30/60, DES dim:31/60, ADIM:0xc4
+8897 2024/05/16 15:14:00.610000 987.6161 240 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:28 kernel: [ 987.614026] [TOUCH][lge_himax_ts_read_icid] touch IC ID = HX83192A
+8898 2024/05/16 15:14:00.610000 987.6162 241 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:28 kernel: [ 987.614032] [TOUCH][lge_touch_monitor_func] himax_ts - alive[961], error[0]
+9504 2024/05/16 15:14:06.238000 993.2482 243 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:34 kernel: [ 993.245330] MICOM I> can1: rx_packets=0, rx_bytes=0, rx_errors=0, rx_dropped=0
+9503 2024/05/16 15:14:06.238000 993.2482 242 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:34 kernel: [ 993.245325] MICOM I> can0: rx_packets=1292, rx_bytes=20149, rx_errors=0, rx_dropped=0
+9609 2024/05/16 15:14:07.251000 994.2721 244 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:35 kernel: [ 994.269436] RTL9010AA Gigabit Ethernet stmmac-0:00: phy link status: down
+9715 2024/05/16 15:14:08.272000 995.2961 245 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:36 kernel: [ 995.293973] RTL9010AA Gigabit Ethernet stmmac-0:00: PHY SQI:0x0 rx_pkt:0 NET tx:0 rx:0
+10138 2024/05/16 15:14:10.842000 997.8561 246 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:39 kernel: [ 997.854032] [TOUCH][lge_himax_ts_read_icid] touch IC ID = HX83192A
+10139 2024/05/16 15:14:10.842000 997.8562 247 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:39 kernel: [ 997.854038] [TOUCH][lge_touch_monitor_func] himax_ts - alive[971], error[0]
+10861 2024/05/16 15:14:16.452000 1003.4882 249 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:44 kernel: [ 1003.485333] MICOM I> can1: rx_packets=0, rx_bytes=0, rx_errors=0, rx_dropped=0
+10860 2024/05/16 15:14:16.452000 1003.4882 248 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:44 kernel: [ 1003.485328] MICOM I> can0: rx_packets=1292, rx_bytes=20149, rx_errors=0, rx_dropped=0
+10966 2024/05/16 15:14:17.500000 1004.5121 250 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:45 kernel: [ 1004.509430] RTL9010AA Gigabit Ethernet stmmac-0:00: phy link status: down
+11071 2024/05/16 15:14:18.539000 1005.5361 251 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:46 kernel: [ 1005.533968] RTL9010AA Gigabit Ethernet stmmac-0:00: PHY SQI:0x0 rx_pkt:0 NET tx:0 rx:0
+11398 2024/05/16 15:14:21.093000 1008.0961 252 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:49 kernel: [ 1008.094024] [TOUCH][lge_himax_ts_read_icid] touch IC ID = HX83192A
+11399 2024/05/16 15:14:21.093000 1008.0962 253 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:49 kernel: [ 1008.094030] [TOUCH][lge_touch_monitor_func] himax_ts - alive[981], error[0]
+11961 2024/05/16 15:14:26.719000 1013.7282 255 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:55 kernel: [ 1013.725330] MICOM I> can1: rx_packets=0, rx_bytes=0, rx_errors=0, rx_dropped=0
+11960 2024/05/16 15:14:26.719000 1013.7282 254 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:55 kernel: [ 1013.725325] MICOM I> can0: rx_packets=1292, rx_bytes=20149, rx_errors=0, rx_dropped=0
+12071 2024/05/16 15:14:27.735000 1014.7521 0 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:56 kernel: [ 1014.749438] RTL9010AA Gigabit Ethernet stmmac-0:00: phy link status: down
+12177 2024/05/16 15:14:28.777000 1015.7761 1 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:57 kernel: [ 1015.773965] RTL9010AA Gigabit Ethernet stmmac-0:00: PHY SQI:0x0 rx_pkt:0 NET tx:0 rx:0
+12497 2024/05/16 15:14:31.330000 1018.3361 2 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:59 kernel: [ 1018.334018] [TOUCH][lge_himax_ts_read_icid] touch IC ID = HX83192A
+12498 2024/05/16 15:14:31.330000 1018.3362 3 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:17:59 kernel: [ 1018.334025] [TOUCH][lge_touch_monitor_func] himax_ts - alive[991], error[0]
+13087 2024/05/16 15:14:36.927000 1023.9682 5 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:05 kernel: [ 1023.965329] MICOM I> can1: rx_packets=0, rx_bytes=0, rx_errors=0, rx_dropped=0
+13086 2024/05/16 15:14:36.927000 1023.9682 4 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:05 kernel: [ 1023.965323] MICOM I> can0: rx_packets=1292, rx_bytes=20149, rx_errors=0, rx_dropped=0
+13210 2024/05/16 15:14:37.948000 1024.9922 8 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.989549] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: PAGSR : addr=0x1F, data=0x0A42
+13209 2024/05/16 15:14:37.948000 1024.9922 7 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.989437] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: start
+13208 2024/05/16 15:14:37.948000 1024.9922 6 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.989432] RTL9010AA Gigabit Ethernet stmmac-0:00: phy link status: down
+13213 2024/05/16 15:14:37.948000 1024.9923 11 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.989985] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: PHYSR2 : addr=0x1A, data=0x0028
+13212 2024/05/16 15:14:37.948000 1024.9923 10 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.989875] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: BMSR : addr=0x01, data=0x0009
+13211 2024/05/16 15:14:37.948000 1024.9923 9 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.989659] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: BMCR : addr=0x00, data=0x0140
+13216 2024/05/16 15:14:37.948000 1024.9924 14 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.990421] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: OPMR : addr=0xDF10, data=0x0030
+13215 2024/05/16 15:14:37.948000 1024.9924 13 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.990205] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: PHYSFR : addr=0x10, data=0x0063
+13214 2024/05/16 15:14:37.948000 1024.9924 12 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.990095] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: PHYSR1 : addr=0x0A, data=0x0000
+13218 2024/05/16 15:14:37.948000 1024.9925 16 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.991065] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: PCSSR : addr=0x10, data=0x3382 (#1)
+13217 2024/05/16 15:14:37.948000 1024.9925 15 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.990637] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: LFL : addr=0xD120, data=0x0000
+13221 2024/05/16 15:14:37.948000 1024.9926 19 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.992347] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: PCSSR : addr=0x10, data=0x3382 (#4)
+13220 2024/05/16 15:14:37.948000 1024.9926 18 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.991920] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: PCSSR : addr=0x10, data=0x3382 (#3)
+13219 2024/05/16 15:14:37.948000 1024.9926 17 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.991493] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: PCSSR : addr=0x10, data=0x3382 (#2)
+13224 2024/05/16 15:14:37.969000 1024.9927 22 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.993328] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: PAGSR : addr=0x1F, data=0x0A42
+13223 2024/05/16 15:14:37.969000 1024.9927 21 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.993201] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: GINSR : addr=0x1D, data=0x0000
+13222 2024/05/16 15:14:37.948000 1024.9927 20 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.992774] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: PCSSR : addr=0x10, data=0x3382 (#5)
+13225 2024/05/16 15:14:37.969000 1024.9928 23 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.993566] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: OPINSR1: addr=0xDD08, data=0x0000
+13227 2024/05/16 15:14:37.969000 1024.9961 25 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.994015] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: OPINSR3: addr=0xDD18, data=0x0000
+13226 2024/05/16 15:14:37.969000 1024.9961 24 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1024.993792] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: OPINSR2: addr=0xDD10, data=0x0000
+13235 2024/05/16 15:14:38.011000 1025.0441 27 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1025.041862] RTL9010AA Gigabit Ethernet stmmac-0:00: rtl9010_rtct: RTCTSR: addr=0x8022, data=0x0048
+13234 2024/05/16 15:14:38.011000 1025.0441 26 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1025.041644] RTL9010AA Gigabit Ethernet stmmac-0:00: rtl9010_rtct: RTCT 0x8000
+13238 2024/05/16 15:14:38.011000 1025.0442 30 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1025.042084] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: finished
+13237 2024/05/16 15:14:38.011000 1025.0442 29 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1025.042081] RTL9010AA Gigabit Ethernet stmmac-0:00: lge_phy_regdump: cable status = open
+13236 2024/05/16 15:14:38.011000 1025.0442 28 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:06 kernel: [ 1025.042078] RTL9010AA Gigabit Ethernet stmmac-0:00: rtl9010_print_cable_length: cable length=0
+13349 2024/05/16 15:14:39.005000 1026.0161 31 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:07 kernel: [ 1026.013986] RTL9010AA Gigabit Ethernet stmmac-0:00: PHY SQI:0x0 rx_pkt:0 NET tx:0 rx:0
+13634 2024/05/16 15:14:41.542000 1028.5761 32 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:09 kernel: [ 1028.574046] [TOUCH][lge_himax_ts_read_icid] touch IC ID = HX83192A
+13635 2024/05/16 15:14:41.542000 1028.5762 33 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:09 kernel: [ 1028.574052] [TOUCH][lge_touch_monitor_func] himax_ts - alive[1001], error[0]
+14240 2024/05/16 15:14:47.189000 1034.2081 34 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:15 kernel: [ 1034.205324] MICOM I> can0: rx_packets=1292, rx_bytes=20149, rx_errors=0, rx_dropped=0
+14241 2024/05/16 15:14:47.189000 1034.2082 35 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:15 kernel: [ 1034.205329] MICOM I> can1: rx_packets=0, rx_bytes=0, rx_errors=0, rx_dropped=0
+14345 2024/05/16 15:14:48.189000 1035.2321 36 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:16 kernel: [ 1035.229369] RTL9010AA Gigabit Ethernet stmmac-0:00: phy link status: down
+14460 2024/05/16 15:14:49.254000 1036.2561 37 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:17 kernel: [ 1036.253984] RTL9010AA Gigabit Ethernet stmmac-0:00: PHY SQI:0x0 rx_pkt:0 NET tx:0 rx:0
+14743 2024/05/16 15:14:51.784000 1038.8161 39 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:20 kernel: [ 1038.814029] [TOUCH][lge_touch_monitor_func] himax_ts - alive[1011], error[0]
+14742 2024/05/16 15:14:51.784000 1038.8161 38 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:20 kernel: [ 1038.814023] [TOUCH][lge_himax_ts_read_icid] touch IC ID = HX83192A
+15337 2024/05/16 15:14:57.426000 1044.4481 40 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:25 kernel: [ 1044.445324] MICOM I> can0: rx_packets=1292, rx_bytes=20149, rx_errors=0, rx_dropped=0
+15338 2024/05/16 15:14:57.426000 1044.4482 41 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:25 kernel: [ 1044.445329] MICOM I> can1: rx_packets=0, rx_bytes=0, rx_errors=0, rx_dropped=0
+15461 2024/05/16 15:14:58.511000 1045.4722 42 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:26 kernel: [ 1045.469438] RTL9010AA Gigabit Ethernet stmmac-0:00: phy link status: down
+15567 2024/05/16 15:14:59.482000 1046.5001 43 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:27 kernel: [ 1046.497979] RTL9010AA Gigabit Ethernet stmmac-0:00: PHY SQI:0x0 rx_pkt:0 NET tx:0 rx:0
+15734 2024/05/16 15:15:00.802000 1047.8401 44 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:29 kernel: [ 1047.837863] lge_monitor f_monitor_ccnc_pio: [front_DIM_check] SER dim:30/60, DES dim:31/60, ADIM:0xc4
+15891 2024/05/16 15:15:02.052000 1049.0561 45 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:30 kernel: [ 1049.054025] [TOUCH][lge_himax_ts_read_icid] touch IC ID = HX83192A
+15892 2024/05/16 15:15:02.052000 1049.0562 46 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:30 kernel: [ 1049.054031] [TOUCH][lge_touch_monitor_func] himax_ts - alive[1021], error[0]
+16447 2024/05/16 15:15:07.650000 1054.6882 48 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:36 kernel: [ 1054.685330] MICOM I> can1: rx_packets=0, rx_bytes=0, rx_errors=0, rx_dropped=0
+16446 2024/05/16 15:15:07.650000 1054.6882 47 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:36 kernel: [ 1054.685325] MICOM I> can0: rx_packets=1292, rx_bytes=20149, rx_errors=0, rx_dropped=0
+16565 2024/05/16 15:15:08.669000 1055.7121 49 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:37 kernel: [ 1055.709429] RTL9010AA Gigabit Ethernet stmmac-0:00: phy link status: down
+16671 2024/05/16 15:15:09.708000 1056.7361 50 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:38 kernel: [ 1056.733999] RTL9010AA Gigabit Ethernet stmmac-0:00: PHY SQI:0x0 rx_pkt:0 NET tx:0 rx:0
+16996 2024/05/16 15:15:12.275000 1059.2961 52 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:40 kernel: [ 1059.294023] [TOUCH][lge_touch_monitor_func] himax_ts - alive[1031], error[0]
+16995 2024/05/16 15:15:12.275000 1059.2961 51 CCIC SYS SYSL 854 log warn verbose 1 <14>Jan 1 10:18:40 kernel: [ 1059.294016] [TOUCH][lge_himax_ts_read_icid] touch IC ID = HX83192A
