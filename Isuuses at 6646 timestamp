@@ -115,3 +115,81 @@ void PlayerProvider::onError(const ptree& pt) {
             MMLogInfo("[%d] ignored", error_code);
             return;
         }
+
+
+
+368979 2024/07/02 07:16:09.592976 6647.7295 137 CCIC MMSV MMSV 1150 log info verbose 1 [playerprovider.cpp:2523][onPlaybackStatus] Playing
+368978 2024/07/02 07:16:09.592956 6647.7295 224 CCIC VA HMED 2695 log info verbose 1 [p:2695] [t:3472] [hmedia] [I] player) getHandleFromMediaIDMap:4328 : find handle=[13], media_id=[227793]
+368980 2024/07/02 07:16:09.593001 6647.7296 225 CCIC VA HMED 2695 log info verbose 1 [p:2695] [t:3472] [hmedia] [I] player) PlaybackStatusChangeCallbackInternal:2911 : handle(13), onPlayingStateChanged(PLAYING)
+369197 2024/07/02 07:16:09.679710 6647.8162 59 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:09 kernel: [ 6647.884414 / 07-02 01:46:09.678][0] lge_monitor hud_monitor_ccic: [lge_lcd_init_func] start lcd init(lock:0)!
+369198 2024/07/02 07:16:09.679896 6647.8163 60 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:09 kernel: [ 6647.884414 / 07-02 01:46:09.678][0]
+369321 2024/07/02 07:16:09.791007 6647.9274 173 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:1304][GetDuration] duration : 0 (sec)
+369406 2024/07/02 07:16:09.991924 6648.1284 174 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:1304][GetDuration] duration : 0 (sec)
+369580 2024/07/02 07:16:10.153848 6648.2902 61 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:10 kernel: [ 6648.356584 / 07-02 01:46:10.150][1] eqos 2490000.ether_qos: PHY SQI:0x7
+369584 2024/07/02 07:16:10.154312 6648.2903 65 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:10 kernel: [ 6648.356749 / 07-02 01:46:10.150][1] eqos 2490000.ether_qos: QOS ch[1] tx_irq:0, tx_pkt:0, rx_irq:95817, rx_pkt:95971
+369583 2024/07/02 07:16:10.154168 6648.2903 64 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:10 kernel: [ 6648.356744 / 07-02 01:46:10.150][1] eqos 2490000.ether_qos: QOS ch[0] tx_irq:369321, tx_pkt:373594, rx_irq:107485, rx_pkt:139345
+369582 2024/07/02 07:16:10.154101 6648.2903 63 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:10 kernel: [ 6648.356738 / 07-02 01:46:10.150][1] eqos 2490000.ether_qos: QOS rx_framecount_gb:235316
+369581 2024/07/02 07:16:10.154028 6648.2903 62 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:10 kernel: [ 6648.356731 / 07-02 01:46:10.150][1] eqos 2490000.ether_qos: PHY rx_pkt:340865
+369596 2024/07/02 07:16:10.160732 6648.2971 67 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:10 kernel: [ 6648.356756 / 07-02 01:46:10.150][1] eqos 2490000.ether_qos: QOS ch[3] tx_irq:0, tx_pkt:0, rx_irq:0, rx_pkt:0
+369595 2024/07/02 07:16:10.160639 6648.2971 66 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:10 kernel: [ 6648.356753 / 07-02 01:46:10.150][1] eqos 2490000.ether_qos: QOS ch[2] tx_irq:0, tx_pkt:0, rx_irq:0, rx_pkt:0
+369668 2024/07/02 07:16:10.198632 6648.3294 68 CCIC SYS SYSL 667 log warn verbose 1 <12>Jul 2 01:46:10 kernel: [ 6648.397791 / 07-02 01:46:10.191][2] wl_android_priv_cmd: Android private cmd "GET_CHANIM_STATS" on softap1
+369669 2024/07/02 07:16:10.198722 6648.3297 69 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:10 kernel: [ 6648.398117 / 07-02 01:46:10.191][3] CFG80211-INFO) wl_chanim_stats : chanspec: 0xd897 glitch: 0 badplcp: 0 knoise: -88 idle: 99 timestamp: 6647701
+369670 2024/07/02 07:16:10.198799 6648.3298 70 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:10 kernel: [ 6648.398128 / 07-02 01:46:10.191][3] CFG80211-INFO) wl_chanim_stats : chanspec=0xd897 tx=2 inbss=1 obss=1 nocat=0 nopkt=0 doze=0 txop=99 goodtx=1 badtx=1 glitch=0 badplcp=0 knoise=-88 idle=99 timestamp=6647701
+369672 2024/07/02 07:16:10.198900 6648.3300 175 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:1304][GetDuration] duration : 0 (sec)
+370013 2024/07/02 07:16:10.394463 6648.5297 176 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:1304][GetDuration] duration : 0 (sec)
+370066 2024/07/02 07:16:10.598474 6648.7324 177 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:1304][GetDuration] duration : 0 (sec)
+370155 2024/07/02 07:16:10.720296 6648.8567 71 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:10 kernel: [ 6648.924468 / 07-02 01:46:10.718][0] lge_monitor hud_monitor_ccic: [lge_lcd_init_func] start lcd init(lock:0)!
+370156 2024/07/02 07:16:10.720852 6648.8568 72 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:10 kernel: [ 6648.924468 / 07-02 01:46:10.718][0]
+370201 2024/07/02 07:16:10.796654 6648.9331 178 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:1304][GetDuration] duration : 0 (sec)
+370335 2024/07/02 07:16:10.997974 6649.1344 179 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:1304][GetDuration] duration : 0 (sec)
+370970 2024/07/02 07:16:11.205594 6649.3348 180 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:1304][GetDuration] duration : 0 (sec)
+371438 2024/07/02 07:16:11.400166 6649.5363 181 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:1304][GetDuration] duration : 0 (sec)
+371765 2024/07/02 07:16:11.657872 6649.7681 73 CCIC SYS SYSL 667 log warn verbose 1 <30>Jul 2 01:46:11 kernel: [ 6649.835670 / 07-02 01:46:11.629][2] systemd[1]: cinemo.service: Scheduled restart job, restart counter is at 2047.
+371766 2024/07/02 07:16:11.657996 6649.7682 74 CCIC SYS SYSL 667 log warn verbose 1 <30>Jul 2 01:46:11 kernel: [ 6649.836984 / 07-02 01:46:11.630][2] systemd[1]: Stopped cinemo.service.
+371773 2024/07/02 07:16:11.658283 6649.7815 75 CCIC SYS SYSL 667 log warn verbose 1 <30>Jul 2 01:46:11 kernel: [ 6649.847335 / 07-02 01:46:11.640][2] systemd[1]: Starting cinemo.service...
+371781 2024/07/02 07:16:11.658550 6649.7908 76 CCIC SYS SYSL 667 log warn verbose 1 <29>Jul 2 01:46:11 kernel: [ 6649.852719 / 07-02 01:46:11.646][1] systemd[1]: cinemo.service: Main process exited, code=exited, status=127/n/a
+371783 2024/07/02 07:16:11.658695 6649.7927 78 CCIC SYS SYSL 667 log error verbose 1 <27>Jul 2 01:46:11 kernel: [ 6649.855983 / 07-02 01:46:11.649][1] systemd[1]: Failed to start cinemo.service.
+371782 2024/07/02 07:16:11.658622 6649.7927 77 CCIC SYS SYSL 667 log warn verbose 1 <28>Jul 2 01:46:11 kernel: [ 6649.854097 / 07-02 01:46:11.647][1] systemd[1]: cinemo.service: Failed with result 'exit-code'.
+371818 2024/07/02 07:16:11.688762 6649.8249 79 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:11 kernel: [ 6649.892652 / 07-02 01:46:11.686][3] tegra-tj-thermal tegra-tj: current Tj temperature = 51000
+371951 2024/07/02 07:16:11.760327 6649.8968 80 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:11 kernel: [ 6649.964479 / 07-02 01:46:11.758][0] lge_monitor hud_monitor_ccic: [lge_lcd_init_func] start lcd init(lock:0)!
+371952 2024/07/02 07:16:11.760603 6649.8969 81 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:11 kernel: [ 6649.964479 / 07-02 01:46:11.758][0]
+372391 2024/07/02 07:16:12.198002 6650.3333 84 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:12 kernel: [ 6650.401806 / 07-02 01:46:12.195][3] CFG80211-INFO) wl_chanim_stats : chanspec=0xd897 tx=1 inbss=1 obss=0 nocat=0 nopkt=0 doze=0 txop=100 goodtx=1 badtx=0 glitch=0 badplcp=0 knoise=-88 idle=100 timestamp=6649703
+372390 2024/07/02 07:16:12.197939 6650.3333 83 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:12 kernel: [ 6650.401797 / 07-02 01:46:12.195][3] CFG80211-INFO) wl_chanim_stats : chanspec: 0xd897 glitch: 0 badplcp: 0 knoise: -88 idle: 100 timestamp: 6649703
+372389 2024/07/02 07:16:12.197802 6650.3333 82 CCIC SYS SYSL 667 log warn verbose 1 <12>Jul 2 01:46:12 kernel: [ 6650.401483 / 07-02 01:46:12.195][3] wl_android_priv_cmd: Android private cmd "GET_CHANIM_STATS" on softap1
+373076 2024/07/02 07:16:12.800167 6650.9365 86 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:12 kernel: [ 6651.004524 / 07-02 01:46:12.798][0]
+373075 2024/07/02 07:16:12.799933 6650.9365 85 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:12 kernel: [ 6651.004524 / 07-02 01:46:12.798][0] lge_monitor hud_monitor_ccic: [lge_lcd_init_func] start lcd init(lock:0)!
+374155 2024/07/02 07:16:13.840031 6651.9763 88 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:13 kernel: [ 6652.044502 / 07-02 01:46:13.838][0]
+374154 2024/07/02 07:16:13.839776 6651.9763 87 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:13 kernel: [ 6652.044502 / 07-02 01:46:13.838][0] lge_monitor hud_monitor_ccic: [lge_lcd_init_func] start lcd init(lock:0)!
+374820 2024/07/02 07:16:14.199681 6652.3362 89 CCIC SYS SYSL 667 log warn verbose 1 <12>Jul 2 01:46:14 kernel: [ 6652.404038 / 07-02 01:46:14.197][1] wl_android_priv_cmd: Android private cmd "GET_CHANIM_STATS" on softap1
+374823 2024/07/02 07:16:14.201068 6652.3376 90 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:14 kernel: [ 6652.405780 / 07-02 01:46:14.199][1] CFG80211-INFO) wl_chanim_stats : chanspec: 0xd897 glitch: 4 badplcp: 2 knoise: -88 idle: 100 timestamp: 6651704
+374824 2024/07/02 07:16:14.204912 6652.3414 91 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:14 kernel: [ 6652.405799 / 07-02 01:46:14.199][1] CFG80211-INFO) wl_chanim_stats : chanspec=0xd897 tx=1 inbss=1 obss=1 nocat=1 nopkt=1 doze=0 txop=99 goodtx=1 badtx=1 glitch=4 badplcp=2 knoise=-88 idle=100 timestamp=6651704
+374841 2024/07/02 07:16:14.247883 6652.3843 92 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:14 kernel: [ 6652.452834 / 07-02 01:46:14.246][1] atmel_mxt_ts 0-004b: [selftest_monitor_func] t10_status: 0x121, t10_cnt: 6529
+375530 2024/07/02 07:16:14.879348 6653.0156 95 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:14 kernel: [ 6653.084468 / 07-02 01:46:14.878][0]
+375529 2024/07/02 07:16:14.879280 6653.0156 94 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:14 kernel: [ 6653.084468 / 07-02 01:46:14.878][0] lge_monitor hud_monitor_ccic: [lge_lcd_init_func] start lcd init(lock:0)!
+375528 2024/07/02 07:16:14.879083 6653.0156 93 CCIC SYS SYSL 667 log warn verbose 1 <30>Jul 2 01:46:14 kernel: [ 6653.083955 / 07-02 01:46:14.877][1] systemd[1]: cinemo.service: Scheduled restart job, restart counter is at 2048.
+375531 2024/07/02 07:16:14.879750 6653.0162 96 CCIC SYS SYSL 667 log warn verbose 1 <30>Jul 2 01:46:14 kernel: [ 6653.085258 / 07-02 01:46:14.878][1] systemd[1]: Stopped cinemo.service.
+375552 2024/07/02 07:16:14.895026 6653.0311 99 CCIC SYS SYSL 667 log warn verbose 1 <28>Jul 2 01:46:14 kernel: [ 6653.100099 / 07-02 01:46:14.893][2] systemd[1]: cinemo.service: Failed with result 'exit-code'.
+375551 2024/07/02 07:16:14.894960 6653.0311 98 CCIC SYS SYSL 667 log warn verbose 1 <29>Jul 2 01:46:14 kernel: [ 6653.099739 / 07-02 01:46:14.893][2] systemd[1]: cinemo.service: Main process exited, code=exited, status=127/n/a
+375550 2024/07/02 07:16:14.894867 6653.0311 97 CCIC SYS SYSL 667 log warn verbose 1 <30>Jul 2 01:46:14 kernel: [ 6653.098771 / 07-02 01:46:14.892][2] systemd[1]: Starting cinemo.service...
+375561 2024/07/02 07:16:14.916305 6653.0419 100 CCIC SYS SYSL 667 log error verbose 1 <27>Jul 2 01:46:14 kernel: [ 6653.101816 / 07-02 01:46:14.895][2] systemd[1]: Failed to start cinemo.service.
+376673 2024/07/02 07:16:15.920175 6654.0564 102 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:15 kernel: [ 6654.124416 / 07-02 01:46:15.918][0]
+376672 2024/07/02 07:16:15.919896 6654.0564 101 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:15 kernel: [ 6654.124416 / 07-02 01:46:15.918][0] lge_monitor hud_monitor_ccic: [lge_lcd_init_func] start lcd init(lock:0)!
+377001 2024/07/02 07:16:16.204521 6654.3405 104 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:16 kernel: [ 6654.409317 / 07-02 01:46:16.202][0] CFG80211-INFO) wl_chanim_stats : chanspec: 0xd897 glitch: 2 badplcp: 0 knoise: -88 idle: 100 timestamp: 6653706
+377000 2024/07/02 07:16:16.204292 6654.3405 103 CCIC SYS SYSL 667 log warn verbose 1 <12>Jul 2 01:46:16 kernel: [ 6654.408823 / 07-02 01:46:16.202][2] wl_android_priv_cmd: Android private cmd "GET_CHANIM_STATS" on softap1
+377002 2024/07/02 07:16:16.204578 6654.3406 105 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:16 kernel: [ 6654.409329 / 07-02 01:46:16.202][0] CFG80211-INFO) wl_chanim_stats : chanspec=0xd897 tx=2 inbss=1 obss=1 nocat=1 nopkt=1 doze=0 txop=99 goodtx=1 badtx=1 glitch=2 badplcp=0 knoise=-88 idle=100 timestamp=6653706
+377617 2024/07/02 07:16:16.961117 6655.0976 106 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:16 kernel: [ 6655.165508 / 07-02 01:46:16.959][0] lge_monitor hud_monitor_ccic: [lge_lcd_init_func] start lcd init(lock:0)!
+377618 2024/07/02 07:16:16.961416 6655.0977 107 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:16 kernel: [ 6655.165508 / 07-02 01:46:16.959][0]
+378483 2024/07/02 07:16:17.913206 6656.0497 108 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:17 kernel: [ 6656.117108 / 07-02 01:46:17.910][3] atmel_mxt_ts 0-004b: id:[0] type:1 x:4115 y:1 a:00 p:01 v:00
+378533 2024/07/02 07:16:17.939890 6656.0747 109 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:17 kernel: [ 6656.142749 / 07-02 01:46:17.936][3] atmel_mxt_ts 0-004b: [0] release
+378850 2024/07/02 07:16:18.004648 6656.1359 138 CCIC MMSV MMSV 1150 log info verbose 1 [playerstub.cpp:373][stop] mid=[227793], ins_num=[4], aid=[1414], f=[0]
+378854 2024/07/02 07:16:18.004766 6656.1361 141 CCIC MMSV MMSV 1150 log error verbose 1 [playerprovider.cpp:214][getRateAttrIdx] [getRateAttrIdx] Rate list size[1]
+378852 2024/07/02 07:16:18.004730 6656.1361 140 CCIC MMSV MMSV 1150 log info verbose 1 [playerprovider.cpp:1298][process] [StopCommand] proxy=[1] state=[2]
+378851 2024/07/02 07:16:18.004709 6656.1361 139 CCIC MMSV MMSV 1150 log info verbose 1 [playerprovider.cpp:1290][process] [StopCommand] mid=[227793]
+378857 2024/07/02 07:16:18.004823 6656.1364 142 CCIC MMSV MMSV 1150 log info verbose 1 [event_system.cpp:97][WaitEvent] success:0x00000004, fail:0x00000000
+378863 2024/07/02 07:16:18.005242 6656.1389 110 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:18 kernel: [ 6656.204436 / 07-02 01:46:17.998][0] lge_monitor hud_monitor_ccic: [lge_lcd_init_func] start lcd init(lock:0)!
+378864 2024/07/02 07:16:18.005409 6656.1391 111 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:18 kernel: [ 6656.204436 / 07-02 01:46:17.998][0]
+378875 2024/07/02 07:16:18.005701 6656.1414 185 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:730][ChangeStateToReady]
+378874 2024/07/02 07:16:18.005684 6656.1414 184 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:331][UnloadInternal] cur_state is [4]
+378873 2024/07/02 07:16:18.005667 6656.1414 183 CCIC PESV PESV 227793 log info verbose 1 [subtitle_controller.cpp:100][Stop] Stop
+378872 2024/07/02 07:16:18.005649 6656.1414 182 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:307][UnloadInternal] UnloadInternal(1)
+
