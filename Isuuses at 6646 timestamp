@@ -193,3 +193,89 @@ void PlayerProvider::onError(const ptree& pt) {
 378873 2024/07/02 07:16:18.005667 6656.1414 183 CCIC PESV PESV 227793 log info verbose 1 [subtitle_controller.cpp:100][Stop] Stop
 378872 2024/07/02 07:16:18.005649 6656.1414 182 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:307][UnloadInternal] UnloadInternal(1)
 
+
+
+368095 2024/07/02 07:16:09.088933 6647.2252 124 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:92][Load] Load with URI[http://kakaoi-newtone-hdkia.kakao.com/v2/synthesize/5c250859c7f6118cea9faf235e88c9fc.mp3]
+368094 2024/07/02 07:16:09.088916 6647.2252 123 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:294][Load] saturation[0.000000] contrast[1.000000] brightness[1.000000]
+368093 2024/07/02 07:16:09.088876 6647.2252 122 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:293][Load] media_type_=[kakao_i], no_audio=[0] cache=[0], u_video=[0], u_redirect=[0]
+368113 2024/07/02 07:16:09.092732 6647.2288 126 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:253][CreateAudioSinkBin] audio-sink=[audioconvert ! audio/x-raw,channels=2 ! alsasink device=kakaoi0 buffer-time=80000 latency-time=10000]
+368112 2024/07/02 07:16:09.092714 6647.2288 125 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:201][CreateAudioSinkBin] Channel=[2] Alsa device name[kakaoi]
+368114 2024/07/02 07:16:09.092749 6647.2289 118 CCIC MMSV MMSV 1150 log info verbose 1 [playerprovider.cpp:2974][onError] [201] ignored
+368122 2024/07/02 07:16:09.101588 6647.2355 127 CCIC PESV PESV 227793 log info verbose 1 [seek_control.cpp:29][SeekControl]
+368123 2024/07/02 07:16:09.101608 6647.2356 128 CCIC PESV PESV 227793 log info verbose 1 [seek_control.cpp:72][Loop]
+368142 2024/07/02 07:16:09.106813 6647.2433 45 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:09 kernel: [ 6647.311886 / 07-02 01:46:09.105][0] snd_pcm_open: pid = 227793, comm = playerservice
+368144 2024/07/02 07:16:09.107043 6647.2434 47 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:09 kernel: [ 6647.312234 / 07-02 01:46:09.105][0] [dma_request_chan] device name :virt-alt-pcm channel name:tx18
+368143 2024/07/02 07:16:09.106990 6647.2434 46 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:09 kernel: [ 6647.311907 / 07-02 01:46:09.105][0] virt-alt-pcm virt-alt-pcm: soc_pcm_open: DAI = ADMAIF18
+368145 2024/07/02 07:16:09.107225 6647.2438 129 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:716][HandleElementAdd] uridecodebin0
+368146 2024/07/02 07:16:09.107356 6647.2439 130 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:751][HandleElementAdd] timeout interval-7000
+368148 2024/07/02 07:16:09.114924 6647.2514 131 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:810][HandleUriDecodeBinElementAdd] source
+368149 2024/07/02 07:16:09.115191 6647.2517 132 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:810][HandleUriDecodeBinElementAdd] typefindelement0
+368151 2024/07/02 07:16:09.116809 6647.2533 133 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:986][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [NULL -> READY]
+368152 2024/07/02 07:16:09.117242 6647.2537 119 CCIC MMSV MMSV 1150 log info verbose 1 [event_system.cpp:105][WaitEvent] got succeed event: 00000004
+368153 2024/07/02 07:16:09.118648 6647.2547 120 CCIC MMSV MMSV 1150 log info verbose 1 [playerprovider.cpp:594][process] Mutex lock() in rate_list before inserting it
+368155 2024/07/02 07:16:09.118718 6647.2548 122 CCIC MMSV MMSV 1150 log error verbose 1 [playerprovider.cpp:598][process] Index -1 or Size = 0, Insert rate_list[0] rate=1 to vector
+368154 2024/07/02 07:16:09.118701 6647.2548 121 CCIC MMSV MMSV 1150 log error verbose 1 [playerprovider.cpp:214][getRateAttrIdx] [getRateAttrIdx] Rate list size[0]
+368159 2024/07/02 07:16:09.118795 6647.2549 126 CCIC MMSV MMSV 1150 log error verbose 1 [playerprovider.cpp:674][process] Index -1 or Size = 0, Insert speed_list[0] rate=1 to vector
+368158 2024/07/02 07:16:09.118779 6647.2549 125 CCIC MMSV MMSV 1150 log error verbose 1 [playerprovider.cpp:232][getSpeedAttrIdx] [getSpeedAttrIdx] Speed list size[0]
+368157 2024/07/02 07:16:09.118763 6647.2549 124 CCIC MMSV MMSV 1150 log info verbose 1 [playerprovider.cpp:670][process] Mutex lock() in speed_list before inserting it
+368156 2024/07/02 07:16:09.118745 6647.2549 123 CCIC MMSV MMSV 1150 log info verbose 1 [playerprovider.cpp:652][process] getPlaybackAttribute Idx = [0]
+368165 2024/07/02 07:16:09.122608 6647.2588 215 CCIC VA HMED 2695 log info verbose 1 [p:2695] [t:2695] [hmedia] [I] player) deleteHandleFromMediaIDMap:4534 : remove a MediaIDFromMediaIDMap, handle=[13]
+368166 2024/07/02 07:16:09.122689 6647.2589 216 CCIC VA HMED 2695 log info verbose 1 [p:2695] [t:2695] [hmedia] [I] player) createHandleToMediaIDMap:4517 : handle=[13], media_id=[227793]
+368171 2024/07/02 07:16:09.123280 6647.2595 218 CCIC VA HMED 2695 log info verbose 1 [p:2695] [t:3472] [hmedia] [I] player) MediaDataChangeCallback:627 : m_id=[227793] {"CurrentTrack":{"index":0,"uri":"[0]http:\/\/kakaoi-newtone-hdkia.kakao.com\/v2\/synthesize\/5c250859c7f6118cea9faf235e88c9fc.mp3"}}
+368170 2024/07/02 07:16:09.123239 6647.2595 217 CCIC VA HMED 2695 log info verbose 1 [p:2695] [t:3472] [hmedia] [I] player) getHandleFromMediaIDMap:4328 : find handle=[13], media_id=[227793]
+368173 2024/07/02 07:16:09.123315 6647.2596 220 CCIC VA HMED 2695 log info verbose 1 [p:2695] [t:3472] [hmedia] [I] player) getHandleFromMediaIDMap:4328 : find handle=[13], media_id=[227793]
+368172 2024/07/02 07:16:09.123299 6647.2596 219 CCIC VA HMED 2695 log info verbose 1 [p:2695] [t:3472] [hmedia] [I] player) MediaDataChangeCallback:650, CurrentTrack
+368174 2024/07/02 07:16:09.123331 6647.2598 221 CCIC VA HMED 2695 log info verbose 1 [p:2695] [t:3472] [hmedia] [I] player) getHandleFromMediaIDMap:4328 : find handle=[13], media_id=[227793]
+368177 2024/07/02 07:16:09.127675 6647.2642 48 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:09 kernel: [ 6647.332414 / 07-02 01:46:09.126][0] atmel_mxt_ts 0-004b: [selftest_monitor_func] t10_status: 0x121, t10_cnt: 6524
+368432 2024/07/02 07:16:09.240768 6647.3762 49 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:09 kernel: [ 6647.444497 / 07-02 01:46:09.238][2] [FM1488][fm1488_dsp_mode_store] path: /etc/ecnr/parameters/RG3E/KOR/HARMAN/FM1488_PARAM/
+368456 2024/07/02 07:16:09.263400 6647.3995 50 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:09 kernel: [ 6647.467501 / 07-02 01:46:09.261][2] [FM1488][fm1488_app_switch_off] app switch off. mode: 0x00000001 (VR_2_zone_VR)
+368516 2024/07/02 07:16:09.306452 6647.4407 52 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:09 kernel: [ 6647.500482 / 07-02 01:46:09.294][2] [FM1488][fm1488_set_dt_param] Enable DT
+368514 2024/07/02 07:16:09.306308 6647.4407 51 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:09 kernel: [ 6647.500471 / 07-02 01:46:09.294][2] [FM1488][fm1488_app_switch_on] app switch on. mode: 0x00000001 (VR_2_zone)
+368518 2024/07/02 07:16:09.306554 6647.4408 54 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:09 kernel: [ 6647.501758 / 07-02 01:46:09.295][1] [FM1488][fm1488_dsp_sub_mode_change] Sub mode: 0x00000001 (VR_2_zone_WuP)
+368517 2024/07/02 07:16:09.306506 6647.4408 53 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:09 kernel: [ 6647.500900 / 07-02 01:46:09.294][1] [FM1488][fm1488_dsp_mode_store] path: /etc/ecnr/parameters/RG3E/KOR/HARMAN/FM1488_PARAM/
+368837 2024/07/02 07:16:09.465702 6647.6022 134 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:810][HandleUriDecodeBinElementAdd] decodebin0
+368840 2024/07/02 07:16:09.466346 6647.6029 135 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:810][HandleUriDecodeBinElementAdd] queue2-0
+368852 2024/07/02 07:16:09.470745 6647.6073 136 CCIC PESV PESV 227793 log info verbose 1 [media_player.cpp:163][PrintGstLog] [../../alsa-lib-1.2.1.2/src/conf.c:5115 snd_config_expand] alsalib error: Unknown parameters {AES0 0x02 AES1 0x82 AES2 0x00 AES3 0x02}
+368853 2024/07/02 07:16:09.470935 6647.6074 137 CCIC PESV PESV 227793 log info verbose 1 [media_player.cpp:163][PrintGstLog] [../../../alsa-lib-1.2.1.2/src/pcm/pcm.c:2642 snd_pcm_open_noupdate] alsalib error: Unknown PCM kakaoi0:{AES0 0x02 AES1 0x82 AES2 0x00 AES3 0x02}
+368882 2024/07/02 07:16:09.517943 6647.6506 139 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:860][HandleAutoplugSort] count - 0
+368881 2024/07/02 07:16:09.517925 6647.6506 138 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:857][HandleAutoplugSort] cap name - audio/mpeg
+368883 2024/07/02 07:16:09.517959 6647.6507 140 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:870][HandleAutoplugSort] playback timer start
+368884 2024/07/02 07:16:09.517975 6647.6509 141 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:890][HandleAutoplugSelect] #### gst_plugin_feature_get_name=[mpegaudioparse] ####
+368888 2024/07/02 07:16:09.518038 6647.6526 142 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:792][HandleDecodeBinElementAdd] mpegaudioparse0
+368893 2024/07/02 07:16:09.519256 6647.6553 144 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:860][HandleAutoplugSort] count - 1
+368892 2024/07/02 07:16:09.519193 6647.6553 143 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:857][HandleAutoplugSort] cap name - audio/mpeg
+368895 2024/07/02 07:16:09.519290 6647.6556 146 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:902][HandleAutoplugSelect] samplerate=[22050]
+368894 2024/07/02 07:16:09.519274 6647.6556 145 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:890][HandleAutoplugSelect] #### gst_plugin_feature_get_name=[avdec_mp3] ####
+368910 2024/07/02 07:16:09.537239 6647.6736 147 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:792][HandleDecodeBinElementAdd] avdec_mp3-0
+368914 2024/07/02 07:16:09.545307 6647.6818 148 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:716][HandleElementAdd] inputselector0
+368918 2024/07/02 07:16:09.566522 6647.7025 149 CCIC PESV PESV 227793 log info verbose 1 [media_player.cpp:163][PrintGstLog] [../gst-plugins-base-1.16.2/gst-libs/gst/audio/audio-resampler.c:274 convert_taps_gint16_c] can't find exact taps
+368926 2024/07/02 07:16:09.570203 6647.7057 56 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:09 kernel: [ 6647.774357 / 07-02 01:46:09.567][0] virt-alt-pcm virt-alt-pcm: asrc4 ratio change completed. ratio=986500300
+368925 2024/07/02 07:16:09.569808 6647.7057 55 CCIC SYS SYSL 667 log warn verbose 1 <14>Jul 2 01:46:09 kernel: [ 6647.774284 / 07-02 01:46:09.567][0] virt-alt-pcm virt-alt-pcm: asrc4 ratio will be set to 986500300
+368927 2024/07/02 07:16:09.574513 6647.7096 150 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:986][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [READY -> PAUSED]
+368929 2024/07/02 07:16:09.574596 6647.7098 152 CCIC PESV PESV 227793 log info verbose 1 [event.cpp:299][NotifyEventAsyncDone] [NotifyEventAsyncDone]
+368928 2024/07/02 07:16:09.574575 6647.7098 151 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:1038][HandleAsyncDone] [BUS] GST_MESSAGE_ASYNC_DONE
+368930 2024/07/02 07:16:09.574614 6647.7107 153 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:1304][GetDuration] duration : 0 (sec)
+368931 2024/07/02 07:16:09.574786 6647.7113 154 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:1316][IsSeekable] seekable : false
+368933 2024/07/02 07:16:09.574976 6647.7114 156 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:1051][GetAudioTagInfo] GST_TAG_AUDIO_CODEC-MPEG-1 Layer 3 (MP3)
+368932 2024/07/02 07:16:09.574832 6647.7114 155 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:941][GetLanguage] get-audio-tags : code[un]
+368934 2024/07/02 07:16:09.575012 6647.7115 157 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:1052][GetAudioTagInfo] GST_TAG_AUDIO_BITRATE-95995
+368938 2024/07/02 07:16:09.575086 6647.7116 161 CCIC PESV PESV 227793 log info verbose 1 [subtitle_controller.cpp:62][Load] Failed to get the allocated shared_memory
+368937 2024/07/02 07:16:09.575069 6647.7116 160 CCIC PESV PESV 227793 log info verbose 1 [subtitle_utils.cpp:203][GetSharedMemory] Don't need to create a shared memory
+368936 2024/07/02 07:16:09.575050 6647.7116 159 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:1110][GetAudioPadInfo] GST_CAPS_AUDIO SAMPLERATE[22050]
+368935 2024/07/02 07:16:09.575029 6647.7116 158 CCIC PESV PESV 227793 log info verbose 1 [gst_media.cpp:1109][GetAudioPadInfo] GST_CAPS_AUDIO - audio/x-raw, format=(string)S16LE, layout=(string)non-interleaved, rate=(int)22050, channels=(int)1
+368939 2024/07/02 07:16:09.576421 6647.7129 162 CCIC PESV PESV 227793 log info verbose 1 [event.cpp:91][NotifyEventSourceInfo] [NotifyEventSourceInfo] {"SourceInfo":{"CanPlay":true,"CanPause":true,"CanSeek":false,"TrackInfo":{"NumAudioTracks":1,"NumVideoTracks":0,"NumTextTracks":0,"AudioTrack":[{"Format":"un"}]}}}
+368941 2024/07/02 07:16:09.576994 6647.7134 128 CCIC MMSV MMSV 1150 log info verbose 1 [playerprovider.cpp:2476][onDuration] Duration aft set 0
+368940 2024/07/02 07:16:09.576941 6647.7134 127 CCIC MMSV MMSV 1150 log info verbose 1 [playerprovider.cpp:2464][onDuration] Duration [0], list size=[1], index=[0]
+368942 2024/07/02 07:16:09.577674 6647.7138 163 CCIC PESV PESV 227793 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Ready
+368943 2024/07/02 07:16:09.580984 6647.7171 129 CCIC MMSV MMSV 1150 log info verbose 1 [playerprovider.cpp:2806][onSourceInfo]
+368944 2024/07/02 07:16:09.581061 6647.7172 130 CCIC MMSV MMSV 1150 log info verbose 1 [playerprovider.cpp:2811][onSourceInfo] CanSeek : 0
+368945 2024/07/02 07:16:09.581078 6647.7174 131 CCIC MMSV MMSV 1150 log info verbose 1 [playerprovider.cpp:3577][fillSubtitleList] No TextTrack : No such node (TrackInfo.TextTrack)
+368946 2024/07/02 07:16:09.582276 6647.7181 132 CCIC MMSV MMSV 1150 log info verbose 1 [playerprovider.cpp:2562][onPlaybackStatus] Ready
+368947 2024/07/02 07:16:09.582545 6647.7190 222 CCIC VA HMED 2695 log info verbose 1 [p:2695] [t:3472] [hmedia] [I] player) getHandleFromMediaIDMap:4328 : find handle=[13], media_id=[227793]
+368948 2024/07/02 07:16:09.582584 6647.7191 223 CCIC VA HMED 2695 log info verbose 1 [p:2695] [t:3472] [hmedia] [I] player) PlaybackStatusChangeCallbackInternal:2911 : handle(13), onPlayingStateChanged(READY)
+368953 2024/07/02 07:16:09.584681 6647.7209 134 CCIC MMSV MMSV 1150 log info verbose 1 [playerstub.cpp:302][play] connectionName = :1.75
+368952 2024/07/02 07:16:09.584628 6647.7209 133 CCIC MMSV MMSV 1150 log info verbose 1 [playerstub.cpp:300][play] media id = 227793
+368954 2024/07/02 07:16:09.584729 6647.7212 135 CCIC MMSV MMSV 1150 log info verbose 1 [playerprovider.cpp:885][process] [PlayCommand]
+368956 2024/07/02 07:16:09.586579 6647.7225 165 CCIC PESV PESV 227793 log info verbose 1 [streaming_pipeline.cpp:363][Play] Play
+
+
