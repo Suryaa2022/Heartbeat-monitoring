@@ -32,94 +32,10 @@ Handling Existing Mediaid :
 --> Playerstub create a openuri command = [map playerengine_id/ map media_id] to the playerprovider.
 
 
-Plyerprovider 
-
-The process method in playerprovider is to handle commands to open media URI.
-
---> Extracting the command information such as index,URI,media type.
---> checks the lastfailmediaid, if the current command's mediaid matches then return false.
---> This methods prepare a playerengine proxy with the given connection name.if the proxyid returns invalid, the process is aborted. 
+Playerprovider 
 
 
-playerEngine :
-
---> [SetURI] media type[2][video], channel=[2], slot=[3]
---> Parse the Mediatype
---> set videopipeline with preroll,clock,ch,convert,type,saturation,contrast,brightness are load with URI.
---> get playsink
---> HandleBusChangeState [NULL -> READY]
-
-
----------------------------------------------------------------------------------------------------------------------------------------->
-
-
-
-
-HMediaPlayer::setURL receives the call
-
-The HMediaPlayer::setURL method receives the call.
-
-
-Step 3: HMediaPlayer::setURL retrieves the Impl object
-
-The method retrieves the Impl object associated with the current HMediaPlayer instance using this->m_pImpl.get().
-
-
-Step 4: HMediaPlayer::setURL checks for a valid Impl object
-
-The method checks if the Impl object is not null (line 545). If it's null, the method returns HResult::ERROR.
-
-
-Step 5: HMediaPlayer::setURL delegates to HMediaPlayer::Impl::setURL
-
-If the Impl object is valid, the method delegates the call to the HMediaPlayer::Impl::setURL method, passing the url argument.
-
-
-Step 6: HMediaPlayer::Impl::setURL receives the call
-
-The HMediaPlayer::Impl::setURL method receives the call.
-
-
-Step 7: HMediaPlayer::Impl::setURL gets the PlayerEngineCCOSAdaptor instance
-
-The method gets the singleton instance of the PlayerEngineCCOSAdaptor class using PlayerEngineCCOSAdaptor::getInstance() 
-
-2)Handling Non-audio media types:
-
-
-
---> checks if the "current Type"(media type) already exists in map_media_id. if mediatype is new, set the map_media_id to 0 (for new mediatype).
-
---> Create a playerengine for new mediatype and calls "checkvalidmediaid( )" for checking mediaid is valid.
-
-
-
-Handling Existing Mediaid :
-
-
-
---> if the mediaid for current type is greater than 0, assigns the exxisting mediaid to "media_id".
-
---> if the connection name is empty for this media_id, using getconnectionname( ) to retrive a valid connection name.
-
---> if the valid connection name is obatined,then inserts it into the connection map.
-
-
-
-
-
---> Playerstub create a openuri command = [map playerengine_id/ map media_id] to the playerprovider
-
-
-
-
-
-Plyerprovider 
-
-
-
-The process method in playerprovider is to handle commands to open media URI.
-
+The process method in playerprovider is to handle commands from playerstub.
 
 
 --> Extracting the command information such as index,URI,media type.
@@ -131,19 +47,7 @@ The process method in playerprovider is to handle commands to open media URI.
 
 --> PlayerStub receive the play command with media_id and connection name and send it to Playerprovider.
 
---> playerprovider processes the play command
-
-
-Then flow of PlayerProvider,
-
-PlayerProvider :
-
---> PlayerProvider receives the command with media_id and connection name from the Playerstub.For example : openuri command.
-
---> Extracting the command information and checks the lastfailmediaid, if the current command's mediaid matches then return false.
-
-
---> PlayerProvider initiates an com_lge_player_engine_call asynchronous D-Bus call to invoke the method on the player Engine.Which is used to create a proxy for a player engine.
+--> playerprovider processes the play command by initiates an com_lge_player_engine_call asynchronous D-Bus call to invoke the method on the player Engine.Which is used to create a proxy for a player engine.
 
 D-Bus service :
 
@@ -171,28 +75,9 @@ Audio/Video pipeline :
 
 --> If the PlayerProvider requires access to the pipeline, the Mediaplayer provides a method to retrieve that pipeline instances. 
 
+=======================================================================================================================================================>>>
 
-PLAYERPROVIDER :
-
-
---> PlayerStub receive the play command with media_id and connection name and send it to Playerprovider.
-
---> playerprovider processes the play command
-
-
-Then flow of PlayerProvider,
-
-PlayerProvider :
-
---> PlayerProvider receives the command with media_id and connection name from the Playerstub.
-
---> Extracting the command information and checks the lastfailmediaid, if the current command's mediaid matches then return false.
-
-
---> PlayerProvider initiates an com_lge_player_engine_call asynchronous D-Bus call to invoke the method on the player Engine.Which is used to create a proxy for a player engine.
-
-
-
+PROCESS METHOD
 
 This is a C++ method named process in a class PlayerProvider. It takes two parameters: a command::Coro::pull_type& object named in and a command::PlayCommand* object named command. The method returns a boolean value indicating the success or failure of the operation.
 
@@ -228,32 +113,8 @@ In summary, this method processes a PlayCommand by preparing a PE proxy, checkin
 
 
 
-==========================================================================================
+==========================================================================================>>>
 
-
-6. Update state and return result
-
-
-
-Instances :
-
-
-A class is a blueprint or template that defines the characteristics of an object.
-
-An instance is an object created from a class, with its own set of attributes and methods.
-
-
-Class: Dog Instances:
-
-Fido (instance 1)
-Buddy (instance 2)
-Rex (instance 3)
-
-In this example, Dog is the class (the blueprint), and Fido, Buddy, and Rex are instances (objects) created from that class. 
-Each instance has its own set of attributes (e.g., name, age, breed) and methods (e.g., bark, wagTail), 
-but they all share the same characteristics defined by the Dog class
-
-=====================================================================
 
 Singleton instances
 
@@ -269,7 +130,7 @@ By creating a single instance, you can ensure that the resource is only created 
 Global Access: Singleton instances provide a global point of access to a resource or service, making it easily accessible from anywhere in the application.
 This is particularly useful for logging, configuration, or caching mechanisms.
 
-=================================================================
+================================================================================>>>
 
 The map is used to store the media IDs for different media types. When a new media type is requested, the method checks if the media type is already present in the map. If it is, the corresponding media ID is retrieved. If not, a new entry is added to the map with a media ID of 0.
 
@@ -282,7 +143,7 @@ Prevent duplicate media IDs for the same media type.
 When a new audio media type is requested, the method checks if the audio media type is already present in the map. 
 If it is, the corresponding media ID is retrieved. If not, a new entry is added to the map with a media ID of 0.
 
-=================================================================
+=================================================================>>>
 
 HMediaplayer.cpp
 
@@ -293,11 +154,6 @@ Call the play() method on the HMediaPlayer class to start playing the USB audio 
 
  playerProxy->openUri(str_url_with_slot, audio_channel, media_type, callStatus, error, media_id, &callInfo);--> PlayerStub.cpp
 
-
-Playerstub.cpp
-
-
-===================================================================================
 
 
 HMediaPlayer
@@ -425,7 +281,6 @@ The second snippet uses D-Bus to retrieve a connection name.
 Synchronous vs. asynchronous: The first snippet is a simple synchronous function that returns a connection name immediately. 
 The second snippet uses asynchronous D-Bus calls to retrieve the connection name, which may take some time to complete.
 
-=======================================================================================================================================================
 
 
 void PlayerEngineManager::insertMediaId(int mediaId, string connectionName)
@@ -497,12 +352,7 @@ updates it if necessary. If the media ID is not found, it logs a message and ins
 The connectionMap is likely a std::map<int, string> object that stores media IDs as keys and connection names as values. The PlayerEngineManager uses this map to 
 keep track of which media ID is associated with which connection name.
 
-
-
-
-
-
-
+========================================================================================>>>
 
 
 
@@ -618,7 +468,7 @@ By using playbin,the developer doesn't need to worry about creating and configur
 
 =====================================================================================================================================
 
-Rough understanding of HMediaPlayer code for USB_AUDIO mediatype.
+understanding of HMediaPlayer code for USB_AUDIO mediatype.
 
 
 Step 1: Create an instance of HMediaPlayer
