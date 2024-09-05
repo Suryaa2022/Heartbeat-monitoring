@@ -1,0 +1,1328 @@
+
+qtdemux error
+
+
+DEBUG LEVEL :3
+ 
+0:00:00.019764067 3173974 0x57698770a760 WARN                 qtdemux qtdemux.c:3121:qtdemux_parse_trex:<qtdemux0> failed to find fragment defaults for stream 1
+ERROR: from element /GstPipeline:pipeline0/GstDecodeBin:decodebin0/avdec_aac:avdec_aac0: No valid frames decoded before end of stream
+Additional debug info:
+../gst-libs/gst/audio/gstaudiodecoder.c(2488): gst_audio_decoder_sink_eventfunc (): /GstPipeline:pipeline0/GstDecodeBin:decodebin0/avdec_aac:avdec_aac0:
+no valid frames found
+ERROR: pipeline doesn't want to preroll.
+Setting pipeline to NULL ...
+Freeing pipeline ...
+
+===========================================================================================================>>>
+
+DEBUG LEVEL :5
+
+0:00:00.452334717 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:6446:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 249358, size 94, dts=0:01:23.104000000, pts=0:01:23.104000000, duration 0:00:00.032000000
+0:00:00.452343523 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:9622:qtdemux_parse_samples:<qtdemux0> parsing up to sample 2598
+0:00:00.452348849 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:9831:qtdemux_parse_samples:<qtdemux0> sample 2598: index 2598, timestamp 0:01:23.136000000
+0:00:00.452352638 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:9936:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+0:00:00.452359239 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:6446:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 249452, size 98, dts=0:01:23.136000000, pts=0:01:23.136000000, duration 0:00:00.032000000
+0:00:00.452368218 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:9622:qtdemux_parse_samples:<qtdemux0> parsing up to sample 2599
+0:00:00.452373573 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:9831:qtdemux_parse_samples:<qtdemux0> sample 2599: index 2599, timestamp 0:01:23.168000000
+0:00:00.452377365 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:9936:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+0:00:00.452384034 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:6446:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 249550, size 91, dts=0:01:23.168000000, pts=0:01:23.168000000, duration 0:00:00.032000000
+0:00:00.452392952 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:9622:qtdemux_parse_samples:<qtdemux0> parsing up to sample 2600
+0:00:00.452398343 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:9831:qtdemux_parse_samples:<qtdemux0> sample 2600: index 2600, timestamp 0:01:23.200000000
+0:00:00.452402262 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:9936:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+0:00:00.452408982 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:6446:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 249641, size 101, dts=0:01:23.200000000, pts=0:01:23.200000000, duration 0:00:00.032000000
+0:00:00.452417845 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:9622:qtdemux_parse_samples:<qtdemux0> parsing up to sample 2601
+0:00:00.452423176 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:9831:qtdemux_parse_samples:<qtdemux0> sample 2601: index 2601, timestamp 0:01:23.232000000
+0:00:00.452427032 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:9936:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+0:00:00.452433692 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:6446:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 249742, size 95, dts=0:01:23.232000000, pts=0:01:23.232000000, duration 0:00:00.032000000
+0:00:00.452442415 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:9622:qtdemux_parse_samples:<qtdemux0> parsing up to sample 2602
+0:00:00.452447832 3174198 0x5d1c9e766760 DEBUG                qtdemux qtdemux.c:9831:qtdemux_parse_samples:<qtdemux0> sample 2602: index 2602, timestamp 0:01:23.264000000
+
+
+===========================================================================================================>>>
+
+aacparse
+ 
+gst-launch-1.0 filesrc location=/home/lg/Desktop/ALL_MEDIA/ISSUE/AAC_ELD/m4a_AAC-ELD_24kbps_16kHz_Mono\ 1.m4a ! decodebin ! autoaudiosink
+
+Setting pipeline to PAUSED ...
+Pipeline is PREROLLING ...
+0:00:00.020818966 3174489 0x651b89d98760 DEBUG               aacparse gstaacparse.c:156:gst_aac_parse_init: initialized
+0:00:00.020897435 3174489 0x651b89d98760 DEBUG               aacparse gstaacparse.c:1507:gst_aac_parse_start: start
+0:00:00.020933186 3174489 0x651b89d98760 DEBUG               aacparse gstaacparse.c:310:gst_aac_parse_sink_setcaps:<aacparse0> setcaps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)1, codec_data=(buffer)f8f02000, rate=(int)16000, channels=(int)2
+0:00:00.020941244 3174489 0x651b89d98760 INFO                aacparse gstaacparse.c:608:gst_aac_parse_read_audio_specific_config:<aacparse0> Parsed AudioSpecificConfig: 16000 Hz, 1 channels
+0:00:00.020945736 3174489 0x651b89d98760 DEBUG               aacparse gstaacparse.c:623:gst_aac_parse_read_audio_specific_config:<aacparse0> Need more code to parse humongous LOAS data, currently ignored
+0:00:00.020950300 3174489 0x651b89d98760 DEBUG               aacparse gstaacparse.c:335:gst_aac_parse_sink_setcaps: codec_data: object_type=39, sample_rate=16000, channels=1, samples=1024
+0:00:00.020963104 3174489 0x651b89d98760 DEBUG               aacparse gstaacparse.c:186:gst_aac_parse_set_src_caps:<aacparse0> sink caps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)1, codec_data=(buffer)f8f02000, rate=(int)16000, channels=(int)2
+0:00:00.020980875 3174489 0x651b89d98760 DEBUG               aacparse gstaacparse.c:275:gst_aac_parse_set_src_caps:<aacparse0> setting src caps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)1, codec_data=(buffer)f8f02000, rate=(int)16000, channels=(int)1
+0:00:00.040013278 3174489 0x77ff900a5c60 DEBUG               aacparse gstaacparse.c:310:gst_aac_parse_sink_setcaps:<aacparse0> setcaps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)1, codec_data=(buffer)f8f02000, rate=(int)16000, channels=(int)2
+0:00:00.040031133 3174489 0x77ff900a5c60 INFO                aacparse gstaacparse.c:608:gst_aac_parse_read_audio_specific_config:<aacparse0> Parsed AudioSpecificConfig: 16000 Hz, 1 channels
+0:00:00.040036194 3174489 0x77ff900a5c60 DEBUG               aacparse gstaacparse.c:623:gst_aac_parse_read_audio_specific_config:<aacparse0> Need more code to parse humongous LOAS data, currently ignored
+0:00:00.040041275 3174489 0x77ff900a5c60 DEBUG               aacparse gstaacparse.c:335:gst_aac_parse_sink_setcaps: codec_data: object_type=39, sample_rate=16000, channels=1, samples=1024
+0:00:00.040048326 3174489 0x77ff900a5c60 DEBUG               aacparse gstaacparse.c:186:gst_aac_parse_set_src_caps:<aacparse0> sink caps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)1, codec_data=(buffer)f8f02000, rate=(int)16000, channels=(int)2
+0:00:00.040084955 3174489 0x77ff900a5c60 DEBUG               aacparse gstaacparse.c:275:gst_aac_parse_set_src_caps:<aacparse0> setting src caps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)1, codec_data=(buffer)f8f02000, rate=(int)16000, channels=(int)1
+
+ERROR: from element /GstPipeline:pipeline0/GstDecodeBin:decodebin0/avdec_aac:avdec_aac0: No valid frames decoded before end of stream
+Additional debug info:
+../gst-libs/gst/audio/gstaudiodecoder.c(2488): gst_audio_decoder_sink_eventfunc (): /GstPipeline:pipeline0/GstDecodeBin:decodebin0/avdec_aac:avdec_aac0:
+no valid frames found
+ERROR: pipeline doesn't want to preroll.
+Setting pipeline to NULL ...
+0:00:00.056362666 3174489 0x651b89daa590 DEBUG               aacparse gstaacparse.c:1534:gst_aac_parse_stop: stop
+
+==================================================================================================================>>>
+
+DECODEBIN
+ 
+0:00:00.019279829 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:5649:gst_decode_bin_handle_message:<decodebin0> Forwarding msg structure-change message: 0x72d468001a40, time 99:99:99.999999999, seq-num 33, element 'proxypad2', GstMessageStructureChange, type=(GstStructureChangeType)unlink, owner=(GstElement)"\(GstTypeFindElement\)\ typefind", busy=(boolean)false;
+0:00:00.019289469 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:5649:gst_decode_bin_handle_message:<decodebin0> Forwarding msg structure-change message: 0x72d468001ac0, time 99:99:99.999999999, seq-num 34, element 'proxypad2', GstMessageStructureChange, type=(GstStructureChangeType)link, owner=(GstElement)"\(GstTypeFindElement\)\ typefind", busy=(boolean)true;
+0:00:00.019300035 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:5649:gst_decode_bin_handle_message:<decodebin0> Forwarding msg structure-change message: 0x72d468001b40, time 99:99:99.999999999, seq-num 36, element 'proxypad2', GstMessageStructureChange, type=(GstStructureChangeType)link, owner=(GstElement)"\(GstTypeFindElement\)\ typefind", busy=(boolean)false;
+0:00:00.019309121 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:1508:copy_sticky_events:<'':decodepad0> store sticky event stream-start event: 0x5bd216469510, time 99:99:99.999999999, seq-num 27, GstEventStreamStart, stream-id=(string)10754bb18adb9e5f32dee10807d94f4fc01f84f3a84309517a9346add536b743, flags=(GstStreamFlags)GST_STREAM_FLAG_NONE, group-id=(uint)1;
+0:00:00.019316046 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:1508:copy_sticky_events:<'':decodepad0> store sticky event caps event: 0x5bd2164695f0, time 99:99:99.999999999, seq-num 28, GstEventCaps, caps=(GstCaps)audio/x-m4a;
+0:00:00.019322443 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:1455:gst_decode_bin_autoplug_select:<decodebin0> default autoplug-select returns TRY
+0:00:00.019326855 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:2276:connect_pad:<decodebin0> autoplug select requested try
+0:00:00.019334094 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:5649:gst_decode_bin_handle_message:<decodebin0> Forwarding msg structure-change message: 0x72d468001bc0, time 99:99:99.999999999, seq-num 37, element 'proxypad2', GstMessageStructureChange, type=(GstStructureChangeType)unlink, owner=(GstElement)"\(GstTypeFindElement\)\ typefind", busy=(boolean)true;
+0:00:00.019342255 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:5649:gst_decode_bin_handle_message:<decodebin0> Forwarding msg structure-change message: 0x72d468001c40, time 99:99:99.999999999, seq-num 38, element 'proxypad2', GstMessageStructureChange, type=(GstStructureChangeType)unlink, owner=(GstElement)"\(GstTypeFindElement\)\ typefind", busy=(boolean)false;
+0:00:00.019349999 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:1497:clear_sticky_events:<'':decodepad0> clearing sticky event stream-start event: 0x5bd216469510, time 99:99:99.999999999, seq-num 27, GstEventStreamStart, stream-id=(string)10754bb18adb9e5f32dee10807d94f4fc01f84f3a84309517a9346add536b743, flags=(GstStreamFlags)GST_STREAM_FLAG_NONE, group-id=(uint)1;
+0:00:00.019356882 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:1497:clear_sticky_events:<'':decodepad0> clearing sticky event caps event: 0x5bd2164695f0, time 99:99:99.999999999, seq-num 28, GstEventCaps, caps=(GstCaps)audio/x-m4a;
+0:00:00.020148926 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:5649:gst_decode_bin_handle_message:<decodebin0> Forwarding msg structure-change message: 0x72d468001cc0, time 99:99:99.999999999, seq-num 39, element 'sink', GstMessageStructureChange, type=(GstStructureChangeType)link, owner=(GstElement)"\(GstTypeFindElement\)\ typefind", busy=(boolean)true;
+0:00:00.020165596 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:5649:gst_decode_bin_handle_message:<decodebin0> Forwarding msg structure-change message: 0x72d468001d40, time 99:99:99.999999999, seq-num 41, element 'sink', GstMessageStructureChange, type=(GstStructureChangeType)link, owner=(GstElement)"\(GstTypeFindElement\)\ typefind", busy=(boolean)false;
+0:00:00.020177032 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:5649:gst_decode_bin_handle_message:<decodebin0> Forwarding msg state-changed message: 0x72d468001dc0, time 99:99:99.999999999, seq-num 42, element 'qtdemux0', GstMessageStateChanged, old-state=(GstState)null, new-state=(GstState)ready, pending-state=(GstState)void-pending;
+0:00:00.020195307 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:2709:connect_element:<decodebin0> Attempting to connect element qtdemux0 [chain:0x5bd21647b450] further
+0:00:00.020200743 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:2723:connect_element:<decodebin0> got a source pad template video_%u
+0:00:00.020205241 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:2757:connect_element:<decodebin0> did not get the sometimes pad of template video_%u
+0:00:00.020209414 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:2723:connect_element:<decodebin0> got a source pad template audio_%u
+0:00:00.020213493 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:2757:connect_element:<decodebin0> did not get the sometimes pad of template audio_%u
+0:00:00.020217718 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:2723:connect_element:<decodebin0> got a source pad template subtitle_%u
+0:00:00.020221783 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:2757:connect_element:<decodebin0> did not get the sometimes pad of template subtitle_%u
+0:00:00.020285440 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:5649:gst_decode_bin_handle_message:<decodebin0> Forwarding msg stream-status message: 0x72d468001d40, time 99:99:99.999999999, seq-num 43, element 'sink', GstMessageStreamStatus, type=(GstStreamStatusType)create, owner=(GstElement)"\(GstQTDemux\)\ qtdemux0", object=(GstTask)"\(GstTask\)\ task1";
+0:00:00.020369902 3174825 0x5bd21644c240 DEBUG              decodebin gstdecodebin2.c:5649:gst_decode_bin_handle_message:<decodebin0> Forwarding msg state-changed message: 0x72d468001cc0, time 99:99:99.999999999, seq-num 44, element 'qtdemux0', GstMessageStateChanged, old-state=(GstState)ready, new-state=(GstState)paused, pending-state=(GstState)void-pending;
+0:00:00.020464301 3174825 0x5bd21644c760 DEBUG              decodebin gstdecodebin2.c:5649:gst_decode_bin_handle_message:<decodebin0> Forwarding msg stream-status message: 0x72d468001e40, time 99:99:99.999999999, seq-num 45, element 'sink', GstMessageStreamStatus, type=(GstStreamStatusType)enter, owner=(GstElement)"\(GstQTDemux\)\ qtdemux0", object=(GstTask)"\(GstTask\)\ qtdemux0:sink";
+0:00:00.020642689 3174825 0x5bd21644c760 DEBUG              decodebin gstdecodebin2.c:2968:pad_added_cb:<qtdemux0:audio_0> pad added, chain:0x5bd21647b450
+0:00:00.020658532 3174825 0x5bd21644c760 DEBUG              decodebin gstdecodebin2.c:1551:analyze_new_pad:<decodebin0> Pad qtdemux0:audio_0 caps:audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)1, codec_data=(buffer)f8f02000, rate=(int)16000, channels=(int)2
+0:00:00.020667963 3174825 0x5bd21644c760 DEBUG              decodebin gstdecodebin2.c:3850:gst_decode_group_new:<decodebin0> Creating new group 0x72d4680aa770 with parent chain 0x5bd21647b450
+0:00:00.020721762 3174825 0x5bd21644c760 DEBUG              decodebin gstdecodebin2.c:2867:check_upstream_seekable:<decodebin0> upstream seekable: 1
+0:00:00.020728120 3174825 0x5bd21644c760 DEBUG              decodebin gstdecodebin2.c:3797:decodebin_set_queue_size_full:<multiqueue0> use buffering 0
+0:00:00.020733068 3174825 0x5bd21644c760 DEBUG              decodebin gstdecodebin2.c:3829:decodebin_set_queue_size_full:<multiqueue0> setting limits 8388608 bytes, 0 buffers, 0 time
+0:00:00.020751095 3174825 0x5bd21644c760 DEBUG              decodebin gstdecodebin2.c:3544:gst_decode_c
+
+===============================================================================================================>>>
+
+AAC FILE
+
+DEBUG LEVEL :3 
+ 
+gst-launch-1.0 filesrc location=/home/lg/Desktop/ALL_MEDIA/MUSIC/AAC/sample-1.aac ! decodebin ! audioconvert ! audioresample ! autoaudiosink
+
+Setting pipeline to PAUSED ...
+0:00:00.024783601 3176603 0x64acb2129190 WARN                 basesrc gstbasesrc.c:3600:gst_base_src_start_complete:<filesrc0> pad not activated yet
+Pipeline is PREROLLING ...
+0:00:00.028344053 3176603 0x64acb20f7f00 WARN                 qtdemux qtdemux_types.c:239:qtdemux_type_get: unknown QuickTime node type sgpd
+0:00:00.028358728 3176603 0x64acb20f7f00 WARN                 qtdemux qtdemux_types.c:239:qtdemux_type_get: unknown QuickTime node type sbgp
+0:00:00.028391040 3176603 0x64acb20f7f00 WARN                 qtdemux qtdemux.c:3237:qtdemux_parse_trex:<qtdemux0> failed to find fragment defaults for stream 1
+Redistribute latency...
+Pipeline is PREROLLED ...
+Setting pipeline to PLAYING ...
+New clock: GstPulseSinkClock
+0:01:35.986003884 3176603 0x78c4ec07c060 WARN                   libav gstavauddec.c:628:gst_ffmpegauddec_drain:<avdec_aac0> send packet failed, could not drain decoder
+0:01:36.089683107 3176603 0x78c4e40ecb90 WARN                   pulse pulsesink.c:702:gst_pulsering_stream_underflow_cb:<autoaudiosink0-actual-sink-pulse> Got underflow
+Got EOS from element "pipeline0".
+Execution ended after 0:01:36.069466610
+Setting pipeline to PAUSED ...
+Setting pipeline to READY ...
+Setting pipeline to NULL ...
+Freeing pipeline ...
+
+===============================================================================================================>>>
+
+qtdemux 
+
+
+DEBUG LEVEL :3
+ 
+Setting pipeline to PAUSED ...
+
+Pipeline is PREROLLING ...
+
+0:00:00.028107697 3176903 0x5be5a93f6f00 WARN                 qtdemux qtdemux_types.c:239:qtdemux_type_get: unknown QuickTime node type sgpd
+
+0:00:00.028125753 3176903 0x5be5a93f6f00 WARN                 qtdemux qtdemux_types.c:239:qtdemux_type_get: unknown QuickTime node type sbgp
+
+0:00:00.028189220 3176903 0x5be5a93f6f00 WARN                 qtdemux qtdemux.c:3237:qtdemux_parse_trex:<qtdemux0> failed to find fragment defaults for stream 1
+
+Redistribute latency...
+
+Pipeline is PREROLLED ...
+
+Setting pipeline to PLAYING ...
+
+New clock: GstPulseSinkClock
+
+^Chandling interrupt.
+
+Interrupt: Stopping pipeline ...
+
+Execution ended after 0:00:08.607314620
+
+Setting pipeline to PAUSED ...
+
+Setting pipeline to READY ...
+
+Setting pipeline to NULL ...
+
+Freeing pipeline ...
+
+
+
+DEBUG LEVEL :5
+
+ 
+0:00:00.067528065 3176917 0x648a939e5f00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 9
+
+0:00:00.067541342 3176917 0x648a939e5f00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 9: index 9, timestamp 0:00:00.208979591
+
+0:00:00.067545844 3176917 0x648a939e5f00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+
+0:00:00.067556264 3176917 0x648a939e5f00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 8399, size 928, dts=0:00:00.208979591, pts=0:00:00.208979591, duration 0:00:00.023219955
+
+0:00:00.067647130 3176917 0x648a939e5f00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 10
+
+0:00:00.067658877 3176917 0x648a939e5f00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 10: index 10, timestamp 0:00:00.232199546
+
+0:00:00.067663908 3176917 0x648a939e5f00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+
+0:00:00.067673550 3176917 0x648a939e5f00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 9327, size 929, dts=0:00:00.232199546, pts=0:00:00.232199546, duration 0:00:00.023219955
+
+0:00:00.067686688 3176917 0x648a939e5f00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 11
+
+0:00:00.067692891 3176917 0x648a939e5f00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 11: index 11, timestamp 0:00:00.255419501
+
+0:00:00.067696411 3176917 0x648a939e5f00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+
+0:00:00.067703945 3176917 0x648a939e5f00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 10256, size 929, dts=0:00:00.255419501, pts=0:00:00.255419501, duration 0:00:00.023219954
+
+
+==================================================================================================================================>>>
+
+aacparse
+
+DEBUG LEVEL :5
+ 
+gst-launch-1.0 filesrc location=/home/lg/Desktop/ALL_MEDIA/MUSIC/AAC/sample-1.aac ! decodebin ! audioconvert ! audioresample ! autoaudiosink
+
+
+Setting pipeline to PAUSED ...
+
+Pipeline is PREROLLING ...
+
+0:00:00.028852525 3177473 0x564bca589f00 DEBUG               aacparse gstaacparse.c:153:gst_aac_parse_init: initialized
+
+0:00:00.028927821 3177473 0x564bca589f00 DEBUG               aacparse gstaacparse.c:1501:gst_aac_parse_start: start
+
+0:00:00.028965511 3177473 0x564bca589f00 DEBUG               aacparse gstaacparse.c:306:gst_aac_parse_sink_setcaps:<aacparse0> setcaps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)2, base-profile=(string)lc, profile=(string)lc, codec_data=(buffer)1210, rate=(int)44100, channels=(int)2
+
+0:00:00.028974433 3177473 0x564bca589f00 INFO                aacparse gstaacparse.c:604:gst_aac_parse_read_audio_specific_config:<aacparse0> Parsed AudioSpecificConfig: 44100 Hz, 2 channels
+
+0:00:00.028979186 3177473 0x564bca589f00 DEBUG               aacparse gstaacparse.c:619:gst_aac_parse_read_audio_specific_config:<aacparse0> Need more code to parse humongous LOAS data, currently ignored
+
+0:00:00.028986973 3177473 0x564bca589f00 DEBUG               aacparse gstaacparse.c:331:gst_aac_parse_sink_setcaps: codec_data: object_type=2, sample_rate=44100, channels=2, samples=1024
+
+0:00:00.028994187 3177473 0x564bca589f00 DEBUG               aacparse gstaacparse.c:183:gst_aac_parse_set_src_caps:<aacparse0> sink caps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)2, base-profile=(string)lc, profile=(string)lc, codec_data=(buffer)1210, rate=(int)44100, channels=(int)2
+
+0:00:00.029014269 3177473 0x564bca589f00 DEBUG               aacparse gstaacparse.c:271:gst_aac_parse_set_src_caps:<aacparse0> setting src caps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)2, base-profile=(string)lc, profile=(string)lc, codec_data=(buffer)1210, rate=(int)44100, channels=(int)2
+
+0:00:00.057626550 3177473 0x7b16a807b060 DEBUG               aacparse gstaacparse.c:306:gst_aac_parse_sink_setcaps:<aacparse0> setcaps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)2, base-profile=(string)lc, profile=(string)lc, codec_data=(buffer)1210, rate=(int)44100, channels=(int)2
+
+0:00:00.057647380 3177473 0x7b16a807b060 INFO                aacparse gstaacparse.c:604:gst_aac_parse_read_audio_specific_config:<aacparse0> Parsed AudioSpecificConfig: 44100 Hz, 2 channels
+
+0:00:00.057651880 3177473 0x7b16a807b060 DEBUG               aacparse gstaacparse.c:619:gst_aac_parse_read_audio_specific_config:<aacparse0> Need more code to parse humongous LOAS data, currently ignored
+
+0:00:00.057656447 3177473 0x7b16a807b060 DEBUG               aacparse gstaacparse.c:331:gst_aac_parse_sink_setcaps: codec_data: object_type=2, sample_rate=44100, channels=2, samples=1024
+
+0:00:00.057663385 3177473 0x7b16a807b060 DEBUG               aacparse gstaacparse.c:183:gst_aac_parse_set_src_caps:<aacparse0> sink caps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)2, base-profile=(string)lc, profile=(string)lc, codec_data=(buffer)1210, rate=(int)44100, channels=(int)2
+
+0:00:00.057705398 3177473 0x7b16a807b060 DEBUG               aacparse gstaacparse.c:271:gst_aac_parse_set_src_caps:<aacparse0> setting src caps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)2, base-profile=(string)lc, profile=(string)lc, codec_data=(buffer)1210, rate=(int)44100, channels=(int)2
+
+Redistribute latency...
+
+Pipeline is PREROLLED ...
+
+Setting pipeline to PLAYING ...
+
+New clock: GstPulseSinkClock
+
+^Chandling interrupt.
+
+Interrupt: Stopping pipeline ...
+
+Execution ended after 0:00:13.469742420
+
+Setting pipeline to PAUSED ...
+
+Setting pipeline to READY ...
+
+0:00:13.536060364 3177473 0x564bca5bb520 DEBUG               aacparse gstaacparse.c:1528:gst_aac_parse_stop: stop
+
+Setting pipeline to NULL ...
+
+Freeing pipeline ...
+
+===============================================================================================================>>>
+
+AAC-ELD (DEBUG LEVEL : 3)
+
+ gst-launch-1.0 filesrc location=/home/lg/Desktop/ALL_MEDIA/ISSUE/AAC_ELD/m4a_AAC-ELD_24kbps_16kHz_Mono\ 1.m4a ! decodebin ! autoaudiosink
+
+Setting pipeline to PAUSED ...
+0:00:00.163081462 3223555 0x6201c99e9550 WARN                 basesrc gstbasesrc.c:3600:gst_base_src_start_complete:<filesrc0> pad not activated yet
+
+Pipeline is PREROLLING ...
+0:00:00.171239556 3223555 0x6201c99be700 WARN                 qtdemux qtdemux.c:3237:qtdemux_parse_trex:<qtdemux0> failed to find fragment defaults for stream 1
+
+0:00:00.203693458 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.203721445 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.203730946 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.203738362 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.203745465 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.203753840 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.203761536 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.203767864 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.203775796 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.203789650 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.203797144 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.203807697 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.203818576 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.203827555 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+
+
+0:00:00.366313945 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.366329815 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.366345823 3223555 0x78f960076860 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+
+0:00:00.366364930 3223555 0x78f960076860 WARN                   libav gstavauddec.c:628:gst_ffmpegauddec_drain:<avdec_aac0> send packet failed, could not drain decoder
+0:00:00.366415076 3223555 0x78f960076860 WARN            audiodecoder gstaudiodecoder.c:1753:gst_audio_decoder_drain:<avdec_aac0> still 2927 frames left after draining
+0:00:00.366584391 3223555 0x78f960076860 WARN            audiodecoder gstaudiodecoder.c:2421:gst_audio_decoder_sink_eventfunc:<avdec_aac0> error: No valid frames decoded before end of stream
+0:00:00.366597052 3223555 0x78f960076860 WARN            audiodecoder gstaudiodecoder.c:2421:gst_audio_decoder_sink_eventfunc:<avdec_aac0> error: no valid frames found
+
+ERROR: from element /GstPipeline:pipeline0/GstDecodeBin:decodebin0/avdec_aac:avdec_aac0: No valid frames decoded before end of stream
+
+Additional debug info:
+../subprojects/gst-plugins-base/gst-libs/gst/audio/gstaudiodecoder.c(2421): gst_audio_decoder_sink_eventfunc (): /GstPipeline:pipeline0/GstDecodeBin:decodebin0/avdec_aac:avdec_aac0:
+no valid frames found
+
+ERROR: pipeline doesn't want to preroll.
+Setting pipeline to NULL ...
+0:00:00.368597074 3223555 0x78f960076860 WARN                 default grammar.y:506:gst_parse_no_more_pads:<decodebin0> warning: Delayed linking failed.
+0:00:00.368622812 3223555 0x78f960076860 WARN                 default grammar.y:506:gst_parse_no_more_pads:<decodebin0> warning: failed delayed linking some pad of GstDecodeBin named decodebin0 to some pad of GstAutoAudioSink named autoaudiosink0
+
+Freeing pipeline ...
+
+=====================================================================================================>>
+
+AAC (DEBUG LEVEL :3)
+
+gst-launch-1.0 filesrc location=/home/lg/Desktop/ALL_MEDIA/MUSIC/AAC/sample-1.aac ! decodebin ! audioconvert ! audioresample ! autoaudiosink
+
+Setting pipeline to PAUSED ...
+0:00:00.152364154 3226037 0x5efc59c4db90 WARN                 basesrc gstbasesrc.c:3600:gst_base_src_start_complete:<filesrc0> pad not activated yet
+
+Pipeline is PREROLLING ...
+0:00:00.230045469 3226037 0x5efc59c1c300 WARN                 qtdemux qtdemux_types.c:239:qtdemux_type_get: unknown QuickTime node type sgpd
+0:00:00.230075875 3226037 0x5efc59c1c300 WARN                 qtdemux qtdemux_types.c:239:qtdemux_type_get: unknown QuickTime node type sbgp
+0:00:00.230112385 3226037 0x5efc59c1c300 WARN                 qtdemux qtdemux.c:3237:qtdemux_parse_trex:<qtdemux0> failed to find fragment defaults for stream 1
+
+Redistribute latency...
+Pipeline is PREROLLED ...
+Setting pipeline to PLAYING ...
+New clock: GstPulseSinkClock
+^Chandling interrupt.
+Interrupt: Stopping pipeline ...
+Execution ended after 0:00:16.661476654
+Setting pipeline to PAUSED ...
+Setting pipeline to READY ...
+Setting pipeline to NULL ...
+Freeing pipeline ...
+
+=======================================================================================================>>
+
+gstaudiodecoder.c
+
+AAC
+
+
+0:00:00.256515158 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:430:gst_audio_decoder_init:<GstAudioDecoder@0x7b71cc0d0ad0> gst_audio_decoder_init
+0:00:00.256540552 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:447:gst_audio_decoder_init:<GstAudioDecoder@0x7b71cc0d0ad0> sinkpad created
+0:00:00.256557441 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:460:gst_audio_decoder_init:<GstAudioDecoder@0x7b71cc0d0ad0> srcpad created
+0:00:00.256570918 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:485:gst_audio_decoder_reset:<GstAudioDecoder@0x7b71cc0d0ad0> gst_audio_decoder_reset
+0:00:00.256575183 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:479:gst_audio_decoder_init:<GstAudioDecoder@0x7b71cc0d0ad0> init ok
+
+0:00:00.256942661 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:2848:gst_audio_decoder_sink_query:<avdec_aac0:sink> received query accept-caps query: 0x7b71cc00cf20, GstQueryAcceptCaps, caps=(GstCaps)"audio/mpeg\,\ mpegversion\=\(int\)4\,\ framed\=\(boolean\)true\,\ stream-format\=\(string\)raw\,\ level\=\(string\)2\,\ base-profile\=\(string\)lc\,\ profile\=\(string\)lc\,\ codec_data\=\(buffer\)1210\,\ rate\=\(int\)44100\,\ channels\=\(int\)2", result=(boolean)false;
+0:00:00.257082071 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:2999:gst_audio_decoder_src_query:<avdec_aac0:src> received query caps query: 0x7b71cc00cf70, GstQueryCaps, filter=(GstCaps)"NULL", caps=(GstCaps)"NULL";
+0:00:00.257231381 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:3036:gst_audio_decoder_start:<avdec_aac0> gst_audio_decoder_start
+
+0:00:00.257234336 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:485:gst_audio_decoder_reset:<avdec_aac0> gst_audio_decoder_reset
+0:00:00.257365012 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 10254, stream-start
+0:00:00.257368241 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:485:gst_audio_decoder_reset:<avdec_aac0> gst_audio_decoder_reset
+0:00:00.257371243 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:2314:gst_audio_decoder_sink_eventfunc:<avdec_aac0> received STREAM_START. Clearing taglist
+0:00:00.257505384 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:2848:gst_audio_decoder_sink_query:<avdec_aac0:sink> received query accept-caps query: 0x7b71cc00cf70, GstQueryAcceptCaps, caps=(GstCaps)"audio/mpeg\,\ mpegversion\=\(int\)4\,\ framed\=\(boolean\)true\,\ stream-format\=\(string\)raw\,\ level\=\(string\)2\,\ base-profile\=\(string\)lc\,\ profile\=\(string\)lc\,\ codec_data\=\(buffer\)1210\,\ rate\=\(int\)44100\,\ channels\=\(int\)2", result=(boolean)false;
+0:00:00.257536955 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 12814, caps
+0:00:00.257542473 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:880:gst_audio_decoder_sink_setcaps:<avdec_aac0> caps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)2, base-profile=(string)lc, profile=(string)lc, codec_data=(buffer)1210, rate=(int)44100, channels=(int)2
+0:00:00.258889591 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:2999:gst_audio_decoder_src_query:<avdec_aac0:src> received query caps query: 0x7b71cc00cf20, GstQueryCaps, filter=(GstCaps)"NULL", caps=(GstCaps)"NULL";
+0:00:00.258953731 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 10254, stream-start
+0:00:00.258956468 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:485:gst_audio_decoder_reset:<avdec_aac0> gst_audio_decoder_reset
+0:00:00.258959520 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:2314:gst_audio_decoder_sink_eventfunc:<avdec_aac0> received STREAM_START. Clearing taglist
+0:00:00.258996868 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:2848:gst_audio_decoder_sink_query:<avdec_aac0:sink> received query accept-caps query: 0x7b71cc00ce30, GstQueryAcceptCaps, caps=(GstCaps)"audio/mpeg\,\ mpegversion\=\(int\)4\,\ framed\=\(boolean\)true\,\ stream-format\=\(string\)raw\,\ level\=\(string\)2\,\ base-profile\=\(string\)lc\,\ profile\=\(string\)lc\,\ codec_data\=\(buffer\)1210\,\ rate\=\(int\)44100\,\ channels\=\(int\)2", result=(boolean)false;
+0:00:00.259026717 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 12814, caps
+0:00:00.259032241 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:880:gst_audio_decoder_sink_setcaps:<avdec_aac0> caps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)2, base-profile=(string)lc, profile=(string)lc, codec_data=(buffer)1210, rate=(int)44100, channels=(int)2
+0:00:00.259035217 3234304 0x5ab3243ee300 DEBUG           audiodecoder gstaudiodecoder.c:886:gst_audio_decoder_sink_setcaps:<avdec_aac0> Caps did not change, not setting again
+0:00:00.259718970 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:2848:gst_audio_decoder_sink_query:<avdec_aac0:sink> received query caps query: 0x7b71c40078f0, GstQueryCaps, filter=(GstCaps)"audio/mpeg\,\ mpegversion\=\(int\)4\,\ framed\=\(boolean\)true\,\ stream-format\=\(string\)raw\,\ level\=\(string\)2\,\ base-profile\=\(string\)lc\,\ profile\=\(string\)lc\,\ codec_data\=\(buffer\)1210\,\ rate\=\(int\)44100\,\ channels\=\(int\)2", caps=(GstCaps)"NULL";
+0:00:00.259966425 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:2848:gst_audio_decoder_sink_query:<avdec_aac0:sink> received query accept-caps query: 0x7b71c4008000, GstQueryAcceptCaps, caps=(GstCaps)"audio/mpeg\,\ mpegversion\=\(int\)4\,\ framed\=\(boolean\)true\,\ stream-format\=\(string\)raw\,\ level\=\(string\)2\,\ base-profile\=\(string\)lc\,\ profile\=\(string\)lc\,\ codec_data\=\(buffer\)1210\,\ rate\=\(int\)44100\,\ channels\=\(int\)2", result=(boolean)false;
+0:00:00.260030198 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 12814, caps
+0:00:00.260036414 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:880:gst_audio_decoder_sink_setcaps:<avdec_aac0> caps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)2, base-profile=(string)lc, profile=(string)lc, codec_data=(buffer)1210, rate=(int)44100, channels=(int)2
+0:00:00.260054429 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:886:gst_audio_decoder_sink_setcaps:<avdec_aac0> Caps did not change, not setting again
+0:00:00.260500419 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 17934, segment
+0:00:00.260507742 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:2335:gst_audio_decoder_sink_eventfunc:<avdec_aac0> received TIME SEGMENT time segment start=0:00:00.046439909, offset=0:00:00.000000000, stop=0:01:36.112439909, rate=1.000000, applied_rate=1.000000, flags=0x00, time=0:00:00.000000000, base=0:00:00.000000000, position 0:00:00.046439909, duration 99:99:99.999999999
+0:00:00.260588359 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 20510, tag
+0:00:00.260593229 3234304 0x7b71d407ac60 INFO            audiodecoder gstaudiodecoder.c:2454:gst_audio_decoder_sink_eventfunc:<avdec_aac0> upstream stream tags: taglist, audio-codec=(string)"MPEG-4\ AAC\ audio", maximum-bitrate=(uint)320059, bitrate=(uint)320059;
+0:00:00.260598181 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:585:gst_audio_decoder_create_merged_tags_event:<avdec_aac0> merged   : taglist, audio-codec=(string)"MPEG-4\ AAC\ audio", maximum-bitrate=(uint)320059, bitrate=(uint)320059;
+0:00:00.260622276 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:2475:gst_audio_decoder_sink_eventfunc:<avdec_aac0> Enqueuing event 20510, tag
+0:00:00.260682751 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 20510, tag
+0:00:00.260686297 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:2475:gst_audio_decoder_sink_eventfunc:<avdec_aac0> Enqueuing event 20510, tag
+0:00:00.260783196 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 20510, tag
+0:00:00.260787528 3234304 0x7b71d407ac60 INFO            audiodecoder gstaudiodecoder.c:2454:gst_audio_decoder_sink_eventfunc:<avdec_aac0> upstream stream tags: taglist, audio-codec=(string)"MPEG-4\ AAC", maximum-bitrate=(uint)320059, bitrate=(uint)320059;
+0:00:00.260791737 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:585:gst_audio_decoder_create_merged_tags_event:<avdec_aac0> merged   : taglist, audio-codec=(string)"MPEG-4\ AAC", maximum-bitrate=(uint)320059, bitrate=(uint)320059;
+0:00:00.260799149 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:2475:gst_audio_decoder_sink_eventfunc:<avdec_aac0> Enqueuing event 20510, tag
+0:00:00.260818095 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:2055:gst_audio_decoder_chain:<avdec_aac0> handling discont
+0:00:00.260837267 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:485:gst_audio_decoder_reset:<avdec_aac0> gst_audio_decoder_reset
+0:00:00.260841139 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 929
+0:00:00.260933820 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:821:gst_audio_decoder_set_output_caps:<avdec_aac0> Setting srcpad caps audio/x-raw, format=(string)F32LE, layout=(string)non-interleaved, rate=(int)44100, channels=(int)2, channel-mask=(bitmask)0x0000000000000003
+0:00:00.260989242 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:3687:gst_audio_decoder_allocate_output_buffer: alloc src buffer
+0:00:00.260997336 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:644:gst_audio_decoder_negotiate_default:<avdec_aac0> setting src caps audio/x-raw, format=(string)F32LE, layout=(string)non-interleaved, rate=(int)44100, channels=(int)2, channel-mask=(bitmask)0x0000000000000003
+0:00:00.261000308 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:651:gst_audio_decoder_negotiate_default:<avdec_aac0> Pushing pending events
+0:00:00.261184040 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:2999:gst_audio_decoder_src_query:<avdec_aac0:src> received query caps query: 0x7b71c4008000, GstQueryCaps, filter=(GstCaps)"NULL", caps=(GstCaps)"NULL";
+0:00:00.262441251 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:2999:gst_audio_decoder_src_query:<avdec_aac0:src> received query caps query: 0x7b71c40079e0, GstQueryCaps, filter=(GstCaps)"NULL", caps=(GstCaps)"NULL";
+0:00:00.263213746 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:2644:gst_audio_decoder_src_event:<avdec_aac0> received event 61441, reconfigure
+0:00:00.268837932 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:685:gst_audio_decoder_negotiate_default:<avdec_aac0> ALLOCATION (1) params: allocation query: 0x7b71c4007990, GstQueryAllocation, caps=(GstCaps)"audio/x-raw\,\ format\=\(string\)F32LE\,\ layout\=\(string\)non-interleaved\,\ rate\=\(int\)44100\,\ channels\=\(int\)2\,\ channel-mask\=\(bitmask\)0x0000000000000003", need-pool=(boolean)true, allocator=(GArray)NULL;
+0:00:00.268893832 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:644:gst_audio_decoder_negotiate_default:<avdec_aac0> setting src caps audio/x-raw, format=(string)F32LE, layout=(string)non-interleaved, rate=(int)44100, channels=(int)2, channel-mask=(bitmask)0x0000000000000003
+0:00:00.268896840 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:651:gst_audio_decoder_negotiate_default:<avdec_aac0> Pushing pending events
+0:00:00.268970983 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:685:gst_audio_decoder_negotiate_default:<avdec_aac0> ALLOCATION (1) params: allocation query: 0x7b71c4007a80, GstQueryAllocation, caps=(GstCaps)"audio/x-raw\,\ format\=\(string\)F32LE\,\ layout\=\(string\)non-interleaved\,\ rate\=\(int\)44100\,\ channels\=\(int\)2\,\ channel-mask\=\(bitmask\)0x0000000000000003", need-pool=(boolean)true, allocator=(GArray)NULL;
+0:00:00.268974520 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:1115:send_pending_events:<avdec_aac0> Pushing pending events
+
+
+0:00:01.714115532 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 929
+0:00:01.714203020 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:3687:gst_audio_decoder_allocate_output_buffer: alloc src buffer
+0:00:01.714305161 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:1390:gst_audio_decoder_finish_frame_or_subframe:<avdec_aac0> leading frame ts 0:00:01.625396825
+0:00:01.714314769 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:1445:gst_audio_decoder_finish_frame_or_subframe:<avdec_aac0> base_ts resync
+0:00:01.734538051 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:1390:gst_audio_decoder_finish_frame_or_subframe:<avdec_aac0> leading frame ts 0:00:01.625396825
+0:00:01.734784623 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 929
+0:00:01.734891583 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:3687:gst_audio_decoder_allocate_output_buffer: alloc src buffer
+0:00:01.735023362 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:1390:gst_audio_decoder_finish_frame_or_subframe:<avdec_aac0> leading frame ts 0:00:01.648616780
+0:00:01.735033514 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:1445:gst_audio_decoder_finish_frame_or_subframe:<avdec_aac0> base_ts resync
+0:00:01.755578237 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:1390:gst_audio_decoder_finish_frame_or_subframe:<avdec_aac0> leading frame ts 0:00:01.648616780
+0:00:01.755954903 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 929
+0:00:01.756110269 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:3687:gst_audio_decoder_allocate_output_buffer: alloc src buffer
+0:00:01.756240328 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:1390:gst_audio_decoder_finish_frame_or_subframe:<avdec_aac0> leading frame ts 0:00:01.671836734
+0:00:01.756257956 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:1445:gst_audio_decoder_finish_frame_or_subframe:<avdec_aac0> base_ts resync
+0:00:01.775830868 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:1390:gst_audio_decoder_finish_frame_or_subframe:<avdec_aac0> leading frame ts 0:00:01.671836734
+0:00:01.776171835 3234304 0x7b71d407ac60 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 929
+
+
+==============================================================================================================================================>>>
+
+AAC-ELD 
+
+
+gst-launch-1.0 filesrc location=/home/lg/Desktop/ALL_MEDIA/ISSUE/AAC_ELD/m4a_AAC-ELD_24kbps_16kHz_Mono\ 1.m4a ! decodebin ! autoaudiosink 2>&1 | grep "gstaudiodecoder"
+
+
+0:00:00.309180505 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:430:gst_audio_decoder_init:<GstAudioDecoder@0x769dec0e82d0> gst_audio_decoder_init
+0:00:00.309206149 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:447:gst_audio_decoder_init:<GstAudioDecoder@0x769dec0e82d0> sinkpad created
+0:00:00.309223063 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:460:gst_audio_decoder_init:<GstAudioDecoder@0x769dec0e82d0> srcpad created
+0:00:00.309237329 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:485:gst_audio_decoder_reset:<GstAudioDecoder@0x769dec0e82d0> gst_audio_decoder_reset
+0:00:00.309241099 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:479:gst_audio_decoder_init:<GstAudioDecoder@0x769dec0e82d0> init ok
+0:00:00.309622645 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:2848:gst_audio_decoder_sink_query:<avdec_aac0:sink> received query accept-caps query: 0x769dec00db20, GstQueryAcceptCaps, caps=(GstCaps)"audio/mpeg\,\ mpegversion\=\(int\)4\,\ framed\=\(boolean\)true\,\ stream-format\=\(string\)raw\,\ level\=\(string\)1\,\ codec_data\=\(buffer\)f8f02000\,\ rate\=\(int\)16000\,\ channels\=\(int\)1", result=(boolean)false;
+0:00:00.309731323 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:2999:gst_audio_decoder_src_query:<avdec_aac0:src> received query caps query: 0x769dec00db70, GstQueryCaps, filter=(GstCaps)"NULL", caps=(GstCaps)"NULL";
+0:00:00.309889201 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:3036:gst_audio_decoder_start:<avdec_aac0> gst_audio_decoder_start
+0:00:00.309892219 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:485:gst_audio_decoder_reset:<avdec_aac0> gst_audio_decoder_reset
+0:00:00.310021257 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 10254, stream-start
+0:00:00.310024552 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:485:gst_audio_decoder_reset:<avdec_aac0> gst_audio_decoder_reset
+0:00:00.310027671 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:2314:gst_audio_decoder_sink_eventfunc:<avdec_aac0> received STREAM_START. Clearing taglist
+0:00:00.310158016 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:2848:gst_audio_decoder_sink_query:<avdec_aac0:sink> received query accept-caps query: 0x769dec00db70, GstQueryAcceptCaps, caps=(GstCaps)"audio/mpeg\,\ mpegversion\=\(int\)4\,\ framed\=\(boolean\)true\,\ stream-format\=\(string\)raw\,\ level\=\(string\)1\,\ codec_data\=\(buffer\)f8f02000\,\ rate\=\(int\)16000\,\ channels\=\(int\)1", result=(boolean)false;
+0:00:00.310218974 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 12814, caps
+0:00:00.310224556 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:880:gst_audio_decoder_sink_setcaps:<avdec_aac0> caps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)1, codec_data=(buffer)f8f02000, rate=(int)16000, channels=(int)1
+0:00:00.311594139 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:2999:gst_audio_decoder_src_query:<avdec_aac0:src> received query caps query: 0x769dec00db20, GstQueryCaps, filter=(GstCaps)"NULL", caps=(GstCaps)"NULL";
+0:00:00.311659889 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 10254, stream-start
+0:00:00.312418329 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:485:gst_audio_decoder_reset:<avdec_aac0> gst_audio_decoder_reset
+0:00:00.312422432 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:2314:gst_audio_decoder_sink_eventfunc:<avdec_aac0> received STREAM_START. Clearing taglist
+0:00:00.312460459 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:2848:gst_audio_decoder_sink_query:<avdec_aac0:sink> received query accept-caps query: 0x769dec00da30, GstQueryAcceptCaps, caps=(GstCaps)"audio/mpeg\,\ mpegversion\=\(int\)4\,\ framed\=\(boolean\)true\,\ stream-format\=\(string\)raw\,\ level\=\(string\)1\,\ codec_data\=\(buffer\)f8f02000\,\ rate\=\(int\)16000\,\ channels\=\(int\)1", result=(boolean)false;
+0:00:00.312489795 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 12814, caps
+0:00:00.312494584 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:880:gst_audio_decoder_sink_setcaps:<avdec_aac0> caps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)1, codec_data=(buffer)f8f02000, rate=(int)16000, channels=(int)1
+0:00:00.312497644 3237376 0x5c36c12ebf00 DEBUG           audiodecoder gstaudiodecoder.c:886:gst_audio_decoder_sink_setcaps:<avdec_aac0> Caps did not change, not setting again
+0:00:00.313196754 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2848:gst_audio_decoder_sink_query:<avdec_aac0:sink> received query caps query: 0x769de80074f0, GstQueryCaps, filter=(GstCaps)"audio/mpeg\,\ mpegversion\=\(int\)4\,\ framed\=\(boolean\)true\,\ stream-format\=\(string\)raw\,\ level\=\(string\)1\,\ codec_data\=\(buffer\)f8f02000\,\ rate\=\(int\)16000\,\ channels\=\(int\)1", caps=(GstCaps)"NULL";
+0:00:00.313421514 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2848:gst_audio_decoder_sink_query:<avdec_aac0:sink> received query accept-caps query: 0x769de8007c00, GstQueryAcceptCaps, caps=(GstCaps)"audio/mpeg\,\ mpegversion\=\(int\)4\,\ framed\=\(boolean\)true\,\ stream-format\=\(string\)raw\,\ level\=\(string\)1\,\ codec_data\=\(buffer\)f8f02000\,\ rate\=\(int\)16000\,\ channels\=\(int\)1", result=(boolean)false;
+0:00:00.313458166 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 12814, caps
+0:00:00.313484847 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:880:gst_audio_decoder_sink_setcaps:<avdec_aac0> caps: audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)1, codec_data=(buffer)f8f02000, rate=(int)16000, channels=(int)1
+0:00:00.313491368 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:886:gst_audio_decoder_sink_setcaps:<avdec_aac0> Caps did not change, not setting again
+0:00:00.313943974 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 17934, segment
+0:00:00.313952111 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2335:gst_audio_decoder_sink_eventfunc:<avdec_aac0> received TIME SEGMENT time segment start=0:00:00.048000000, offset=0:00:00.000000000, stop=0:01:33.671000000, rate=1.000000, applied_rate=1.000000, flags=0x00, time=0:00:00.000000000, base=0:00:00.000000000, position 0:00:00.048000000, duration 99:99:99.999999999
+0:00:00.314028911 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 20510, tag
+0:00:00.314033772 3237376 0x769df4076460 INFO            audiodecoder gstaudiodecoder.c:2454:gst_audio_decoder_sink_eventfunc:<avdec_aac0> upstream stream tags: taglist, audio-codec=(string)"MPEG-4\ AAC\ audio", maximum-bitrate=(uint)24006, bitrate=(uint)24006;
+0:00:00.314055965 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:585:gst_audio_decoder_create_merged_tags_event:<avdec_aac0> merged   : taglist, audio-codec=(string)"MPEG-4\ AAC\ audio", maximum-bitrate=(uint)24006, bitrate=(uint)24006;
+0:00:00.314065287 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2475:gst_audio_decoder_sink_eventfunc:<avdec_aac0> Enqueuing event 20510, tag
+0:00:00.314151768 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 20510, tag
+0:00:00.314155305 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2475:gst_audio_decoder_sink_eventfunc:<avdec_aac0> Enqueuing event 20510, tag
+0:00:00.314241832 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 20510, tag
+0:00:00.314246430 3237376 0x769df4076460 INFO            audiodecoder gstaudiodecoder.c:2454:gst_audio_decoder_sink_eventfunc:<avdec_aac0> upstream stream tags: taglist, audio-codec=(string)"MPEG-4\ AAC", maximum-bitrate=(uint)24006, bitrate=(uint)24006;
+0:00:00.314250817 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:585:gst_audio_decoder_create_merged_tags_event:<avdec_aac0> merged   : taglist, audio-codec=(string)"MPEG-4\ AAC", maximum-bitrate=(uint)24006, bitrate=(uint)24006;
+0:00:00.314273484 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2475:gst_audio_decoder_sink_eventfunc:<avdec_aac0> Enqueuing event 20510, tag
+0:00:00.314293488 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2055:gst_audio_decoder_chain:<avdec_aac0> handling discont
+0:00:00.314296727 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:485:gst_audio_decoder_reset:<avdec_aac0> gst_audio_decoder_reset
+0:00:00.314300608 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 96
+0:00:00.314390989 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 96
+0:00:00.314486237 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 96
+0:00:00.314597289 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 99
+0:00:00.314671615 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 95
+0:00:00.314775467 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 99
+0:00:00.314833408 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 94
+0:00:00.314906029 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 99
+0:00:00.314961170 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 94
+0:00:00.315080772 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 20510, tag
+0:00:00.315085923 3237376 0x769df4076460 INFO            audiodecoder gstaudiodecoder.c:2454:gst_audio_decoder_sink_eventfunc:<avdec_aac0> upstream stream tags: taglist, audio-codec=(string)"MPEG-4\ AAC", maximum-bitrate=(uint)24006, bitrate=(uint)24006, minimum-bitrate=(uint)23500;
+0:00:00.315091151 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:585:gst_audio_decoder_create_merged_tags_event:<avdec_aac0> merged   : taglist, audio-codec=(string)"MPEG-4\ AAC", maximum-bitrate=(uint)24006, bitrate=(uint)24006, minimum-bitrate=(uint)23500;
+0:00:00.315098619 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2475:gst_audio_decoder_sink_eventfunc:<avdec_aac0> Enqueuing event 20510, tag
+0:00:00.315123499 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 94
+0:00:00.315218988 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 99
+0:00:00.315336307 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 20510, tag
+0:00:00.315342228 3237376 0x769df4076460 INFO            audiodecoder gstaudiodecoder.c:2454:gst_audio_decoder_sink_eventfunc:<avdec_aac0> upstream stream tags: taglist, audio-codec=(string)"MPEG-4\ AAC", maximum-bitrate=(uint)24006, bitrate=(uint)24006, minimum-bitrate=(uint)23250;
+0:00:00.315349385 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:585:gst_audio_decoder_create_merged_tags_event:<avdec_aac0> merged   : taglist, audio-codec=(string)"MPEG-4\ AAC", maximum-bitrate=(uint)24006, bitrate=(uint)24006, minimum-bitrate=(uint)23250;
+0:00:00.315356670 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2475:gst_audio_decoder_sink_eventfunc:<avdec_aac0> Enqueuing event 20510, tag
+0:00:00.315382189 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 93
+0:00:00.315481023 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 95
+0:00:00.315583068 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 100
+0:00:00.315729133 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2499:gst_audio_decoder_sink_event:<avdec_aac0> received event 20510, tag
+0:00:00.315738044 3237376 0x769df4076460 INFO            audiodecoder gstaudiodecoder.c:2454:gst_audio_decoder_sink_eventfunc:<avdec_aac0> upstream stream tags: taglist, audio-codec=(string)"MPEG-4\ AAC", maximum-bitrate=(uint)24006, bitrate=(uint)24006, minimum-bitrate=(uint)23000;
+0:00:00.315743162 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:585:gst_audio_decoder_create_merged_tags_event:<avdec_aac0> merged   : taglist, audio-codec=(string)"MPEG-4\ AAC", maximum-bitrate=(uint)24006, bitrate=(uint)24006, minimum-bitrate=(uint)23000;
+0:00:00.315756189 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:2475:gst_audio_decoder_sink_eventfunc:<avdec_aac0> Enqueuing event 20510, tag
+0:00:00.315821124 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 92
+0:00:00.315927925 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 96
+0:00:00.316006015 3237376 0x769df4076460 DEBUG           audiodecoder gstaudiodecoder.c:1624:gst_audio_decoder_push_buffers:<avdec_aac0> available: 96
+
+
+
+
+
+0:00:00.540144914 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.540236073 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.540350565 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.540425994 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.540523481 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.540632602 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.540795457 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:628:gst_ffmpegauddec_drain:<avdec_aac0> send packet failed, could not drain decoder
+
+===============================================================================================================>>
+
+AAC
+
+gstavauddec.c
+
+
+gst-launch-1.0 filesrc location=/home/lg/Desktop/ALL_MEDIA/MUSIC/AAC/sample-1.aac ! decodebin ! audioconvert ! audioresample ! autoaudiosink 2>&1 | grep "gstavauddec.c"
+
+
+
+0:00:00.248497879 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin comfortnoise [RFC 3389 comfort noise generator]
+0:00:00.248510244 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dvaudio [Ulead DV Audio]
+0:00:00.248517859 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin 8svx_exp [8SVX exponential]
+0:00:00.248525089 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin 8svx_fib [8SVX fibonacci]
+0:00:00.249285578 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin s302m [SMPTE 302M]
+0:00:00.249297616 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin aac [AAC (Advanced Audio Coding)]
+0:00:00.249306206 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin aac_fixed [AAC (Advanced Audio Coding)]
+0:00:00.249322747 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin aac_latm [AAC LATM (Advanced Audio Coding LATM syntax)]
+0:00:00.249330286 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin ac3 [ATSC A/52A (AC-3)]
+0:00:00.249337255 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin ac3_fixed [ATSC A/52A (AC-3)]
+0:00:00.249344409 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin acelp.kelvin [Sipro ACELP.KELVIN]
+0:00:00.249352153 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin alac [ALAC (Apple Lossless Audio Codec)]
+0:00:00.249359446 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin als [MPEG-4 Audio Lossless Coding (ALS)]
+0:00:00.249367304 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin amrnb [AMR-NB (Adaptive Multi-Rate NarrowBand)]
+0:00:00.249374474 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin amrwb [AMR-WB (Adaptive Multi-Rate WideBand)]
+0:00:00.249402353 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin ape [Monkey's Audio]
+0:00:00.249410521 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin aptx [aptX (Audio Processing Technology for Bluetooth)]
+0:00:00.249418186 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin aptx_hd [aptX HD (Audio Processing Technology for Bluetooth)]
+0:00:00.249426182 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin atrac1 [ATRAC1 (Adaptive TRansform Acoustic Coding)]
+0:00:00.249434358 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin atrac3 [ATRAC3 (Adaptive TRansform Acoustic Coding 3)]
+0:00:00.249442039 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin atrac3al [ATRAC3 AL (Adaptive TRansform Acoustic Coding 3 Advanced Lossless)]
+0:00:00.249455971 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin atrac3plus [ATRAC3+ (Adaptive TRansform Acoustic Coding 3+)]
+0:00:00.249476948 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin atrac3plusal [ATRAC3+ AL (Adaptive TRansform Acoustic Coding 3+ Advanced Lossless)]
+0:00:00.249484310 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin atrac9 [ATRAC9 (Adaptive TRansform Acoustic Coding 9)]
+0:00:00.249510210 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin binkaudio_dct [Bink Audio (DCT)]
+0:00:00.249518244 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin binkaudio_rdft [Bink Audio (RDFT)]
+0:00:00.249526339 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin bmv_audio [Discworld II BMV audio]
+0:00:00.249534416 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin cook [Cook / Cooker / Gecko (RealAudio G2)]
+0:00:00.249543233 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dca [DCA (DTS Coherent Acoustics)]
+0:00:00.249555913 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dolby_e [Dolby E]
+0:00:00.249563881 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dsd_lsbf [DSD (Direct Stream Digital), least significant bit first]
+0:00:00.249571134 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dsd_msbf [DSD (Direct Stream Digital), most significant bit first]
+0:00:00.249578728 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dsd_lsbf_planar [DSD (Direct Stream Digital), least significant bit first, planar]
+0:00:00.249586116 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dsd_msbf_planar [DSD (Direct Stream Digital), most significant bit first, planar]
+0:00:00.249593480 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dsicinaudio [Delphine Software International CIN audio]
+0:00:00.249600796 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dss_sp [Digital Speech Standard - Standard Play mode (DSS SP)]
+0:00:00.249608451 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dst [DST (Digital Stream Transfer)]
+0:00:00.249615765 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin eac3 [ATSC A/52B (AC-3, E-AC-3)]
+0:00:00.249628417 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin evrc [EVRC (Enhanced Variable Rate Codec)]
+0:00:00.249635808 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin fastaudio [MobiClip FastAudio]
+0:00:00.249643638 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin wavesynth [Wave synthesis pseudo-codec]
+0:00:00.249651160 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin flac [FLAC (Free Lossless Audio Codec)]
+0:00:00.249658858 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin g723_1 [G.723.1]
+0:00:00.249668684 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin g729 [G.729]
+0:00:00.249676880 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin gsm [GSM]
+0:00:00.249684537 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin gsm_ms [GSM Microsoft variant]
+0:00:00.249692551 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin hca [CRI HCA]
+0:00:00.249700327 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin hcom [HCOM Audio]
+0:00:00.249707892 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin iac [IAC (Indeo Audio Coder)]
+0:00:00.249715859 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin ilbc [iLBC (Internet Low Bitrate Codec)]
+0:00:00.249728696 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin imc [IMC (Intel Music Coder)]
+0:00:00.249736626 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin interplayacm [Interplay ACM]
+0:00:00.249744776 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mace3 [MACE (Macintosh Audio Compression/Expansion) 3:1]
+0:00:00.249752693 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mace6 [MACE (Macintosh Audio Compression/Expansion) 6:1]
+0:00:00.249760536 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin metasound [Voxware MetaSound]
+0:00:00.249768306 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mlp [MLP (Meridian Lossless Packing)]
+0:00:00.249776780 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mp1 [MP1 (MPEG audio layer 1)]
+0:00:00.249780015 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mp1float [MP1 (MPEG audio layer 1)]
+0:00:00.249792513 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mp2 [MP2 (MPEG audio layer 2)]
+0:00:00.249795633 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mp2float [MP2 (MPEG audio layer 2)]
+0:00:00.249803328 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mp3float [MP3 (MPEG audio layer 3)]
+0:00:00.249810615 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mp3 [MP3 (MPEG audio layer 3)]
+0:00:00.249818618 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mp3adufloat [ADU (Application Data Unit) MP3 (MPEG audio layer 3)]
+0:00:00.249826089 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mp3adu [ADU (Application Data Unit) MP3 (MPEG audio layer 3)]
+0:00:00.249833928 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mp3on4float [MP3onMP4]
+0:00:00.249841955 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mp3on4 [MP3onMP4]
+0:00:00.249855414 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mpc7 [Musepack SV7]
+0:00:00.249863343 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mpc8 [Musepack SV8]
+0:00:00.249871134 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin nellymoser [Nellymoser Asao]
+0:00:00.249879075 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin on2avc [On2 Audio for Video Codec]
+0:00:00.249886763 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin opus [Opus]
+0:00:00.249894613 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin paf_audio [Amazing Studio Packed Animation File Audio]
+0:00:00.249902629 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin qcelp [QCELP / PureVoice]
+0:00:00.249910348 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin qdm2 [QDesign Music Codec 2]
+0:00:00.249925115 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin qdmc [QDesign Music Codec 1]
+0:00:00.249933083 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin real_144 [RealAudio 1.0 (14.4K)]
+0:00:00.249941043 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin real_288 [RealAudio 2.0 (28.8K)]
+0:00:00.249948727 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin ralf [RealAudio Lossless]
+0:00:00.249956820 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin sbc [SBC (low-complexity subband codec)]
+0:00:00.249964432 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin shorten [Shorten]
+0:00:00.249972239 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin sipr [RealAudio SIPR / ACELP.NET]
+0:00:00.249985234 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin siren [Siren]
+0:00:00.250011955 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin smackaud [Smacker audio]
+0:00:00.250019734 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin sonic [Sonic]
+0:00:00.250027800 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin tak [TAK (Tom's lossless Audio Kompressor)]
+0:00:00.250035496 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin truehd [TrueHD]
+0:00:00.250043547 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin truespeech [DSP Group TrueSpeech]
+0:00:00.250051558 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin tta [TTA (True Audio)]
+0:00:00.250064865 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin twinvq [VQF TwinVQ]
+0:00:00.250072704 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin vmdaudio [Sierra VMD audio]
+0:00:00.250080495 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin vorbis [Vorbis]
+0:00:00.250083744 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin wavpack [WavPack]
+0:00:00.250086735 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin wmalossless [Windows Media Audio Lossless]
+
+
+
+:00:00.250675115 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin adpcm_yamaha [ADPCM Yamaha]
+0:00:00.250682870 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin adpcm_zork [ADPCM Zork]
+0:00:00.250696439 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:803:gst_ffmpegauddec_register: Not using external library decoder libcodec2. Use the gstreamer-native ones instead.
+0:00:00.250699720 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:803:gst_ffmpegauddec_register: Not using external library decoder libgsm. Use the gstreamer-native ones instead.
+0:00:00.250702587 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:803:gst_ffmpegauddec_register: Not using external library decoder libgsm_ms. Use the gstreamer-native ones instead.
+0:00:00.250705290 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:803:gst_ffmpegauddec_register: Not using external library decoder libopus. Use the gstreamer-native ones instead.
+0:00:00.250708066 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:803:gst_ffmpegauddec_register: Not using external library decoder libspeex. Use the gstreamer-native ones instead.
+0:00:00.250710618 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:803:gst_ffmpegauddec_register: Not using external library decoder libvorbis. Use the gstreamer-native ones instead.
+0:00:00.256337610 3241025 0x597045247f00 DEBUG                  libav gstavauddec.c:307:gst_ffmpegauddec_set_format:<avdec_aac0> setcaps called
+0:00:00.259637231 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:399:gst_ffmpegauddec_negotiate:<avdec_aac0> Renegotiating audio from 0Hz@0channels (0, interleaved=1) to 44100Hz@2channels (28, interleaved=0)
+0:00:00.259693224 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:501:gst_ffmpegauddec_audio_frame:<avdec_aac0> Creating output buffer
+0:00:00.267103921 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:525:gst_ffmpegauddec_audio_frame:<avdec_aac0> Buffer created. Size: 8192
+0:00:00.267109071 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:551:gst_ffmpegauddec_audio_frame:<avdec_aac0> return flow 0, out 0x7f8cbc049360, got_frame 1
+0:00:00.270233833 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:551:gst_ffmpegauddec_audio_frame:<avdec_aac0> return flow 0, out (nil), got_frame 0
+0:00:00.270237047 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:583:gst_ffmpegauddec_frame:<avdec_aac0> We didn't get a decoded buffer
+0:00:00.270451765 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:501:gst_ffmpegauddec_audio_frame:<avdec_aac0> Creating output buffer
+0:00:00.270492295 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:525:gst_ffmpegauddec_audio_frame:<avdec_aac0> Buffer created. Size: 8192
+0:00:00.270496643 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:551:gst_ffmpegauddec_audio_frame:<avdec_aac0> return flow 0, out 0x7f8cbc049b40, got_frame 1
+0:00:00.270977218 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:551:gst_ffmpegauddec_audio_frame:<avdec_aac0> return flow 0, out (nil), got_frame 0
+0:00:00.270981969 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:583:gst_ffmpegauddec_frame:<avdec_aac0> We didn't get a decoded buffer
+0:00:00.271105444 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:501:gst_ffmpegauddec_audio_frame:<avdec_aac0> Creating output buffer
+0:00:00.271130212 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:525:gst_ffmpegauddec_audio_frame:<avdec_aac0> Buffer created. Size: 8192
+0:00:00.271146484 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:551:gst_ffmpegauddec_audio_frame:<avdec_aac0> return flow 0, out 0x7f8cbc049c60, got_frame 1
+0:00:00.271513011 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:551:gst_ffmpegauddec_audio_frame:<avdec_aac0> return flow 0, out (nil), got_frame 0
+0:00:00.271515878 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:583:gst_ffmpegauddec_frame:<avdec_aac0> We didn't get a decoded buffer
+0:00:00.271638672 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:501:gst_ffmpegauddec_audio_frame:<avdec_aac0> Creating output buffer
+0:00:00.271674359 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:525:gst_ffmpegauddec_audio_frame:<avdec_aac0> Buffer created. Size: 8192
+0:00:00.271685187 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:551:gst_ffmpegauddec_audio_frame:<avdec_aac0> return flow 0, out 0x7f8cbc0377e0, got_frame 1
+0:00:00.272134611 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:551:gst_ffmpegauddec_audio_frame:<avdec_aac0> return flow 0, out (nil), got_frame 0
+0:00:00.272138060 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:583:gst_ffmpegauddec_frame:<avdec_aac0> We didn't get a decoded buffer
+0:00:00.272265179 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:501:gst_ffmpegauddec_audio_frame:<avdec_aac0> Creating output buffer
+0:00:00.272305455 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:525:gst_ffmpegauddec_audio_frame:<avdec_aac0> Buffer created. Size: 8192
+0:00:00.272318603 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:551:gst_ffmpegauddec_audio_frame:<avdec_aac0> return flow 0, out 0x7f8cbc0377e0, got_frame 1
+0:00:00.273011453 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:551:gst_ffmpegauddec_audio_frame:<avdec_aac0> return flow 0, out (nil), got_frame 0
+0:00:00.273014546 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:583:gst_ffmpegauddec_frame:<avdec_aac0> We didn't get a decoded buffer
+0:00:00.273155428 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:501:gst_ffmpegauddec_audio_frame:<avdec_aac0> Creating output buffer
+0:00:00.273176261 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:525:gst_ffmpegauddec_audio_frame:<avdec_aac0> Buffer created. Size: 8192
+0:00:00.273181509 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:551:gst_ffmpegauddec_audio_frame:<avdec_aac0> return flow 0, out 0x7f8cbc037a20, got_frame 1
+0:00:00.273492125 3241025 0x7f8cbc07b060 DEBUG                  libav gstavauddec.c:551:gst_ffmpegauddec_audio_frame:<avdec_aac0> return flow 0, out (nil), got_frame 0
+
+
+
+ 
+===============================================================================================================================>>>
+
+AAC-ELD 
+
+gstavauddec
+
+
+ gst-launch-1.0 filesrc location=/home/lg/Desktop/ALL_MEDIA/ISSUE/AAC_ELD/m4a_AAC-ELD_24kbps_16kHz_Mono\ 1.m4a ! decodebin ! autoaudiosink 2>&1 | grep "gstavauddec.c"
+
+
+0:00:00.250945047 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin comfortnoise [RFC 3389 comfort noise generator]
+0:00:00.250957087 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dvaudio [Ulead DV Audio]
+0:00:00.250964853 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin 8svx_exp [8SVX exponential]
+0:00:00.250972333 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin 8svx_fib [8SVX fibonacci]
+0:00:00.250980516 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin s302m [SMPTE 302M]
+0:00:00.250988524 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin aac [AAC (Advanced Audio Coding)]
+0:00:00.250995730 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin aac_fixed [AAC (Advanced Audio Coding)]
+0:00:00.251002970 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin aac_latm [AAC LATM (Advanced Audio Coding LATM syntax)]
+0:00:00.251009913 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin ac3 [ATSC A/52A (AC-3)]
+0:00:00.251017284 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin ac3_fixed [ATSC A/52A (AC-3)]
+0:00:00.251024877 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin acelp.kelvin [Sipro ACELP.KELVIN]
+0:00:00.251037363 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin alac [ALAC (Apple Lossless Audio Codec)]
+0:00:00.251044736 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin als [MPEG-4 Audio Lossless Coding (ALS)]
+0:00:00.251051879 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin amrnb [AMR-NB (Adaptive Multi-Rate NarrowBand)]
+0:00:00.251059123 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin amrwb [AMR-WB (Adaptive Multi-Rate WideBand)]
+0:00:00.251066213 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin ape [Monkey's Audio]
+0:00:00.251092208 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin aptx [aptX (Audio Processing Technology for Bluetooth)]
+0:00:00.251100120 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin aptx_hd [aptX HD (Audio Processing Technology for Bluetooth)]
+0:00:00.251107819 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin atrac1 [ATRAC1 (Adaptive TRansform Acoustic Coding)]
+0:00:00.251116449 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin atrac3 [ATRAC3 (Adaptive TRansform Acoustic Coding 3)]
+0:00:00.251129881 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin atrac3al [ATRAC3 AL (Adaptive TRansform Acoustic Coding 3 Advanced Lossless)]
+0:00:00.251138052 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin atrac3plus [ATRAC3+ (Adaptive TRansform Acoustic Coding 3+)]
+0:00:00.251159014 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin atrac3plusal [ATRAC3+ AL (Adaptive TRansform Acoustic Coding 3+ Advanced Lossless)]
+0:00:00.251187854 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin atrac9 [ATRAC9 (Adaptive TRansform Acoustic Coding 9)]
+0:00:00.251196037 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin binkaudio_dct [Bink Audio (DCT)]
+0:00:00.251217183 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin binkaudio_rdft [Bink Audio (RDFT)]
+0:00:00.251242568 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin bmv_audio [Discworld II BMV audio]
+0:00:00.251250588 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin cook [Cook / Cooker / Gecko (RealAudio G2)]
+0:00:00.251258549 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dca [DCA (DTS Coherent Acoustics)]
+0:00:00.251266209 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dolby_e [Dolby E]
+0:00:00.251279005 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dsd_lsbf [DSD (Direct Stream Digital), least significant bit first]
+0:00:00.251287494 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dsd_msbf [DSD (Direct Stream Digital), most significant bit first]
+0:00:00.251295817 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dsd_lsbf_planar [DSD (Direct Stream Digital), least significant bit first, planar]
+0:00:00.251304025 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dsd_msbf_planar [DSD (Direct Stream Digital), most significant bit first, planar]
+0:00:00.251312407 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dsicinaudio [Delphine Software International CIN audio]
+0:00:00.251320479 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dss_sp [Digital Speech Standard - Standard Play mode (DSS SP)]
+0:00:00.251328262 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin dst [DST (Digital Stream Transfer)]
+0:00:00.251336152 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin eac3 [ATSC A/52B (AC-3, E-AC-3)]
+0:00:00.251344511 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin evrc [EVRC (Enhanced Variable Rate Codec)]
+0:00:00.251352213 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin fastaudio [MobiClip FastAudio]
+0:00:00.251360574 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin wavesynth [Wave synthesis pseudo-codec]
+0:00:00.251373648 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin flac [FLAC (Free Lossless Audio Codec)]
+0:00:00.251382080 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin g723_1 [G.723.1]
+0:00:00.251389942 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin g729 [G.729]
+0:00:00.251397862 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin gsm [GSM]
+0:00:00.251405563 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin gsm_ms [GSM Microsoft variant]
+0:00:00.251413264 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin hca [CRI HCA]
+0:00:00.251420918 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin hcom [HCOM Audio]
+0:00:00.251428695 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin iac [IAC (Indeo Audio Coder)]
+0:00:00.251436361 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin ilbc [iLBC (Internet Low Bitrate Codec)]
+0:00:00.251449536 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin imc [IMC (Intel Music Coder)]
+0:00:00.251457172 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin interplayacm [Interplay ACM]
+0:00:00.251465291 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mace3 [MACE (Macintosh Audio Compression/Expansion) 3:1]
+0:00:00.251473226 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mace6 [MACE (Macintosh Audio Compression/Expansion) 6:1]
+0:00:00.251480980 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin metasound [Voxware MetaSound]
+0:00:00.251488857 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin mlp [MLP (Meridian Lossless Packing)]
+
+
+
+0:00:00.252411209 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin adpcm_yamaha [ADPCM Yamaha]
+0:00:00.252419002 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:809:gst_ffmpegauddec_register: Trying plugin adpcm_zork [ADPCM Zork]
+0:00:00.252427585 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:803:gst_ffmpegauddec_register: Not using external library decoder libcodec2. Use the gstreamer-native ones instead.
+0:00:00.252430796 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:803:gst_ffmpegauddec_register: Not using external library decoder libgsm. Use the gstreamer-native ones instead.
+0:00:00.252433585 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:803:gst_ffmpegauddec_register: Not using external library decoder libgsm_ms. Use the gstreamer-native ones instead.
+0:00:00.252436288 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:803:gst_ffmpegauddec_register: Not using external library decoder libopus. Use the gstreamer-native ones instead.
+0:00:00.252439143 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:803:gst_ffmpegauddec_register: Not using external library decoder libspeex. Use the gstreamer-native ones instead.
+0:00:00.252441680 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:803:gst_ffmpegauddec_register: Not using external library decoder libvorbis. Use the gstreamer-native ones instead.
+0:00:00.258030441 3242871 0x64476c01a300 DEBUG                  libav gstavauddec.c:307:gst_ffmpegauddec_set_format:<avdec_aac0> setcaps called
+0:00:00.262259820 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.262354754 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.262443490 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.262560152 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.262646116 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.262834301 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.262900044 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.262983132 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.263078850 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.263262919 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.263341119 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.263526400 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.263600160 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.263675639 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.263833489 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.263937225 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.264025857 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.264123333 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.264186789 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.264271848 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.264337327 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.264407654 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.264478263 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.264571943 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.264674075 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.264768011 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.264860129 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.264956273 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.265040151 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.265130990 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.265208449 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.265276446 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.265333639 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.265392898 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.265466450 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.265529718 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.265605784 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.265687740 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.265767842 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.265836560 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.265944702 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.266092690 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.266203774 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.266292050 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.266377199 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.266464954 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.266556877 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.266641126 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.266726537 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.266906692 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.266995999 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.267057628 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+
+
+0:00:00.540144914 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.540236073 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.540350565 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.540425994 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.540523481 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.540632602 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:756:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+0:00:00.540795457 3242871 0x73a168074c60 WARN                   libav gstavauddec.c:628:gst_ffmpegauddec_drain:<avdec_aac0> send packet failed, could not drain decoder
+
+===================================================================================================================================>>>
+
+Check Codec Capabilities:
+
+checks if the codec has delay capabilities using AV_CODEC_CAP_DELAY. This flag indicates whether the codec needs to process additional 
+frames even after the main data has been consumed.
+
+if (oclass->in_plugin->capabilities & AV_CODEC_CAP_DELAY) {
+
+=======================>>
+
+Send NULL Packet:
+
+If the codec has delay capabilities, it sends a NULL packet to the decoder using avcodec_send_packet(ffmpegdec->context, NULL). This signals the decoder 
+that no more data will be sent and triggers it to flush its internal buffers.
+
+
+if (avcodec_send_packet(ffmpegdec->context, NULL))
+    goto send_packet_failed;
+
+========================>>
+
+Extract Remaining Frames:
+
+The function then enters a loop to extract any remaining frames from the decoder using gst_ffmpegauddec_frame. It processes each frame until no more frames 
+are available.
+
+do {
+    GstFlowReturn ret;
+    got_frame = gst_ffmpegauddec_frame(ffmpegdec, &ret);
+    if (got_frame)
+        got_any_frames = TRUE;
+} while (got_frame);
+
+============================>>
+
+After processing all remaining frames, it calls avcodec_flush_buffers to ensure any residual data in the decoder’s buffers is cleared.
+
+avcodec_flush_buffers(ffmpegdec->context);
+
+===========================>>
+
+If any frames were processed, it calls gst_audio_decoder_finish_frame to signal that the current frame has been finished and to finalize the output.
+
+if (got_any_frames)
+    gst_audio_decoder_finish_frame(GST_AUDIO_DECODER(ffmpegdec), NULL, 1);
+
+=====================================================================================================================================================>>>
+
+The demuxer (qtdemux in this case) is correctly parsing samples, setting keyframes, and pushing data to the next element in the pipeline. It is extracting and 
+handling the data packets with the appropriate timestamps and sizes.
+
+Decoder Issue: The decoder (avdec_aac or any similar audio/video decoder) seems to be encountering issues with the packets it receives. This could be due to several 
+reasons, such as:
+
+Incorrect Packet Data: The packets might be malformed or missing crucial information.
+Timestamp Issues: The timestamps (PTS, DTS) might be incorrect or not aligned with the decoder’s expectations.
+Synchronization Problems: There could be issues with how the packets are synchronized or ordered when they reach the decoder.
+Buffering Issues: The decoder might be receiving data but not in a form it can process correctly due to buffering or queue management issues.
+
+========================================================================================================================================================>>>
+
+Demuxer to Decoder Communication:
+
+The demuxer correctly parsing and pushing data segments to the decoder with appropriate timestamps (PTS and DTS).
+Decoder Timestamp Handling:
+
+The decoder, however, might not be handling or interpreting these timestamps correctly. This could be due to various reasons, such as incorrect configuration, issues with timestamp parsing, or other internal decoder problems.
+Decoder's Draining and Frame Processing:
+
+During the draining process, the decoder reports that frames are still left to be processed even after a flush or drain request. This indicates that the decoder has not processed all frames or buffers correctly.
+End-of-Stream Handling:
+
+At the end of the stream, the decoder fails to produce valid frames and reports errors like "no valid frames decoded before end of stream." This suggests that the decoder was not able to process the data correctly before reaching the end of the stream.
+
+
+Detailed Breakdown
+
+
+Demuxer Behavior:
+
+Action: Parses data and pushes segments to the decoder.
+Timestamp Handling: The timestamps in the data should align with the expected format and sequence.
+Decoder Behavior:
+
+Timestamp Issues: If the decoder isn’t handling timestamps correctly, it might misinterpret the data, leading to errors in decoding.
+Draining Errors: The decoder’s gst_audio_decoder_drain function reports frames left after draining, indicating that not all frames were processed or flushed properly.
+
+Error Reporting:
+
+No Valid Frames: The error message "no valid frames decoded before end of stream" suggests that despite receiving data, the decoder could not decode any frames successfully before the stream ended.
+Possible Causes and Solutions
+Incorrect Timestamp Handling:
+
+Check Timestamp Parsing: Ensure that the decoder correctly parses and uses the timestamps provided by the demuxer. Logs related to timestamp handling can be crucial.
+Verify Time Format Conversion: If there’s a conversion between different time formats (e.g., bytes to time), verify that it is done correctly.
+Decoder Configuration and State:
+
+Review Decoder Settings: Check if the decoder is configured properly for the input data format. Incorrect settings might affect frame processing.
+Inspect Decoder State: Ensure that the decoder’s internal state and buffers are correctly managed and cleared.
+
+==================================================================================================================>>>
+
+The timestamp not getting properly by the decoder , so now i'm checking the logs in VLC 
+
+Initialized AVPacket:
+  Size: 96
+  Data: 0x716dd8002000
+  PTS: 0
+  DTS: 0
+  Duration: 0
+  Flags: 0
+0:00:00.190065424 3325564 0x716de807c060 WARN                   libav gstavauddec.c:765:gst_ffmpegauddec_handle_frame:<avdec_aac0> decoding error
+
+====================================================================================================================>>
+
+
+0:00:03.082321133 3434989 0x75eb3007ac60 DEBUG                  libav gstavauddec.c:551:gst_ffmpegauddec_audio_frame:<avdec_aac0> return flow 0, out (nil), 
+got_frame 0
+0:00:03.082342118 3434989 0x75eb3007ac60 DEBUG                  libav gstavauddec.c:583:gst_ffmpegauddec_frame:<avdec_aac0> We didn't get a decoded buffer
+
+
+
+The decoder (avdec_aac0) received an audio frame but did not produce a decoded buffer. This might indicate that the decoder didn't have enough data or encountered 
+an issue decoding the frame.
+
+The decoder’s sink pad successfully processed a buffer.
+
+
+
+0:00:03.082477801 3434989 0x75eb3007ac60 DEBUG             multiqueue gstmultiqueue.c:1798:gst_multi_queue_loop:<multiqueue0> SingleQueue 0 : trying to pop an object
+
+The multiqueue element is managing queues and attempting to pop an object for processing.
+
+
+Buffer Position Updates:
+
+0:00:03.082516174 3434989 0x75eb3007ac60 DEBUG             multiqueue gstmultiqueue.c:1508:apply_buffer:<multiqueue0> queue 0, src position updated to 0:00:01.300317460
+
+
+
+The source position in the queue is being updated, indicating where in the stream the buffer is located.
+
+0:00:03.082832132 3434989 0x75eb3007ac60 DEBUG              baseparse gstbaseparse.c:3074:gst_base_parse_chain:<aacparse0> chain
+0:00:03.082897631 3434989 0x5afdef7d8300 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+
+
+The baseparse and qtdemux elements are processing and parsing the audio data. The qtdemux is setting keyframes, which helps with seeking and synchronization.
+
+
+================================================================>>>
+
+
+The logs you've provided detail the processing of an audio buffer through a GStreamer pipeline. Here's a breakdown of what's happening at each stage of the pipeline:
+
+### Breakdown of the Log Entries
+
+1. **Decoder Frame Handling:**
+   ```
+   0:00:03.082321133 3434989 0x75eb3007ac60 DEBUG                  libav gstavauddec.c:551:gst_ffmpegauddec_audio_frame:<avdec_aac0> return flow 0, out (nil), got_frame 0
+   0:00:03.082342118 3434989 0x75eb3007ac60 DEBUG                  libav gstavauddec.c:583:gst_ffmpegauddec_frame:<avdec_aac0> We didn't get a decoded buffer
+   ```
+   - The decoder (`avdec_aac0`) received an audio frame but did not produce a decoded buffer. This might indicate that the decoder didn't have enough data or encountered an issue decoding the frame.
+
+2. **Timestamp Management:**
+   ```
+   0:00:03.082397569 3434989 0x75eb3007ac60 DEBUG             GST_MEMORY gstmemory.c:88:_gst_memory_free: free memory 0x75eb280f0840
+   ```
+   - Memory associated with a buffer is being freed, likely because the buffer was processed or discarded.
+
+   ```
+   0:00:03.082451698 3434989 0x75eb3007ac60 DEBUG         GST_SCHEDULING gstpad.c:4329:gst_pad_chain_data_unchecked:<avdec_aac0:sink> called chainfunction &gst_audio_decoder_chain with buffer 0x75eb30049b40, returned ok
+   ```
+   - The decoder’s sink pad successfully processed a buffer.
+
+3. **Queue Management:**
+   ```
+   0:00:03.082477801 3434989 0x75eb3007ac60 DEBUG             multiqueue gstmultiqueue.c:1798:gst_multi_queue_loop:<multiqueue0> SingleQueue 0 : trying to pop an object
+   ```
+   - The `multiqueue` element is managing queues and attempting to pop an object for processing.
+
+4. **Buffer Position Updates:**
+   ```
+   0:00:03.082516174 3434989 0x75eb3007ac60 DEBUG             multiqueue gstmultiqueue.c:1508:apply_buffer:<multiqueue0> queue 0, src position updated to 0:00:01.300317460
+   ```
+   - The source position in the queue is being updated, indicating where in the stream the buffer is located.
+
+   ```
+   0:00:03.082549440 3434989 0x75eb3007ac60 DEBUG             multiqueue gstmultiqueue.c:1431:update_time_level:<multiqueue0> queue 0, sink +0:00:01.346757369, src +0:00:01.253877551
+   ```
+   - Time levels for the queue are updated, reflecting how data flows through the queue.
+
+5. **Buffer Handling:**
+   ```
+   0:00:03.082728242 3434989 0x75eb3007ac60 DEBUG             multiqueue gstmultiqueue.c:1636:gst_single_queue_push_one:<multiqueue0> SingleQueue 0 : Pushing buffer 0x75eb30049360 with ts 0:00:01.277097505
+   ```
+   - A buffer with timestamp `0:00:01.277097505` is being pushed into the queue.
+
+6. **Parsing and Demuxing:**
+   ```
+   0:00:03.082832132 3434989 0x75eb3007ac60 DEBUG              baseparse gstbaseparse.c:3074:gst_base_parse_chain:<aacparse0> chain
+   0:00:03.082897631 3434989 0x5afdef7d8300 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+   ```
+   - The `baseparse` and `qtdemux` elements are processing and parsing the audio data. The `qtdemux` is setting keyframes, which helps with seeking and synchronization.
+
+7. **Buffer Pushing and Timestamp Setting:**
+   ```
+   0:00:03.083001462 3434989 0x75eb3007ac60 DEBUG               GST_CAPS gstpad.c:2704:gst_pad_has_current_caps:<aacparse0:src> check current pad caps audio/mpeg, mpegversion=(int)4, framed=(boolean)true, stream-format=(string)raw, level=(string)2, base-profile=(string)lc, profile=(string)lc, codec_data=(buffer)1210, rate=(int)44100, channels=(int)2
+   ```
+   - The `aacparse0` pad capabilities are being checked, confirming the audio format and codec information.
+
+   ```
+   0:00:03.083142831 3434989 0x75eb3007ac60 DEBUG             GST_MEMORY gstmemory.c:138:gst_memory_init: new memory 0x75eb280f0840, maxsize:936 offset:0 size:929
+   ```
+   - A new memory buffer of size 929 is allocated for the audio data.
+
+8. **Audio Conversion:**
+   ```
+   0:00:03.083257329 3434989 0x75eb3007ac60 DEBUG               GST_PADS gstpad.c:3815:do_probe_callbacks:<decodebin0:src_0> data is passed
+   0:00:03.083295109 3434989 0x75eb3007ac60 DEBUG         GST_SCHEDULING gstpad.c:4323:gst_pad_chain_data_unchecked:<audioconvert0:sink> calling chainfunction &gst_base_transform_chain with buffer buffer: 0x75eb300495a0, pts 0:00:01.277097505, dts 99:99:99.999999999, dur 0:00:00.023219955, size 8192, offset none, offset_end none, flags 0x0
+   ```
+   - The `audioconvert0` element is processing the audio data. The buffer with the timestamp `0:00:01.277097505` is being transformed.
+
+9. **Metadata and Buffer Management:**
+   ```
+   0:00:03.083425490 3434989 0x75eb3007ac60 DEBUG             GST_BUFFER gstbuffer.c:2279:gst_buffer_add_meta: alloc metadata 0x75eb200344a0 (GstAudioMeta) of size 448
+   ```
+   - Metadata related to audio (GstAudioMeta) is added to the buffer.
+
+10. **Final Processing:**
+    ```
+    0:00:03.084130915 3434989 0x75eb3007ac60 DEBUG          basetransform gstbasetransform.c:2117:default_generate_output:<audioconvert0> using allocated buffer in 0x75eb300495a0, out 0x75eb300497e0
+    ```
+    - The `audioconvert0` element is preparing the output buffer for the next stage.
+
+### Key Points
+
+- **Buffer Flow:** The logs show buffers flowing through different elements (`avdec_aac0`, `aacparse0`, `multiqueue0`, `audioconvert0`), with timestamps and sizes managed appropriately.
+- **Decoding Issues:** There are instances where the decoder didn't produce a buffer initially, but subsequent steps show successful processing and buffer allocation.
+- **Queue Management:** Queues are being managed, and positions are updated as buffers are processed.
+
+### Summary
+
+The logs indicate a complex process where audio data is being decoded, parsed, and processed through various GStreamer elements. Initial issues with buffer handling in the decoder are resolved, and the audio data continues to flow through the pipeline with correct handling of timestamps and buffer sizes. The GStreamer pipeline appears to be functioning correctly, despite some initial issues with buffer availability in the decoder.
+
+
+========================================================================================================================================================>>>
+
+
+
+ sample 1
+0:00:00.155272541 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 1: index 1, timestamp 0:00:00.032000000
+0:00:00.155276170 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+0:00:00.155279781 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 2
+0:00:00.155284262 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 2: index 2, timestamp 0:00:00.064000000
+0:00:00.155287519 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+0:00:00.155293034 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:5117:gst_qtdemux_activate_segment:<qtdemux0:audio_0> moving data pointer to 0:00:00.048000000, index: 1, pts 0:00:00.032000000
+0:00:00.155298651 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:1243:gst_qtdemux_find_keyframe:<qtdemux0> searching for keyframe index before index 1 gave 1
+0:00:00.155342460 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:5170:gst_qtdemux_activate_segment:<qtdemux0:audio_0> moving backwards to keyframe at 1 (pts 0:00:00.032000000 dts 0:00:00.032000000 )
+0:00:00.155347526 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:1308:gst_qtdemux_move_stream:<qtdemux0> moving to sample 1 of 2928
+0:00:00.155370335 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 136, size 96, dts=0:00:00.032000000, pts=0:00:00.032000000, duration 0:00:00.032000000
+0:00:00.155408270 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 232, size 96, dts=0:00:00.064000000, pts=0:00:00.064000000, duration 0:00:00.032000000
+0:00:00.155418332 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 3
+Initialized AVPacket:
+0:00:00.155423940 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 3: index 3, timestamp 0:00:00.096000000
+  Size: 96
+  Data: 0x7c84d8002000
+0:00:00.155429332 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+  PTS: 0
+  DTS: 0
+  Duration: 0
+  Flags: 0
+0:00:00.155441052 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 328, size 96, dts=0:00:00.096000000, pts=0:00:00.096000000, duration 0:00:00.032000000
+0:00:00.155449463 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 4
+0:00:00.155454832 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 4: index 4, timestamp 0:00:00.128000000
+Initialized AVPacket:
+0:00:00.155458674 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+  Size: 96
+  Data: 0x7c84d8002000
+  PTS: 0
+  DTS: 0
+0:00:00.155482308 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 424, size 99, dts=0:00:00.128000000, pts=0:00:00.128000000, duration 0:00:00.032000000
+  Duration: 0
+  Flags: 0
+0:00:00.155490583 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 5
+0:00:00.155496134 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 5: index 5, timestamp 0:00:00.160000000
+Initialized AVPacket:
+  Size: 96
+0:00:00.155500185 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+  Data: 0x7c84d8002000
+  PTS: 0
+  DTS: 0
+  Duration: 0
+0:00:00.155520862 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 523, size 95, dts=0:00:00.160000000, pts=0:00:00.160000000, duration 0:00:00.032000000
+  Flags: 0
+Initialized AVPacket:
+0:00:00.155548032 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 6
+  Size: 99
+  Data: 0x7c84d8002000
+  PTS: 0
+0:00:00.155553239 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 6: index 6, timestamp 0:00:00.192000000
+  DTS: 0
+  Duration: 0
+0:00:00.155557398 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+  Flags: 0
+Initialized AVPacket:
+0:00:00.155564187 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 618, size 99, dts=0:00:00.192000000, pts=0:00:00.192000000, duration 0:00:00.032000000
+  Size: 95
+  Data: 0x7c84d8002000
+  PTS: 0
+  DTS: 0
+0:00:00.155571867 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 7
+  Duration: 0
+  Flags: 0
+0:00:00.155576732 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 7: index 7, timestamp 0:00:00.224000000
+Initialized AVPacket:
+0:00:00.155580743 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+  Size: 99
+  Data: 0x7c84d8002000
+  PTS: 0
+  DTS: 0
+0:00:00.155587795 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 717, size 94, dts=0:00:00.224000000, pts=0:00:00.224000000, duration 0:00:00.032000000
+  Duration: 0
+  Flags: 0
+0:00:00.155596979 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 8
+Initialized AVPacket:
+  Size: 94
+0:00:00.155602280 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 8: index 8, timestamp 0:00:00.256000000
+  Data: 0x7c84d8002000
+  PTS: 0
+0:00:00.155606906 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+  DTS: 0
+  Duration: 0
+  Flags: 0
+0:00:00.155614297 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 811, size 99, dts=0:00:00.256000000, pts=0:00:00.256000000, duration 0:00:00.032000000
+0:00:00.155623400 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 9
+Initialized AVPacket:
+  Size: 99
+0:00:00.155628744 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 9: index 9, timestamp 0:00:00.288000000
+  Data: 0x7c84d8002000
+  PTS: 0
+0:00:00.155633803 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+  DTS: 0
+  Duration: 0
+  Flags: 0
+0:00:00.155640279 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 910, size 94, dts=0:00:00.288000000, pts=0:00:00.288000000, duration 0:00:00.032000000
+0:00:00.155649136 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 10
+Initialized AVPacket:
+0:00:00.155654617 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 10: index 10, timestamp 0:00:00.320000000
+  Size: 94
+  Data: 0x7c84d8002000
+0:00:00.155660193 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+  PTS: 0
+  DTS: 0
+  Duration: 0
+0:00:00.155668312 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 1004, size 94, dts=0:00:00.320000000, pts=0:00:00.320000000, duration 0:00:00.032000000
+  Flags: 0
+0:00:00.155683169 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 11
+0:00:00.155688965 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 11: index 11, timestamp 0:00:00.352000000
+0:00:00.155692926 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+Initialized AVPacket:
+  Size: 94
+  Data: 0x7c84d8002000
+0:00:00.155700194 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 1098, size 99, dts=0:00:00.352000000, pts=0:00:00.352000000, duration 0:00:00.032000000
+  PTS: 0
+  DTS: 0
+  Duration: 0
+  Flags: 0
+0:00:00.155709294 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 12
+0:00:00.155714960 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 12: index 12, timestamp 0:00:00.384000000
+Initialized AVPacket:
+0:00:00.155718898 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+  Size: 99
+  Data: 0x7c84d8002000
+  PTS: 0
+  DTS: 0
+0:00:00.155725860 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 1197, size 93, dts=0:00:00.384000000, pts=0:00:00.384000000, duration 0:00:00.032000000
+  Duration: 0
+  Flags: 0
+0:00:00.155735023 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 13
+Initialized AVPacket:
+0:00:00.155740589 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 13: index 13, timestamp 0:00:00.416000000
+  Size: 93
+  Data: 0x7c84d8002000
+0:00:00.155744762 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+  PTS: 0
+  DTS: 0
+  Duration: 0
+  Flags: 0
+0:00:00.155752059 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 1290, size 95, dts=0:00:00.416000000, pts=0:00:00.416000000, duration 0:00:00.032000000
+0:00:00.155767056 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 14
+0:00:00.155772704 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 14: index 14, timestamp 0:00:00.448000000
+0:00:00.155789766 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+0:00:00.155813213 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 1385, size 100, dts=0:00:00.448000000, pts=0:00:00.448000000, duration 0:00:00.032000000
+0:00:00.155822333 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 15
+0:00:00.155827774 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 15: index 15, timestamp 0:00:00.480000000
+Initialized AVPacket:
+0:00:00.155831804 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+  Size: 95
+  Data: 0x7c84d8002000
+0:00:00.155839564 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 1485, size 92, dts=0:00:00.480000000, pts=0:00:00.480000000, duration 0:00:00.032000000
+  PTS: 0
+  DTS: 0
+  Duration: 0
+  Flags: 0
+0:00:00.155847709 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 16
+0:00:00.155853631 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 16: index 16, timestamp 0:00:00.512000000
+0:00:00.155857522 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+Initialized AVPacket:
+  Size: 100
+  Data: 0x7c84d8002000
+0:00:00.155864369 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 1577, size 96, dts=0:00:00.512000000, pts=0:00:00.512000000, duration 0:00:00.032000000
+  PTS: 0
+  DTS: 0
+  Duration: 0
+  Flags: 0
+0:00:00.155873596 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 17
+0:00:00.155879689 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 17: index 17, timestamp 0:00:00.544000000
+0:00:00.155883632 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+Initialized AVPacket:
+  Size: 92
+  Data: 0x7c84d8002000
+0:00:00.155890358 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 1673, size 96, dts=0:00:00.544000000, pts=0:00:00.544000000, duration 0:00:00.032000000
+  PTS: 0
+  DTS: 0
+  Duration: 0
+  Flags: 0
+0:00:00.155899427 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 18
+Initialized AVPacket:
+0:00:00.155905609 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 18: index 18, timestamp 0:00:00.576000000
+  Size: 96
+  Data: 0x7c84d8002000
+0:00:00.155910171 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+  PTS: 0
+  DTS: 0
+  Duration: 0
+  Flags: 0
+0:00:00.155917353 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 1769, size 96, dts=0:00:00.576000000, pts=0:00:00.576000000, duration 0:00:00.032000000
+Initialized AVPacket:
+  Size: 96
+0:00:00.155926178 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 19
+  Data: 0x7c84d8002000
+  PTS: 0
+  DTS: 0
+0:00:00.155931773 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 19: index 19, timestamp 0:00:00.608000000
+  Duration: 0
+  Flags: 0
+0:00:00.155936633 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+Initialized AVPacket:
+0:00:00.155944143 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 1865, size 97, dts=0:00:00.608000000, pts=0:00:00.608000000, duration 0:00:00.032000000
+  Size: 96
+  Data: 0x7c84d8002000
+  PTS: 0
+  DTS: 0
+0:00:00.155952860 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 20
+  Duration: 0
+  Flags: 0
+0:00:00.155958865 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 20: index 20, timestamp 0:00:00.640000000
+Initialized AVPacket:
+0:00:00.155962847 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+  Size: 97
+  Data: 0x7c84d8002000
+  PTS: 0
+  DTS: 0
+0:00:00.155970029 3519094 0x6015503a9b00 DEBUG                qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 1962, size 95, dts=0:00:00.640000000, pts=0:00:00.640000000, duration 0:00:00.032000000
+  Duration: 0
+  Flags: 0
+
+==========================================================================================================================>>>
+
+PARSING 
+
+-->Sample-1 parsing :
+
+0:00:00.155272541 3519094 0x6015503a9b00 DEBUG qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 1: index 1, timestamp 0:00:00.032000000
+
+The demuxer is processing the first sample with an index of 1 and a timestamp of 0:00:00.032000000 (32 ms).
+
+->setting keyframes :
+
+0:00:00.155276170 3519094 0x6015503a9b00 DEBUG qtdemux qtdemux.c:9641:qtdemux_parse_samples:<qtdemux0> setting all keyframes
+
+The qtdemux is setting all frames as keyframes for this sample. This is typically done during initial parsing or if all frames are keyframes in the media file.
+
+->Sample-2 :
+
+0:00:00.155279781 3519094 0x6015503a9b00 DEBUG qtdemux qtdemux.c:9327:qtdemux_parse_samples:<qtdemux0> parsing up to sample 2
+0:00:00.155284262 3519094 0x6015503a9b00 DEBUG qtdemux qtdemux.c:9536:qtdemux_parse_samples:<qtdemux0> sample 2: index 2, timestamp 0:00:00.064000000
+
+-->Pushing Data :
+
+0:00:00.155370335 3519094 0x6015503a9b00 DEBUG qtdemux qtdemux.c:6353:gst_qtdemux_loop_state_movie:<qtdemux0> pushing from track-id 1, empty 0 offset 136, size 96, 
+dts=0:00:00.032000000, pts=0:00:00.032000000, duration 0:00:00.032000000
+
+The demuxer pushes the parsed data to downstream elements with track ID 1. The data’s timestamp (PTS) and decoding timestamp (DTS) are 0:00:00.032000000, and 
+the duration is 32 ms. The offset indicates the byte offset in the file.
+
+
+=================================================================================================================================>>
+
+The demuxer reads the media file and extracts metadata, including timestamp information (PTS, DTS) for each packet.
+This information is crucial for synchronizing playback and ensuring that frames are decoded and presented at the correct times.
+
+
+Initialization of AV Packet:
+When the demuxer prepares AV packets for downstream processing (e.g., pushing to a decoder), it is expected to include the timestamp information it has extracted.
+If, during this initialization phase, the timestamps (PTS and DTS) are zeroed out or not set correctly, this indicates a potential issue in how the packet is being 
+prepared or how timestamp information is being managed.
+
+
+Decoder Processing:
+The decoder relies on the timestamps provided by the demuxer to correctly decode and present frames.
+If the timestamps are zero or missing, the decoder cannot accurately place frames in time, leading to issues like incorrect playback timing, audio-video sync problems,
+or other playback anomalies.
+
+
+
+
