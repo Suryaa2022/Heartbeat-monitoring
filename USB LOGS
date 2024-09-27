@@ -1,0 +1,1563 @@
+
+20396 2024/09/27 11:36:31.355000 8998.0267 240 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 717 ] do_delete_old(...) Couldn't run SQL delete old dtime '1291260658', ret=13: database or disk is full
+
+
+
+20863 2024/09/27 11:36:31.373000 8998.0643 16 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:117901] [hmedia] [I] LmsDatabase) create db - /rw_data/service/lightmediascanner/db.sqlite3.
+
+
+
+11681 2024/09/27 11:36:30.914000 8997.5298 60 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner.c : 143 ] _parser_load(...) so_path = /usr/lib/lightmediascanner/plugins/mp4.so
+11679 2024/09/27 11:36:30.914000 8997.5298 59 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1985 ] setup_lms(...) parser = /usr/lib/lightmediascanner/plugins/mp4.so
+11200 2024/09/27 11:36:30.872000 8997.5298 60 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner.c : 143 ] _parser_load(...) so_path = /usr/lib/lightmediascanner/plugins/mp4.so
+11198 2024/09/27 11:36:30.872000 8997.5298 59 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1985 ] setup_lms(...) parser = /usr/lib/lightmediascanner/plugins/mp4.so
+10669 2024/09/27 11:36:30.825000 8997.5298 60 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner.c : 143 ] _parser_load(...) so_path = /usr/lib/lightmediascanner/plugins/mp4.so
+10667 2024/09/27 11:36:30.825000 8997.5298 59 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1985 ] setup_lms(...) parser = /usr/lib/lightmediascanner/plugins/mp4.so
+
+
+
+11708 2024/09/27 11:36:30.914000 8997.5327 61 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 589 ] check_scanner_status(...) [ pid : 929 ] , bus_name = org.lightmediascanner.front , status = [[[[[ LMS_SCANNER_STATUS_RUNNIG ]]]]]
+11227 2024/09/27 11:36:30.872000 8997.5327 61 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 589 ] check_scanner_status(...) [ pid : 929 ] , bus_name = org.lightmediascanner.front , status = [[[[[ LMS_SCANNER_STATUS_RUNNIG ]]]]]
+10696 2024/09/27 11:36:30.825000 8997.5327 61 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 589 ] check_scanner_status(...) [ pid : 929 ] , bus_name = org.lightmediascanner.front , status = [[[[[ LMS_SCANNER_STATUS_RUNNIG ]]]]]
+
+
+11709 2024/09/27 11:36:30.914000 8997.5328 62 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1434 ] scanner_dbus_props_changed(...) [[[[[ Emit signal ]]]]] properties changed [ pid : 929 ] , bus_name = org.lightmediascanner.front
+11228 2024/09/27 11:36:30.872000 8997.5328 62 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1434 ] scanner_dbus_props_changed(...) [[[[[ Emit signal ]]]]] properties changed [ pid : 929 ] , bus_name = org.lightmediascanner.front
+10697 2024/09/27 11:36:30.825000 8997.5328 62 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1434 ] scanner_dbus_props_changed(...) [[[[[ Emit signal ]]]]] properties changed [ pid : 929 ] , bus_name = org.lightmediascanner.front
+
+
+
+13730 2024/09/27 11:36:31.005000 8997.5648 95 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 932 ] lms_create_pipes(...) lms_create_pipes(...) , [ pid : 929 ] , pinfo->master.r = 13 , pinfo->slave.w = 14 , pinfo->slave.r = 15 , pinfo->master.w = 16
+13729 2024/09/27 11:36:31.005000 8997.5648 94 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 911 ] lms_create_pipes(...) lms_create_pipes(...) , [ pid : 929 ]
+13728 2024/09/27 11:36:31.005000 8997.5648 93 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_check.c : 1081 ] lms_check(...) + lock [ pid : 929 ] ..... [[ START ]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10624 2024/09/27 11:36:30.825000 8997.5292 39 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2389 ] scanner_method_call(...) bus_name = org.lightmediascanner.front , method = [[[[[[[[[[ Scan ]]]]]]]]]]]
+11638 2024/09/27 11:36:30.914000 8997.5293 41 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1695 ] dbus_scanner_scan_params_set(...) empty = 1
+11637 2024/09/27 11:36:30.914000 8997.5293 40 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2223 ] dbus_scanner_scan(...) bus_name = org.lightmediascanner.front
+10627 2024/09/27 11:36:30.825000 8997.5294 42 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2249 ] dbus_scanner_scan(...) dbus_scanner_scan : do_scan
+11646 2024/09/27 11:36:30.914000 8997.5295 46 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1718 ] scanner_status_changed(...) scanner_dbus_props_changed(...) Called.
+11644 2024/09/27 11:36:30.914000 8997.5295 45 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1454 ] scanner_write_lock_changed(...) scanner_dbus_props_changed(...) Called.
+11642 2024/09/27 11:36:30.914000 8997.5295 44 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1705 ] scanner_is_scanning_changed(...) scanner_dbus_props_changed(...) Called.
+11657 2024/09/27 11:36:30.914000 8997.5296 49 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = x�ء
+11656 2024/09/27 11:36:30.914000 8997.5296 48 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: x�ء , bus_name = org.lightmediascanner.front
+11653 2024/09/27 11:36:30.914000 8997.5296 47 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2088 ] scanner_thread_work(...) started scanner thread , [ pid : 929 ] , bus_name = org.lightmediascanner.front
+11673 2024/09/27 11:36:30.914000 8997.5297 58 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = audio
+11670 2024/09/27 11:36:30.914000 8997.5297 57 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: audio , bus_name = org.lightmediascanner.front
+11668 2024/09/27 11:36:30.914000 8997.5297 56 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category p�ء
+11667 2024/09/27 11:36:30.914000 8997.5297 55 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = p�ء
+10667 2024/09/27 11:36:30.825000 8997.5298 59 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1985 ] setup_lms(...) parser = /usr/lib/lightmediascanner/plugins/mp4.so
+11708 2024/09/27 11:36:30.914000 8997.5327 61 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 589 ] check_scanner_status(...) [ pid : 929 ] , bus_name = org.lightmediascanner.front , status = [[[[[ LMS_SCANNER_STATUS_RUNNIG ]]]]]
+11227 2024/09/27 11:36:30.872000 8997.5327 61 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 589 ] check_scanner_status(...) [ pid : 929 ] , bus_name = org.lightmediascanner.front , status = [[[[[ LMS_SCANNER_STATUS_RUNNIG ]]]]]
+10697 2024/09/27 11:36:30.825000 8997.5328 62 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1434 ] scanner_dbus_props_changed(...) [[[[[ Emit signal ]]]]] properties changed [ pid : 929 ] , bus_name = org.lightmediascanner.front
+11746 2024/09/27 11:36:30.914000 8997.5347 64 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2223 ] dbus_scanner_scan(...) bus_name = org.lightmediascanner.front
+11745 2024/09/27 11:36:30.914000 8997.5347 63 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2389 ] scanner_method_call(...) bus_name = org.lightmediascanner.front , method = [[[[[[[[[[ Scan ]]]]]]]]]]]
+
+10697 2024/09/27 11:36:30.825000 8997.5328 62 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1434 ] scanner_dbus_props_changed(...) [[[[[ Emit signal ]]]]] properties changed [ pid : 929 ] , bus_name = org.lightmediascanner.front
+11746 2024/09/27 11:36:30.914000 8997.5347 64 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2223 ] dbus_scanner_scan(...) bus_name = org.lightmediascanner.front
+11745 2024/09/27 11:36:30.914000 8997.5347 63 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2389 ] scanner_method_call(...) bus_name = org.lightmediascanner.front , method = [[[[[[[[[[ Scan ]]]]]]]]]]]
+
+14009 2024/09/27 11:36:31.015000 8997.7061 101 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2166 ] scanner_thread_work(...) lms_process [ pid : 929 ] , path = /rw_data/media/usb/front , bus_name = org.lightmediascanner.front
+14686 2024/09/27 11:36:31.044000 8997.7065 102 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1940 ] lms_process(...) [ pid : 929 ] , top_path = /rw_data/media/usb/front ..... [[ START ]]
+14376 2024/09/27 11:36:31.032000 8997.7065 102 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1940 ] lms_process(...) [ pid : 929 ] , top_path = /rw_data/media/usb/front ..... [[ START ]]
+14010 2024/09/27 11:36:31.015000 8997.7065 102 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1940 ] lms_process(...) [ pid : 929 ] , top_path = /rw_data/media/usb/front ..... [[ START ]]
+14687 2024/09/27 11:36:31.044000 8997.7066 103 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 911 ] lms_create_pipes(...) lms_create_pipes(...) , [ pid : 929 ]
+14377 2024/09/27 11:36:31.032000 8997.7066 103 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 911 ] lms_create_pipes(...) lms_create_pipes(...) , [ pid : 929 ]
+14011 2024/09/27 11:36:31.015000 8997.7066 103 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 911 ] lms_create_pipes(...) lms_create_pipes(...) , [ pid : 929 ]
+14692 2024/09/27 11:36:31.044000 8997.7071 104 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 932 ] lms_create_pipes(...) lms_create_pipes(...) , [ pid : 929 ] , pinfo->master.r = 13 , pinfo->slave.w = 14 , pinfo->slave.r = 15 , pinfo->master.w = 16
+14382 2024/09/27 11:36:31.032000 8997.7071 104 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 932 ] lms_create_pipes(...) lms_create_pipes(...) , [ pid : 929 ] , pinfo->master.r = 13 , pinfo->slave.w = 14 , pinfo->slave.r = 15 , pinfo->master.w = 16
+14016 2024/09/27 11:36:31.015000 8997.7071 104 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 932 ] lms_create_pipes(...) lms_create_pipes(...) , [ pid : 929 ] , pinfo->master.r = 13 , pinfo->slave.w = 14 , pinfo->slave.r = 15 , pinfo->master.w = 16
+14693 2024/09/27 11:36:31.045000 8997.7076 105 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 944 ] lms_create_slave(...) lms_create_slave(...) , [ pid : 929 ]
+14383 2024/09/27 11:36:31.032000 8997.7076 105 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 944 ] lms_create_slave(...) lms_create_slave(...) , [ pid : 929 ]
+14017 2024/09/27 11:36:31.015000 8997.7076 105 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 944 ] lms_create_slave(...) lms_create_slave(...) , [ pid : 929 ]
+14699 2024/09/27 11:36:31.045000 8997.7110 107 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1888 ] _process_trigger(...) [ pid : 929 ] , top_path = /rw_data/media/usb/front ..... [[ START ]]
+14697 2024/09/27 11:36:31.045000 8997.7110 106 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 952 ] lms_create_slave(...) lms_create_slave(...) , [ pid : 929 ] , pinfo->child = 117895
+14389 2024/09/27 11:36:31.032000 8997.7110 107 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1888 ] _process_trigger(...) [ pid : 929 ] , top_path = /rw_data/media/usb/front ..... [[ START ]]
+14387 2024/09/27 11:36:31.032000 8997.7110 106 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 952 ] lms_create_slave(...) lms_create_slave(...) , [ pid : 929 ] , pinfo->child = 117895
+14023 2024/09/27 11:36:31.015000 8997.7110 107 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1888 ] _process_trigger(...) [ pid : 929 ] , top_path = /rw_data/media/usb/front ..... [[ START ]]
+14021 2024/09/27 11:36:31.015000 8997.7110 106 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 952 ] lms_create_slave(...) lms_create_slave(...) , [ pid : 929 ] , pinfo->child = 117895
+14701 2024/09/27 11:36:31.045000 8997.7113 108 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1284 ] _process_unknown(...) [ pid : 929 ] , base = 19 , path = /rw_data/media/usb/front , name = front ..... [[ START ]]
+
+14728 2024/09/27 11:36:31.045000 8997.7211 110 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/20x_Issue]] idx/scanCount = 1/24, type = DT_DIR(4)
+14418 2024/09/27 11:36:31.032000 8997.7211 110 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/20x_Issue]] idx/scanCount = 1/24, type = DT_DIR(4)
+14052 2024/09/27 11:36:31.016000 8997.7211 110 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/20x_Issue]] idx/scanCount = 1/24, type = DT_DIR(4)
+14729 2024/09/27 11:36:31.045000 8997.7212 111 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/AJAY]] idx/scanCount = 2/24, type = DT_DIR(4)
+14419 2024/09/27 11:36:31.032000 8997.7212 111 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/AJAY]] idx/scanCount = 2/24, type = DT_DIR(4)
+14053 2024/09/27 11:36:31.016000 8997.7212 111 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/AJAY]] idx/scanCount = 2/24, type = DT_DIR(4)
+14730 2024/09/27 11:36:31.045000 8997.7213 112 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/AJAY/DLT_FILES_FOR_ALBUM_ART_ISSUE]] idx/scanCount = 1/1, type = DT_DIR(4)
+14420 2024/09/27 11:36:31.032000 8997.7213 112 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/AJAY/DLT_FILES_FOR_ALBUM_ART_ISSUE]] idx/scanCount = 1/1, type = DT_DIR(4)
+14054 2024/09/27 11:36:31.016000 8997.7213 112 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/AJAY/DLT_FILES_FOR_ALBUM_ART_ISSUE]] idx/scanCount = 1/1, type = DT_DIR(4)
+14733 2024/09/27 11:36:31.045000 8997.7215 113 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/AJAY/DLT_FILES_FOR_ALBUM_ART_ISSUE/DLT]] idx/scanCount = 1/1, type = DT_DIR(4)
+14423 2024/09/27 11:36:31.032000 8997.7215 113 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/AJAY/DLT_FILES_FOR_ALBUM_ART_ISSUE/DLT]] idx/scanCount = 1/1, type = DT_DIR(4)
+14057 2024/09/27 11:36:31.016000 8997.7215 113 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/AJAY/DLT_FILES_FOR_ALBUM_ART_ISSUE/DLT]] idx/scanCount = 1/1, type = DT_DIR(4)
+
+19544 2024/09/27 11:36:31.254000 8997.9885 12 CCIC LMS SLV 117895 log error verbose 1 [ lightmediascanner_process.c : 501 ] lms_parsers_finish(...) ERROR: parser "m3u" failed to finish: -1.
+19324 2024/09/27 11:36:31.237000 8997.9885 12 CCIC LMS SLV 117895 log error verbose 1 [ lightmediascanner_process.c : 501 ] lms_parsers_finish(...) ERROR: parser "m3u" failed to finish: -1.
+19145 2024/09/27 11:36:31.230000 8997.9885 12 CCIC LMS SLV 117895 log error verbose 1 [ lightmediascanner_process.c : 501 ] lms_parsers_finish(...) ERROR: parser "m3u" failed to finish: -1.
+19545 2024/09/27 11:36:31.254000 8997.9887 13 CCIC LMS SLV 117895 log info verbose 1 [ lightmediascanner_process.c : 348 ] _db_close(...) [ pid : 117895 ]
+19325 2024/09/27 11:36:31.237000 8997.9887 13 CCIC LMS SLV 117895 log info verbose 1 [ lightmediascanner_process.c : 348 ] _db_close(...) [ pid : 117895 ]
+19146 2024/09/27 11:36:31.230000 8997.9887 13 CCIC LMS SLV 117895 log info verbose 1 [ lightmediascanner_process.c : 348 ] _db_close(...) [ pid : 117895 ]
+19726 2024/09/27 11:36:31.259000 8997.9895 14 CCIC LMS SLV 117895 log info verbose 1 [ lightmediascanner_process.c : 838 ] _slave_work(...) - slave done , [ Parent ID : 929 ] , [ pid : 117895 ]
+19546 2024/09/27 11:36:31.254000 8997.9895 14 CCIC LMS SLV 117895 log info verbose 1 [ lightmediascanner_process.c : 838 ] _slave_work(...) - slave done , [ Parent ID : 929 ] , [ pid : 117895 ]
+19326 2024/09/27 11:36:31.237000 8997.9895 14 CCIC LMS SLV 117895 log info verbose 1 [ lightmediascanner_process.c : 838 ] _slave_work(...) - slave done , [ Parent ID : 929 ] , [ pid : 117895 ]
+19731 2024/09/27 11:36:31.259000 8997.9915 1 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] _root : [/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c]
+19730 2024/09/27 11:36:31.259000 8997.9915 0 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] files.size()=[14]
+19551 2024/09/27 11:36:31.254000 8997.9915 1 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] _root : [/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c]
+19550 2024/09/27 11:36:31.254000 8997.9915 0 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] files.size()=[14]
+19331 2024/09/27 11:36:31.237000 8997.9915 1 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] _root : [/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c]
+19330 2024/09/27 11:36:31.237000 8997.9915 0 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] files.size()=[14]
+19732 2024/09/27 11:36:31.259000 8997.9916 2 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] front mount path=[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c]
+19552 2024/09/27 11:36:31.254000 8997.9916 2 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] front mount path=[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c]
+19332 2024/09/27 11:36:31.237000 8997.9916 2 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] front mount path=[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c]
+19734 2024/09/27 11:36:31.259000 8997.9933 0 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] files.size()=[45]
+19554 2024/09/27 11:36:31.254000 8997.9933 0 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] files.size()=[45]
+19334 2024/09/27 11:36:31.237000 8997.9933 0 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] files.size()=[45]
+19735 2024/09/27 11:36:31.259000 8997.9934 1 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] _root : [/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c]
+19555 2024/09/27 11:36:31.254000 8997.9934 1 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] _root : [/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c]
+
+19338 2024/09/27 11:36:31.237000 8997.9952 4 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] data) benchmark of scanning: 469.917 ms
+19337 2024/09/27 11:36:31.237000 8997.9952 3 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] data) scan_info: [/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c, finished]
+19742 2024/09/27 11:36:31.259000 8997.9955 6 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] data) filesystem: audio(45), video(14)
+19562 2024/09/27 11:36:31.255000 8997.9955 6 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] data) filesystem: audio(45), video(14)
+19342 2024/09/27 11:36:31.237000 8997.9955 6 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] data) filesystem: audio(45), video(14)
+19746 2024/09/27 11:36:31.259000 8997.9959 203 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1966 ] lms_process(...) [ pid : 929 ] , top_path = /rw_data/media/usb/front ..... [[ END ]]
+19566 2024/09/27 11:36:31.255000 8997.9959 203 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1966 ] lms_process(...) [ pid : 929 ] , top_path = /rw_data/media/usb/front ..... [[ END ]]
+19346 2024/09/27 11:36:31.237000 8997.9959 203 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1966 ] lms_process(...) [ pid : 929 ] , top_path = /rw_data/media/usb/front ..... [[ END ]]
+19807 2024/09/27 11:36:31.268000 8997.9995 208 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = AIFF parser
+19806 2024/09/27 11:36:31.268000 8997.9995 207 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: AIFF parser , bus_name = org.lightmediascanner.front
+19805 2024/09/27 11:36:31.268000 8997.9995 206 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category multimedia
+19804 2024/09/27 11:36:31.268000 8997.9995 205 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = multimedia
+19803 2024/09/27 11:36:31.268000 8997.9995 204 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: multimedia , bus_name = org.lightmediascanner.front
+
+
+37398 2024/09/27 11:37:01.030000 9027.6937 13 CCIC LMS SLV 118303 log info verbose 1 [ lightmediascanner_process.c : 348 ] _db_close(...) [ pid : 118303 ]
+38369 2024/09/27 11:37:01.064000 9027.6942 14 CCIC LMS SLV 118303 log info verbose 1 [ lightmediascanner_process.c : 838 ] _slave_work(...) - slave done , [ Parent ID : 929 ] , [ pid : 118303 ]
+37884 2024/09/27 11:37:01.048000 9027.6942 14 CCIC LMS SLV 118303 log info verbose 1 [ lightmediascanner_process.c : 838 ] _slave_work(...) - slave done , [ Parent ID : 929 ] , [ pid : 118303 ]
+37399 2024/09/27 11:37:01.030000 9027.6942 14 CCIC LMS SLV 118303 log info verbose 1 [ lightmediascanner_process.c : 838 ] _slave_work(...) - slave done , [ Parent ID : 929 ] , [ pid : 118303 ]
+38373 2024/09/27 11:37:01.064000 9027.6997 70 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1966 ] lms_process(...) [ pid : 929 ] , top_path = /rw_data/media/usb/front ..... [[ END ]]
+37888 2024/09/27 11:37:01.048000 9027.6997 70 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1966 ] lms_process(...) [ pid : 929 ] , top_path = /rw_data/media/usb/front ..... [[ END ]]
+37403 2024/09/27 11:37:01.030000 9027.6997 70 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1966 ] lms_process(...) [ pid : 929 ] , top_path = /rw_data/media/usb/front ..... [[ END ]]
+38385 2024/09/27 11:37:01.064000 9027.7062 78 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = playlist
+38384 2024/09/27 11:37:01.064000 9027.7062 77 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: playlist , bus_name = org.lightmediascanner.front
+38383 2024/09/27 11:37:01.064000 9027.7062 76 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category AIFF parser
+38382 2024/09/27 11:37:01.064000 9027.7062 75 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = AIFF parser
+38381 2024/09/27 11:37:01.064000 9027.7062 74 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: AIFF parser , bus_name = org.lightmediascanner.front
+38380 2024/09/27 11:37:01.064000 9027.7062 73 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category multimedia
+38379 2024/09/27 11:37:01.064000 9027.7062 72 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = multimedia
+38378 2024/09/27 11:37:01.064000 9027.7062 71 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: multimedia , bus_name = org.lightmediascanner.front
+37900 2024/09/27 11:37:01.048000 9027.7062 78 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = playlist
+37899 2024/09/27 11:37:01.048000 9027.7062 77 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: playlist , bus_name = org.lightmediascanner.front
+37898 2024/09/27 11:37:01.048000 9027.7062 76 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category AIFF parser
+37897 2024/09/27 11:37:01.048000 9027.7062 75 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = AIFF parser
+37896 2024/09/27 11:37:01.048000 9027.7062 74 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: AIFF parser , bus_name = org.lightmediascanner.front
+37895 2024/09/27 11:37:01.048000 9027.7062 73 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category multimedia
+37894 2024/09/27 11:37:01.048000 9027.7062 72 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = multimedia
+37893 2024/09/27 11:37:01.048000 9027.7062 71 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: multimedia , bus_name = org.lightmediascanner.front
+37415 2024/09/27 11:37:01.030000 9027.7062 78 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = playlist
+37414 2024/09/27 11:37:01.030000 9027.7062 77 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: playlist , bus_name = org.lightmediascanner.front
+37413 2024/09/27 11:37:01.030000 9027.7062 76 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category AIFF parser
+37412 2024/09/27 11:37:01.030000 9027.7062 75 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = AIFF parser
+37411 2024/09/27 11:37:01.030000 9027.7062 74 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: AIFF parser , bus_name = org.lightmediascanner.front
+37410 2024/09/27 11:37:01.030000 9027.7062 73 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category multimedia
+37409 2024/09/27 11:37:01.030000 9027.7062 72 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = multimedia
+37408 2024/09/27 11:37:01.030000 9027.7062 71 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: multimedia , bus_name = org.lightmediascanner.front
+38409 2024/09/27 11:37:01.064000 9027.7063 102 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = ��ء
+38408 2024/09/27 11:37:01.064000 9027.7063 101 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: ��ء , bus_name = org.lightmediascanner.front
+38407 2024/09/27 11:37:01.064000 9027.7063 100 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category MATROSKA parser
+38406 2024/09/27 11:37:01.064000 9027.7063 99 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = MATROSKA parser
+38405 2024/09/27 11:37:01.064000 9027.7063 98 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: MATROSKA parser , bus_name = org.lightmediascanner.front
+38404 2024/09/27 11:37:01.064000 9027.7063 97 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category http://github.com/profusion/lightmediascanner
+38403 2024/09/27 11:37:01.064000 9027.7063 96 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = http://github.com/profusion/lightmediascanner
+38402 2024/09/27 11:37:01.064000 9027.7063 95 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: http://github.com/profusion/lightmediascanner , bus_name = org.lightmediascanner.front
+38401 2024/09/27 11:37:01.064000 9027.7063 94 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category picture
+38400 2024/09/27 11:37:01.064000 9027.7063 93 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = picture
+38399 2024/09/27 11:37:01.064000 9027.7063 92 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: picture , bus_name = org.lightmediascanner.front
+38398 2024/09/27 11:37:01.064000 9027.7063 91 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category ��ء
+38397 2024/09/27 11:37:01.064000 9027.7063 90 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = ��ء
+38396 2024/09/27 11:37:01.064000 9027.7063 89 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: ��ء , bus_name = org.lightmediascanner.front
+38395 2024/09/27 11:37:01.064000 9027.7063 88 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category video
+38394 2024/09/27 11:37:01.064000 9027.7063 87 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = video
+38393 2024/09/27 11:37:01.064000 9027.7063 86 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: video , bus_name = org.lightmediascanner.front
+38392 2024/09/27 11:37:01.064000 9027.7063 85 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category aiff
+38391 2024/09/27 11:37:01.064000 9027.7063 84 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = aiff
+38390 2024/09/27 11:37:01.064000 9027.7063 83 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: aiff , bus_name = org.lightmediascanner.front
+38389 2024/09/27 11:37:01.064000 9027.7063 82 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category matroska
+38388 2024/09/27 11:37:01.064000 9027.7063 81 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = matroska
+38387 2024/09/27 11:37:01.064000 9027.7063 80 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: matroska , bus_name = org.lightmediascanner.front
+38386 2024/09/27 11:37:01.064000 9027.7063 79 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category playlist
+37924 2024/09/27 11:37:01.048000 9027.7063 102 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = ��ء
+37923 2024/09/27 11:37:01.048000 9027.7063 101 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: ��ء , bus_name = org.lightmediascanner.front
+37922 2024/09/27 11:37:01.048000 9027.7063 100 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category MATROSKA parser
+37921 2024/09/27 11:37:01.048000 9027.7063 99 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = MATROSKA parser
+37920 2024/09/27 11:37:01.048000 9027.7063 98 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: MATROSKA parser , bus_name = org.lightmediascanner.front
+37919 2024/09/27 11:37:01.048000 9027.7063 97 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category http://github.com/profusion/lightmediascanner
+37918 2024/09/27 11:37:01.048000 9027.7063 96 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = http://github.com/profusion/lightmediascanner
+37917 2024/09/27 11:37:01.048000 9027.7063 95 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: http://github.com/profusion/lightmediascanner , bus_name = org.lightmediascanner.front
+37916 2024/09/27 11:37:01.048000 9027.7063 94 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category picture
+37915 2024/09/27 11:37:01.048000 9027.7063 93 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = picture
+37914 2024/09/27 11:37:01.048000 9027.7063 92 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: picture , bus_name = org.lightmediascanner.front
+37913 2024/09/27 11:37:01.048000 9027.7063 91 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category ��ء
+37912 2024/09/27 11:37:01.048000 9027.7063 90 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = ��ء
+37911 2024/09/27 11:37:01.048000 9027.7063 89 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: ��ء , bus_name = org.lightmediascanner.front
+37910 2024/09/27 11:37:01.048000 9027.7063 88 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category video
+37909 2024/09/27 11:37:01.048000 9027.7063 87 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = video
+37908 2024/09/27 11:37:01.048000 9027.7063 86 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: video , bus_name = org.lightmediascanner.front
+37907 2024/09/27 11:37:01.048000 9027.7063 85 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category aiff
+37906 2024/09/27 11:37:01.048000 9027.7063 84 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = aiff
+37905 2024/09/27 11:37:01.048000 9027.7063 83 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: aiff , bus_name = org.lightmediascanner.front
+37904 2024/09/27 11:37:01.048000 9027.7063 82 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category matroska
+37903 2024/09/27 11:37:01.048000 9027.7063 81 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = matroska
+37902 2024/09/27 11:37:01.048000 9027.7063 80 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: matroska , bus_name = org.lightmediascanner.front
+37901 2024/09/27 11:37:01.048000 9027.7063 79 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category playlist
+37439 2024/09/27 11:37:01.030000 9027.7063 102 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = ��ء
+37438 2024/09/27 11:37:01.030000 9027.7063 101 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: ��ء , bus_name = org.lightmediascanner.front
+37437 2024/09/27 11:37:01.030000 9027.7063 100 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category MATROSKA parser
+37436 2024/09/27 11:37:01.030000 9027.7063 99 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = MATROSKA parser
+37435 2024/09/27 11:37:01.030000 9027.7063 98 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: MATROSKA parser , bus_name = org.lightmediascanner.front
+37434 2024/09/27 11:37:01.030000 9027.7063 97 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category http://github.com/profusion/lightmediascanner
+37433 2024/09/27 11:37:01.030000 9027.7063 96 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = http://github.com/profusion/lightmediascanner
+37432 2024/09/27 11:37:01.030000 9027.7063 95 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: http://github.com/profusion/lightmediascanner , bus_name = org.lightmediascanner.front
+37431 2024/09/27 11:37:01.030000 9027.7063 94 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category picture
+37430 2024/09/27 11:37:01.030000 9027.7063 93 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = picture
+37429 2024/09/27 11:37:01.030000 9027.7063 92 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: picture , bus_name = org.lightmediascanner.front
+37428 2024/09/27 11:37:01.030000 9027.7063 91 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category ��ء
+37427 2024/09/27 11:37:01.030000 9027.7063 90 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = ��ء
+37426 2024/09/27 11:37:01.030000 9027.7063 89 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: ��ء , bus_name = org.lightmediascanner.front
+37425 2024/09/27 11:37:01.030000 9027.7063 88 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category video
+37424 2024/09/27 11:37:01.030000 9027.7063 87 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = video
+37423 2024/09/27 11:37:01.030000 9027.7063 86 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: video , bus_name = org.lightmediascanner.front
+37422 2024/09/27 11:37:01.030000 9027.7063 85 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category aiff
+37421 2024/09/27 11:37:01.030000 9027.7063 84 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = aiff
+37420 2024/09/27 11:37:01.030000 9027.7063 83 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: aiff , bus_name = org.lightmediascanner.front
+37419 2024/09/27 11:37:01.030000 9027.7063 82 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category matroska
+37418 2024/09/27 11:37:01.030000 9027.7063 81 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1922 ] setup_lms(...) category = matroska
+37417 2024/09/27 11:37:01.030000 9027.7063 80 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2107 ] scanner_thread_work(...) scan category: matroska , bus_name = org.lightmediascanner.front
+37416 2024/09/27 11:37:01.030000 9027.7063 79 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category playlist
+38412 2024/09/27 11:37:01.064000 9027.7064 105 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1255 ] refresh_database(...) + lock [ pid : 929 ] , bus_name = org.lightmediascanner.front
+38411 2024/09/27 11:37:01.064000 9027.7064 104 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2187 ] scanner_thread_work(...) finished scanner thread , bus_name = org.lightmediascanner.front
+38410 2024/09/27 11:37:01.064000 9027.7064 103 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category ��ء
+37927 2024/09/27 11:37:01.048000 9027.7064 105 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1255 ] refresh_database(...) + lock [ pid : 929 ] , bus_name = org.lightmediascanner.front
+37926 2024/09/27 11:37:01.048000 9027.7064 104 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2187 ] scanner_thread_work(...) finished scanner thread , bus_name = org.lightmediascanner.front
+37925 2024/09/27 11:37:01.048000 9027.7064 103 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category ��ء
+37442 2024/09/27 11:37:01.030000 9027.7064 105 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1255 ] refresh_database(...) + lock [ pid : 929 ] , bus_name = org.lightmediascanner.front
+37441 2024/09/27 11:37:01.030000 9027.7064 104 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2187 ] scanner_thread_work(...) finished scanner thread , bus_name = org.lightmediascanner.front
+37440 2024/09/27 11:37:01.030000 9027.7064 103 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 1931 ] setup_lms(...) No parsers for category ��ء
+38413 2024/09/27 11:37:01.064000 9027.7083 106 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 492 ] update_recent_device_files(...) Update from DB recent devices
+37928 2024/09/27 11:37:01.048000 9027.7083 106 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 492 ] update_recent_device_files(...) Update from DB recent devices
+37443 2024/09/27 11:37:01.030000 9027.7083 106 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 492 ] update_recent_device_files(...) Update from DB recent devices
+38417 2024/09/27 11:37:01.064000 9027.7126 107 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 717 ] do_delete_old(...) Couldn't run SQL delete old dtime '1291260688', ret=13: database or disk is full
+37932 2024/09/27 11:37:01.048000 9027.7126 107 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 717 ] do_delete_old(...) Couldn't run SQL delete old dtime '1291260688', ret=13: database or disk is full
+37447 2024/09/27 11:37:01.030000 9027.7126 107 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 717 ] do_delete_old(...) Couldn't run SQL delete old dtime '1291260688', ret=13: database or disk is full
+38434 2024/09/27 11:37:01.064000 9027.7151 109 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 316 ] delete_over_scanned_files(...) delete_over_scanned_files in, device: front, limt: 8000
+38418 2024/09/27 11:37:01.064000 9027.7151 108 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 289 ] delete_deleted_files(...) Delete from DB deleted files in mounted devices
+37949 2024/09/27 11:37:01.048000 9027.7151 109 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 316 ] delete_over_scanned_files(...) delete_over_scanned_files in, device: front, limt: 8000
+37933 2024/09/27 11:37:01.048000 9027.7151 108 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 289 ] delete_deleted_files(...) Delete from DB deleted files in mounted devices
+37464 2024/09/27 11:37:01.030000 9027.7151 109 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 316 ] delete_over_scanned_files(...) delete_over_scanned_files in, device: front, limt: 8000
+37448 2024/09/27 11:37:01.030000 9027.7151 108 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 289 ] delete_deleted_files(...) Delete from DB deleted files in mounted devices
+38462 2024/09/27 11:37:01.064000 9027.7171 110 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1281 ] refresh_database(...) - unlock [pid:929]
+37977 2024/09/27 11:37:01.048000 9027.7171 110 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1281 ] refresh_database(...) - unlock [pid:929]
+37492 2024/09/27 11:37:01.030000 9027.7171 110 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1281 ] refresh_database(...) - unlock [pid:929]
+38463 2024/09/27 11:37:01.064000 9027.7172 111 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2199 ] scanner_thread_work(...) Finished scanner thread , Elapsed time: 0.104 seconds [ pid : 929 ] [ bus_name : org.lightmediascanner.front ]
+37978 2024/09/27 11:37:01.048000 9027.7172 111 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2199 ] scanner_thread_work(...) Finished scanner thread , Elapsed time: 0.104 seconds [ pid : 929 ] [ bus_name : org.lightmediascanner.front ]
+37493 2024/09/27 11:37:01.030000 9027.7172 111 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2199 ] scanner_thread_work(...) Finished scanner thread , Elapsed time: 0.104 seconds [ pid : 929 ] [ bus_name : org.lightmediascanner.front ]
+38464 2024/09/27 11:37:01.064000 9027.7173 112 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2029 ] scanner_thread_cleanup(...) cleanup scanner work thread , bus_name = org.lightmediascanner.front
+37979 2024/09/27 11:37:01.048000 9027.7173 112 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2029 ] scanner_thread_cleanup(...) cleanup scanner work thread , bus_name = org.lightmediascanner.front
+37494 2024/09/27 11:37:01.030000 9027.7173 112 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2029 ] scanner_thread_cleanup(...) cleanup scanner work thread , bus_name = org.lightmediascanner.front
+38466 2024/09/27 11:37:01.064000 9027.7174 114 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1454 ] scanner_write_lock_changed(...) scanner_dbus_props_changed(...) Called.
+38465 2024/09/27 11:37:01.064000 9027.7174 113 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1705 ] scanner_is_scanning_changed(...) scanner_dbus_props_changed(...) Called.
+37981 2024/09/27 11:37:01.048000 9027.7174 114 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1454 ] scanner_write_lock_changed(...) scanner_dbus_props_changed(...) Called.
+37980 2024/09/27 11:37:01.048000 9027.7174 113 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1705 ] scanner_is_scanning_changed(...) scanner_dbus_props_changed(...) Called.
+37496 2024/09/27 11:37:01.030000 9027.7174 114 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1454 ] scanner_write_lock_changed(...) scanner_dbus_props_changed(...) Called.
+37495 2024/09/27 11:37:01.030000 9027.7174 113 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1705 ] scanner_is_scanning_changed(...) scanner_dbus_props_changed(...) Called.
+38478 2024/09/27 11:37:01.064000 9027.7175 116 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 649 ] get_update_id(...) + lock [pid:929]
+38467 2024/09/27 11:37:01.064000 9027.7175 115 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1718 ] scanner_status_changed(...) scanner_dbus_props_changed(...) Called.
+37993 2024/09/27 11:37:01.048000 9027.7175 116 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 649 ] get_update_id(...) + lock [pid:929]
+37982 2024/09/27 11:37:01.048000 9027.7175 115 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1718 ] scanner_status_changed(...) scanner_dbus_props_changed(...) Called.
+37508 2024/09/27 11:37:01.030000 9027.7175 116 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 649 ] get_update_id(...) + lock [pid:929]
+37497 2024/09/27 11:37:01.030000 9027.7175 115 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1718 ] scanner_status_changed(...) scanner_dbus_props_changed(...) Called.
+38563 2024/09/27 11:37:01.064000 9027.7205 118 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 589 ] check_scanner_status(...) [ pid : 929 ] , bus_name = org.lightmediascanner.front , status = [[[[[ LMS_SCANNER_STATUS_IDLE ]]]]]
+38562 2024/09/27 11:37:01.064000 9027.7205 117 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 682 ] get_update_id(...) - unlock [pid:929] update id: 143
+38078 2024/09/27 11:37:01.048000 9027.7205 118 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 589 ] check_scanner_status(...) [ pid : 929 ] , bus_name = org.lightmediascanner.front , status = [[[[[ LMS_SCANNER_STATUS_IDLE ]]]]]
+38077 2024/09/27 11:37:01.048000 9027.7205 117 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 682 ] get_update_id(...) - unlock [pid:929] update id: 143
+37593 2024/09/27 11:37:01.030000 9027.7205 118 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 589 ] check_scanner_status(...) [ pid : 929 ] , bus_name = org.lightmediascanner.front , status = [[[[[ LMS_SCANNER_STATUS_IDLE ]]]]]
+37592 2024/09/27 11:37:01.030000 9027.7205 117 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 682 ] get_update_id(...) - unlock [pid:929] update id: 143
+38564 2024/09/27 11:37:01.064000 9027.7206 119 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1434 ] scanner_dbus_props_changed(...) [[[[[ Emit signal ]]]]] properties changed [ pid : 929 ] , bus_name = org.lightmediascanner.front
+38079 2024/09/27 11:37:01.048000 9027.7206 119 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1434 ] scanner_dbus_props_changed(...) [[[[[ Emit signal ]]]]] properties changed [ pid : 929 ] , bus_name = org.lightmediascanner.front
+37594 2024/09/27 11:37:01.030000 9027.7206 119 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1434 ] scanner_dbus_props_changed(...) [[[[[ Emit signal ]]]]] properties changed [ pid : 929 ] , bus_name = org.lightmediascanner.front
+
+===============================================================================================================================>>>
+
+
+
+lighrmediascannerd.c
+
+2384 static void
+2385 scanner_method_call(GDBusConnection *conn, const char *sender, const char *opath, const char *iface, const char *method, GVariant      *params, GDBusMethodInvocation *inv, gpointer data)
+2386 {
+2387     scanner_t *scanner = data;
+2388
+2389     log_info("bus_name = %s , method = [[[[[[[[[[ %s ]]]]]]]]]]]" , bus_name , method);
+2390
+2391     if (strcmp(method, "Scan") == 0)
+2392         dbus_scanner_scan(inv, scanner, params);
+2393     else if (strcmp(method, "Stop") == 0)
+2394         dbus_scanner_stop(inv, scanner);
+2395     else if (strcmp(method, "RequestWriteLock") == 0)
+2396         dbus_scanner_request_write_lock(inv, scanner, sender);
+2397     else if (strcmp(method, "ReleaseWriteLock") == 0)
+2398         dbus_scanner_release_write_lock(inv, scanner, sender);
+2399 #ifdef PATCH_LGE
+2400     else if (strcmp(method, "SetPlayNG") == 0)
+2401         dbus_scanner_set_playNG(inv, scanner, params);
+2402 #endif
+2403 }
+2404
+
+
+
+
+
+
+
+
+
+2220 static void
+2221 dbus_scanner_scan(GDBusMethodInvocation *inv, scanner_t *scanner, GVariant *params)
+2222 {
+2223     log_info("bus_name = %s" , bus_name);
+2224
+2225     if (scanner->thread) {
+2226         g_dbus_method_invocation_return_dbus_error(
+2227             inv, "org.lightmediascanner.AlreadyScanning",
+2228             "Scanner was already scanning.");
+2229         return;
+2230     }
+2231
+2232     if (scanner->write_lock) {
+2233         g_dbus_method_invocation_return_dbus_error(
+2234             inv, "org.lightmediascanner.WriteLocked",
+2235             "Data Base has a write lock for another process.");
+2236         return;
+2237     }
+2238
+2239     dbus_scanner_scan_params_set(scanner, params);
+2240
+2241     if (scanner->mounts.timer) { // prevent scan twice
+2242         g_source_remove(scanner->mounts.timer);
+2243         scanner->mounts.timer = 0;
+2244         if (scanner->mounts.pending) {
+2245             g_list_free_full(scanner->mounts.pending, g_free);
+2246             scanner->mounts.pending = NULL;
+2247         }
+2248     }
+2249     log_info("dbus_scanner_scan : do_scan");
+2250     do_scan(scanner);
+2251
+2252     g_dbus_method_invocation_return_value(inv, NULL);
+2253 }
+2254
+
+
+
+
+
+
+2206 static void
+2207 do_scan(scanner_t *scanner)
+2208 {
+2209     log_info("[ pid : %d ] , bus_name = %s" , getpid() , bus_name);
+2210
+2211     scanner->thread = g_thread_new("scanner", scanner_thread_work, scanner);
+2212
+2213     scanner_is_scanning_changed(scanner);
+2214     scanner_write_lock_changed(scanner);
+2215 #ifdef PATCH_LGE
+2216     scanner_status_changed(scanner);
+2217 #endif
+2218 }
+2219
+
+
+
+
+
+
+
+
+
+static void
+1703 scanner_is_scanning_changed(scanner_t *scanner)
+1704 {
+1705     log_info("scanner_dbus_props_changed(...) Called.");
+1706
+1707     if (scanner->changed_props.idler == 0)
+1708         scanner->changed_props.idler = g_idle_add(scanner_dbus_props_changed,
+1709                                                   scanner);
+1710
+1711     scanner->changed_props.is_scanning = TRUE;
+1712 }
+1713
+1714 #ifdef PATCH_LGE
+1715 static void
+1716 scanner_status_changed(scanner_t *scanner)
+1717 {
+1718     log_info("scanner_dbus_props_changed(...) Called.");
+1719
+1720     if (scanner->changed_props.idler == 0)
+1721         scanner->changed_props.idler = g_idle_add(scanner_dbus_props_changed,
+1722                                                   scanner);
+1723
+1724     scanner->changed_props.scanner_status = TRUE;
+1725 }
+
+
+
+
+1451 static void
+1452 scanner_write_lock_changed(scanner_t *scanner)
+1453 {
+1454     log_info("scanner_dbus_props_changed(...) Called.");
+1455
+1456     if (scanner->changed_props.idler == 0)
+1457         scanner->changed_props.idler = g_idle_add(scanner_dbus_props_changed,
+1458                                                   scanner);
+1459
+1460     scanner->changed_props.write_locked = TRUE;
+1461 }
+
+
+
+
+
+
+ static lms_t *
+1912 setup_lms(const char *category, const scanner_t *scanner)
+1913 {
+1914     scanner_category_t *sc;
+1915     char **itr;
+1916     lms_t *lms;
+1917     scanner_pending_t *pending;
+1918     GList *n;
+1919     GList *p;
+1920     char *device_path = NULL;
+1921
+1922     log_info("category = %s", category);
+1923
+1924     sc = g_hash_table_lookup(categories, category);
+1925     if (!sc) {
+1926         log_error("Unknown category %s", category);
+1927         return NULL;
+1928     }
+1929
+1930     if (sc->parsers->len == 0) {
+1931         log_warning("No parsers for category %s", category);
+1932         return NULL;
+1933     }
+1934
+1935     lms = lms_new(db_path);
+1936     if (!lms) {
+1937         log_warning("Failed to create lms");
+1938         return NULL;
+1939     }
+1940
+1941     if (commit_interval < 0)
+1942     {
+1943       log_error("ERROR: Invalid commit interval is less than zero");
+1944     }
+1945     else
+1946     {
+1947       lms_set_commit_interval(lms, (unsigned int)commit_interval);
+1948     }
+1949     lms_set_commit_duration(lms, commit_duration);
+1950     lms_set_slave_timeout(lms, slave_timeout * 1000);
+1951     lms_set_country(lms, country);
+1952     lms_set_chardet_level(lms, charset_detect_level);
+1953     lms_set_lms_target(lms, lmsTarget);
+1954
+1955     #if defined(ENABLE_LIMIT_NUMBERS_OF_FILE_SCAN)
+1956         lms_set_maxFileScanCount(lms, maxFileScanCount);
+1957         lms_set_currentFileScanCount(lms, currentFileCount);
+1958         lms_set_isPrintDirectoryStructure(lms, isPrintDirectoryStructure);
+1959     #endif
+
+
+
+	
+
+
+
+
+
+
+
+
+
+ /*
+2061  * Note on thread usage and locks (or lack of locks):
+2062  *
+2063  * The main thread is responsible for launching the worker thread,
+2064  * setting 'scanner->thread' pointer, which is later checked *ONLY* by
+2065  * main thread. When the thread is done, it will notify the main
+2066  * thread with scanner_thread_cleanup() so it can unset the pointer
+2067  * and do whatever it needs, so 'scanner->thread' is exclusively
+2068  * managed by main thread.
+2069  *
+2070  * The other shared data 'scanner->pending_scan' is managed by the
+2071  * main thread only when 'scanner->thread' is unset. If there is a
+2072  * worker thread the main thread should never touch that list, thus
+2073  * there is *NO NEED FOR LOCKS*.
+2074  *
+2075  * The thread will stop its work by checking 'scanner->pending_stop',
+2076  * this is also done without a lock as there is no need for such thing
+2077  * given above. The stop is also voluntary and it can happen on a
+2078  * second iteration of work.
+2079  */
+
+
+
+
+
+
+
+
+ static gpointer
+2081 scanner_thread_work(gpointer data)
+2082 {
+2083     GList *lst;
+2084     scanner_t *scanner = data;
+2085     scanner_pending_t *device_pending;
+2086     GTimer *timer_scanner = NULL;
+2087
+2088     log_info("started scanner thread , [ pid : %d ] , bus_name = %s" , getpid() , bus_name);
+2089
+2090     timer_scanner = g_timer_new();
+2091
+2092     g_list_foreach(scanner->mounts.paths, (GFunc)set_device_path, (gpointer)NULL);
+2093
+2094     lst = scanner->pending_scan;
+2095     scanner->pending_scan = NULL;
+2096
+2097     while (lst) {
+2098         scanner_pending_t *pending;
+2099         lms_t *lms = NULL;
+2100
+2101         if (scanner->pending_stop)
+2102             break;
+2103
+2104         pending = lst->data;
+2105         lst = g_list_delete_link(lst, lst);
+2106
+2107         log_info("scan category: %s , bus_name = %s", pending->category , bus_name);
+2108
+2109         lms = setup_lms(pending->category, scanner);
+2110
+2111         if (lms) {
+2112
+2113             lms_set_mutex(lms, mtx);
+2114
+2115             while (pending->paths) {
+2116
+2117                 char *path;
+2118                 scan_progress_t *scan_progress = NULL;
+2119 #ifdef PATCH_LGE
+2120                 scanDeviceType *scan_device = NULL;
+2121 #endif
+2122
+2123                 if (scanner->pending_stop)
+2124                     break;
+2125
+2126                 path = pending->paths->data;
+2127                 pending->paths = g_list_delete_link(pending->paths,
+2128                                                     pending->paths);
+2129
+2130                 g_info("scan category = %s , path = %s , bus_name = %s", pending->category, path , bus_name);
+2131
+2132                 if(strcmp(path,"/media/")!=0 &&
+2133                    strcmp(path,"/media/usb/")!=0 &&
+2134                    strcmp(path,"/media/mtp/")!=0 ) {
+2135                     device_pending = scanner_pending_device_get_or_add(scanner, pending->category);
+2136                     scanner_pending_add(device_pending, NULL, path);
+2137                     lms_set_device_scan_path(lms, path);
+2138                     log_info("device scan path : %s, %s , bus_name = %s", pending->category, path , bus_name);
+2139                 }
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+Lightmediascanner.c
+
+
+static int
+ 138 _parser_load(struct parser *p, const char *so_path)
+ 139 {
+ 140     lms_plugin_t *(*plugin_open)(void);
+ 141     char *errmsg;
+ 142
+ 143     log_info("so_path = %s", so_path);
+ 144
+ 145     memset(p, 0, sizeof(*p));
+ 146     p->dl_handle = dlopen(so_path, RTLD_NOW | RTLD_LOCAL);
+ 147     if (p->dl_handle == NULL) {
+ 148         log_error("ERROR: p->dl_handle is null");
+ 149         return -2;
+ 150     } else {
+ 151         errmsg = dlerror();
+ 152         if (errmsg) {
+ 153             log_error("ERROR: could not dlopen() %s", errmsg);
+ 154             return -1;
+ 155         }
+ 156     }
+ 157
+ 158     plugin_open = dlsym(p->dl_handle, "lms_plugin_open");
+ 159     errmsg = dlerror();
+ 160     if (errmsg) {
+ 161         log_error("ERROR: could not find plugin entry point %s",
+ 162                 errmsg);
+ 163         return -2;
+ 164     }
+ 165     p->so_path = strdup(so_path);
+ 166     if (!p->so_path) {
+ 167         perror("strdup");
+ 163         return -2;
+ 164     }
+ 165     p->so_path = strdup(so_path);
+ 166     if (!p->so_path) {
+ 167         perror("strdup");
+ 168         return -3;
+ 169     }
+ 170     p->plugin = plugin_open();
+ 171     if (!p->plugin) {
+ 172         log_error("ERROR: plugin \"%s\" failed to init.", so_path);
+ 173         return -4;
+ 174     }
+ 175     return 0;
+ 176 }
+ 177
+    
+
+
+Lightmediascanner_process.c
+
+
+
+ 937 int
+ 938 lms_create_slave(struct pinfo *pinfo, int (*work)(struct pinfo *pinfo))
+ 939 {
+ 940     int r = 0;
+ 941     int niceValue = -100;
+ 942     lms_t *lms = NULL;
+ 943
+ 944     log_info("lms_create_slave(...) , [ pid : %d ]" , getpid());
+ 945
+ 946     pinfo->child = fork();
+ 947     if (pinfo->child == -1) {
+ 948         perror("fork");
+ 949         return -1;
+ 950     }
+ 951
+ 952     log_info("lms_create_slave(...) , [ pid : %d ] , pinfo->child = %d" , getpid() , pinfo->child);
+ 953
+ 954     if (pinfo->child > 0)
+ 955         return 0;
+ 956
+ 957     //////////////////////////////////////////////////
+ 958     ////////// slave process                //////////
+ 959     //////////////////////////////////////////////////
+ 960     _close_fds(&pinfo->master);
+ 961
+ 962     niceValue = nice(19);
+ 963
+ 964     // OYK_2019_03_25 : Replace the log context with the slave context.
+ 965     //init_log();
+ 966     lms = pinfo->common.lms;
+ 967     if (lms != NULL) {
+ 968
+ 969         switch (lms->lmsTarget)
+ 970         {
+ 971             case LMS_TARGET_FRONT:
+ 972                 init_log_slave();
+ 973                 break;
+ 974             case LMS_TARGET_REAR:
+ 975                 init_log_rear_slave();
+ 976                 break;
+ 977
+ 978             default:
+ 979                 init_log_slave();
+ 980                 break;
+ 981         }
+ 982     }
+ 983     else {
+ 984         init_log_slave();
+ 985     }
+ 986
+ 987     log_info("lms_create_slave(...) , [ Parent ID : %d ] , [ pid : %d ] , niceValue = %d" , getppid() , getpid() , niceValue);
+ 988
+ 989     r = work(pinfo);
+ 990
+ 991     //  lms_free(pinfo->common.lms);
+ 992     uninit_log();
+ 993
+ 994     _exit(r);
+ 995
+ 996     return r; /* shouldn't reach anyway... */
+ 997 }
+ 998
+  
+
+The flow for creating the slave process in the `lms_create_slave` function:
+
+ Flow of Creating the Slave Process
+
+ Function Call:
+    The function `lms_create_slave` is called with two parameters: a pointer to a `struct pinfo` and a function pointer to a `work` function.
+
+ Forking the Process:
+  
+ The function calls `fork()`, which creates a new child process. The return value is stored in `pinfo->child`.
+  At this point, two processes exist: the parent (original) and the child (newly created).
+
+ Error Handling:
+	If `fork()` fails (returns -1), an error message is logged, and the function returns -1.
+
+Logging the Child Process Creation:
+   - If `fork()` is successful, the function logs both the parent PID and the child PID.
+
+Parent Process Logic:
+   - The parent process checks if `pinfo->child` is greater than 0 (indicating it's the parent). If so, it simply returns 0, ending the parent’s execution of this function.
+
+Child Process Logic:
+   - If `pinfo->child` is not greater than 0, it means the execution is now in the child process. The following steps occur only in the child:
+
+  Close Unnecessary File Descriptors:
+      - The function `_close_fds(&pinfo->master)` is called to close file descriptors that the child does not need, preventing resource leaks.
+
+   Adjust Process Priority:
+      - The nice value is set to 19 (lower priority) using `nice(19)`. This modifies the scheduling priority of the child process.
+
+ 
+   Log Slave Process Information:
+      - The child logs its own PID and its parent’s PID along with the nice value, providing context for debugging.
+
+   Execute the Work Function:
+      - The `work(pinfo)` function is called. This is where the main functionality of the slave process is executed, performing the tasks it was designed for.
+
+   Cleanup:
+      - After the `work` function completes, any necessary cleanup is done (e.g., calling `uninit_log()` to finalize logging).
+
+   Exit the Child Process:
+      - The child process exits using `_exit(r)`, where `r` is the return value from the `work` function. This ensures the child ends its execution properly without 
+returning to the code after `_exit()`.
+
+Unreachable Return in Child:
+   - The return statement at the end of the function is never reached in the child process since `_exit()` terminates it. It's mainly for completeness.
+
+ Summary
+
+- The function manages the creation of a slave process using `fork()`, handling both the parent and child logic distinctly.
+- The child process performs its designated work while ensuring proper logging and resource management.
+- The parent process can continue executing independently after spawning the child. 
+
+This separation allows for efficient multitasking in applications that require concurrent processing.
+
+
+==============================================================================================================================>>>
+
+
+14368 2024/09/27 11:36:31.031000 8997.7019 5 CCIC LMS SLV 117886 log error verbose 1 [ lightmediascanner_process.c : 501 ] lms_parsers_finish(...) ERROR: parser 
+"m3u" failed to finish: -1.
+
+
+int
+ 487 lms_parsers_finish(lms_t *lms, sqlite3 *db)
+ 488 {
+ 489     struct lms_context ctxt;
+ 490     int i;
+ 491
+ 492     _ctxt_init(&ctxt, lms, db);
+ 493
+ 494     for (i = 0; i < lms->n_parsers; i++) {
+ 495         lms_plugin_t *plugin;
+ 496         int r;
+ 497
+ 498         plugin = lms->parsers[i].plugin;
+ 499         r = plugin->finish(plugin, &ctxt);
+ 500         if (r != 0)
+ 501             log_error("ERROR: parser \"%s\" failed to finish: %d.",
+ 502                     plugin->name, r);
+ 503     }
+ 504
+ 505     return 0;
+ 506 }
+
+
+
+
+Overview of the lms_parsers_finish Function
+
+The lms_parsers_finish function plays a crucial role in managing the lifecycle of parsers (plugins) associated with a light media scanner (lms_t). 
+
+Purpose
+
+The main goal of this function is to perform cleanup operations for all the parsers that have been loaded and used during the scanning process. This is essential to 
+ensure that resources are properly released and that any necessary finalization tasks are completed before the application or component exits or transitions to a new 
+state.
+
+
+===========================================================================================================================================>>>
+
+14684 2024/09/27 11:36:31.044000 8997.7059 100 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_check.c : 1132 ] lms_check(...) + unlock [ pid : 929 ] ..... [[ END ]]
+
+
+
+/**
+1060  * Check consistency of given directory or file.
+1061  *
+1062  * This will update media in the given directory or its children. If files
+1063  * are missing, they'll be marked as deleted (dtime is set), if they were
+1064  * marked as deleted and are now present, they are unmarked (dtime is unset).
+1065  *
+1066  * @param lms previously allocated Light Media Scanner instance.
+1067  * @param top_path top directory or file to scan.
+1068  *
+1069  * @return On success 0 is returned.
+1070  */
+
+
+
+
+
+1071 int
+1072 lms_check(lms_t *lms, const char *top_path)
+1073 {
+1074     char path[PATH_SIZE];
+1075     struct pinfo pinfo = {};
+1076     int r = 0;
+1077     size_t str_len = 0;
+1078
+1079     pthread_mutex_lock(lms->mtx);
+1080
+1081     log_info("+ lock [ pid : %d ] ..... [[ START ]]", getpid());
+1082
+1083     r = _lms_check_check_valid(lms, top_path);
+1084     if (r < 0) {
+1085         pthread_mutex_unlock(lms->mtx);
+1086         log_info("+ unlock [ pid : %d ]", getpid());
+1087         return r;
+1088     }
+  pinfo.common.lms = lms;
+1091
+1092     if (lms_create_pipes(&pinfo) != 0) {
+1093         r = -5;
+1094         goto end;
+1095     }
+1096
+1097     if (realpath(top_path, path) == NULL) {
+1098        size_t len = strlen(top_path);
+1099        if (len >= UINT_MAX) {
+1100            log_error("ERROR: len may overflow");
+1101            pthread_mutex_unlock(lms->mtx);
+1102            return -5;
+1103        }
+1104        if (len + 1 < PATH_SIZE) {
+1105           memcpy(path, top_path, len + 1);
+1106        }
+1107        else {
+1108           log_error("ERROR: path is too long: %s", top_path);
+1109           pthread_mutex_unlock(lms->mtx);
+1110           return -5;
+1111        }
+1112     }
+1113
+1114     lms->is_processing = 1;
+1115     lms->stop_processing = 0;
+1116     str_len = strlen(path);
+1117     if (str_len > PATH_SIZE - 1) {
+1118         log_error("ERROR: str_len may overflow");
+1119         pthread_mutex_unlock(lms->mtx);
+1120         return -5;
+1121     } else {
+                 log_error("ERROR: path is too long: %s", top_path);
+1109           pthread_mutex_unlock(lms->mtx);
+1110           return -5;
+1111        }
+1112     }
+1113
+1114     lms->is_processing = 1;
+1115     lms->stop_processing = 0;
+1116     str_len = strlen(path);
+1117     if (str_len > PATH_SIZE - 1) {
+1118         log_error("ERROR: str_len may overflow");
+1119         pthread_mutex_unlock(lms->mtx);
+1120         return -5;
+1121     } else {
+1122         r = _check(&pinfo, str_len, path);
+1123     }
+1124     lms->is_processing = 0;
+1125     lms->stop_processing = 0;
+1126
+1127     lms_close_pipes(&pinfo);
+1128
+1129 end:
+1130     pthread_mutex_unlock(lms->mtx);
+1131
+1132     log_info("+ unlock [ pid : %d ] ..... [[ END ]]", getpid());
+1133
+1134     return r;
+1135 }
+
+
+This message indicates that the lms_check function has completed its execution and is unlocking the mutex it previously held. The pid : 929 refers to the process ID 
+that was executing this function.
+
+=================================================================================================================
+
+
+14685 2024/09/27 11:36:31.044000 8997.7061 101 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2166 ] scanner_thread_work(...) lms_process [ pid : 929 ] ,
+path = /rw_data/media/usb/front , bus_name = org.lightmediascanner.front
+
+
+That the scanner thread has reached a point in its execution where it is processing media located at /rw_data/media/usb/front. The process ID is 929, and it is 
+operating under the bus name org.lightmediascanner.front.
+
+
+
+ /*
+2061  * Note on thread usage and locks (or lack of locks):
+2062  *
+2063  * The main thread is responsible for launching the worker thread,
+2064  * setting 'scanner->thread' pointer, which is later checked *ONLY* by
+2065  * main thread. When the thread is done, it will notify the main
+2066  * thread with scanner_thread_cleanup() so it can unset the pointer
+2067  * and do whatever it needs, so 'scanner->thread' is exclusively
+2068  * managed by main thread.
+2069  *
+2070  * The other shared data 'scanner->pending_scan' is managed by the
+2071  * main thread only when 'scanner->thread' is unset. If there is a
+2072  * worker thread the main thread should never touch that list, thus
+2073  * there is *NO NEED FOR LOCKS*.
+2074  *
+2075  * The thread will stop its work by checking 'scanner->pending_stop',
+2076  * this is also done without a lock as there is no need for such thing
+2077  * given above. The stop is also voluntary and it can happen on a
+2078  * second iteration of work.
+2079  */
+
+
+
+
+
+
+ static gpointer
+2081 scanner_thread_work(gpointer data)
+2082 {
+2083     GList *lst;
+2084     scanner_t *scanner = data;
+2085     scanner_pending_t *device_pending;
+2086     GTimer *timer_scanner = NULL;
+2087
+2088     log_info("started scanner thread , [ pid : %d ] , bus_name = %s" , getpid() , bus_name);
+2089
+2090     timer_scanner = g_timer_new();
+2091
+2092     g_list_foreach(scanner->mounts.paths, (GFunc)set_device_path, (gpointer)NULL);
+2093
+2094     lst = scanner->pending_scan;
+2095     scanner->pending_scan = NULL;
+2096
+2097     while (lst) {
+2098         scanner_pending_t *pending;
+2099         lms_t *lms = NULL;
+2100
+2101         if (scanner->pending_stop)
+2102             break;
+2103
+2104         pending = lst->data;
+2105         lst = g_list_delete_link(lst, lst);
+2106
+2107         log_info("scan category: %s , bus_name = %s", pending->category , bus_name);
+2108
+2109         lms = setup_lms(pending->category, scanner);
+2110
+2111         if (lms) {
+2112
+		 lms_set_mutex(lms, mtx);
+2114
+2115             while (pending->paths) {
+2116
+2117                 char *path;
+2118                 scan_progress_t *scan_progress = NULL;
+2119 #ifdef PATCH_LGE
+2120                 scanDeviceType *scan_device = NULL;
+2121 #endif
+2122
+2123                 if (scanner->pending_stop)
+2124                     break;
+2125
+2126                 path = pending->paths->data;
+2127                 pending->paths = g_list_delete_link(pending->paths,
+2128                                                     pending->paths);
+2129
+2130                 g_info("scan category = %s , path = %s , bus_name = %s", pending->category, path , bus_name);
+2131
+2132                 if(strcmp(path,"/media/")!=0 &&
+2133                    strcmp(path,"/media/usb/")!=0 &&
+2134                    strcmp(path,"/media/mtp/")!=0 ) {
+2135                     device_pending = scanner_pending_device_get_or_add(scanner, pending->category);
+2136                     scanner_pending_add(device_pending, NULL, path);
+2137                     lms_set_device_scan_path(lms, path);
+2138                     log_info("device scan path : %s, %s , bus_name = %s", pending->category, path , bus_name);
+2139                 }
+2140
+2141                 if (!omit_scan_progress) {
+2142                     scan_progress = g_new0(scan_progress_t, 1);
+2143                     scan_progress->conn = g_object_ref(scanner->conn);
+2144                     scan_progress->category = g_strdup(pending->category);
+2145                     scan_progress->path = g_strdup(path);
+
+2148 #ifdef PATCH_LGE
+2149                     scan_device = g_new0(scanDeviceType, 1);
+2150                     scan_device->conn = g_object_ref(scanner->conn);
+2151                     scan_device->category = g_strdup(pending->category);
+2152                     scan_device->path = g_strdup(path);
+2153                     scanner->scan_device = scan_device;
+2154 #endif
+2155                 }
+2156
+2157                 if (!scanner->pending_stop) {
+2158
+2159                     log_info("lms_check [ pid : %d ] , bus_name = %s", getpid() , bus_name);
+2160
+2161                     lms_check(lms, path);
+2162                 }
+2163
+2164                 if (!scanner->pending_stop && g_file_test(path, G_FILE_TEST_EXISTS)) {
+2165
+2166                     log_info("lms_process [ pid : %d ] , path = %s , bus_name = %s", getpid() , path , bus_name);
+2167
+2168                     lms_process(lms, path);
+2169                 }
+2170
+2171                 if (scan_progress)
+2172                     g_idle_add(report_scan_progress_and_free, scan_progress);
+2173
+2174 #ifdef PATCH_LGE
+2175                 if (scan_device)
+2176                     g_idle_add(report_scan_device_and_free, scan_device);
+2177 #endif
+2178
+2179                 g_free(path);
+2180             }
+2181             lms_free(lms);
+2182         }
+2183
+2184         scanner_pending_free(pending);
+2185     }
+2186
+2187     log_info("finished scanner thread , bus_name = %s" , bus_name);
+2188
+2189     refresh_database();
+2190
+2191     if (scanner->unavail_files){
+2192         g_list_foreach(scanner->unavail_files, update_db_play_ng_file, NULL);
+2193         g_list_free(scanner->unavail_files);
+2194         scanner->unavail_files = NULL;
+2195     }
+2196
+2197     scanner->cleanup_thread_idler = g_idle_add(scanner_thread_cleanup, scanner);
+2198
+2199     log_info("Finished scanner thread , Elapsed time: %0.3f seconds [ pid : %d ] [ bus_name : %s ]\n" , g_timer_elapsed(timer_sca     nner, NULL), getpid(), bus_name);
+2200
+2201     g_timer_destroy (timer_scanner);
+2202
+2203     return scanner;
+2204 }
+                                
+=========================================================================================================================================>>
+
+14687 2024/09/27 11:36:31.044000 8997.7066 103 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 911 ] lms_create_pipes(...) lms_create_pipes(...) ,
+[ pid : 929 ]
+
+
+
+
+ 906 int
+ 907 lms_create_pipes(struct pinfo *pinfo)
+ 908 {
+ 909     int fds[2];
+ 910
+ 911     log_info("lms_create_pipes(...) , [ pid : %d ]" , getpid());
+ 912
+ 913     if (pipe(fds) != 0) {
+ 914         perror("pipe");
+ 915         return -1;
+ 916     }
+ 917     pinfo->master.r = fds[0];
+ 918     pinfo->slave.w = fds[1];
+ 919
+ 920     if (pipe(fds) != 0) {
+ 921         perror("pipe");
+ 922         close(pinfo->master.r);
+ 923         close(pinfo->slave.w);
+ 924         return -1;
+ 925     }
+ 926     pinfo->slave.r = fds[0];
+ 927     pinfo->master.w = fds[1];
+ 928
+ 929     pinfo->poll.fd = pinfo->master.r;
+ 930     pinfo->poll.events = POLLIN;
+ 931
+ 932     log_info("lms_create_pipes(...) , [ pid : %d ] , pinfo->master.r = %d , pinfo->slave.w = %d , pinfo->slave.r = %d , pinfo->ma     ster.w = %d" , getpid() , pinfo->master.r , pinfo->slave.w , pinfo->slave.r , pinfo->master.w);
+ 933
+ 934     return 0;
+ 935 }
+ 936
+             
+
+
+The flow of the `lms_create_pipes` function:
+
+
+Function Initialization:
+
+   - The function `lms_create_pipes` is called with a pointer to a `struct pinfo` that contains information about the communication pipes.
+   - It initializes an integer array `fds[2]` to hold the file descriptors for the two pipes.
+
+
+Creating the First Pipe:
+   - The function calls `pipe(fds)`, which creates a pipe. On success:
+     - `fds[0]` becomes the read end of the pipe.
+     - `fds[1]` becomes the write end of the pipe.
+   - If the pipe creation fails, an error is logged using `perror("pipe")`, and the function returns `-1`.
+   - If successful, it assigns:
+     - `pinfo->master.r` to `fds[0]` (master process's read end).
+     - `pinfo->slave.w` to `fds[1]` (slave process's write end).
+
+
+Creating the Second Pipe:
+   - The function attempts to create a second pipe using `pipe(fds)` again. This creates another set of read and write ends:
+     - If this pipe creation fails, it closes the previously opened file descriptors (`pinfo->master.r` and `pinfo->slave.w`), logs an error, and returns `-1`.
+     - If successful, it assigns:
+       - `pinfo->slave.r` to `fds[0]` (slave process's read end).
+       - `pinfo->master.w` to `fds[1]` (master process's write end).
+
+Setting Up Polling:
+   - The function sets up polling by assigning `pinfo->poll.fd` to `pinfo->master.r` and `pinfo->poll.events` to `POLLIN`, indicating that it wants to monitor this file descriptor for incoming data.
+
+
+
+Summary of Flow
+
+Initialization: The function begins by preparing to create pipes and logs the current process ID.
+
+Pipe Creation: It creates two pipes, establishing communication paths between the master and slave processes.
+
+Polling Setup: It prepares the master process to listen for data on its read end.
+
+
+This flow ensures that both the master and slave processes have the necessary communication channels set up for effective inter-process communication.    
+
+
+================================================================================================================>>     
+
+
+14049 2024/09/27 11:36:31.016000 8997.7207 7 CCIC LMS SLV 117895 log info verbose 1 [ lightmediascanner_process.c : 741 ] _slave_work(...) + get update id , [ Parent ID : 929 ] , [ pid : 117895 ]
+
+ The parent process ID (929) and the current slave process ID (117895), indicating a relationship between the processes.
+
+
+
+14727 2024/09/27 11:36:31.045000 8997.7208 9 CCIC LMS SLV 117895 log info verbose 1 [ lightmediascanner_process.c : 762 ] _slave_work(...) + begin_transaction , [ Parent ID : 929 ] , [ pid : 117895 ]
+
+Indicates that the _slave_work function has started a database transaction.
+Again, it references the parent process ID (929) and the current slave process ID (117895).
+
+
+===============================================================================================================>>      
+
+
+14052 2024/09/27 11:36:31.016000 8997.7211 110 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/20x_Issue]] idx/scanCount = 1/24, type = DT_DIR(4)
+
+
+The _process_dir function is processing a directory (20x_Issue) located in a specified path.
+The index (idx) indicates this is the first directory being processed out of a total of 24 (scanCount = 1/24).
+type = DT_DIR(4) indicates that this entry is a directory.
+
+
+
+
+14419 2024/09/27 11:36:31.032000 8997.7212 111 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/AJAY]] idx/scanCount = 2/24, type = DT_DIR(4)
+
+
+
+14420 2024/09/27 11:36:31.032000 8997.7213 112 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/AJAY/DLT_FILES_FOR_ALBUM_ART_ISSUE]] idx/scanCount = 1/1, type = DT_DIR(4)
+                      
+
+
+14734 2024/09/27 11:36:31.045000 8997.7216 114 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/AV_FORMAT_HANG]] idx/scanCount = 3/24, type = DT_DIR(4)
+
+
+14427 2024/09/27 11:36:31.032000 8997.7218 117 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1678 ] _process_dir(...) [DIR] [[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/ccic2_jx_25my_sample_240807/ccIC2.001.002.240820/GENERAL_A]] idx/scanCount = 1/1, type = DT_DIR(4)
+        
+
+19541 2024/09/27 11:36:31.254000 8997.9882 202 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1919 ] _process_trigger(...) [ pid : 929 ] , top_path = /rw_data/media/usb/front ..... [[ END ]]
+
+
+19320 2024/09/27 11:36:31.237000 8997.9882 201 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1310 ] _process_unknown(...) [ pid : 929 ] , path = /rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c/USB_SEEK/issue2.mp3 , name = front ..... [[ END ]]
+19142 2024/09/27 11:36:31.230000 8997.9882 202 CCIC LMS LMS 929 log info verbose 1 [ lightmediascanner_process.c : 1919 ] _process_trigger(...) [ pid : 929 ] , top_path = /rw_data/media/usb/front ..... [[ END ]]
+
+
+
+19551 2024/09/27 11:36:31.254000 8997.9915 1 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] _root : [/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c]
+19550 2024/09/27 11:36:31.254000 8997.9915 0 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] files.size()=[14]
+
+
+
+19332 2024/09/27 11:36:31.237000 8997.9916 2 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] front mount path=[/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c]
+19734 2024/09/27 11:36:31.259000 8997.9933 0 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] file_strt) [MediaFileStructure] files.size()=[45]
+
+
+19338 2024/09/27 11:36:31.237000 8997.9952 4 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] data) benchmark of scanning: 469.917 ms
+19337 2024/09/27 11:36:31.237000 8997.9952 3 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] data) scan_info: [/rw_data/media/usb/front/da7b0d56-66ae-41a4-ae6a-ab1921516a1c, finished]
+19742 2024/09/27 11:36:31.259000 8997.9955 6 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1882] [hmedia] [I] data) filesystem: audio(45), video(14)
+
+===============================================================================================================>>>
+
+
+
+19674 2024/09/27 11:36:31.259000 8998.0042 239 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 492 ] update_recent_device_files(...) Update from DB recent devices
+20385 2024/09/27 11:36:31.355000 8998.0253 7 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:117901] [hmedia] [I] [create_audio_for_media](dir = , recurse = true all = false)
+20386 2024/09/27 11:36:31.355000 8998.0256 8 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:117901] [hmedia] [I] lm) list created - id: [0], src: [USB_AUDIO], type: [MEDIA], filter: [FILENAME, key1= key2=false], size: [45]
+
+
+20396 2024/09/27 11:36:31.355000 8998.0267 240 CCIC LMS LMS 929 log warn verbose 1 [ lightmediascannerd.c : 717 ] do_delete_old(...) Couldn't run SQL delete old dtime '1291260658', ret=13: database or disk is full
+
+
+19932 2024/09/27 11:36:31.273000 8998.0299 9 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:117901] [hmedia] [I] [create_video_for_media](dir = , recurse = true all = false)
+20403 2024/09/27 11:36:31.355000 8998.0301 10 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:117901] [hmedia] [I] lm) list created - id: [1], src: [USB_VIDEO], type: [MEDIA], filter: [FILENAME, key1= key2=false], size: [14]
+20407 2024/09/27 11:36:31.355000 8998.0304 11 CCIC MEDI MBFS 1427 log info verbose 1 [p:1427] [t:1427] [hmedia] [I] lms-proxy) on signaled - ScanProgress : ('audio', '/rw_data/media/usb/front', uint64 45, uint64 0, uint64 0, uint64 0, uint64 0)
+
+
+20791 2024/09/27 11:36:31.370000 8998.0348 241 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 289 ] delete_deleted_files(...) Delete from DB deleted files in mounted devices
+20106 2024/09/27 11:36:31.343000 8998.0349 242 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 316 ] delete_over_scanned_files(...) delete_over_scanned_files in, device: front, limt: 8000
+20795 2024/09/27 11:36:31.372000 8998.0362 243 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 401 ] delete_over_scanned_files(...) Delete from DB over deleted files in mounted devices path=/rw_data/media/usb/front/%
+
+
+
+20800 2024/09/27 11:36:31.372000 8998.0389 244 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1281 ] refresh_database(...) - unlock [pid:929]
+
+
+20115 2024/09/27 11:36:31.343000 8998.0391 245 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2199 ] scanner_thread_work(...) Finished scanner thread , Elapsed time: 0.510 seconds [ pid : 929 ] [ bus_name : org.lightmediascanner.front ]
+20802 2024/09/27 11:36:31.372000 8998.0396 246 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 2029 ] scanner_thread_cleanup(...) cleanup scanner work thread , bus_name = org.lightmediascanner.front
+
+
+
+20117 2024/09/27 11:36:31.343000 8998.0397 247 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1705 ] scanner_is_scanning_changed(...) scanner_dbus_props_changed(...) Called.
+20817 2024/09/27 11:36:31.372000 8998.0422 251 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 682 ] get_update_id(...) - unlock [pid:929] update id: 143
+
+
+20117 2024/09/27 11:36:31.343000 8998.0397 247 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1705 ] scanner_is_scanning_changed(...) scanner_dbus_props_changed(...) Called.
+20817 2024/09/27 11:36:31.372000 8998.0422 251 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 682 ] get_update_id(...) - unlock [pid:929] update id: 143
+
+
+
+========================================================================================================================================>>
+
+
+20819 2024/09/27 11:36:31.372000 8998.0423 253 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1434 ] scanner_dbus_props_changed(...) [[[[[ Emit signal ]]]]] properties changed [ pid : 929 ] , bus_name = org.lightmediascanner.front
+
+
+ static gboolean
+1389 scanner_dbus_props_changed(gpointer data)
+1390 {
+1391     GVariantBuilder *builder;
+1392     GError *error = NULL;
+1393     scanner_t *scanner = data;
+1394     guint64 update_id = 0;
+1395
+1396     if (!check_write_locked(scanner))
+1397         update_id = get_update_id();
+1398     if (update_id > 0 && update_id != scanner->update_id) {
+1399         scanner->changed_props.update_id = TRUE;
+1400         scanner->update_id = update_id;
+1401     }
+1402
+1403     builder = g_variant_builder_new(G_VARIANT_TYPE_ARRAY);
+1404
+1405     if (scanner->changed_props.is_scanning) {
+1406         scanner->changed_props.is_scanning = FALSE;
+1407         g_variant_builder_add(builder, "{sv}", "IsScanning",
+1408                               g_variant_new_boolean(scanner->thread != NULL));
+1409     }
+1410     if (scanner->changed_props.write_locked) {
+1411         scanner->changed_props.write_locked = FALSE;
+1412         g_variant_builder_add(
+1413             builder, "{sv}", "WriteLocked",
+1414             g_variant_new_boolean(check_write_locked(scanner)));
+1415     }
+1416     if (scanner->changed_props.update_id) {
+1417         scanner->changed_props.update_id = FALSE;
+1418         g_variant_builder_add(builder, "{sv}", "UpdateID",
+1419                               g_variant_new_uint64(scanner->update_id));
+1420     }
+1421     if (scanner->changed_props.categories) {
+1422         scanner->changed_props.categories = FALSE;
+1423         g_variant_builder_add(builder, "{sv}", "Categories",
+1424                               categories_get_variant());
+1425     }
+1426 #ifdef PATCH_LGE
+1427     if (scanner->changed_props.scanner_status) {
+1428         scanner->changed_props.scanner_status = FALSE;
+1429         g_variant_builder_add(builder, "{sv}", "ScannerStatus",
+1430                               g_variant_new_int32(check_scanner_status(scanner)));
+1431     }
+1432 #endif
+1433
+1434     log_info("    [[[[[ Emit signal ]]]]] properties changed [ pid : %d ] , bus_name = %s", getpid() , bus_name);
+1435
+1436     g_dbus_connection_emit_signal(scanner->conn,
+1437                                   NULL,
+1438                                   object_path,
+1439                                   "org.freedesktop.DBus.Properties",
+1440                                   "PropertiesChanged",
+1441                                   g_variant_new("(sa{sv}as)",
+1442                                                 BUS_IFACE, builder, NULL),
+1443                                   &error);
+1444     g_variant_builder_unref(builder);
+1445     g_assert_no_error(error);
+1446
+1447     scanner->changed_props.idler = 0;
+1448     return FALSE;
+1449 }
+1450
+ 
+
+
+
+
+20819 2024/09/27 11:36:31.372000 8998.0423 253 CCIC LMS LMS 929 log info verbose 1 [ lightmediascannerd.c : 1434 ] scanner_dbus_props_changed(...) [[[[[ Emit signal ]]]]] properties changed [ pid : 929 ] , bus_name = org.lightmediascanner.front
+
+
+
+static lms_scanner_status_t
+ 577 check_scanner_status(const scanner_t *scanner)
+ 578 {
+ 579     lms_scanner_status_t status;
+ 580
+ 581     if (scanner->thread != NULL){
+ 582         if (scanner->pending_stop == NULL)
+ 583             status = LMS_SCANNER_STATUS_RUNNIG;
+ 584         else
+ 585             status = LMS_SCANNER_STATUS_STOPPED;
+ 586     }else
+ 587         status = LMS_SCANNER_STATUS_IDLE;
+ 588
+ 589     log_info("[ pid : %d ] , bus_name = %s , status = [[[[[    %s    ]]]]]", getpid() , bus_name , (status==LMS_SCANNER_STATUS_RU     NNIG) ? "LMS_SCANNER_STATUS_RUNNIG" : ((status==LMS_SCANNER_STATUS_STOPPED) ? "LMS_SCANNER_STATUS_STOPPED" : "LMS_SCANNER_STATUS_     IDLE"));
+ 590
+ 591     return status;
+ 592 }
+    
+
+
+check_scanner_status
+
+This function checks the current status of a scanner thread.      
+
+It checks if the scanner->thread is not NULL. If it's NULL, this indicates that the scanner is not currently running, thus setting the status to IDLE.
+ 
+If the thread exists, it further checks if scanner->pending_stop is NULL. If it is NULL, the scanner is actively running, and the status is set 
+to RUNNING. Same as, if pending_stop is set, it indicates that a stop operation has been initiated, changing the status to STOPPED.    
+
+This function returns a value from the lms_scanner_status_t ,to understand the scanner's status
+
+
+scanner_dbus_props_changed
+
+ This function is designed to emit changes in scanner properties to other components of the system via the D-Bus messaging system
+
+
+it checks if the scanner is in a write-locked state. If it isn’t, it retrieves a new update ID, which is crucial for identifying the latest changes.
+
+
+check_scanner_status helps in determining the current operational state of the scanner.
+
+
+scanner_dbus_props_changed updates and emits changes based on the current state of the scanner, effectively notifying other components about its operational status 
+
+=====================================================================================================>>>
+
+
+
+The flow of execution for the `_db_open` function:
+
+  The function `_db_open` is called with the database path (`db_path`) as an argument.
+
+   Memory is allocated for a `struct db` using `calloc`.
+   If the allocation fails (`db` is `NULL`), an error is logged with `perror`, and the function returns `NULL`.
+
+ Open SQLite Database:
+   - The function attempts to open the SQLite database at the specified `db_path` using `sqlite3_open`.
+   - If this fails:
+     - An error message is logged, detailing the failure and the SQLite error.
+     - Control jumps to the `error` cleanup section.
+
+
+    The function `lms_db_create_core_tables_if_required` is called to ensure that necessary tables exist in the database.
+    If this fails error message is logged and Control jumps to the `error` cleanup section.
+
+
+   - If both the database opening and table creation succeed, the function returns a pointer to the initialized `struct db`.
+
+7. **Error Cleanup** (if any errors occurred):
+   - The `error` label is executed:
+     - The database connection (`db->handle`) is closed to release resources.
+     - The allocated memory for `db` is freed.
+     - The function returns `NULL` to indicate failure.
+
+### Summary of Execution Flow
+
+1. Start `_db_open`
+2. Log process ID
+3. Allocate memory for `struct db`
+   - If allocation fails: log error, return `NULL`
+4. Open SQLite database
+   - If opening fails: log error, jump to cleanup
+5. Check/Create core tables
+   - If creation fails: log error, jump to cleanup
+6. Return pointer to `struct db` (success)
+7. Cleanup (if any errors):
+   - Close database connection
+   - Free memory
+   - Return `NULL`
+
+This flow ensures that the function handles both successful and erroneous conditions, maintaining resource integrity throughout its execution.    
+
+================================================================================================>>
+
+
+ static void
+ 688 do_delete_old(void)
+ 689 {
+ 690     const char sql[] = "DELETE FROM files WHERE dtime > 0 and dtime <= ?";
+ 691     sqlite3 *db;
+ 692     sqlite3_stmt *stmt;
+ 693     gint64 dtime;
+ 694     int ret;
+ 695
+ 696     ret = sqlite3_open_v2(db_path, &db, SQLITE_OPEN_READWRITE, NULL);
+ 697     if (ret != SQLITE_OK) {
+ 698         log_warning("Couldn't open '%s': %s", db_path, sqlite3_errmsg(db));
+ 699         goto end;
+ 700     }
+ 701
+ 702     if (sqlite3_prepare_v2(db, sql, -1, &stmt, NULL) != SQLITE_OK) {
+ 703         log_warning("Couldn't prepare delete old from %s: %s",
+ 704                   db_path, sqlite3_errmsg(db));
+ 705         goto end;
+ 706     }
+ 707
+ 708     dtime = (gint64)time(NULL) - delete_older_than * (24 * 60 * 60);
+ 709     if (sqlite3_bind_int64(stmt, 1, dtime) != SQLITE_OK) {
+ 710         log_warning("Couldn't bind delete old dtime '%"G_GINT64_FORMAT
+ 711                   "'from %s: %s", dtime, db_path, sqlite3_errmsg(db));
+ 712         goto cleanup;
+ 713     }
+ 714
+ 715     ret = sqlite3_step(stmt);
+ 716     if (ret != SQLITE_DONE)
+ 717         log_warning("Couldn't run SQL delete old dtime '%"G_GINT64_FORMAT
+ 718                   "', ret=%d: %s", dtime, ret, sqlite3_errmsg(db));
+ 720 cleanup:
+ 721     sqlite3_reset(stmt);
+ 722     sqlite3_finalize(stmt);
+ 723
+ 724 end:
+ 725     sqlite3_close(db);
+ 726 }
+       
+
+
+
+The `do_delete_old` function, which handles the deletion of old records from a database.
+
+
+
+This function is to delete records from the `files` table in a SQLite database where the `dtime` (presumably a timestamp) is older than a specified threshold.
+
+
+
+
+ A SQL statement is defined to delete records where the `dtime` is greater than zero and less than or equal to a specified value (bound later).
+
+ Variables are declared for the SQLite database handle (`db`), prepared statement (`stmt`), a timestamp value (`dtime`), and the return code (`ret`).
+
+    The function attempts to open the database using `sqlite3_open_v2` with read/write permissions.
+    If this fails (i.e., `ret` is not `SQLITE_OK`) and warning is logged that includes the database path and error message.
+     
+   The SQL statement for deletion is prepared using `sqlite3_prepare_v2`
+
+    The `dtime` value is calculated as the current time minus a configurable threshold (`delete_older_than`), converted from days to seconds.
+
+
+    The `dtime` value is bound to the first placeholder in the SQL statement using `sqlite3_bind_int64`.
+    If binding fails, warning is logged, and control jumps to the `cleanup` section.
+
+Execute SQL Statement:
+   The prepared statement is executed using `sqlite3_step`.
+   If execution does not return `SQLITE_DONE` (indicating success), warning is logged that includes the `dtime` and the return code.
+
+   - The database connection is closed.
+
+### Summary of Execution Flow
+
+1. **Define SQL statement** for deleting old records.
+2. **Open the database**:
+   - If fails, log warning and go to end.
+3. **Prepare SQL statement**:
+   - If fails, log warning and go to end.
+4. **Calculate `dtime`** based on current time and configured threshold.
+5. **Bind `dtime`** to the prepared statement:
+   - If fails, log warning and go to cleanup.
+6. **Execute SQL statement**:
+   - If fails, log warning.
+7. **Cleanup**:
+   - Reset and finalize the prepared statement.
+8. **Close the database connection**.
+
+### Key Points
+
+- The function is robust in handling errors by logging warnings and ensuring resources are cleaned up properly.
+- It uses parameterized queries to prevent SQL injection and manage dynamic values safely.
+- It deletes records based on a timestamp, which is useful for managing data retention in a database.
+
