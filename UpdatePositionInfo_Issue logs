@@ -1,0 +1,332 @@
+418 2024/10/10 16:05:31.562000 22832.3324 249 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:302][play] connectionName = :1.55
+417 2024/10/10 16:05:31.562000 22832.3324 248 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:300][play] media id = 4119
+419 2024/10/10 16:05:31.562000 22832.3326 250 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:889][process] [PlayCommand]
+420 2024/10/10 16:05:31.562000 22832.3337 164 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:73][Play] Play
+421 2024/10/10 16:05:31.562000 22832.3338 165 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:247][Play] Play
+427 2024/10/10 16:05:31.562000 22832.3363 166 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x1c
+428 2024/10/10 16:05:31.562000 22832.3370 167 CCIC PESV PESV 4119 log info verbose 1 [gst_media.cpp:826][ChangeStateToPlay] changed state to play
+430 2024/10/10 16:05:31.562000 22832.3371 169 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:46][fadeIn] ##### Fade In ######, time_ms=[100]
+429 2024/10/10 16:05:31.562000 22832.3371 168 CCIC PESV PESV 4119 log info verbose 1 [subtitle_controller.cpp:91][Play] Play
+443 2024/10/10 16:05:31.599000 22832.3629 170 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:375][fadeInWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[65536], ret=[0]
+447 2024/10/10 16:05:31.599000 22832.3646 172 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Playing
+446 2024/10/10 16:05:31.599000 22832.3646 171 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PAUSED -> PLAYING]
+448 2024/10/10 16:05:31.599000 22832.3662 251 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2527][onPlaybackStatus] Playing
+697 2024/10/10 16:05:32.331000 22833.1004 173 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:581][UpdatePositionInfo] UpdatePositionInfo time(sec)-0.767256
+698 2024/10/10 16:05:32.331000 22833.1017 252 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2509][onCurrentTime] get position = 767000
+883 2024/10/10 16:05:32.917000 22833.6870 253 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:286][pause] media id = 4119
+884 2024/10/10 16:05:32.917000 22833.6871 254 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:288][pause] connectionName = :1.55
+887 2024/10/10 16:05:32.917000 22833.6872 1 CCIC MMSV MMSV 937 log error verbose 1 [playerprovider.cpp:214][getRateAttrIdx] [getRateAttrIdx] Rate list size[1]
+886 2024/10/10 16:05:32.917000 22833.6872 0 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:767][process] [PauseCommand] state : 2
+885 2024/10/10 16:05:32.917000 22833.6872 255 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:756][process] [PauseCommand]
+890 2024/10/10 16:05:32.917000 22833.6884 175 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:86][fadeOut] ##### Fade Out ######, ms=[80]
+889 2024/10/10 16:05:32.917000 22833.6884 174 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:83][Pause] Pause
+891 2024/10/10 16:05:32.917000 22833.6892 176 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:383][fadeOutWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[0], ret=[0]
+902 2024/10/10 16:05:33.032000 22833.7893 177 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:258][Pause] Pause
+905 2024/10/10 16:05:33.032000 22833.7945 178 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x23
+908 2024/10/10 16:05:33.064000 22833.8173 180 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Paused
+907 2024/10/10 16:05:33.064000 22833.8173 179 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PLAYING -> PAUSED]
+910 2024/10/10 16:05:33.064000 22833.8180 182 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:299][NotifyEventAsyncDone] [NotifyEventAsyncDone]
+909 2024/10/10 16:05:33.064000 22833.8180 181 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1392][HandleAsyncDone] [BUS] GST_MESSAGE_ASYNC_DONE
+914 2024/10/10 16:05:33.064000 22833.8187 2 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2548][onPlaybackStatus] Paused
+1041 2024/10/10 16:05:33.132000 22833.8793 3 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:300][play] media id = 4119
+1042 2024/10/10 16:05:33.132000 22833.8794 4 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:302][play] connectionName = :1.55
+1043 2024/10/10 16:05:33.132000 22833.8796 5 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:889][process] [PlayCommand]
+1045 2024/10/10 16:05:33.132000 22833.8808 184 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:247][Play] Play
+1044 2024/10/10 16:05:33.132000 22833.8808 183 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:73][Play] Play
+1046 2024/10/10 16:05:33.132000 22833.8823 185 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x1c
+1047 2024/10/10 16:05:33.132000 22833.8830 186 CCIC PESV PESV 4119 log info verbose 1 [gst_media.cpp:826][ChangeStateToPlay] changed state to play
+1049 2024/10/10 16:05:33.132000 22833.8831 188 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:46][fadeIn] ##### Fade In ######, time_ms=[100]
+1048 2024/10/10 16:05:33.132000 22833.8831 187 CCIC PESV PESV 4119 log info verbose 1 [subtitle_controller.cpp:91][Play] Play
+1060 2024/10/10 16:05:33.148000 22833.9088 189 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:375][fadeInWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[65536], ret=[0]
+1062 2024/10/10 16:05:33.148000 22833.9104 191 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Playing
+1061 2024/10/10 16:05:33.148000 22833.9104 190 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PAUSED -> PLAYING]
+1066 2024/10/10 16:05:33.148000 22833.9127 6 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2527][onPlaybackStatus] Playing
+1288 2024/10/10 16:05:33.317000 22834.0703 7 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:286][pause] media id = 4119
+1289 2024/10/10 16:05:33.317000 22834.0704 8 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:288][pause] connectionName = :1.55
+1293 2024/10/10 16:05:33.317000 22834.0705 11 CCIC MMSV MMSV 937 log error verbose 1 [playerprovider.cpp:214][getRateAttrIdx] [getRateAttrIdx] Rate list size[1]
+1292 2024/10/10 16:05:33.317000 22834.0705 10 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:767][process] [PauseCommand] state : 2
+1291 2024/10/10 16:05:33.317000 22834.0705 9 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:756][process] [PauseCommand]
+1295 2024/10/10 16:05:33.317000 22834.0717 193 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:86][fadeOut] ##### Fade Out ######, ms=[80]
+1294 2024/10/10 16:05:33.317000 22834.0717 192 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:83][Pause] Pause
+1297 2024/10/10 16:05:33.317000 22834.0725 194 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:383][fadeOutWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[0], ret=[0]
+1312 2024/10/10 16:05:33.418000 22834.1726 195 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:258][Pause] Pause
+1313 2024/10/10 16:05:33.418000 22834.1802 196 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x23
+1328 2024/10/10 16:05:33.433000 22834.2024 197 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:581][UpdatePositionInfo] UpdatePositionInfo time(sec)-1.834875
+1333 2024/10/10 16:05:33.433000 22834.2035 198 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PLAYING -> PAUSED]
+1331 2024/10/10 16:05:33.433000 22834.2035 12 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2509][onCurrentTime] get position = 1834000
+1335 2024/10/10 16:05:33.433000 22834.2036 199 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Paused
+1337 2024/10/10 16:05:33.433000 22834.2040 201 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:299][NotifyEventAsyncDone] [NotifyEventAsyncDone]
+1336 2024/10/10 16:05:33.433000 22834.2040 200 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1392][HandleAsyncDone] [BUS] GST_MESSAGE_ASYNC_DONE
+1368 2024/10/10 16:05:33.433000 22834.2070 13 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2548][onPlaybackStatus] Paused
+1487 2024/10/10 16:05:33.502000 22834.2617 15 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:302][play] connectionName = :1.55
+1486 2024/10/10 16:05:33.502000 22834.2617 14 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:300][play] media id = 4119
+1489 2024/10/10 16:05:33.502000 22834.2618 16 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:889][process] [PlayCommand]
+1491 2024/10/10 16:05:33.502000 22834.2629 203 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:247][Play] Play
+1490 2024/10/10 16:05:33.502000 22834.2629 202 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:73][Play] Play
+1492 2024/10/10 16:05:33.502000 22834.2646 204 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x1c
+1495 2024/10/10 16:05:33.534000 22834.2653 207 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:46][fadeIn] ##### Fade In ######, time_ms=[100]
+1494 2024/10/10 16:05:33.534000 22834.2653 206 CCIC PESV PESV 4119 log info verbose 1 [subtitle_controller.cpp:91][Play] Play
+1493 2024/10/10 16:05:33.502000 22834.2653 205 CCIC PESV PESV 4119 log info verbose 1 [gst_media.cpp:826][ChangeStateToPlay] changed state to play
+1505 2024/10/10 16:05:33.534000 22834.2913 208 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:375][fadeInWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[65536], ret=[0]
+1508 2024/10/10 16:05:33.534000 22834.2934 209 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PAUSED -> PLAYING]
+1509 2024/10/10 16:05:33.534000 22834.2935 210 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Playing
+1510 2024/10/10 16:05:33.534000 22834.2953 17 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2527][onPlaybackStatus] Playing
+1699 2024/10/10 16:05:33.687000 22834.4534 19 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:288][pause] connectionName = :1.55
+1698 2024/10/10 16:05:33.687000 22834.4534 18 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:286][pause] media id = 4119
+1700 2024/10/10 16:05:33.687000 22834.4535 20 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:756][process] [PauseCommand]
+1702 2024/10/10 16:05:33.687000 22834.4536 22 CCIC MMSV MMSV 937 log error verbose 1 [playerprovider.cpp:214][getRateAttrIdx] [getRateAttrIdx] Rate list size[1]
+1701 2024/10/10 16:05:33.687000 22834.4536 21 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:767][process] [PauseCommand] state : 2
+1703 2024/10/10 16:05:33.687000 22834.4546 211 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:83][Pause] Pause
+1704 2024/10/10 16:05:33.687000 22834.4547 212 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:86][fadeOut] ##### Fade Out ######, ms=[80]
+1705 2024/10/10 16:05:33.687000 22834.4554 213 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:383][fadeOutWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[0], ret=[0]
+1740 2024/10/10 16:05:33.788000 22834.5555 214 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:258][Pause] Pause
+1743 2024/10/10 16:05:33.788000 22834.5629 215 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x23
+1754 2024/10/10 16:05:33.835000 22834.5858 216 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PLAYING -> PAUSED]
+1755 2024/10/10 16:05:33.835000 22834.5859 217 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Paused
+1758 2024/10/10 16:05:33.835000 22834.5865 218 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1392][HandleAsyncDone] [BUS] GST_MESSAGE_ASYNC_DONE
+1759 2024/10/10 16:05:33.835000 22834.5866 219 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:299][NotifyEventAsyncDone] [NotifyEventAsyncDone]
+1762 2024/10/10 16:05:33.835000 22834.5874 23 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2548][onPlaybackStatus] Paused
+1937 2024/10/10 16:05:33.904000 22834.6621 25 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:302][play] connectionName = :1.55
+1936 2024/10/10 16:05:33.904000 22834.6621 24 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:300][play] media id = 4119
+1938 2024/10/10 16:05:33.904000 22834.6622 26 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:889][process] [PlayCommand]
+1939 2024/10/10 16:05:33.904000 22834.6632 220 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:73][Play] Play
+1940 2024/10/10 16:05:33.904000 22834.6633 221 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:247][Play] Play
+1941 2024/10/10 16:05:33.904000 22834.6649 222 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x1c
+1942 2024/10/10 16:05:33.904000 22834.6657 223 CCIC PESV PESV 4119 log info verbose 1 [gst_media.cpp:826][ChangeStateToPlay] changed state to play
+1944 2024/10/10 16:05:33.904000 22834.6658 225 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:46][fadeIn] ##### Fade In ######, time_ms=[100]
+1943 2024/10/10 16:05:33.904000 22834.6658 224 CCIC PESV PESV 4119 log info verbose 1 [subtitle_controller.cpp:91][Play] Play
+1955 2024/10/10 16:05:33.935000 22834.6917 226 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:375][fadeInWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[65536], ret=[0]
+1958 2024/10/10 16:05:33.935000 22834.6940 227 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PAUSED -> PLAYING]
+1959 2024/10/10 16:05:33.935000 22834.6941 228 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Playing
+1960 2024/10/10 16:05:33.935000 22834.6956 27 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2527][onPlaybackStatus] Playing
+2162 2024/10/10 16:05:34.088000 22834.8524 29 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:288][pause] connectionName = :1.55
+2161 2024/10/10 16:05:34.088000 22834.8524 28 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:286][pause] media id = 4119
+2164 2024/10/10 16:05:34.088000 22834.8525 30 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:756][process] [PauseCommand]
+2166 2024/10/10 16:05:34.088000 22834.8526 32 CCIC MMSV MMSV 937 log error verbose 1 [playerprovider.cpp:214][getRateAttrIdx] [getRateAttrIdx] Rate list size[1]
+2165 2024/10/10 16:05:34.088000 22834.8526 31 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:767][process] [PauseCommand] state : 2
+2168 2024/10/10 16:05:34.088000 22834.8536 230 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:86][fadeOut] ##### Fade Out ######, ms=[80]
+2167 2024/10/10 16:05:34.088000 22834.8536 229 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:83][Pause] Pause
+2169 2024/10/10 16:05:34.088000 22834.8543 231 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:383][fadeOutWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[0], ret=[0]
+2181 2024/10/10 16:05:34.204000 22834.9544 232 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:258][Pause] Pause
+2182 2024/10/10 16:05:34.204000 22834.9628 233 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x23
+2197 2024/10/10 16:05:34.220000 22834.9852 235 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Paused
+2196 2024/10/10 16:05:34.220000 22834.9852 234 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PLAYING -> PAUSED]
+2203 2024/10/10 16:05:34.220000 22834.9858 237 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:299][NotifyEventAsyncDone] [NotifyEventAsyncDone]
+2202 2024/10/10 16:05:34.220000 22834.9858 236 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1392][HandleAsyncDone] [BUS] GST_MESSAGE_ASYNC_DONE
+2204 2024/10/10 16:05:34.220000 22834.9877 33 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2548][onPlaybackStatus] Paused
+2346 2024/10/10 16:05:34.289000 22835.0603 34 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:300][play] media id = 4119
+2347 2024/10/10 16:05:34.289000 22835.0604 35 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:302][play] connectionName = :1.55
+2349 2024/10/10 16:05:34.289000 22835.0605 36 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:889][process] [PlayCommand]
+2351 2024/10/10 16:05:34.289000 22835.0615 239 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:247][Play] Play
+2350 2024/10/10 16:05:34.289000 22835.0615 238 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:73][Play] Play
+2352 2024/10/10 16:05:34.289000 22835.0632 240 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x1c
+2353 2024/10/10 16:05:34.305000 22835.0638 241 CCIC PESV PESV 4119 log info verbose 1 [gst_media.cpp:826][ChangeStateToPlay] changed state to play
+2355 2024/10/10 16:05:34.305000 22835.0639 243 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:46][fadeIn] ##### Fade In ######, time_ms=[100]
+2354 2024/10/10 16:05:34.305000 22835.0639 242 CCIC PESV PESV 4119 log info verbose 1 [subtitle_controller.cpp:91][Play] Play
+2377 2024/10/10 16:05:34.320000 22835.0897 244 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:375][fadeInWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[65536], ret=[0]
+2380 2024/10/10 16:05:34.320000 22835.0917 246 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Playing
+2379 2024/10/10 16:05:34.320000 22835.0917 245 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PAUSED -> PLAYING]
+2381 2024/10/10 16:05:34.320000 22835.0929 37 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2527][onPlaybackStatus] Playing
+2535 2024/10/10 16:05:34.437000 22835.2033 247 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:581][UpdatePositionInfo] UpdatePositionInfo time(sec)-2.823583
+2536 2024/10/10 16:05:34.437000 22835.2042 38 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2509][onCurrentTime] get position = 2823000
+2602 2024/10/10 16:05:34.521000 22835.2825 39 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:286][pause] media id = 4119
+2603 2024/10/10 16:05:34.521000 22835.2826 40 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:288][pause] connectionName = :1.55
+2606 2024/10/10 16:05:34.521000 22835.2827 43 CCIC MMSV MMSV 937 log error verbose 1 [playerprovider.cpp:214][getRateAttrIdx] [getRateAttrIdx] Rate list size[1]
+2605 2024/10/10 16:05:34.521000 22835.2827 42 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:767][process] [PauseCommand] state : 2
+2604 2024/10/10 16:05:34.521000 22835.2827 41 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:756][process] [PauseCommand]
+2609 2024/10/10 16:05:34.521000 22835.2839 249 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:86][fadeOut] ##### Fade Out ######, ms=[80]
+2608 2024/10/10 16:05:34.521000 22835.2839 248 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:83][Pause] Pause
+2610 2024/10/10 16:05:34.521000 22835.2846 250 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:383][fadeOutWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[0], ret=[0]
+2622 2024/10/10 16:05:34.622000 22835.3847 251 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:258][Pause] Pause
+2623 2024/10/10 16:05:34.622000 22835.3908 252 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x23
+2639 2024/10/10 16:05:34.653000 22835.4139 254 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Paused
+2638 2024/10/10 16:05:34.653000 22835.4139 253 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PLAYING -> PAUSED]
+2643 2024/10/10 16:05:34.653000 22835.4146 0 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:299][NotifyEventAsyncDone] [NotifyEventAsyncDone]
+2642 2024/10/10 16:05:34.653000 22835.4146 255 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1392][HandleAsyncDone] [BUS] GST_MESSAGE_ASYNC_DONE
+2644 2024/10/10 16:05:34.653000 22835.4153 44 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2548][onPlaybackStatus] Paused
+2762 2024/10/10 16:05:34.706000 22835.4588 46 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:302][play] connectionName = :1.55
+2761 2024/10/10 16:05:34.706000 22835.4588 45 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:300][play] media id = 4119
+2763 2024/10/10 16:05:34.706000 22835.4590 47 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:889][process] [PlayCommand]
+2764 2024/10/10 16:05:34.706000 22835.4604 1 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:73][Play] Play
+2765 2024/10/10 16:05:34.706000 22835.4605 2 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:247][Play] Play
+2766 2024/10/10 16:05:34.706000 22835.4620 3 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x1c
+2767 2024/10/10 16:05:34.706000 22835.4627 4 CCIC PESV PESV 4119 log info verbose 1 [gst_media.cpp:826][ChangeStateToPlay] changed state to play
+2769 2024/10/10 16:05:34.706000 22835.4628 6 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:46][fadeIn] ##### Fade In ######, time_ms=[100]
+2768 2024/10/10 16:05:34.706000 22835.4628 5 CCIC PESV PESV 4119 log info verbose 1 [subtitle_controller.cpp:91][Play] Play
+2780 2024/10/10 16:05:34.737000 22835.4886 7 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:375][fadeInWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[65536], ret=[0]
+2783 2024/10/10 16:05:34.737000 22835.4901 8 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PAUSED -> PLAYING]
+2784 2024/10/10 16:05:34.737000 22835.4902 9 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Playing
+2785 2024/10/10 16:05:34.737000 22835.4915 48 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2527][onPlaybackStatus] Playing
+
+
+
+
+
+
+
+
+
+
+
+
+31199 2024/10/10 16:06:02.836000 22863.6077 234 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:286][pause] media id = 4119
+31200 2024/10/10 16:06:02.836000 22863.6078 235 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:288][pause] connectionName = :1.55
+31203 2024/10/10 16:06:02.836000 22863.6079 238 CCIC MMSV MMSV 937 log error verbose 1 [playerprovider.cpp:214][getRateAttrIdx] [getRateAttrIdx] Rate list size[1]
+31202 2024/10/10 16:06:02.836000 22863.6079 237 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:767][process] [PauseCommand] state : 2
+31201 2024/10/10 16:06:02.836000 22863.6079 236 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:756][process] [PauseCommand]
+31205 2024/10/10 16:06:02.836000 22863.6093 220 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:86][fadeOut] ##### Fade Out ######, ms=[80]
+31204 2024/10/10 16:06:02.836000 22863.6093 219 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:83][Pause] Pause
+31206 2024/10/10 16:06:02.836000 22863.6101 221 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:383][fadeOutWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[0], ret=[0]
+31285 2024/10/10 16:06:02.936000 22863.7102 222 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:258][Pause] Pause
+31309 2024/10/10 16:06:02.958000 22863.7224 223 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x23
+31322 2024/10/10 16:06:02.974000 22863.7446 224 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:581][UpdatePositionInfo] UpdatePositionInfo time(sec)-30.100182
+31325 2024/10/10 16:06:02.974000 22863.7455 239 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2509][onCurrentTime] get position = 30100000
+31330 2024/10/10 16:06:02.974000 22863.7457 226 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Paused
+31329 2024/10/10 16:06:02.974000 22863.7457 225 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PLAYING -> PAUSED]
+31336 2024/10/10 16:06:02.989000 22863.7463 228 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:299][NotifyEventAsyncDone] [NotifyEventAsyncDone]
+31335 2024/10/10 16:06:02.989000 22863.7463 227 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1392][HandleAsyncDone] [BUS] GST_MESSAGE_ASYNC_DONE
+31337 2024/10/10 16:06:02.989000 22863.7469 240 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2548][onPlaybackStatus] Paused
+31491 2024/10/10 16:06:03.074000 22863.8389 242 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:302][play] connectionName = :1.55
+31490 2024/10/10 16:06:03.074000 22863.8389 241 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:300][play] media id = 4119
+31492 2024/10/10 16:06:03.074000 22863.8391 243 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:889][process] [PlayCommand]
+31493 2024/10/10 16:06:03.074000 22863.8401 229 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:73][Play] Play
+31494 2024/10/10 16:06:03.074000 22863.8402 230 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:247][Play] Play
+31495 2024/10/10 16:06:03.105000 22863.8416 231 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x1c
+31497 2024/10/10 16:06:03.105000 22863.8423 233 CCIC PESV PESV 4119 log info verbose 1 [subtitle_controller.cpp:91][Play] Play
+31496 2024/10/10 16:06:03.105000 22863.8423 232 CCIC PESV PESV 4119 log info verbose 1 [gst_media.cpp:826][ChangeStateToPlay] changed state to play
+31498 2024/10/10 16:06:03.105000 22863.8424 234 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:46][fadeIn] ##### Fade In ######, time_ms=[100]
+31508 2024/10/10 16:06:03.105000 22863.8682 235 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:375][fadeInWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[65536], ret=[0]
+31511 2024/10/10 16:06:03.105000 22863.8698 236 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PAUSED -> PLAYING]
+31512 2024/10/10 16:06:03.105000 22863.8699 237 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Playing
+31513 2024/10/10 16:06:03.105000 22863.8718 244 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2527][onPlaybackStatus] Playing
+31701 2024/10/10 16:06:03.291000 22864.0611 246 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:288][pause] connectionName = :1.55
+31700 2024/10/10 16:06:03.291000 22864.0611 245 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:286][pause] media id = 4119
+31702 2024/10/10 16:06:03.291000 22864.0612 247 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:756][process] [PauseCommand]
+31704 2024/10/10 16:06:03.291000 22864.0613 249 CCIC MMSV MMSV 937 log error verbose 1 [playerprovider.cpp:214][getRateAttrIdx] [getRateAttrIdx] Rate list size[1]
+31703 2024/10/10 16:06:03.291000 22864.0613 248 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:767][process] [PauseCommand] state : 2
+31708 2024/10/10 16:06:03.306000 22864.0624 239 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:86][fadeOut] ##### Fade Out ######, ms=[80]
+31707 2024/10/10 16:06:03.306000 22864.0624 238 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:83][Pause] Pause
+31709 2024/10/10 16:06:03.306000 22864.0633 240 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:383][fadeOutWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[0], ret=[0]
+31722 2024/10/10 16:06:03.422000 22864.1634 241 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:258][Pause] Pause
+31723 2024/10/10 16:06:03.422000 22864.1697 242 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x23
+31738 2024/10/10 16:06:03.422000 22864.1919 244 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Paused
+31737 2024/10/10 16:06:03.422000 22864.1919 243 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PLAYING -> PAUSED]
+31740 2024/10/10 16:06:03.422000 22864.1925 246 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:299][NotifyEventAsyncDone] [NotifyEventAsyncDone]
+31739 2024/10/10 16:06:03.422000 22864.1925 245 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1392][HandleAsyncDone] [BUS] GST_MESSAGE_ASYNC_DONE
+31743 2024/10/10 16:06:03.422000 22864.1936 250 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2548][onPlaybackStatus] Paused
+31863 2024/10/10 16:06:03.507000 22864.2689 251 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:300][play] media id = 4119
+31864 2024/10/10 16:06:03.507000 22864.2690 252 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:302][play] connectionName = :1.55
+31866 2024/10/10 16:06:03.507000 22864.2692 253 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:889][process] [PlayCommand]
+31868 2024/10/10 16:06:03.522000 22864.2703 247 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:73][Play] Play
+31869 2024/10/10 16:06:03.522000 22864.2704 248 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:247][Play] Play
+31870 2024/10/10 16:06:03.522000 22864.2717 249 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x1c
+31872 2024/10/10 16:06:03.522000 22864.2724 251 CCIC PESV PESV 4119 log info verbose 1 [subtitle_controller.cpp:91][Play] Play
+31871 2024/10/10 16:06:03.522000 22864.2724 250 CCIC PESV PESV 4119 log info verbose 1 [gst_media.cpp:826][ChangeStateToPlay] changed state to play
+31873 2024/10/10 16:06:03.522000 22864.2725 252 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:46][fadeIn] ##### Fade In ######, time_ms=[100]
+31889 2024/10/10 16:06:03.538000 22864.2984 253 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:375][fadeInWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[65536], ret=[0]
+31892 2024/10/10 16:06:03.538000 22864.2999 255 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Playing
+31891 2024/10/10 16:06:03.538000 22864.2999 254 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PAUSED -> PLAYING]
+31895 2024/10/10 16:06:03.538000 22864.3012 254 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2527][onPlaybackStatus] Playing
+32090 2024/10/10 16:06:03.754000 22864.5079 255 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:286][pause] media id = 4119
+32091 2024/10/10 16:06:03.754000 22864.5080 0 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:288][pause] connectionName = :1.55
+32093 2024/10/10 16:06:03.754000 22864.5081 2 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:767][process] [PauseCommand] state : 2
+32092 2024/10/10 16:06:03.754000 22864.5081 1 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:756][process] [PauseCommand]
+32094 2024/10/10 16:06:03.754000 22864.5082 3 CCIC MMSV MMSV 937 log error verbose 1 [playerprovider.cpp:214][getRateAttrIdx] [getRateAttrIdx] Rate list size[1]
+32095 2024/10/10 16:06:03.754000 22864.5093 0 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:83][Pause] Pause
+32096 2024/10/10 16:06:03.754000 22864.5094 1 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:86][fadeOut] ##### Fade Out ######, ms=[80]
+32097 2024/10/10 16:06:03.754000 22864.5101 2 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:383][fadeOutWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[0], ret=[0]
+32126 2024/10/10 16:06:03.861000 22864.6102 3 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:258][Pause] Pause
+32127 2024/10/10 16:06:03.861000 22864.6203 4 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x23
+32142 2024/10/10 16:06:03.877000 22864.6427 6 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Paused
+32141 2024/10/10 16:06:03.877000 22864.6427 5 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PLAYING -> PAUSED]
+32146 2024/10/10 16:06:03.877000 22864.6433 7 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1392][HandleAsyncDone] [BUS] GST_MESSAGE_ASYNC_DONE
+32147 2024/10/10 16:06:03.877000 22864.6434 8 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:299][NotifyEventAsyncDone] [NotifyEventAsyncDone]
+32149 2024/10/10 16:06:03.877000 22864.6440 4 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2548][onPlaybackStatus] Paused
+32327 2024/10/10 16:06:03.961000 22864.7324 6 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:302][play] connectionName = :1.55
+32326 2024/10/10 16:06:03.961000 22864.7324 5 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:300][play] media id = 4119
+32328 2024/10/10 16:06:03.961000 22864.7325 7 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:889][process] [PlayCommand]
+32329 2024/10/10 16:06:03.961000 22864.7334 9 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:73][Play] Play
+32330 2024/10/10 16:06:03.961000 22864.7335 10 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:247][Play] Play
+32331 2024/10/10 16:06:03.961000 22864.7350 11 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x1c
+32333 2024/10/10 16:06:03.992000 22864.7356 13 CCIC PESV PESV 4119 log info verbose 1 [subtitle_controller.cpp:91][Play] Play
+32332 2024/10/10 16:06:03.961000 22864.7356 12 CCIC PESV PESV 4119 log info verbose 1 [gst_media.cpp:826][ChangeStateToPlay] changed state to play
+32334 2024/10/10 16:06:03.992000 22864.7357 14 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:46][fadeIn] ##### Fade In ######, time_ms=[100]
+32344 2024/10/10 16:06:03.992000 22864.7615 15 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:375][fadeInWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[65536], ret=[0]
+32347 2024/10/10 16:06:04.008000 22864.7632 16 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:581][UpdatePositionInfo] UpdatePositionInfo time(sec)-31.061836
+32349 2024/10/10 16:06:04.008000 22864.7643 18 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Playing
+32348 2024/10/10 16:06:04.008000 22864.7643 17 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PAUSED -> PLAYING]
+32350 2024/10/10 16:06:04.008000 22864.7659 8 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2509][onCurrentTime] get position = 31061000
+32351 2024/10/10 16:06:04.008000 22864.7661 9 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2527][onPlaybackStatus] Playing
+32582 2024/10/10 16:06:04.209000 22864.9568 11 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:288][pause] connectionName = :1.55
+32581 2024/10/10 16:06:04.193000 22864.9568 10 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:286][pause] media id = 4119
+32583 2024/10/10 16:06:04.209000 22864.9569 12 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:756][process] [PauseCommand]
+32585 2024/10/10 16:06:04.209000 22864.9570 14 CCIC MMSV MMSV 937 log error verbose 1 [playerprovider.cpp:214][getRateAttrIdx] [getRateAttrIdx] Rate list size[1]
+32584 2024/10/10 16:06:04.209000 22864.9570 13 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:767][process] [PauseCommand] state : 2
+32587 2024/10/10 16:06:04.209000 22864.9582 20 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:86][fadeOut] ##### Fade Out ######, ms=[80]
+32586 2024/10/10 16:06:04.209000 22864.9582 19 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:83][Pause] Pause
+32588 2024/10/10 16:06:04.209000 22864.9589 21 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:383][fadeOutWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[0], ret=[0]
+32626 2024/10/10 16:06:04.309000 22865.0590 22 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:258][Pause] Pause
+32627 2024/10/10 16:06:04.309000 22865.0624 23 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x23
+32630 2024/10/10 16:06:04.309000 22865.0846 24 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PLAYING -> PAUSED]
+32631 2024/10/10 16:06:04.309000 22865.0847 25 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Paused
+32633 2024/10/10 16:06:04.309000 22865.0854 27 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:299][NotifyEventAsyncDone] [NotifyEventAsyncDone]
+32632 2024/10/10 16:06:04.309000 22865.0854 26 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1392][HandleAsyncDone] [BUS] GST_MESSAGE_ASYNC_DONE
+32634 2024/10/10 16:06:04.309000 22865.0861 15 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2548][onPlaybackStatus] Paused
+32778 2024/10/10 16:06:04.425000 22865.1969 17 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:302][play] connectionName = :1.55
+32777 2024/10/10 16:06:04.425000 22865.1969 16 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:300][play] media id = 4119
+32779 2024/10/10 16:06:04.425000 22865.1971 18 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:889][process] [PlayCommand]
+32780 2024/10/10 16:06:04.425000 22865.1980 28 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:73][Play] Play
+32781 2024/10/10 16:06:04.425000 22865.1981 29 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:247][Play] Play
+32782 2024/10/10 16:06:04.425000 22865.1995 30 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x1c
+32784 2024/10/10 16:06:04.425000 22865.2003 32 CCIC PESV PESV 4119 log info verbose 1 [subtitle_controller.cpp:91][Play] Play
+32783 2024/10/10 16:06:04.425000 22865.2003 31 CCIC PESV PESV 4119 log info verbose 1 [gst_media.cpp:826][ChangeStateToPlay] changed state to play
+32785 2024/10/10 16:06:04.425000 22865.2004 33 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:46][fadeIn] ##### Fade In ######, time_ms=[100]
+32795 2024/10/10 16:06:04.462000 22865.2261 34 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:375][fadeInWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[65536], ret=[0]
+32797 2024/10/10 16:06:04.462000 22865.2278 36 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Playing
+32796 2024/10/10 16:06:04.462000 22865.2278 35 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PAUSED -> PLAYING]
+32800 2024/10/10 16:06:04.462000 22865.2292 19 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2527][onPlaybackStatus] Playing
+32986 2024/10/10 16:06:04.640000 22865.4013 21 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:288][pause] connectionName = :1.55
+32985 2024/10/10 16:06:04.640000 22865.4013 20 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:286][pause] media id = 4119
+32989 2024/10/10 16:06:04.640000 22865.4015 24 CCIC MMSV MMSV 937 log error verbose 1 [playerprovider.cpp:214][getRateAttrIdx] [getRateAttrIdx] Rate list size[1]
+32988 2024/10/10 16:06:04.640000 22865.4015 23 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:767][process] [PauseCommand] state : 2
+32987 2024/10/10 16:06:04.640000 22865.4015 22 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:756][process] [PauseCommand]
+32990 2024/10/10 16:06:04.663000 22865.4025 37 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:83][Pause] Pause
+32991 2024/10/10 16:06:04.663000 22865.4026 38 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:86][fadeOut] ##### Fade Out ######, ms=[80]
+32992 2024/10/10 16:06:04.663000 22865.4033 39 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:383][fadeOutWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[0], ret=[0]
+33006 2024/10/10 16:06:04.763000 22865.5034 40 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:258][Pause] Pause
+33009 2024/10/10 16:06:04.763000 22865.5070 41 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x23
+33018 2024/10/10 16:06:04.763000 22865.5293 43 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Paused
+33017 2024/10/10 16:06:04.763000 22865.5293 42 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PLAYING -> PAUSED]
+33020 2024/10/10 16:06:04.763000 22865.5299 45 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:299][NotifyEventAsyncDone] [NotifyEventAsyncDone]
+33019 2024/10/10 16:06:04.763000 22865.5299 44 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1392][HandleAsyncDone] [BUS] GST_MESSAGE_ASYNC_DONE
+33023 2024/10/10 16:06:04.763000 22865.5312 25 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2548][onPlaybackStatus] Paused
+33159 2024/10/10 16:06:04.910000 22865.6254 27 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:302][play] connectionName = :1.55
+33158 2024/10/10 16:06:04.910000 22865.6254 26 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:300][play] media id = 4119
+33160 2024/10/10 16:06:04.910000 22865.6256 28 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:889][process] [PlayCommand]
+33163 2024/10/10 16:06:04.910000 22865.6268 47 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:247][Play] Play
+33162 2024/10/10 16:06:04.910000 22865.6268 46 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:73][Play] Play
+33164 2024/10/10 16:06:04.910000 22865.6286 48 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x1c
+33165 2024/10/10 16:06:04.910000 22865.6293 49 CCIC PESV PESV 4119 log info verbose 1 [gst_media.cpp:826][ChangeStateToPlay] changed state to play
+33167 2024/10/10 16:06:04.910000 22865.6294 51 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:46][fadeIn] ##### Fade In ######, time_ms=[100]
+33166 2024/10/10 16:06:04.910000 22865.6294 50 CCIC PESV PESV 4119 log info verbose 1 [subtitle_controller.cpp:91][Play] Play
+33176 2024/10/10 16:06:04.910000 22865.6552 52 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:375][fadeInWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[65536], ret=[0]
+33178 2024/10/10 16:06:04.910000 22865.6569 54 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Playing
+33177 2024/10/10 16:06:04.910000 22865.6569 53 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PAUSED -> PLAYING]
+33181 2024/10/10 16:06:04.910000 22865.6583 29 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2527][onPlaybackStatus] Playing
+33346 2024/10/10 16:06:04.995000 22865.7635 55 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:581][UpdatePositionInfo] UpdatePositionInfo time(sec)-31.968504
+33347 2024/10/10 16:06:04.995000 22865.7645 30 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2509][onCurrentTime] get position = 31968000
+33454 2024/10/10 16:06:05.095000 22865.8485 31 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:286][pause] media id = 4119
+33455 2024/10/10 16:06:05.095000 22865.8486 32 CCIC MMSV MMSV 937 log info verbose 1 [playerstub.cpp:288][pause] connectionName = :1.55
+33458 2024/10/10 16:06:05.095000 22865.8487 35 CCIC MMSV MMSV 937 log error verbose 1 [playerprovider.cpp:214][getRateAttrIdx] [getRateAttrIdx] Rate list size[1]
+33457 2024/10/10 16:06:05.095000 22865.8487 34 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:767][process] [PauseCommand] state : 2
+33456 2024/10/10 16:06:05.095000 22865.8487 33 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:756][process] [PauseCommand]
+33460 2024/10/10 16:06:05.095000 22865.8497 57 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:86][fadeOut] ##### Fade Out ######, ms=[80]
+33459 2024/10/10 16:06:05.095000 22865.8497 56 CCIC PESV PESV 4119 log info verbose 1 [dbus_player_service.cpp:83][Pause] Pause
+33462 2024/10/10 16:06:05.095000 22865.8504 58 CCIC PESV PESV 4119 log info verbose 1 [audio_controller.cpp:383][fadeOutWithHardwareVol] setHardwareVolume(Dev=[name=RX5] , Gain=[0], ret=[0]
+33472 2024/10/10 16:06:05.226000 22865.9505 59 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:258][Pause] Pause
+33473 2024/10/10 16:06:05.226000 22865.9565 60 CCIC PESV PESV 4119 log info verbose 1 [media_player.cpp:163][PrintGstLog] [/dvs/git/dirty/git-master_linux/multimedia/gstreamer/gst-nvmedia/plugin/video/basevidrend/gstnvmeglwaylandsink.c:761 gst_nvm_eglwayland_sink_change_state] End of change state eglwayland: 0x23
+33487 2024/10/10 16:06:05.226000 22865.9792 61 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1221][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [PLAYING -> PAUSED]
+33488 2024/10/10 16:06:05.226000 22865.9793 62 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:119][NotifyEventPlaybackStatus] [NotifyEventPlaybackStatus] Paused
+33489 2024/10/10 16:06:05.226000 22865.9798 63 CCIC PESV PESV 4119 log info verbose 1 [video_pipeline.cpp:1392][HandleAsyncDone] [BUS] GST_MESSAGE_ASYNC_DONE
+33490 2024/10/10 16:06:05.226000 22865.9799 64 CCIC PESV PESV 4119 log info verbose 1 [event.cpp:299][NotifyEventAsyncDone] [NotifyEventAsyncDone]
+33494 2024/10/10 16:06:05.226000 22865.9812 36 CCIC MMSV MMSV 937 log info verbose 1 [playerprovider.cpp:2548][onPlaybackStatus] Paused
