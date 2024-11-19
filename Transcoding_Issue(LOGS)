@@ -1,0 +1,120 @@
+117485 2024/11/15 05:46:50.612947 52186.2963 177 CCIC Voic Voic 2862 log info verbose 1 2862:2862 VoiceMemoHMI: SaveToGCSListManager::handleSync Sync FileName: (여자)아이들((G)I-DLE) - Nxde (1080p), Status: 0
+117489 2024/11/15 05:46:50.613025 52186.2964 9 CCIC Voic HMED 2862 log info verbose 1 [p:2862] [t:2862] [hmedia] [I] player) setURL:739 : called setURL(8) : [file:///ccOSSecureData/voicememo/user2/(여자)아이들((G)I-DLE) - Nxde (1080p).mp4]
+117488 2024/11/15 05:46:50.613007 52186.2964 8 CCIC Voic HMED 2862 log info verbose 1 [p:2862] [t:2862] [hmedia] [I] player) start:53 : Impl transcode start
+117496 2024/11/15 05:46:50.613241 52186.2973 183 CCIC MMSV MMSV 933 log info verbose 1 [playerstub.cpp:115][arrangeTranscodeOutput] url=[/ccOSSecureData/voicememo/(여자)아이들((G)I-DLE) - Nxde (1080p).opus]
+117506 2024/11/15 05:46:50.614974 52186.2986 11 CCIC Voic HMED 2862 log info verbose 1 [p:2862] [t:2862] [hmedia] [I] load:1213 Setting media_type [8]
+117505 2024/11/15 05:46:50.614158 52186.2986 10 CCIC Voic HMED 2862 log info verbose 1 [p:2862] [t:2862] [hmedia] [I] player) load:878 : channel info(0), 2ch_down=[false]
+117507 2024/11/15 05:46:50.615045 52186.2994 184 CCIC MMSV MMSV 933 log info verbose 1 [playerstub.cpp:861][onRemoteMediaTypeAttributeChanged]
+117508 2024/11/15 05:46:50.615067 52186.2996 185 CCIC MMSV MMSV 933 log info verbose 1 [playerprovider.cpp:2321][process] [SetMediaTypeCommand] prev: 0, now: 8
+117509 2024/11/15 05:46:50.616387 52186.3014 186 CCIC MMSV MMSV 933 log info verbose 1 [playerstub.cpp:126][openUri] load contents.. channels=[2]
+117513 2024/11/15 05:46:50.616551 52186.3015 189 CCIC MMSV MMSV 933 log info verbose 1 [playerengine_manager.cpp:48][createPlayerEngine] launch PlayerEngine: playerservice [/usr/bin/playerservice]
+117511 2024/11/15 05:46:50.616484 52186.3015 188 CCIC MMSV MMSV 933 log info verbose 1 [playerstub.cpp:716][checkValidMediaId] last_fail_id=[0]
+117510 2024/11/15 05:46:50.616464 52186.3015 187 CCIC MMSV MMSV 933 log info verbose 1 [playerstub.cpp:180][openUri] Creating PE for multi instance, type=[8], saved_id=[0], pe_cnt=[1]
+117514 2024/11/15 05:46:50.617925 52186.3028 190 CCIC MMSV MMSV 933 log info verbose 1 [playerengine_manager.cpp:59][createPlayerEngine] PlayerEngine process 702598 created
+
+
+
+
+
+
+
+117628 2024/11/15 05:46:50.675005 52186.3587 191 CCIC MMSV MMSV 933 log error verbose 1 [serviceprovider.cpp:31][onNameVanished] Failed to get name owner for com.lge.PlayerEngine
+117631 2024/11/15 05:46:50.675179 52186.3588 194 CCIC MMSV MMSV 933 log info verbose 1 [main.cpp:1183][operator()] P_Stub_PID=[1948]
+117630 2024/11/15 05:46:50.675129 52186.3588 193 CCIC MMSV MMSV 933 log info verbose 1 [main.cpp:1182][operator()] Child PID=[1948], Default PID=[0]
+117629 2024/11/15 05:46:50.675109 52186.3588 192 CCIC MMSV MMSV 933 log warn verbose 1 [main.cpp:1179][operator()] Cannot connecting to org.genivi.mediamanager.Player : Failed to connect, is com.lge.PlayerEngine running?
+117632 2024/11/15 05:46:50.679586 52186.3646 195 CCIC MMSV MMSV 933 log info verbose 1 [main.cpp:301][isDefaultConnectionNameExist] ## find OK && return true [:1.25][1948]
+117634 2024/11/15 05:46:50.679686 52186.3647 197 CCIC MMSV MMSV 933 log info verbose 1 [main.cpp:1161][operator()] PlayerEngine name appeared in the Dbus
+117633 2024/11/15 05:46:50.679660 52186.3647 196 CCIC MMSV MMSV 933 log info verbose 1 [serviceprovider.cpp:21][onNameAppeared] Found com.lge.PlayerEngine on D-Bus
+117773 2024/11/15 05:46:50.734575 52186.4163 228 CCIC MEDI MEDI 1815 log info verbose 1 1815:1815 MediaPlayerHMI:HmiAppEngine: HmiAppEngine::onScreenStatusUpdated modeInfoName ScreenStatus.center-front, data = {"appid":"ccos.hmi.voicememo.center-front","disp":false,"intent":"SceneVoiceMemo","layout":0}, mIsInValetModeScreen = 0
+117772 2024/11/15 05:46:50.734553 52186.4163 227 CCIC MEDI MEDI 1815 log info verbose 1 1815:1815 MediaPlayerHMI:AppModeInfoServicePrivate: AppModeInfoService::IHAppModeInfoServiceListener::onUpdateAppModeInfoUpdated: infoName(ScreenStatus.center-front} data({"appid":"ccos.hmi.voicememo.center-front","disp":false,"intent":"SceneVoiceMemo","layout":0}}
+117774 2024/11/15 05:46:50.734593 52186.4164 229 CCIC MEDI MEDI 1815 log info verbose 1 1815:1815 MediaPlayerHMI:MediaPlayerWindow: MediaPlayerWindow::onScreenStatusUpdated modeInfoName ScreenStatus.center-front, data = {"appid":"ccos.hmi.voicememo.center-front","disp":false,"intent":"SceneVoiceMemo","layout":0}
+117776 2024/11/15 05:46:50.734629 52186.4166 230 CCIC MEDI MEDI 1815 log info verbose 1 1815:1815 MediaPlayerHMI:AppModeInfoServicePrivate: AppModeInfoService::IHAppModeInfoServiceListener::onUpdateAppModeInfoUpdated: infoName(ScreenStatus.center-front} data({"appid":"ccos.hmi.voicememo.center-front","disp":false,"intent":"SceneVoiceMemo","layout":0}}
+117778 2024/11/15 05:46:50.734666 52186.4167 232 CCIC MEDI MEDI 1815 log info verbose 1 1815:1815 MediaPlayerHMI:MediaPlayerWindow: MediaPlayerWindow::onScreenStatusUpdated modeInfoName ScreenStatus.center-front, data = {"appid":"ccos.hmi.voicememo.center-front","disp":false,"intent":"SceneVoiceMemo","layout":0}
+117777 2024/11/15 05:46:50.734647 52186.4167 231 CCIC MEDI MEDI 1815 log info verbose 1 1815:1815 MediaPlayerHMI:HmiAppEngine: HmiAppEngine::onScreenStatusUpdated modeInfoName ScreenStatus.center-front, data = {"appid":"ccos.hmi.voicememo.center-front","disp":false,"intent":"SceneVoiceMemo","layout":0}, mIsInValetModeScreen = 0
+118059 2024/11/15 05:46:50.763257 52186.4331 198 CCIC MMSV MMSV 933 log info verbose 1 [playerengine_manager.cpp:93][getConnectionName] getConnectionName() method
+118079 2024/11/15 05:46:50.763771 52186.4366 199 CCIC MMSV MMSV 933 log info verbose 1 [playerengine_manager.cpp:143][getConnectionName] New connection name created = :1.75
+118087 2024/11/15 05:46:50.764010 52186.4367 202 CCIC MMSV MMSV 933 log info verbose 1 [playerstub.cpp:240][openUri] Create openUri command=[:1.75 / 702598] to playerprovider
+118085 2024/11/15 05:46:50.763969 52186.4367 201 CCIC MMSV MMSV 933 log info verbose 1 [playerengine_manager.cpp:310][printMap] Map MediaId = 702598:: Map PlayerEngineId = :1.75
+118084 2024/11/15 05:46:50.763947 52186.4367 200 CCIC MMSV MMSV 933 log info verbose 1 [playerstub.cpp:230][openUri] Pass the connection name=[:1.75 / 702598] to playerprovider
+118098 2024/11/15 05:46:50.764236 52186.4369 204 CCIC MMSV MMSV 933 log info verbose 1 [playerprovider.cpp:3437][preparePEProxy] preparePEProxy connectionName =:1.75, PEProxyID = 1
+118097 2024/11/15 05:46:50.764218 52186.4369 203 CCIC MMSV MMSV 933 log info verbose 1 [playerprovider.cpp:3426][preparePEProxy] Proxy id inserted as 1, [:1.75]
+118180 2024/11/15 05:46:50.768219 52186.4423 206 CCIC MMSV MMSV 933 log info verbose 1 [playerprovider.cpp:3465][preparePEProxy] proxyId = 1::connectionName = :1.75
+118179 2024/11/15 05:46:50.768198 52186.4423 205 CCIC MMSV MMSV 933 log info verbose 1 [playerprovider.cpp:3456][preparePEProxy] playerengine_proxy_[1] is created
+118189 2024/11/15 05:46:50.768400 52186.4424 207 CCIC MMSV MMSV 933 log info verbose 1 [playerprovider.cpp:305][process] [OpenUriCommand] index: 0, uri: file:///ccOSSecureData/voicememo/user2/(여자)아이들((G)I-DLE) - Nxde (1080p).mp4, pos_us: 0, channel: 2
+118197 2024/11/15 05:46:50.768552 52186.4427 208 CCIC MMSV MMSV 933 log info verbose 1 [state_change_notifier.cpp:117][NotifyCommon] {"CurrentTrack":{"index":0,"uri":"file:\/\/\/ccOSSecureData\/voicememo\/user2\/(여자)아이들((G)I-DLE) - Nxde (1080p).mp4"}}
+118210 2024/11/15 05:46:50.768963 52186.4432 209 CCIC MMSV MMSV 933 log info verbose 1 [playerprovider.cpp:443][process] call getChannelInfo in sync
+
+
+
+
+
+
+118343 2024/11/15 05:46:50.812364 52186.4974 105 CCIC PESV PESV 702598 log info verbose 1 [audio_controller.cpp:41][setMediaType] type=[transcode]
+118345 2024/11/15 05:46:50.812498 52186.4975 107 CCIC PESV PESV 702598 log info verbose 1 [audio_controller.cpp:135][getAudioChannel] Get actual channel info.. type=[transcode], requested_ch=[2]
+118344 2024/11/15 05:46:50.812447 52186.4975 106 CCIC PESV PESV 702598 log info verbose 1 [media_player.cpp:556][GetChannelInfo] #### Received channel = [2]
+118347 2024/11/15 05:46:50.813507 52186.4985 211 CCIC MMSV MMSV 933 log error verbose 1 [playerprovider.cpp:464][process] Failed to get slot
+118346 2024/11/15 05:46:50.813470 52186.4985 210 CCIC MMSV MMSV 933 log info verbose 1 [playerprovider.cpp:452][process] get result from getChannelInfo in sync
+118348 2024/11/15 05:46:50.813665 52186.4987 212 CCIC MMSV MMSV 933 log info verbose 1 [event_system.cpp:97][WaitEvent] success:0x00000004, fail:0x00000020
+118349 2024/11/15 05:46:50.814429 52186.4994 108 CCIC PESV PESV 702598 log info verbose 1 [dbus_player_service.cpp:134][SetURI] SetURI : uri: file:///ccOSSecureData/voicememo/user2/(여자)아이들((G)I-DLE) - Nxde (1080p).mp4 ,option : {"Option":{"mediatype":"transcode","transcode_codec":"OPUS","transcode_fileformat":"OGG","transcode_output":"\/ccOSSecureData\/voicememo\/(여자)아이들((G)I-DLE) - Nxde (1080p).opus","cache":"false","show-preroll-frame":"true","provide-global-clock":"true","is-dsd":"false","channel":"2"}}
+118350 2024/11/15 05:46:50.815961 52186.5010 109 CCIC PESV PESV 702598 log info verbose 1 [audio_controller.cpp:41][setMediaType] type=[transcode]
+118353 2024/11/15 05:46:50.816176 52186.5011 112 CCIC PESV PESV 702598 log info verbose 1 [audio_controller.cpp:86][fadeOut] ##### Fade Out ######, ms=[100]
+118352 2024/11/15 05:46:50.816025 52186.5011 111 CCIC PESV PESV 702598 log info verbose 1 [audio_controller.cpp:135][getAudioChannel] Get actual channel info.. type=[transcode], requested_ch=[2]
+118351 2024/11/15 05:46:50.816004 52186.5011 110 CCIC PESV PESV 702598 log info verbose 1 [media_player.cpp:320][SetURI] #### Received channel = [2]
+118358 2024/11/15 05:46:50.816263 52186.5012 117 CCIC PESV PESV 702598 log error verbose 1 [event.cpp:138][NotifyEventError] [NotifyEventError] error_code(201)
+118357 2024/11/15 05:46:50.816248 52186.5012 116 CCIC PESV PESV 702598 log info verbose 1 [null_pipeline.cpp:49][Unload] Unload
+118356 2024/11/15 05:46:50.816233 52186.5012 115 CCIC PESV PESV 702598 log info verbose 1 [media_player.cpp:603][SetURIInternal] destroy_pipeline[0]
+118355 2024/11/15 05:46:50.816218 52186.5012 114 CCIC PESV PESV 702598 log info verbose 1 [media_player.cpp:377][SetURI] media type[4][transcode], channel=[2], slot=[0]
+118354 2024/11/15 05:46:50.816203 52186.5012 113 CCIC PESV PESV 702598 log info verbose 1 [audio_controller.cpp:120][fadeOut] volume_type_info_ is empty
+118370 2024/11/15 05:46:50.822508 52186.5056 118 CCIC PESV PESV 702598 log info verbose 1 [null_pipeline.cpp:25][~NullPipeline]
+118378 2024/11/15 05:46:50.822710 52186.5058 125 CCIC PESV PESV 702598 log info verbose 1 [audio_controller.cpp:231][extractAudioChannel] extractAudioChannel called..
+118376 2024/11/15 05:46:50.822670 52186.5058 124 CCIC PESV PESV 702598 log info verbose 1 [transcode_pipeline.cpp:91][TranscodePipeline]
+118375 2024/11/15 05:46:50.822606 52186.5058 123 CCIC PESV PESV 702598 log info verbose 1 [creator.cpp:77][CreatePipeline] TranscodePipeline
+118374 2024/11/15 05:46:50.822588 52186.5058 122 CCIC PESV PESV 702598 log info verbose 1 [creator.cpp:126][ParsePipelineType] media_type[4]
+118373 2024/11/15 05:46:50.822567 52186.5058 121 CCIC PESV PESV 702598 log info verbose 1 [creator.cpp:92][ParsePipelineType] return media type is [4]
+118372 2024/11/15 05:46:50.822545 52186.5058 120 CCIC PESV PESV 702598 log info verbose 1 [creator.cpp:192][ParseMediaTypeFromExtension] Type transcoding audio
+118371 2024/11/15 05:46:50.822526 52186.5058 119 CCIC PESV PESV 702598 log info verbose 1 [creator.cpp:148][ParseMediaTypeFromExtension] given uri[file:///ccOSSecureData/voicememo/user2/(여자)아이들((G)I-DLE) - Nxde (1080p).mp4], file extension[.mp4] , media_type_[4]
+118380 2024/11/15 05:46:50.822746 52186.5064 213 CCIC MMSV MMSV 933 log info verbose 1 [playerprovider.cpp:2978][onError] [201] ignored
+118382 2024/11/15 05:46:50.831827 52186.5168 126 CCIC PESV PESV 702598 log info verbose 1 [audio_controller.cpp:258][extractAudioChannel] avformat_find_stream_info was called...
+118384 2024/11/15 05:46:50.869235 52186.5542 128 CCIC PESV PESV 702598 log info verbose 1 [audio_controller.cpp:284][extractAudioChannel] acquired channel=[2], codec_id=[86018], duration=[183]
+118383 2024/11/15 05:46:50.869167 52186.5542 127 CCIC PESV PESV 702598 log info verbose 1 [audio_controller.cpp:264][extractAudioChannel] av_find_best_stream was called...
+118385 2024/11/15 05:46:50.869254 52186.5543 129 CCIC PESV PESV 702598 log info verbose 1 [audio_controller.cpp:298][extractAudioChannel] avformat_close_input was called...
+118386 2024/11/15 05:46:50.869465 52186.5545 130 CCIC PESV PESV 702598 log info verbose 1 [audio_controller.cpp:129][getAudioDuration] Extract audio info : channel [2], duration [183]
+118387 2024/11/15 05:46:50.870632 52186.5557 131 CCIC PESV PESV 702598 log info verbose 1 [transcode_pipeline.cpp:415][Load] output codec=[OPUS], format=[OGG], path=[/ccOSSecureData/voicememo/(여자)아이들((G)I-DLE) - Nxde (1080p).opus], location=[], platform=[]
+118388 2024/11/15 05:46:50.876590 52186.5616 132 CCIC PESV PESV 702598 log info verbose 1 [transcode_pipeline.cpp:244][Load] VoiceMemo mode[40] : custom pipeline=[aacparse ! avdec_aac ! audioconvert ! opusenc hard-resync=true audio-type=2048 bitrate=16000 frame-size=20 ! filesink location="/ccOSSecureData/voicememo/(여자)아이들((G)I-DLE) - Nxde (1080p).opus.temp"]
+118389 2024/11/15 05:46:50.876677 52186.5617 133 CCIC PESV PESV 702598 log info verbose 1 [transcode_pipeline.cpp:317][Load] Demuxer source linking with audio bin case
+118393 2024/11/15 05:46:50.899684 52186.5847 134 CCIC PESV PESV 702598 log info verbose 1 [media_player.cpp:163][PrintGstLog] [../../../../gstreamer-1.8.3/libs/gst/base/gstbasesrc.c:3489 gst_base_src_start_complete] pad not activated yet
+118394 2024/11/15 05:46:50.900587 52186.5856 135 CCIC PESV PESV 702598 log info verbose 1 [media_player.cpp:163][PrintGstLog] [../../../gst-plugins-good-1.8.3/gst/isomp4/qtdemux_types.c:223 qtdemux_type_get] unknown QuickTime node type pasp
+118396 2024/11/15 05:46:50.900704 52186.5857 137 CCIC PESV PESV 702598 log info verbose 1 [media_player.cpp:163][PrintGstLog] [../../../gst-plugins-good-1.8.3/gst/isomp4/qtdemux_types.c:223 qtdemux_type_get] unknown QuickTime node type sbgp
+118395 2024/11/15 05:46:50.900654 52186.5857 136 CCIC PESV PESV 702598 log info verbose 1 [media_player.cpp:163][PrintGstLog] [../../../gst-plugins-good-1.8.3/gst/isomp4/qtdemux_types.c:223 qtdemux_type_get] unknown QuickTime node type sgpd
+118397 2024/11/15 05:46:50.900721 52186.5858 138 CCIC PESV PESV 702598 log info verbose 1 [media_player.cpp:163][PrintGstLog] [../../../gst-plugins-good-1.8.3/gst/isomp4/qtdemux_types.c:223 qtdemux_type_get] unknown QuickTime node type pasp
+118399 2024/11/15 05:46:50.900859 52186.5859 140 CCIC PESV PESV 702598 log info verbose 1 [media_player.cpp:163][PrintGstLog] [../../../gst-plugins-good-1.8.3/gst/isomp4/qtdemux_types.c:223 qtdemux_type_get] unknown QuickTime node type sbgp
+118398 2024/11/15 05:46:50.900832 52186.5859 139 CCIC PESV PESV 702598 log info verbose 1 [media_player.cpp:163][PrintGstLog] [../../../gst-plugins-good-1.8.3/gst/isomp4/qtdemux_types.c:223 qtdemux_type_get] unknown QuickTime node type sgpd
+118400 2024/11/15 05:46:50.900976 52186.5860 141 CCIC PESV PESV 702598 log info verbose 1 [media_player.cpp:163][PrintGstLog] [../../../gst-plugins-good-1.8.3/gst/isomp4/qtdemux.c:2654 qtdemux_parse_trex] failed to find fragment defaults for stream 1
+118401 2024/11/15 05:46:50.901221 52186.5863 142 CCIC PESV PESV 702598 log info verbose 1 [media_player.cpp:163][PrintGstLog] [../../../gst-plugins-good-1.8.3/gst/isomp4/qtdemux.c:2654 qtdemux_parse_trex] failed to find fragment defaults for stream 2
+118402 2024/11/15 05:46:50.901482 52186.5865 143 CCIC PESV PESV 702598 log info verbose 1 [media_player.cpp:163][PrintGstLog] [../../../../gstreamer-1.8.3/libs/gst/base/gstbasesrc.c:2396 gst_base_src_update_length] processing at or past EOS
+118403 2024/11/15 05:46:50.901667 52186.5867 144 CCIC PESV PESV 702598 log info verbose 1 [transcode_pipeline.cpp:116][on_pad_added] video_0::demuxer [linking] bin0
+118404 2024/11/15 05:46:50.902700 52186.5878 145 CCIC PESV PESV 702598 log error verbose 1 [transcode_pipeline.cpp:121][on_pad_added] failed [return code]:-4
+118405 2024/11/15 05:46:50.902816 52186.5879 146 CCIC PESV PESV 702598 log info verbose 1 [transcode_pipeline.cpp:116][on_pad_added] audio_0::demuxer [linking] bin0
+118406 2024/11/15 05:46:50.903755 52186.5888 147 CCIC PESV PESV 702598 log error verbose 1 [transcode_pipeline.cpp:121][on_pad_added] failed [return code]:-4
+118407 2024/11/15 05:46:50.903951 52186.5890 148 CCIC PESV PESV 702598 log info verbose 1 [media_player.cpp:163][PrintGstLog] [../../../gst-plugins-good-1.8.3/gst/isomp4/qtdemux.c:5527 gst_qtdemux_loop] error: streaming stopped, reason not-linked
+118408 2024/11/15 05:46:50.904187 52186.5892 149 CCIC PESV PESV 702598 log error verbose 1 [gst_media.cpp:821][ChangeStateToPlay] Failed setting pipeline to state
+118409 2024/11/15 05:46:50.904212 52186.5893 150 CCIC PESV PESV 702598 log error verbose 1 [transcode_pipeline.cpp:384][Load] cannot change status into play.
+118410 2024/11/15 05:46:50.905782 52186.5903 214 CCIC MMSV MMSV 933 log info verbose 1 [event_system.cpp:105][WaitEvent] got succeed event: 00000004
+118411 2024/11/15 05:46:50.905831 52186.5904 151 CCIC PESV PESV 702598 log info verbose 1 [transcode_pipeline.cpp:573][HandleBusChangeState] [BUS] GST_MESSAGE_STATE_CHANGED [NULL -> READY]
+118413 2024/11/15 05:46:50.905864 52186.5906 153 CCIC PESV PESV 702598 log error verbose 1 [event.cpp:138][NotifyEventError] [NotifyEventError] error_code(400)
+118412 2024/11/15 05:46:50.905848 52186.5906 152 CCIC PESV PESV 702598 log error verbose 1 [transcode_pipeline.cpp:669][HandleBusElementMessage] [HandleBusElementMessage] GST_MESSAGE_ERROR : GST_STREAM_ERROR - 1(from demuxer), GStreamer encountered a general stream error., ../../../gst-plugins-good-1.8.3/gst/isomp4/qtdemux.c(5527): gst_qtdemux_loop (): /GstPipeline:transcode_pipeline/GstQTDemux:demuxer: streaming stopped, reason not-linked
+118415 2024/11/15 05:46:50.906217 52186.5909 13 CCIC Voic HMED 2862 log info verbose 1 [p:2862] [t:2862] [hmedia] [I] player) createHandleToMediaIDMap:4541 : handle=[8], media_id=[702598]
+118414 2024/11/15 05:46:50.906198 52186.5909 12 CCIC Voic HMED 2862 log info verbose 1 [p:2862] [t:2862] [hmedia] [I] player) deleteHandleFromMediaIDMap:4558 : remove a MediaIDFromMediaIDMap, handle=[8]
+118419 2024/11/15 05:46:50.906320 52186.5911 16 CCIC Voic HMED 2862 log info verbose 1 [p:2862] [t:3872] [hmedia] [I] player) MediaDataChangeCallback:650, CurrentTrack
+118418 2024/11/15 05:46:50.906302 52186.5911 15 CCIC Voic HMED 2862 log info verbose 1 [p:2862] [t:3872] [hmedia] [I] player) MediaDataChangeCallback:627 : m_id=[702598] {"CurrentTrack":{"index":0,"uri":"file:\/\/\/ccOSSecureData\/voicememo\/user2\/(여자)아이들((G)I-DLE) - Nxde (1080p).mp4"}}
+118417 2024/11/15 05:46:50.906248 52186.5911 14 CCIC Voic HMED 2862 log info verbose 1 [p:2862] [t:3872] [hmedia] [I] player) getHandleFromMediaIDMap:4352 : find handle=[8], media_id=[702598]
+118416 2024/11/15 05:46:50.906232 52186.5911 179 CCIC Voic Voic 2862 log info verbose 1 2862:2862 VoiceMemoHMI: SaveToGCSListManager::updateServerOnlyList
+118421 2024/11/15 05:46:50.908300 52186.5933 215 CCIC MMSV MMSV 933 log error verbose 1 [playerprovider.cpp:3013][onError] [400] notify PLAYBACK_INTERNAL_ERROR
+118422 2024/11/15 05:46:50.908384 52186.5934 216 CCIC MMSV MMSV 933 log info verbose 1 [playerprovider.cpp:3115][onPlaybackError]
+118423 2024/11/15 05:46:50.908442 52186.5935 217 CCIC MMSV MMSV 933 log info verbose 1 [playerprovider.cpp:3143][onPlaybackError] is_playing_ is false, so no need_post_command
+118424 2024/11/15 05:46:50.908910 52186.5939 17 CCIC Voic HMED 2862 log info verbose 1 [p:2862] [t:3872] [hmedia] [I] player) getHandleFromMediaIDMap:4352 : find handle=[8], media_id=[702598]
+118426 2024/11/15 05:46:50.908989 52186.5940 19 CCIC Voic HMED 2862 log error verbose 1 [p:2862] [t:3872] [hmedia] [E] player) PlaybackErrorCallbackInternal:1885 : Error-mediaId (702598)
+118425 2024/11/15 05:46:50.908970 52186.5940 18 CCIC Voic HMED 2862 log error verbose 1 [p:2862] [t:3872] [hmedia] [E] player) PlaybackErrorCallbackInternal:1877 : Error[3002]
+118427 2024/11/15 05:46:50.909072 52186.5941 180 CCIC Voic Voic 2862 log info verbose 1 2862:3872 VoiceMemoHMI: SaveToGCSService::SaveToGCSServicePrivate::onStateChanged state{4}
+118429 2024/11/15 05:46:50.909145 52186.5942 20 CCIC Voic HMED 2862 log info verbose 1 [p:2862] [t:3872] [hmedia] [I] player) PlaybackErrorCallbackInternal:1969 : handle(8), onPlayingStatusChanged(FAILED_TO_PLAY)
+118428 2024/11/15 05:46:50.909123 52186.5942 181 CCIC Voic Voic 2862 log info verbose 1 2862:3872 VoiceMemoHMI: SaveToGCSService::SaveToGCSServicePrivate::onStatusChanged status{0}
