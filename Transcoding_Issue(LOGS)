@@ -429,5 +429,163 @@ Load and Prepare Media Source:
 
 Adaptor->load(handle, false) loads the input media into the transcoding pipeline. This step ensures the pipeline is ready to start processing.
 
+===========================================================================================================================================================================================>>>
+
+
+20-11-2024
+
+===========================================================================================================================================================================================
+
+
+
+0:00:00.030695202 632300 0x57865d046e00 INFO            GST_PIPELINE gst/parse/grammar.y:683:gst_parse_perform_link: linking some pad of GstFileSrc named filesrc0 to some pad of GstQTDemux named demux (0/0) with caps "(NULL)"
+0:00:00.030702985 632300 0x57865d046e00 INFO        GST_ELEMENT_PADS gstutils.c:1816:gst_element_link_pads_full: trying to link element filesrc0:(any) to element demux:(any)
+0:00:00.030708760 632300 0x57865d046e00 INFO                GST_PADS gstutils.c:1079:gst_pad_check_link: trying to link filesrc0:src and demux:sink
+0:00:00.030718579 632300 0x57865d046e00 INFO                GST_PADS gstutils.c:1632:prepare_link_maybe_ghosting: filesrc0 and demux in same bin, no need for ghost pads
+0:00:00.030726522 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:2382:gst_pad_link_prepare: trying to link filesrc0:src and demux:sink
+0:00:00.030732840 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:2590:gst_pad_link_full: linked filesrc0:src and demux:sink, successful
+0:00:00.030737769 632300 0x57865d046e00 INFO               GST_EVENT gstevent.c:1660:gst_event_new_reconfigure: creating reconfigure event
+0:00:00.030743078 632300 0x57865d046e00 INFO               GST_EVENT gstpad.c:5946:gst_pad_send_event_unchecked:<filesrc0:src> Received event on flushing pad. Discarding
+0:00:00.030751080 632300 0x57865d046e00 INFO           GST_PARENTAGE gstbin.c:4377:gst_bin_get_by_name: [pipeline0]: looking up child element demux
+0:00:00.030761300 632300 0x57865d046e00 INFO            GST_PIPELINE gst/parse/grammar.y:683:gst_parse_perform_link: linking pad  demux of GstQTDemux named demux to some pad of GstAacParse named aacparse0 (1/0) with caps "(NULL)"
+0:00:00.030767660 632300 0x57865d046e00 INFO        GST_ELEMENT_PADS gstutils.c:1816:gst_element_link_pads_full: trying to link element demux:audio_0 to element aacparse0:(any)
+0:00:00.030772703 632300 0x57865d046e00 INFO        GST_ELEMENT_PADS gstelement.c:1013:gst_element_get_static_pad: no such pad 'audio_0' in element "demux"
+0:00:00.030778176 632300 0x57865d046e00 INFO                 default gstutils.c:2206:gst_element_link_pads_filtered: Could not link pads: demux:audio_0 - aacparse0:(null)
+0:00:00.030788445 632300 0x57865d046e00 INFO            GST_PIPELINE gst/parse/grammar.y:683:gst_parse_perform_link: linking some pad of GstAacParse named aacparse0 to some pad of avdec_aac named avdec_aac0 (0/0) with caps "(NULL)"
+0:00:00.030793885 632300 0x57865d046e00 INFO        GST_ELEMENT_PADS gstutils.c:1816:gst_element_link_pads_full: trying to link element aacparse0:(any) to element avdec_aac0:(any)
+0:00:00.030798695 632300 0x57865d046e00 INFO                GST_PADS gstutils.c:1079:gst_pad_check_link: trying to link aacparse0:src and avdec_aac0:sink
+0:00:00.030805340 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:4357:gst_pad_peer_query:<avdec_aac0:src> pad has no peer
+0:00:00.030819284 632300 0x57865d046e00 INFO                GST_PADS gstutils.c:1632:prepare_link_maybe_ghosting: aacparse0 and avdec_aac0 in same bin, no need for ghost pads
+0:00:00.030825290 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:2382:gst_pad_link_prepare: trying to link aacparse0:src and avdec_aac0:sink
+0:00:00.030830174 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:4357:gst_pad_peer_query:<avdec_aac0:src> pad has no peer
+0:00:00.030839603 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:2590:gst_pad_link_full: linked aacparse0:src and avdec_aac0:sink, successful
+0:00:00.030843798 632300 0x57865d046e00 INFO               GST_EVENT gstevent.c:1660:gst_event_new_reconfigure: creating reconfigure event
+0:00:00.030848068 632300 0x57865d046e00 INFO               GST_EVENT gstpad.c:5946:gst_pad_send_event_unchecked:<aacparse0:src> Received event on flushing pad. Discarding
+0:00:00.030856293 632300 0x57865d046e00 INFO            GST_PIPELINE gst/parse/grammar.y:683:gst_parse_perform_link: linking some pad of avdec_aac named avdec_aac0 to some pad of GstAudioConvert named audioconvert0 (0/0) with caps "(NULL)"
+0:00:00.030861947 632300 0x57865d046e00 INFO        GST_ELEMENT_PADS gstutils.c:1816:gst_element_link_pads_full: trying to link element avdec_aac0:(any) to element audioconvert0:(any)
+0:00:00.030867262 632300 0x57865d046e00 INFO                GST_PADS gstutils.c:1079:gst_pad_check_link: trying to link avdec_aac0:src and audioconvert0:sink
+0:00:00.030872968 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:4357:gst_pad_peer_query:<audioconvert0:src> pad has no peer
+0:00:00.030885944 632300 0x57865d046e00 INFO               structure gststructure.c:2917:gst_structure_get_valist: Expected field 'channel-mask' in structure: audio/x-raw, rate=(int)[ 1, 2147483647 ], channels=(int)[ 1, 2147483647 ];
+0:00:00.030901618 632300 0x57865d046e00 INFO                GST_PADS gstutils.c:1632:prepare_link_maybe_ghosting: avdec_aac0 and audioconvert0 in same bin, no need for ghost pads
+0:00:00.030907953 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:2382:gst_pad_link_prepare: trying to link avdec_aac0:src and audioconvert0:sink
+0:00:00.030913284 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:4357:gst_pad_peer_query:<audioconvert0:src> pad has no peer
+0:00:00.030921795 632300 0x57865d046e00 INFO               structure gststructure.c:2917:gst_structure_get_valist: Expected field 'channel-mask' in structure: audio/x-raw, rate=(int)[ 1, 2147483647 ], channels=(int)[ 1, 2147483647 ];
+0:00:00.030935525 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:2590:gst_pad_link_full: linked avdec_aac0:src and audioconvert0:sink, successful
+0:00:00.030939693 632300 0x57865d046e00 INFO               GST_EVENT gstevent.c:1660:gst_event_new_reconfigure: creating reconfigure event
+0:00:00.030943863 632300 0x57865d046e00 INFO               GST_EVENT gstpad.c:5946:gst_pad_send_event_unchecked:<avdec_aac0:src> Received event on flushing pad. Discarding
+0:00:00.030951413 632300 0x57865d046e00 INFO            GST_PIPELINE gst/parse/grammar.y:683:gst_parse_perform_link: linking some pad of GstAudioConvert named audioconvert0 to some pad of GstOpusEnc named opusenc0 (0/0) with caps "(NULL)"
+0:00:00.030956981 632300 0x57865d046e00 INFO        GST_ELEMENT_PADS gstutils.c:1816:gst_element_link_pads_full: trying to link element audioconvert0:(any) to element opusenc0:(any)
+0:00:00.030962286 632300 0x57865d046e00 INFO                GST_PADS gstutils.c:1079:gst_pad_check_link: trying to link audioconvert0:src and opusenc0:sink
+0:00:00.030971694 632300 0x57865d046e00 INFO               structure gststructure.c:2917:gst_structure_get_valist: Expected field 'channel-mask' in structure: audio/x-raw, rate=(int)[ 1, 2147483647 ], channels=(int)[ 1, 2147483647 ];
+0:00:00.031002786 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:4357:gst_pad_peer_query:<opusenc0:src> pad has no peer
+0:00:00.031110244 632300 0x57865d046e00 INFO                GST_PADS gstutils.c:1632:prepare_link_maybe_ghosting: audioconvert0 and opusenc0 in same bin, no need for ghost pads
+0:00:00.031117146 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:2382:gst_pad_link_prepare: trying to link audioconvert0:src and opusenc0:sink
+0:00:00.031126801 632300 0x57865d046e00 INFO               structure gststructure.c:2917:gst_structure_get_valist: Expected field 'channel-mask' in structure: audio/x-raw, rate=(int)[ 1, 2147483647 ], channels=(int)[ 1, 2147483647 ];
+0:00:00.031136258 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:4357:gst_pad_peer_query:<opusenc0:src> pad has no peer
+0:00:00.031233873 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:2590:gst_pad_link_full: linked audioconvert0:src and opusenc0:sink, successful
+0:00:00.031238592 632300 0x57865d046e00 INFO               GST_EVENT gstevent.c:1660:gst_event_new_reconfigure: creating reconfigure event
+0:00:00.031243394 632300 0x57865d046e00 INFO               GST_EVENT gstpad.c:5946:gst_pad_send_event_unchecked:<audioconvert0:src> Received event on flushing pad. Discarding
+0:00:00.031256073 632300 0x57865d046e00 INFO            GST_PIPELINE gst/parse/grammar.y:683:gst_parse_perform_link: linking some pad of GstOpusEnc named opusenc0 to some pad of GstOggMux named oggmux0 (0/0) with caps "(NULL)"
+0:00:00.031261743 632300 0x57865d046e00 INFO        GST_ELEMENT_PADS gstutils.c:1816:gst_element_link_pads_full: trying to link element opusenc0:(any) to element oggmux0:(any)
+0:00:00.031302213 632300 0x57865d046e00 INFO        GST_ELEMENT_PADS gstelement.c:759:gst_element_add_pad:<oggmux0> adding pad 'audio_594595206'
+0:00:00.031310058 632300 0x57865d046e00 INFO                GST_PADS gstutils.c:1632:prepare_link_maybe_ghosting: opusenc0 and oggmux0 in same bin, no need for ghost pads
+0:00:00.031316293 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:2382:gst_pad_link_prepare: trying to link opusenc0:src and oggmux0:audio_594595206
+0:00:00.031323546 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:2590:gst_pad_link_full: linked opusenc0:src and oggmux0:audio_594595206, successful
+0:00:00.031327468 632300 0x57865d046e00 INFO               GST_EVENT gstevent.c:1660:gst_event_new_reconfigure: creating reconfigure event
+0:00:00.031331735 632300 0x57865d046e00 INFO               GST_EVENT gstpad.c:5946:gst_pad_send_event_unchecked:<opusenc0:src> Received event on flushing pad. Discarding
+0:00:00.031340209 632300 0x57865d046e00 INFO            GST_PIPELINE gst/parse/grammar.y:683:gst_parse_perform_link: linking some pad of GstOggMux named oggmux0 to some pad of GstFileSink named filesink0 (0/0) with caps "(NULL)"
+0:00:00.031345563 632300 0x57865d046e00 INFO        GST_ELEMENT_PADS gstutils.c:1816:gst_element_link_pads_full: trying to link element oggmux0:(any) to element filesink0:(any)
+0:00:00.031350760 632300 0x57865d046e00 INFO                GST_PADS gstutils.c:1079:gst_pad_check_link: trying to link oggmux0:src and filesink0:sink
+0:00:00.031357125 632300 0x57865d046e00 INFO                GST_PADS gstutils.c:1632:prepare_link_maybe_ghosting: oggmux0 and filesink0 in same bin, no need for ghost pads
+0:00:00.031362580 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:2382:gst_pad_link_prepare: trying to link oggmux0:src and filesink0:sink
+0:00:00.031368641 632300 0x57865d046e00 INFO                GST_PADS gstpad.c:2590:gst_pad_link_full: linked oggmux0:src and filesink0:sink, successful
+0:00:00.031372537 632300 0x57865d046e00 INFO               GST_EVENT gstevent.c:1660:gst_event_new_reconfigure: creating reconfigure event
+0:00:00.031376769 632300 0x57865d046e00 INFO               GST_EVENT gstpad.c:5946:gst_pad_send_event_unchecked:<oggmux0:src> Received event on flushing pad. Discarding
+Setting pipeline to PAUSED ...
+
+
+================================================================================================>>
+
+
+
+0:00:00.030412077 635033 0x57fc3ea36e00 INFO        GST_ELEMENT_PADS gstutils.c:1816:gst_element_link_pads_full: trying to link element filesrc0:(any) to element demux:(any)
+0:00:00.030418450 635033 0x57fc3ea36e00 INFO                GST_PADS gstutils.c:1079:gst_pad_check_link: trying to link filesrc0:src and demux:sink
+0:00:00.030428978 635033 0x57fc3ea36e00 INFO                GST_PADS gstutils.c:1632:prepare_link_maybe_ghosting: filesrc0 and demux in same bin, no need for ghost pads
+0:00:00.030437649 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:2382:gst_pad_link_prepare: trying to link filesrc0:src and demux:sink
+0:00:00.030444808 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:2590:gst_pad_link_full: linked filesrc0:src and demux:sink, successful
+0:00:00.030449141 635033 0x57fc3ea36e00 INFO               GST_EVENT gstevent.c:1660:gst_event_new_reconfigure: creating reconfigure event
+0:00:00.030454081 635033 0x57fc3ea36e00 INFO               GST_EVENT gstpad.c:5946:gst_pad_send_event_unchecked:<filesrc0:src> Received event on flushing pad. Discarding
+0:00:00.030461893 635033 0x57fc3ea36e00 INFO           GST_PARENTAGE gstbin.c:4377:gst_bin_get_by_name: [pipeline0]: looking up child element demux
+0:00:00.030471862 635033 0x57fc3ea36e00 INFO            GST_PIPELINE gst/parse/grammar.y:683:gst_parse_perform_link: linking pad  demux of GstQTDemux named demux to some pad of GstAacParse named aacparse0 (1/0) with caps "(NULL)"
+0:00:00.030477783 635033 0x57fc3ea36e00 INFO        GST_ELEMENT_PADS gstutils.c:1816:gst_element_link_pads_full: trying to link element demux:audio_0 to element aacparse0:(any)
+0:00:00.030482633 635033 0x57fc3ea36e00 INFO        GST_ELEMENT_PADS gstelement.c:1013:gst_element_get_static_pad: no such pad 'audio_0' in element "demux"
+0:00:00.030488118 635033 0x57fc3ea36e00 INFO                 default gstutils.c:2206:gst_element_link_pads_filtered: Could not link pads: demux:audio_0 - aacparse0:(null)
+0:00:00.030498454 635033 0x57fc3ea36e00 INFO            GST_PIPELINE gst/parse/grammar.y:683:gst_parse_perform_link: linking some pad of GstAacParse named aacparse0 to some pad of avdec_aac named avdec_aac0 (0/0) with caps "(NULL)"
+0:00:00.030503919 635033 0x57fc3ea36e00 INFO        GST_ELEMENT_PADS gstutils.c:1816:gst_element_link_pads_full: trying to link element aacparse0:(any) to element avdec_aac0:(any)
+0:00:00.030509364 635033 0x57fc3ea36e00 INFO                GST_PADS gstutils.c:1079:gst_pad_check_link: trying to link aacparse0:src and avdec_aac0:sink
+0:00:00.030517366 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:4357:gst_pad_peer_query:<avdec_aac0:src> pad has no peer
+0:00:00.030532178 635033 0x57fc3ea36e00 INFO                GST_PADS gstutils.c:1632:prepare_link_maybe_ghosting: aacparse0 and avdec_aac0 in same bin, no need for ghost pads
+0:00:00.030538651 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:2382:gst_pad_link_prepare: trying to link aacparse0:src and avdec_aac0:sink
+0:00:00.030544343 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:4357:gst_pad_peer_query:<avdec_aac0:src> pad has no peer
+0:00:00.030552989 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:2590:gst_pad_link_full: linked aacparse0:src and avdec_aac0:sink, successful
+0:00:00.030557199 635033 0x57fc3ea36e00 INFO               GST_EVENT gstevent.c:1660:gst_event_new_reconfigure: creating reconfigure event
+0:00:00.030561485 635033 0x57fc3ea36e00 INFO               GST_EVENT gstpad.c:5946:gst_pad_send_event_unchecked:<aacparse0:src> Received event on flushing pad. Discarding
+0:00:00.030569514 635033 0x57fc3ea36e00 INFO            GST_PIPELINE gst/parse/grammar.y:683:gst_parse_perform_link: linking some pad of avdec_aac named avdec_aac0 to some pad of GstAudioConvert named audioconvert0 (0/0) with caps "(NULL)"
+0:00:00.030575106 635033 0x57fc3ea36e00 INFO        GST_ELEMENT_PADS gstutils.c:1816:gst_element_link_pads_full: trying to link element avdec_aac0:(any) to element audioconvert0:(any)
+0:00:00.030580323 635033 0x57fc3ea36e00 INFO                GST_PADS gstutils.c:1079:gst_pad_check_link: trying to link avdec_aac0:src and audioconvert0:sink
+0:00:00.030586333 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:4357:gst_pad_peer_query:<audioconvert0:src> pad has no peer
+0:00:00.030598848 635033 0x57fc3ea36e00 INFO               structure gststructure.c:2917:gst_structure_get_valist: Expected field 'channel-mask' in structure: audio/x-raw, rate=(int)[ 1, 2147483647 ], channels=(int)[ 1, 2147483647 ];
+0:00:00.030615270 635033 0x57fc3ea36e00 INFO                GST_PADS gstutils.c:1632:prepare_link_maybe_ghosting: avdec_aac0 and audioconvert0 in same bin, no need for ghost pads
+0:00:00.030621365 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:2382:gst_pad_link_prepare: trying to link avdec_aac0:src and audioconvert0:sink
+0:00:00.030626859 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:4357:gst_pad_peer_query:<audioconvert0:src> pad has no peer
+0:00:00.030635771 635033 0x57fc3ea36e00 INFO               structure gststructure.c:2917:gst_structure_get_valist: Expected field 'channel-mask' in structure: audio/x-raw, rate=(int)[ 1, 2147483647 ], channels=(int)[ 1, 2147483647 ];
+0:00:00.030650120 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:2590:gst_pad_link_full: linked avdec_aac0:src and audioconvert0:sink, successful
+0:00:00.030654206 635033 0x57fc3ea36e00 INFO               GST_EVENT gstevent.c:1660:gst_event_new_reconfigure: creating reconfigure event
+0:00:00.030658413 635033 0x57fc3ea36e00 INFO               GST_EVENT gstpad.c:5946:gst_pad_send_event_unchecked:<avdec_aac0:src> Received event on flushing pad. Discarding
+0:00:00.030667686 635033 0x57fc3ea36e00 INFO            GST_PIPELINE gst/parse/grammar.y:683:gst_parse_perform_link: linking some pad of GstAudioConvert named audioconvert0 to some pad of GstAudioResample named audioresample0 (0/0) with caps "(NULL)"
+0:00:00.030673542 635033 0x57fc3ea36e00 INFO        GST_ELEMENT_PADS gstutils.c:1816:gst_element_link_pads_full: trying to link element audioconvert0:(any) to element audioresample0:(any)
+0:00:00.030679063 635033 0x57fc3ea36e00 INFO                GST_PADS gstutils.c:1079:gst_pad_check_link: trying to link audioconvert0:src and audioresample0:sink
+0:00:00.030688961 635033 0x57fc3ea36e00 INFO               structure gststructure.c:2917:gst_structure_get_valist: Expected field 'channel-mask' in structure: audio/x-raw, rate=(int)[ 1, 2147483647 ], channels=(int)[ 1, 2147483647 ];
+0:00:00.030700121 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:4357:gst_pad_peer_query:<audioresample0:src> pad has no peer
+0:00:00.030723368 635033 0x57fc3ea36e00 INFO                GST_PADS gstutils.c:1632:prepare_link_maybe_ghosting: audioconvert0 and audioresample0 in same bin, no need for ghost pads
+0:00:00.030729884 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:2382:gst_pad_link_prepare: trying to link audioconvert0:src and audioresample0:sink
+0:00:00.030739347 635033 0x57fc3ea36e00 INFO               structure gststructure.c:2917:gst_structure_get_valist: Expected field 'channel-mask' in structure: audio/x-raw, rate=(int)[ 1, 2147483647 ], channels=(int)[ 1, 2147483647 ];
+0:00:00.030749105 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:4357:gst_pad_peer_query:<audioresample0:src> pad has no peer
+0:00:00.030768156 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:2590:gst_pad_link_full: linked audioconvert0:src and audioresample0:sink, successful
+0:00:00.030772455 635033 0x57fc3ea36e00 INFO               GST_EVENT gstevent.c:1660:gst_event_new_reconfigure: creating reconfigure event
+0:00:00.030776817 635033 0x57fc3ea36e00 INFO               GST_EVENT gstpad.c:5946:gst_pad_send_event_unchecked:<audioconvert0:src> Received event on flushing pad. Discarding
+0:00:00.030785502 635033 0x57fc3ea36e00 INFO            GST_PIPELINE gst/parse/grammar.y:683:gst_parse_perform_link: linking some pad of GstAudioResample named audioresample0 to some pad of GstOpusEnc named opusenc0 (0/0) with caps "(NULL)"
+0:00:00.030791246 635033 0x57fc3ea36e00 INFO        GST_ELEMENT_PADS gstutils.c:1816:gst_element_link_pads_full: trying to link element audioresample0:(any) to element opusenc0:(any)
+0:00:00.030796528 635033 0x57fc3ea36e00 INFO                GST_PADS gstutils.c:1079:gst_pad_check_link: trying to link audioresample0:src and opusenc0:sink
+0:00:00.030822684 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:4357:gst_pad_peer_query:<opusenc0:src> pad has no peer
+0:00:00.030929276 635033 0x57fc3ea36e00 INFO                GST_PADS gstutils.c:1632:prepare_link_maybe_ghosting: audioresample0 and opusenc0 in same bin, no need for ghost pads
+0:00:00.030936128 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:2382:gst_pad_link_prepare: trying to link audioresample0:src and opusenc0:sink
+0:00:00.030941656 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:4357:gst_pad_peer_query:<opusenc0:src> pad has no peer
+0:00:00.031036916 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:2590:gst_pad_link_full: linked audioresample0:src and opusenc0:sink, successful
+0:00:00.031041352 635033 0x57fc3ea36e00 INFO               GST_EVENT gstevent.c:1660:gst_event_new_reconfigure: creating reconfigure event
+0:00:00.031045893 635033 0x57fc3ea36e00 INFO               GST_EVENT gstpad.c:5946:gst_pad_send_event_unchecked:<audioresample0:src> Received event on flushing pad. Discarding
+0:00:00.031055057 635033 0x57fc3ea36e00 INFO            GST_PIPELINE gst/parse/grammar.y:683:gst_parse_perform_link: linking some pad of GstOpusEnc named opusenc0 to some pad of GstOggMux named oggmux0 (0/0) with caps "(NULL)"
+0:00:00.031060909 635033 0x57fc3ea36e00 INFO        GST_ELEMENT_PADS gstutils.c:1816:gst_element_link_pads_full: trying to link element opusenc0:(any) to element oggmux0:(any)
+0:00:00.031100137 635033 0x57fc3ea36e00 INFO        GST_ELEMENT_PADS gstelement.c:759:gst_element_add_pad:<oggmux0> adding pad 'audio_968580041'
+0:00:00.031107806 635033 0x57fc3ea36e00 INFO                GST_PADS gstutils.c:1632:prepare_link_maybe_ghosting: opusenc0 and oggmux0 in same bin, no need for ghost pads
+0:00:00.031114420 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:2382:gst_pad_link_prepare: trying to link opusenc0:src and oggmux0:audio_968580041
+0:00:00.031122132 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:2590:gst_pad_link_full: linked opusenc0:src and oggmux0:audio_968580041, successful
+0:00:00.031126241 635033 0x57fc3ea36e00 INFO               GST_EVENT gstevent.c:1660:gst_event_new_reconfigure: creating reconfigure event
+0:00:00.031130555 635033 0x57fc3ea36e00 INFO               GST_EVENT gstpad.c:5946:gst_pad_send_event_unchecked:<opusenc0:src> Received event on flushing pad. Discarding
+0:00:00.031138556 635033 0x57fc3ea36e00 INFO            GST_PIPELINE gst/parse/grammar.y:683:gst_parse_perform_link: linking some pad of GstOggMux named oggmux0 to some pad of GstFileSink named filesink0 (0/0) with caps "(NULL)"
+0:00:00.031144239 635033 0x57fc3ea36e00 INFO        GST_ELEMENT_PADS gstutils.c:1816:gst_element_link_pads_full: trying to link element oggmux0:(any) to element filesink0:(any)
+0:00:00.031149734 635033 0x57fc3ea36e00 INFO                GST_PADS gstutils.c:1079:gst_pad_check_link: trying to link oggmux0:src and filesink0:sink
+0:00:00.031156568 635033 0x57fc3ea36e00 INFO                GST_PADS gstutils.c:1632:prepare_link_maybe_ghosting: oggmux0 and filesink0 in same bin, no need for ghost pads
+0:00:00.031162275 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:2382:gst_pad_link_prepare: trying to link oggmux0:src and filesink0:sink
+0:00:00.031168515 635033 0x57fc3ea36e00 INFO                GST_PADS gstpad.c:2590:gst_pad_link_full: linked oggmux0:src and filesink0:sink, successful
+0:00:00.031172449 635033 0x57fc3ea36e00 INFO               GST_EVENT gstevent.c:1660:gst_event_new_reconfigure: creating reconfigure event
+0:00:00.031176636 635033 0x57fc3ea36e00 INFO               GST_EVENT gstpad.c:5946:gst_pad_send_event_unchecked:<oggmux0:src> Received event on flushing pad. Discarding
+Setting pipeline to PAUSED ...
+
+===========================================================================================================================================================================================
+
+
+gst-launch-1.0 filesrc location=/home/lg/surya/Record_2024_11_13_17_31_11_569.mp4 ! qtdemux name=demux demux.audio_0 ! aacparse ! avdec_aac ! audioconvert ! 
+audioresample ! opusenc hard-resync=true audio-type=2048 bitrate=16000 frame-size=20 ! oggmux ! filesink location=/home/lg/surya/output.opus
 
 
